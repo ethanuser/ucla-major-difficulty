@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Scraping checkpoints
+data/processed/.scrape_checkpoint.json
+
+# Pipeline logs
+scripts/pipeline_output.log
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
