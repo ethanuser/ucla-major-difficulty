@@ -523,10 +523,26 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
                     s_gpa = (subj_courses['avg_gpa'] * subj_courses['total_letter_grades']).sum() / total_letter
                     s_pct = (subj_courses['pct_A'] * subj_courses['total_letter_grades']).sum() / total_letter
                     total_students = int(total_letter)
+                    # Upper / lower division breakdown for department filter
+                    ud_mask = subj_courses['course_id'].map(is_upper_division)
+                    ud_courses = subj_courses.loc[ud_mask]
+                    ld_courses = subj_courses.loc[~ud_mask]
+                    ud_total = ud_courses['total_letter_grades'].sum()
+                    ld_total = ld_courses['total_letter_grades'].sum()
+                    ud_gpa = round((ud_courses['avg_gpa'] * ud_courses['total_letter_grades']).sum() / ud_total, 3) if ud_total > 0 else None
+                    ud_pctA = round((ud_courses['pct_A'] * ud_courses['total_letter_grades']).sum() / ud_total, 1) if ud_total > 0 else None
+                    ld_gpa = round((ld_courses['avg_gpa'] * ld_courses['total_letter_grades']).sum() / ld_total, 3) if ld_total > 0 else None
+                    ld_pctA = round((ld_courses['pct_A'] * ld_courses['total_letter_grades']).sum() / ld_total, 1) if ld_total > 0 else None
+                    ud_num = int(len(ud_courses))
+                    ld_num = int(len(ld_courses))
+                    ud_students = int(ud_total)
+                    ld_students = int(ld_total)
                 else:
                     s_gpa = s_pct = 0
                     total_students = 0
-                nodes.append({
+                    ud_gpa = ud_pctA = ld_gpa = ld_pctA = None
+                    ud_num = ld_num = ud_students = ld_students = 0
+                node = {
                     'id': subj_id,
                     'label': subj,
                     'type': 'subject',
@@ -534,7 +550,17 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
                     'pct_A': round(s_pct, 1),
                     'num_courses': int(len(subj_courses)),
                     'total_students': total_students,
-                })
+                }
+                if len(subj_courses) > 0:
+                    node['ud_gpa'] = ud_gpa
+                    node['ud_pctA'] = ud_pctA
+                    node['ud_num_courses'] = ud_num
+                    node['ud_total_students'] = ud_students
+                    node['ld_gpa'] = ld_gpa
+                    node['ld_pctA'] = ld_pctA
+                    node['ld_num_courses'] = ld_num
+                    node['ld_total_students'] = ld_students
+                nodes.append(node)
                 node_set.add(subj_id)
             
             edges.append({
@@ -794,6 +820,14 @@ def generate_html(graph_data, output_path):
         <div class="panel" id="panel-dept-rankings">
             <div class="section-title">Departments by Average GPA</div>
             <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">Subject areas (departments) sorted by weighted average GPA across all their courses in this dataset. Lower GPA may indicate stricter grading.</p>
+            <div class="filter-bar">
+                <label>Course Filter:</label>
+                <div class="filter-group">
+                    <button id="dept-filter-all" class="active-filter" onclick="setDeptFilter('all')">All Courses</button>
+                    <button id="dept-filter-ud" onclick="setDeptFilter('ud')">Upper Division</button>
+                    <button id="dept-filter-ld" onclick="setDeptFilter('ld')">Lower Division</button>
+                </div>
+            </div>
             <div class="table-scroll-wrapper">
             <table class="rankings-table">
                 <thead><tr>

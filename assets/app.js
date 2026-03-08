@@ -136,20 +136,42 @@ function renderRankings() {
 
 renderRankings();
 
-// ─── Department Rankings ─────────────────────────────────────
+// ─── Department Rankings (with course filter: all / upper / lower div) ───
+
+let currentDeptFilter = 'all';
+
+function setDeptFilter(mode) {
+    currentDeptFilter = mode;
+    document.querySelectorAll('#panel-dept-rankings .filter-bar button').forEach(b => b.classList.remove('active-filter'));
+    const id = mode === 'ud' ? 'dept-filter-ud' : mode === 'ld' ? 'dept-filter-ld' : 'dept-filter-all';
+    const btn = document.getElementById(id);
+    if (btn) btn.classList.add('active-filter');
+    renderDeptRankings();
+}
 
 function renderDeptRankings() {
-    const depts = DATA.nodes
-        .filter(n => n.type === 'subject' && (n.num_courses || 0) > 0)
-        .map(n => ({
+    const rawDepts = DATA.nodes.filter(n => n.type === 'subject' && (n.num_courses || 0) > 0);
+
+    const depts = rawDepts.map(n => {
+        let gpa, pctA, numCourses, totalStudents;
+        if (currentDeptFilter === 'ud') {
+            if (n.ud_gpa == null) return null;
+            gpa = n.ud_gpa; pctA = n.ud_pctA; numCourses = n.ud_num_courses || 0; totalStudents = n.ud_total_students || 0;
+        } else if (currentDeptFilter === 'ld') {
+            if (n.ld_gpa == null) return null;
+            gpa = n.ld_gpa; pctA = n.ld_pctA; numCourses = n.ld_num_courses || 0; totalStudents = n.ld_total_students || 0;
+        } else {
+            gpa = n.avg_gpa; pctA = n.pct_A; numCourses = n.num_courses || 0; totalStudents = n.total_students || 0;
+        }
+        const adjGpa = adjustGpa(gpa, n.ability_proxy);
+        return {
             label: n.label,
-            avg_gpa: adjustGpa(n.avg_gpa, n.ability_proxy),
-            raw_gpa: n.avg_gpa,
-            pct_A: n.pct_A,
-            num_courses: n.num_courses || 0,
-            total_students: n.total_students || 0,
-        }))
-        .sort((a, b) => a.avg_gpa - b.avg_gpa);
+            avg_gpa: adjGpa,
+            pct_A: pctA,
+            num_courses: numCourses,
+            total_students: totalStudents,
+        };
+    }).filter(Boolean).sort((a, b) => a.avg_gpa - b.avg_gpa);
 
     const tbody = document.getElementById('dept-rankings-body');
     if (!tbody) return;

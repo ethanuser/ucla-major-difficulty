@@ -19,6 +19,14 @@
       "pct_A": 48.6,
       "num_courses": 126,
       "total_students": 69501,
+      "ud_gpa": 3.353,
+      "ud_pctA": 52.7,
+      "ud_num_courses": 117,
+      "ud_total_students": 51836,
+      "ld_gpa": 2.982,
+      "ld_pctA": 36.4,
+      "ld_num_courses": 9,
+      "ld_total_students": 17665,
       "ability_proxy": 3.8737
     },
     {
@@ -29,6 +37,14 @@
       "pct_A": 55.9,
       "num_courses": 107,
       "total_students": 59457,
+      "ud_gpa": 3.26,
+      "ud_pctA": 54.4,
+      "ud_num_courses": 86,
+      "ud_total_students": 24309,
+      "ld_gpa": 3.272,
+      "ld_pctA": 56.9,
+      "ld_num_courses": 21,
+      "ld_total_students": 35148,
       "ability_proxy": 3.869
     },
     {
@@ -39,6 +55,14 @@
       "pct_A": 56.5,
       "num_courses": 111,
       "total_students": 47531,
+      "ud_gpa": 3.495,
+      "ud_pctA": 57.1,
+      "ud_num_courses": 107,
+      "ud_total_students": 41951,
+      "ld_gpa": 3.222,
+      "ld_pctA": 51.6,
+      "ld_num_courses": 4,
+      "ld_total_students": 5580,
       "ability_proxy": 3.8307
     },
     {
@@ -60,6 +84,14 @@
       "pct_A": 75.5,
       "num_courses": 28,
       "total_students": 16145,
+      "ud_gpa": 3.888,
+      "ud_pctA": 93.9,
+      "ud_num_courses": 14,
+      "ud_total_students": 3089,
+      "ld_gpa": 3.602,
+      "ld_pctA": 71.2,
+      "ld_num_courses": 14,
+      "ld_total_students": 13056,
       "ability_proxy": 3.8522
     },
     {
@@ -81,6 +113,14 @@
       "pct_A": 64.3,
       "num_courses": 7,
       "total_students": 6228,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.441,
+      "ld_pctA": 64.3,
+      "ld_num_courses": 7,
+      "ld_total_students": 6228,
       "ability_proxy": 3.8658
     },
     {
@@ -91,6 +131,14 @@
       "pct_A": 69.4,
       "num_courses": 63,
       "total_students": 35640,
+      "ud_gpa": 3.605,
+      "ud_pctA": 71.6,
+      "ud_num_courses": 49,
+      "ud_total_students": 16745,
+      "ld_gpa": 3.507,
+      "ld_pctA": 67.4,
+      "ld_num_courses": 14,
+      "ld_total_students": 18895,
       "ability_proxy": 3.8889
     },
     {
@@ -112,6 +160,14 @@
       "pct_A": 57.9,
       "num_courses": 79,
       "total_students": 49704,
+      "ud_gpa": 3.411,
+      "ud_pctA": 57.4,
+      "ud_num_courses": 52,
+      "ud_total_students": 24549,
+      "ld_gpa": 3.357,
+      "ld_pctA": 58.5,
+      "ld_num_courses": 27,
+      "ld_total_students": 25155,
       "ability_proxy": 3.8785
     },
     {
@@ -122,6 +178,14 @@
       "pct_A": 71.6,
       "num_courses": 30,
       "total_students": 15249,
+      "ud_gpa": 3.429,
+      "ud_pctA": 66.0,
+      "ud_num_courses": 24,
+      "ud_total_students": 5419,
+      "ld_gpa": 3.617,
+      "ld_pctA": 74.7,
+      "ld_num_courses": 6,
+      "ld_total_students": 9830,
       "ability_proxy": 3.8539
     },
     {
@@ -154,6 +218,14 @@
       "pct_A": 73.1,
       "num_courses": 32,
       "total_students": 7185,
+      "ud_gpa": 3.543,
+      "ud_pctA": 67.6,
+      "ud_num_courses": 16,
+      "ud_total_students": 1747,
+      "ld_gpa": 3.59,
+      "ld_pctA": 74.9,
+      "ld_num_courses": 16,
+      "ld_total_students": 5438,
       "ability_proxy": 3.8165
     },
     {
@@ -164,6 +236,14 @@
       "pct_A": 58.4,
       "num_courses": 89,
       "total_students": 77413,
+      "ud_gpa": 3.436,
+      "ud_pctA": 62.2,
+      "ud_num_courses": 40,
+      "ud_total_students": 20229,
+      "ld_gpa": 3.361,
+      "ld_pctA": 57.0,
+      "ld_num_courses": 49,
+      "ld_total_students": 57184,
       "ability_proxy": 3.872
     },
     {
@@ -174,6 +254,14 @@
       "pct_A": 60.8,
       "num_courses": 65,
       "total_students": 47733,
+      "ud_gpa": 3.494,
+      "ud_pctA": 63.9,
+      "ud_num_courses": 43,
+      "ud_total_students": 7443,
+      "ld_gpa": 3.411,
+      "ld_pctA": 60.3,
+      "ld_num_courses": 22,
+      "ld_total_students": 40290,
       "ability_proxy": 3.8751
     },
     {
@@ -239,6 +327,14 @@
       "pct_A": 61.3,
       "num_courses": 43,
       "total_students": 5806,
+      "ud_gpa": 3.445,
+      "ud_pctA": 59.8,
+      "ud_num_courses": 38,
+      "ud_total_students": 5349,
+      "ld_gpa": 3.748,
+      "ld_pctA": 79.6,
+      "ld_num_courses": 5,
+      "ld_total_students": 457,
       "ability_proxy": 3.8602
     },
     {
@@ -260,6 +356,14 @@
       "pct_A": 67.5,
       "num_courses": 71,
       "total_students": 15840,
+      "ud_gpa": 3.568,
+      "ud_pctA": 70.5,
+      "ud_num_courses": 41,
+      "ud_total_students": 5057,
+      "ld_gpa": 3.522,
+      "ld_pctA": 66.1,
+      "ld_num_courses": 30,
+      "ld_total_students": 10783,
       "ability_proxy": 3.8874
     },
     {
@@ -302,6 +406,14 @@
       "pct_A": 53.5,
       "num_courses": 16,
       "total_students": 5586,
+      "ud_gpa": 3.4,
+      "ud_pctA": 59.5,
+      "ud_num_courses": 10,
+      "ud_total_students": 845,
+      "ld_gpa": 3.269,
+      "ld_pctA": 52.5,
+      "ld_num_courses": 6,
+      "ld_total_students": 4741,
       "ability_proxy": 3.85
     },
     {
@@ -312,6 +424,14 @@
       "pct_A": 68.3,
       "num_courses": 31,
       "total_students": 12658,
+      "ud_gpa": 3.49,
+      "ud_pctA": 61.7,
+      "ud_num_courses": 14,
+      "ud_total_students": 986,
+      "ld_gpa": 3.544,
+      "ld_pctA": 68.9,
+      "ld_num_courses": 17,
+      "ld_total_students": 11672,
       "ability_proxy": 3.7917
     },
     {
@@ -333,6 +453,14 @@
       "pct_A": 68.9,
       "num_courses": 68,
       "total_students": 9630,
+      "ud_gpa": 3.543,
+      "ud_pctA": 65.8,
+      "ud_num_courses": 52,
+      "ud_total_students": 7682,
+      "ld_gpa": 3.743,
+      "ld_pctA": 81.3,
+      "ld_num_courses": 16,
+      "ld_total_students": 1948,
       "ability_proxy": 3.8338
     },
     {
@@ -343,6 +471,14 @@
       "pct_A": 68.5,
       "num_courses": 102,
       "total_students": 30003,
+      "ud_gpa": 3.545,
+      "ud_pctA": 67.6,
+      "ud_num_courses": 80,
+      "ud_total_students": 21759,
+      "ld_gpa": 3.594,
+      "ld_pctA": 71.2,
+      "ld_num_courses": 22,
+      "ld_total_students": 8244,
       "ability_proxy": 3.9353
     },
     {
@@ -375,6 +511,14 @@
       "pct_A": 68.6,
       "num_courses": 17,
       "total_students": 73132,
+      "ud_gpa": 3.739,
+      "ud_pctA": 82.9,
+      "ud_num_courses": 6,
+      "ud_total_students": 9167,
+      "ld_gpa": 3.53,
+      "ld_pctA": 66.6,
+      "ld_num_courses": 11,
+      "ld_total_students": 63965,
       "ability_proxy": 3.8755
     },
     {
@@ -418,6 +562,14 @@
       "pct_A": 70.6,
       "num_courses": 33,
       "total_students": 6899,
+      "ud_gpa": 3.63,
+      "ud_pctA": 71.7,
+      "ud_num_courses": 23,
+      "ud_total_students": 5364,
+      "ld_gpa": 3.589,
+      "ld_pctA": 67.0,
+      "ld_num_courses": 10,
+      "ld_total_students": 1535,
       "ability_proxy": 3.7956
     },
     {
@@ -428,6 +580,14 @@
       "pct_A": 66.1,
       "num_courses": 91,
       "total_students": 21198,
+      "ud_gpa": 3.457,
+      "ud_pctA": 62.5,
+      "ud_num_courses": 58,
+      "ud_total_students": 15384,
+      "ld_gpa": 3.673,
+      "ld_pctA": 75.5,
+      "ld_num_courses": 33,
+      "ld_total_students": 5814,
       "ability_proxy": 3.8454
     },
     {
@@ -460,6 +620,14 @@
       "pct_A": 80.6,
       "num_courses": 30,
       "total_students": 13903,
+      "ud_gpa": 3.74,
+      "ud_pctA": 81.7,
+      "ud_num_courses": 13,
+      "ud_total_students": 2935,
+      "ld_gpa": 3.69,
+      "ld_pctA": 80.3,
+      "ld_num_courses": 17,
+      "ld_total_students": 10968,
       "ability_proxy": 3.7844
     },
     {
@@ -502,6 +670,14 @@
       "pct_A": 85.8,
       "num_courses": 39,
       "total_students": 42369,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.8,
+      "ld_pctA": 85.8,
+      "ld_num_courses": 39,
+      "ld_total_students": 42369,
       "ability_proxy": 3.7299
     },
     {
@@ -512,6 +688,14 @@
       "pct_A": 70.9,
       "num_courses": 67,
       "total_students": 17342,
+      "ud_gpa": 3.54,
+      "ud_pctA": 68.6,
+      "ud_num_courses": 51,
+      "ud_total_students": 8322,
+      "ld_gpa": 3.592,
+      "ld_pctA": 72.9,
+      "ld_num_courses": 16,
+      "ld_total_students": 9020,
       "ability_proxy": 3.8373
     },
     {
@@ -533,6 +717,14 @@
       "pct_A": 75.9,
       "num_courses": 78,
       "total_students": 23966,
+      "ud_gpa": 3.652,
+      "ud_pctA": 78.0,
+      "ud_num_courses": 61,
+      "ud_total_students": 13270,
+      "ld_gpa": 3.557,
+      "ld_pctA": 73.4,
+      "ld_num_courses": 17,
+      "ld_total_students": 10696,
       "ability_proxy": 3.8298
     },
     {
@@ -543,6 +735,14 @@
       "pct_A": 67.1,
       "num_courses": 62,
       "total_students": 21034,
+      "ud_gpa": 3.542,
+      "ud_pctA": 67.3,
+      "ud_num_courses": 54,
+      "ud_total_students": 15560,
+      "ld_gpa": 3.448,
+      "ld_pctA": 66.5,
+      "ld_num_courses": 8,
+      "ld_total_students": 5474,
       "ability_proxy": 3.8839
     },
     {
@@ -553,6 +753,14 @@
       "pct_A": 57.8,
       "num_courses": 67,
       "total_students": 37993,
+      "ud_gpa": 3.337,
+      "ud_pctA": 56.2,
+      "ud_num_courses": 51,
+      "ud_total_students": 24450,
+      "ld_gpa": 3.407,
+      "ld_pctA": 60.8,
+      "ld_num_courses": 16,
+      "ld_total_students": 13543,
       "ability_proxy": 3.8644
     },
     {
@@ -574,6 +782,14 @@
       "pct_A": 78.8,
       "num_courses": 131,
       "total_students": 19619,
+      "ud_gpa": 3.665,
+      "ud_pctA": 76.0,
+      "ud_num_courses": 89,
+      "ud_total_students": 10628,
+      "ld_gpa": 3.735,
+      "ld_pctA": 82.1,
+      "ld_num_courses": 42,
+      "ld_total_students": 8991,
       "ability_proxy": 3.8295
     },
     {
@@ -595,6 +811,14 @@
       "pct_A": 86.8,
       "num_courses": 46,
       "total_students": 12325,
+      "ud_gpa": 3.786,
+      "ud_pctA": 82.7,
+      "ud_num_courses": 24,
+      "ud_total_students": 7968,
+      "ld_gpa": 3.925,
+      "ld_pctA": 94.2,
+      "ld_num_courses": 22,
+      "ld_total_students": 4357,
       "ability_proxy": 3.965
     },
     {
@@ -638,6 +862,14 @@
       "pct_A": 73.1,
       "num_courses": 49,
       "total_students": 6399,
+      "ud_gpa": 3.446,
+      "ud_pctA": 65.2,
+      "ud_num_courses": 21,
+      "ud_total_students": 3695,
+      "ld_gpa": 3.789,
+      "ld_pctA": 83.8,
+      "ld_num_courses": 28,
+      "ld_total_students": 2704,
       "ability_proxy": 3.8623
     },
     {
@@ -659,6 +891,14 @@
       "pct_A": 58.7,
       "num_courses": 24,
       "total_students": 8978,
+      "ud_gpa": 3.441,
+      "ud_pctA": 61.6,
+      "ud_num_courses": 19,
+      "ud_total_students": 7410,
+      "ld_gpa": 3.225,
+      "ld_pctA": 44.8,
+      "ld_num_courses": 5,
+      "ld_total_students": 1568,
       "ability_proxy": 3.9146
     },
     {
@@ -691,6 +931,14 @@
       "pct_A": 71.3,
       "num_courses": 9,
       "total_students": 1361,
+      "ud_gpa": 3.57,
+      "ud_pctA": 68.5,
+      "ud_num_courses": 4,
+      "ud_total_students": 505,
+      "ld_gpa": 3.613,
+      "ld_pctA": 72.9,
+      "ld_num_courses": 5,
+      "ld_total_students": 856,
       "ability_proxy": 3.7581
     },
     {
@@ -701,6 +949,14 @@
       "pct_A": 81.6,
       "num_courses": 29,
       "total_students": 4639,
+      "ud_gpa": 3.795,
+      "ud_pctA": 85.6,
+      "ud_num_courses": 11,
+      "ud_total_students": 817,
+      "ld_gpa": 3.7,
+      "ld_pctA": 80.8,
+      "ld_num_courses": 18,
+      "ld_total_students": 3822,
       "ability_proxy": 3.8069
     },
     {
@@ -711,6 +967,14 @@
       "pct_A": 80.6,
       "num_courses": 23,
       "total_students": 5162,
+      "ud_gpa": 3.713,
+      "ud_pctA": 79.5,
+      "ud_num_courses": 10,
+      "ud_total_students": 716,
+      "ld_gpa": 3.708,
+      "ld_pctA": 80.8,
+      "ld_num_courses": 13,
+      "ld_total_students": 4446,
       "ability_proxy": 3.7274
     },
     {
@@ -721,6 +985,14 @@
       "pct_A": 84.8,
       "num_courses": 30,
       "total_students": 4248,
+      "ud_gpa": 3.724,
+      "ud_pctA": 79.1,
+      "ud_num_courses": 14,
+      "ud_total_students": 785,
+      "ld_gpa": 3.768,
+      "ld_pctA": 86.1,
+      "ld_num_courses": 16,
+      "ld_total_students": 3463,
       "ability_proxy": 3.8022
     },
     {
@@ -741,6 +1013,14 @@
       "pct_A": 93.1,
       "num_courses": 162,
       "total_students": 27097,
+      "ud_gpa": 3.913,
+      "ud_pctA": 94.3,
+      "ud_num_courses": 146,
+      "ud_total_students": 21872,
+      "ld_gpa": 3.825,
+      "ld_pctA": 88.5,
+      "ld_num_courses": 16,
+      "ld_total_students": 5225,
       "ability_proxy": 3.8283
     },
     {
@@ -751,6 +1031,14 @@
       "pct_A": 90.0,
       "num_courses": 10,
       "total_students": 1133,
+      "ud_gpa": 3.896,
+      "ud_pctA": 92.2,
+      "ud_num_courses": 6,
+      "ud_total_students": 740,
+      "ld_gpa": 3.813,
+      "ld_pctA": 86.0,
+      "ld_num_courses": 4,
+      "ld_total_students": 393,
       "ability_proxy": 3.9017
     },
     {
@@ -760,7 +1048,15 @@
       "avg_gpa": 3.97,
       "pct_A": 97.7,
       "num_courses": 1,
-      "total_students": 87
+      "total_students": 87,
+      "ud_gpa": 3.97,
+      "ud_pctA": 97.7,
+      "ud_num_courses": 1,
+      "ud_total_students": 87,
+      "ld_gpa": null,
+      "ld_pctA": null,
+      "ld_num_courses": 0,
+      "ld_total_students": 0
     },
     {
       "id": "major_Bioengineering BS",
@@ -792,6 +1088,14 @@
       "pct_A": 81.5,
       "num_courses": 29,
       "total_students": 11378,
+      "ud_gpa": 3.77,
+      "ud_pctA": 83.3,
+      "ud_num_courses": 16,
+      "ud_total_students": 7364,
+      "ld_gpa": 3.696,
+      "ld_pctA": 78.2,
+      "ld_num_courses": 13,
+      "ld_total_students": 4014,
       "ability_proxy": 3.8864
     },
     {
@@ -802,6 +1106,14 @@
       "pct_A": 63.1,
       "num_courses": 24,
       "total_students": 8705,
+      "ud_gpa": 3.445,
+      "ud_pctA": 67.9,
+      "ud_num_courses": 12,
+      "ud_total_students": 2377,
+      "ld_gpa": 3.468,
+      "ld_pctA": 61.3,
+      "ld_num_courses": 12,
+      "ld_total_students": 6328,
       "ability_proxy": 3.9108
     },
     {
@@ -834,6 +1146,14 @@
       "pct_A": 81.5,
       "num_courses": 28,
       "total_students": 7030,
+      "ud_gpa": 3.779,
+      "ud_pctA": 82.7,
+      "ud_num_courses": 18,
+      "ud_total_students": 5028,
+      "ld_gpa": 3.692,
+      "ld_pctA": 78.5,
+      "ld_num_courses": 10,
+      "ld_total_students": 2002,
       "ability_proxy": 3.8467
     },
     {
@@ -866,6 +1186,14 @@
       "pct_A": 75.5,
       "num_courses": 47,
       "total_students": 16487,
+      "ud_gpa": 3.653,
+      "ud_pctA": 73.8,
+      "ud_num_courses": 34,
+      "ud_total_students": 10841,
+      "ld_gpa": 3.704,
+      "ld_pctA": 78.8,
+      "ld_num_courses": 13,
+      "ld_total_students": 5646,
       "ability_proxy": 3.8934
     },
     {
@@ -887,6 +1215,14 @@
       "pct_A": 86.4,
       "num_courses": 8,
       "total_students": 787,
+      "ud_gpa": 3.783,
+      "ud_pctA": 85.5,
+      "ud_num_courses": 5,
+      "ud_total_students": 290,
+      "ld_gpa": 3.8,
+      "ld_pctA": 86.9,
+      "ld_num_courses": 3,
+      "ld_total_students": 497,
       "ability_proxy": 3.8826
     },
     {
@@ -897,6 +1233,14 @@
       "pct_A": 98.5,
       "num_courses": 6,
       "total_students": 405,
+      "ud_gpa": 3.981,
+      "ud_pctA": 99.4,
+      "ud_num_courses": 4,
+      "ud_total_students": 159,
+      "ld_gpa": 3.916,
+      "ld_pctA": 98.0,
+      "ld_num_courses": 2,
+      "ld_total_students": 246,
       "ability_proxy": 3.624
     },
     {
@@ -907,6 +1251,14 @@
       "pct_A": 85.1,
       "num_courses": 72,
       "total_students": 14897,
+      "ud_gpa": 3.752,
+      "ud_pctA": 84.8,
+      "ud_num_courses": 39,
+      "ud_total_students": 7339,
+      "ld_gpa": 3.767,
+      "ld_pctA": 85.5,
+      "ld_num_courses": 33,
+      "ld_total_students": 7558,
       "ability_proxy": 3.8851
     },
     {
@@ -917,6 +1269,14 @@
       "pct_A": 77.8,
       "num_courses": 22,
       "total_students": 3716,
+      "ud_gpa": 3.878,
+      "ud_pctA": 92.9,
+      "ud_num_courses": 12,
+      "ud_total_students": 722,
+      "ld_gpa": 3.634,
+      "ld_pctA": 74.2,
+      "ld_num_courses": 10,
+      "ld_total_students": 2994,
       "ability_proxy": 3.7133
     },
     {
@@ -927,6 +1287,14 @@
       "pct_A": 82.8,
       "num_courses": 8,
       "total_students": 1543,
+      "ud_gpa": 3.83,
+      "ud_pctA": 88.7,
+      "ud_num_courses": 3,
+      "ud_total_students": 195,
+      "ld_gpa": 3.683,
+      "ld_pctA": 82.0,
+      "ld_num_courses": 5,
+      "ld_total_students": 1348,
       "ability_proxy": 3.7259
     },
     {
@@ -937,6 +1305,14 @@
       "pct_A": 94.1,
       "num_courses": 4,
       "total_students": 205,
+      "ud_gpa": 3.867,
+      "ud_pctA": 89.7,
+      "ud_num_courses": 1,
+      "ud_total_students": 39,
+      "ld_gpa": 3.941,
+      "ld_pctA": 95.2,
+      "ld_num_courses": 3,
+      "ld_total_students": 166,
       "ability_proxy": 3.6218
     },
     {
@@ -947,6 +1323,14 @@
       "pct_A": 93.8,
       "num_courses": 15,
       "total_students": 1151,
+      "ud_gpa": 3.949,
+      "ud_pctA": 96.7,
+      "ud_num_courses": 5,
+      "ud_total_students": 398,
+      "ld_gpa": 3.863,
+      "ld_pctA": 92.3,
+      "ld_num_courses": 10,
+      "ld_total_students": 753,
       "ability_proxy": 3.6241
     },
     {
@@ -957,6 +1341,14 @@
       "pct_A": 81.0,
       "num_courses": 6,
       "total_students": 705,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.673,
+      "ld_pctA": 81.0,
+      "ld_num_courses": 6,
+      "ld_total_students": 705,
       "ability_proxy": 3.754
     },
     {
@@ -967,6 +1359,14 @@
       "pct_A": 70.3,
       "num_courses": 115,
       "total_students": 82026,
+      "ud_gpa": 3.615,
+      "ud_pctA": 72.6,
+      "ud_num_courses": 99,
+      "ud_total_students": 68452,
+      "ld_gpa": 3.37,
+      "ld_pctA": 58.7,
+      "ld_num_courses": 16,
+      "ld_total_students": 13574,
       "ability_proxy": 3.8751
     },
     {
@@ -977,6 +1377,14 @@
       "pct_A": 70.4,
       "num_courses": 4,
       "total_students": 405,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.581,
+      "ld_pctA": 70.4,
+      "ld_num_courses": 4,
+      "ld_total_students": 405,
       "ability_proxy": 3.7459
     },
     {
@@ -998,6 +1406,14 @@
       "pct_A": 96.3,
       "num_courses": 10,
       "total_students": 565,
+      "ud_gpa": 3.938,
+      "ud_pctA": 95.6,
+      "ud_num_courses": 7,
+      "ud_total_students": 339,
+      "ld_gpa": 3.912,
+      "ld_pctA": 97.3,
+      "ld_num_courses": 3,
+      "ld_total_students": 226,
       "ability_proxy": 3.905
     },
     {
@@ -1008,6 +1424,14 @@
       "pct_A": 89.8,
       "num_courses": 6,
       "total_students": 1624,
+      "ud_gpa": 3.924,
+      "ud_pctA": 97.1,
+      "ud_num_courses": 1,
+      "ud_total_students": 375,
+      "ld_gpa": 3.809,
+      "ld_pctA": 87.6,
+      "ld_num_courses": 5,
+      "ld_total_students": 1249,
       "ability_proxy": 3.8479
     },
     {
@@ -1018,6 +1442,14 @@
       "pct_A": 72.7,
       "num_courses": 60,
       "total_students": 19164,
+      "ud_gpa": 3.607,
+      "ud_pctA": 72.9,
+      "ud_num_courses": 52,
+      "ud_total_students": 18392,
+      "ld_gpa": 3.527,
+      "ld_pctA": 68.5,
+      "ld_num_courses": 8,
+      "ld_total_students": 772,
       "ability_proxy": 3.8825
     },
     {
@@ -1028,6 +1460,14 @@
       "pct_A": 83.1,
       "num_courses": 30,
       "total_students": 3679,
+      "ud_gpa": 3.747,
+      "ud_pctA": 82.2,
+      "ud_num_courses": 28,
+      "ud_total_students": 3395,
+      "ld_gpa": 3.893,
+      "ld_pctA": 93.7,
+      "ld_num_courses": 2,
+      "ld_total_students": 284,
       "ability_proxy": 3.9012
     },
     {
@@ -1038,6 +1478,14 @@
       "pct_A": 82.0,
       "num_courses": 7,
       "total_students": 1023,
+      "ud_gpa": 3.835,
+      "ud_pctA": 86.9,
+      "ud_num_courses": 4,
+      "ud_total_students": 473,
+      "ld_gpa": 3.769,
+      "ld_pctA": 77.8,
+      "ld_num_courses": 3,
+      "ld_total_students": 550,
       "ability_proxy": 3.905
     },
     {
@@ -1059,6 +1507,14 @@
       "pct_A": 83.5,
       "num_courses": 31,
       "total_students": 4114,
+      "ud_gpa": 3.787,
+      "ud_pctA": 82.8,
+      "ud_num_courses": 27,
+      "ud_total_students": 3783,
+      "ld_gpa": 3.884,
+      "ld_pctA": 91.8,
+      "ld_num_courses": 4,
+      "ld_total_students": 331,
       "ability_proxy": 3.9299
     },
     {
@@ -1069,6 +1525,14 @@
       "pct_A": 78.4,
       "num_courses": 142,
       "total_students": 33536,
+      "ud_gpa": 3.646,
+      "ud_pctA": 75.8,
+      "ud_num_courses": 92,
+      "ud_total_students": 14434,
+      "ld_gpa": 3.697,
+      "ld_pctA": 80.2,
+      "ld_num_courses": 50,
+      "ld_total_students": 19102,
       "ability_proxy": 3.8624
     },
     {
@@ -1090,6 +1554,14 @@
       "pct_A": 73.5,
       "num_courses": 80,
       "total_students": 39203,
+      "ud_gpa": 3.654,
+      "ud_pctA": 76.1,
+      "ud_num_courses": 65,
+      "ud_total_students": 24758,
+      "ld_gpa": 3.538,
+      "ld_pctA": 69.0,
+      "ld_num_courses": 15,
+      "ld_total_students": 14445,
       "ability_proxy": 3.8365
     },
     {
@@ -1133,6 +1605,14 @@
       "pct_A": 89.7,
       "num_courses": 16,
       "total_students": 992,
+      "ud_gpa": 3.853,
+      "ud_pctA": 89.3,
+      "ud_num_courses": 15,
+      "ud_total_students": 952,
+      "ld_gpa": 3.962,
+      "ld_pctA": 100.0,
+      "ld_num_courses": 1,
+      "ld_total_students": 40,
       "ability_proxy": 3.9323
     },
     {
@@ -1154,6 +1634,14 @@
       "pct_A": 93.0,
       "num_courses": 7,
       "total_students": 4221,
+      "ud_gpa": 3.999,
+      "ud_pctA": 100.0,
+      "ud_num_courses": 2,
+      "ud_total_students": 955,
+      "ld_gpa": 3.863,
+      "ld_pctA": 90.9,
+      "ld_num_courses": 5,
+      "ld_total_students": 3266,
       "ability_proxy": 3.935
     },
     {
@@ -1186,6 +1674,14 @@
       "pct_A": 88.4,
       "num_courses": 76,
       "total_students": 16571,
+      "ud_gpa": 3.829,
+      "ud_pctA": 88.4,
+      "ud_num_courses": 66,
+      "ud_total_students": 14655,
+      "ld_gpa": 3.828,
+      "ld_pctA": 88.9,
+      "ld_num_courses": 10,
+      "ld_total_students": 1916,
       "ability_proxy": 3.7985
     },
     {
@@ -1207,6 +1703,14 @@
       "pct_A": 92.3,
       "num_courses": 11,
       "total_students": 1866,
+      "ud_gpa": 3.889,
+      "ud_pctA": 94.2,
+      "ud_num_courses": 5,
+      "ud_total_students": 1439,
+      "ld_gpa": 3.727,
+      "ld_pctA": 85.9,
+      "ld_num_courses": 6,
+      "ld_total_students": 427,
       "ability_proxy": 3.9088
     },
     {
@@ -1217,6 +1721,14 @@
       "pct_A": 90.3,
       "num_courses": 41,
       "total_students": 4951,
+      "ud_gpa": 3.849,
+      "ud_pctA": 90.1,
+      "ud_num_courses": 27,
+      "ud_total_students": 2750,
+      "ld_gpa": 3.847,
+      "ld_pctA": 90.5,
+      "ld_num_courses": 14,
+      "ld_total_students": 2201,
       "ability_proxy": 3.8737
     },
     {
@@ -1227,6 +1739,14 @@
       "pct_A": 86.6,
       "num_courses": 8,
       "total_students": 2605,
+      "ud_gpa": 3.778,
+      "ud_pctA": 82.8,
+      "ud_num_courses": 6,
+      "ud_total_students": 950,
+      "ld_gpa": 3.835,
+      "ld_pctA": 88.8,
+      "ld_num_courses": 2,
+      "ld_total_students": 1655,
       "ability_proxy": 3.879
     },
     {
@@ -1248,6 +1768,14 @@
       "pct_A": 92.1,
       "num_courses": 24,
       "total_students": 8434,
+      "ud_gpa": 3.93,
+      "ud_pctA": 95.7,
+      "ud_num_courses": 17,
+      "ud_total_students": 6659,
+      "ld_gpa": 3.706,
+      "ld_pctA": 78.4,
+      "ld_num_courses": 7,
+      "ld_total_students": 1775,
       "ability_proxy": 3.8622
     },
     {
@@ -1269,6 +1797,14 @@
       "pct_A": 89.2,
       "num_courses": 53,
       "total_students": 6928,
+      "ud_gpa": 3.772,
+      "ud_pctA": 85.3,
+      "ud_num_courses": 34,
+      "ud_total_students": 2463,
+      "ld_gpa": 3.855,
+      "ld_pctA": 91.3,
+      "ld_num_courses": 19,
+      "ld_total_students": 4465,
       "ability_proxy": 3.8899
     },
     {
@@ -1279,6 +1815,14 @@
       "pct_A": 89.2,
       "num_courses": 78,
       "total_students": 20507,
+      "ud_gpa": 3.853,
+      "ud_pctA": 90.4,
+      "ud_num_courses": 60,
+      "ud_total_students": 11129,
+      "ld_gpa": 3.798,
+      "ld_pctA": 87.8,
+      "ld_num_courses": 18,
+      "ld_total_students": 9378,
       "ability_proxy": 3.8077
     },
     {
@@ -1311,6 +1855,14 @@
       "pct_A": 87.1,
       "num_courses": 40,
       "total_students": 4880,
+      "ud_gpa": 3.817,
+      "ud_pctA": 86.4,
+      "ud_num_courses": 31,
+      "ud_total_students": 4090,
+      "ld_gpa": 3.834,
+      "ld_pctA": 90.8,
+      "ld_num_courses": 9,
+      "ld_total_students": 790,
       "ability_proxy": 3.9089
     },
     {
@@ -1321,6 +1873,14 @@
       "pct_A": 89.6,
       "num_courses": 42,
       "total_students": 4173,
+      "ud_gpa": 3.854,
+      "ud_pctA": 89.3,
+      "ud_num_courses": 33,
+      "ud_total_students": 3374,
+      "ld_gpa": 3.877,
+      "ld_pctA": 91.0,
+      "ld_num_courses": 9,
+      "ld_total_students": 799,
       "ability_proxy": 3.9141
     },
     {
@@ -1331,6 +1891,14 @@
       "pct_A": 89.4,
       "num_courses": 11,
       "total_students": 6328,
+      "ud_gpa": 3.851,
+      "ud_pctA": 89.8,
+      "ud_num_courses": 3,
+      "ud_total_students": 3125,
+      "ld_gpa": 3.845,
+      "ld_pctA": 89.0,
+      "ld_num_courses": 8,
+      "ld_total_students": 3203,
       "ability_proxy": 3.9486
     },
     {
@@ -1363,6 +1931,14 @@
       "pct_A": 83.9,
       "num_courses": 55,
       "total_students": 14281,
+      "ud_gpa": 3.819,
+      "ud_pctA": 87.8,
+      "ud_num_courses": 33,
+      "ud_total_students": 7274,
+      "ld_gpa": 3.704,
+      "ld_pctA": 79.9,
+      "ld_num_courses": 22,
+      "ld_total_students": 7007,
       "ability_proxy": 3.8604
     },
     {
@@ -1373,6 +1949,14 @@
       "pct_A": 85.4,
       "num_courses": 44,
       "total_students": 4439,
+      "ud_gpa": 3.838,
+      "ud_pctA": 88.3,
+      "ud_num_courses": 36,
+      "ud_total_students": 3719,
+      "ld_gpa": 3.619,
+      "ld_pctA": 70.4,
+      "ld_num_courses": 8,
+      "ld_total_students": 720,
       "ability_proxy": 3.8469
     },
     {
@@ -1416,6 +2000,14 @@
       "pct_A": 77.9,
       "num_courses": 15,
       "total_students": 6647,
+      "ud_gpa": 3.155,
+      "ud_pctA": 52.4,
+      "ud_num_courses": 1,
+      "ud_total_students": 168,
+      "ld_gpa": 3.623,
+      "ld_pctA": 78.6,
+      "ld_num_courses": 14,
+      "ld_total_students": 6479,
       "ability_proxy": 3.8819
     },
     {
@@ -1426,6 +2018,14 @@
       "pct_A": 77.5,
       "num_courses": 40,
       "total_students": 7766,
+      "ud_gpa": 3.593,
+      "ud_pctA": 73.9,
+      "ud_num_courses": 13,
+      "ud_total_students": 1323,
+      "ld_gpa": 3.656,
+      "ld_pctA": 78.2,
+      "ld_num_courses": 27,
+      "ld_total_students": 6443,
       "ability_proxy": 3.744
     },
     {
@@ -1436,6 +2036,14 @@
       "pct_A": 75.7,
       "num_courses": 17,
       "total_students": 3008,
+      "ud_gpa": 3.733,
+      "ud_pctA": 84.4,
+      "ud_num_courses": 6,
+      "ud_total_students": 569,
+      "ld_gpa": 3.617,
+      "ld_pctA": 73.7,
+      "ld_num_courses": 11,
+      "ld_total_students": 2439,
       "ability_proxy": 3.7613
     },
     {
@@ -1446,6 +2054,14 @@
       "pct_A": 90.3,
       "num_courses": 43,
       "total_students": 7773,
+      "ud_gpa": 3.941,
+      "ud_pctA": 95.7,
+      "ud_num_courses": 20,
+      "ud_total_students": 2903,
+      "ld_gpa": 3.795,
+      "ld_pctA": 87.0,
+      "ld_num_courses": 23,
+      "ld_total_students": 4870,
       "ability_proxy": 3.7195
     },
     {
@@ -1456,6 +2072,14 @@
       "pct_A": 94.4,
       "num_courses": 29,
       "total_students": 2556,
+      "ud_gpa": 3.892,
+      "ud_pctA": 93.9,
+      "ud_num_courses": 17,
+      "ud_total_students": 1552,
+      "ld_gpa": 3.924,
+      "ld_pctA": 95.1,
+      "ld_num_courses": 12,
+      "ld_total_students": 1004,
       "ability_proxy": 3.858
     },
     {
@@ -1466,6 +2090,14 @@
       "pct_A": 70.5,
       "num_courses": 7,
       "total_students": 1103,
+      "ud_gpa": 3.713,
+      "ud_pctA": 82.2,
+      "ud_num_courses": 4,
+      "ud_total_students": 325,
+      "ld_gpa": 3.546,
+      "ld_pctA": 65.7,
+      "ld_num_courses": 3,
+      "ld_total_students": 778,
       "ability_proxy": 3.7748
     },
     {
@@ -1476,6 +2108,14 @@
       "pct_A": 79.3,
       "num_courses": 8,
       "total_students": 3084,
+      "ud_gpa": 3.631,
+      "ud_pctA": 73.4,
+      "ud_num_courses": 5,
+      "ud_total_students": 1490,
+      "ld_gpa": 3.757,
+      "ld_pctA": 84.9,
+      "ld_num_courses": 3,
+      "ld_total_students": 1594,
       "ability_proxy": 3.7748
     },
     {
@@ -1486,6 +2126,14 @@
       "pct_A": 77.6,
       "num_courses": 2,
       "total_students": 918,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.624,
+      "ld_pctA": 77.6,
+      "ld_num_courses": 2,
+      "ld_total_students": 918,
       "ability_proxy": 3.578
     },
     {
@@ -1496,6 +2144,14 @@
       "pct_A": 79.0,
       "num_courses": 3,
       "total_students": 290,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.698,
+      "ld_pctA": 79.0,
+      "ld_num_courses": 3,
+      "ld_total_students": 290,
       "ability_proxy": 3.5666
     },
     {
@@ -1506,6 +2162,14 @@
       "pct_A": 55.2,
       "num_courses": 3,
       "total_students": 286,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.332,
+      "ld_pctA": 55.2,
+      "ld_num_courses": 3,
+      "ld_total_students": 286,
       "ability_proxy": 3.7096
     },
     {
@@ -1526,6 +2190,14 @@
       "pct_A": 93.3,
       "num_courses": 20,
       "total_students": 3239,
+      "ud_gpa": 3.911,
+      "ud_pctA": 94.0,
+      "ud_num_courses": 10,
+      "ud_total_students": 1472,
+      "ld_gpa": 3.88,
+      "ld_pctA": 92.7,
+      "ld_num_courses": 10,
+      "ld_total_students": 1767,
       "ability_proxy": 3.7199
     },
     {
@@ -1569,6 +2241,14 @@
       "pct_A": 83.1,
       "num_courses": 36,
       "total_students": 6011,
+      "ud_gpa": 3.821,
+      "ud_pctA": 89.7,
+      "ud_num_courses": 15,
+      "ud_total_students": 2494,
+      "ld_gpa": 3.663,
+      "ld_pctA": 78.4,
+      "ld_num_courses": 21,
+      "ld_total_students": 3517,
       "ability_proxy": 3.9006
     },
     {
@@ -1579,6 +2259,14 @@
       "pct_A": 80.5,
       "num_courses": 2,
       "total_students": 631,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.665,
+      "ld_pctA": 80.5,
+      "ld_num_courses": 2,
+      "ld_total_students": 631,
       "ability_proxy": 3.9122
     },
     {
@@ -1589,6 +2277,14 @@
       "pct_A": 90.2,
       "num_courses": 6,
       "total_students": 428,
+      "ud_gpa": 3.894,
+      "ud_pctA": 94.1,
+      "ud_num_courses": 2,
+      "ud_total_students": 222,
+      "ld_gpa": 3.842,
+      "ld_pctA": 85.9,
+      "ld_num_courses": 4,
+      "ld_total_students": 206,
       "ability_proxy": 3.93
     },
     {
@@ -1599,6 +2295,14 @@
       "pct_A": 89.4,
       "num_courses": 29,
       "total_students": 6526,
+      "ud_gpa": 3.849,
+      "ud_pctA": 90.5,
+      "ud_num_courses": 17,
+      "ud_total_students": 3737,
+      "ld_gpa": 3.807,
+      "ld_pctA": 88.0,
+      "ld_num_courses": 12,
+      "ld_total_students": 2789,
       "ability_proxy": 3.8822
     },
     {
@@ -1609,6 +2313,14 @@
       "pct_A": 85.0,
       "num_courses": 17,
       "total_students": 3953,
+      "ud_gpa": 3.82,
+      "ud_pctA": 86.8,
+      "ud_num_courses": 15,
+      "ud_total_students": 2945,
+      "ld_gpa": 3.692,
+      "ld_pctA": 79.8,
+      "ld_num_courses": 2,
+      "ld_total_students": 1008,
       "ability_proxy": 3.9154
     },
     {
@@ -1619,6 +2331,14 @@
       "pct_A": 90.5,
       "num_courses": 5,
       "total_students": 1550,
+      "ud_gpa": 3.839,
+      "ud_pctA": 91.8,
+      "ud_num_courses": 3,
+      "ud_total_students": 425,
+      "ld_gpa": 3.833,
+      "ld_pctA": 90.0,
+      "ld_num_courses": 2,
+      "ld_total_students": 1125,
       "ability_proxy": 3.9443
     },
     {
@@ -1649,6 +2369,14 @@
       "pct_A": 95.0,
       "num_courses": 43,
       "total_students": 7920,
+      "ud_gpa": 3.93,
+      "ud_pctA": 95.3,
+      "ud_num_courses": 38,
+      "ud_total_students": 7461,
+      "ld_gpa": 3.86,
+      "ld_pctA": 89.5,
+      "ld_num_courses": 5,
+      "ld_total_students": 459,
       "ability_proxy": 3.9443
     },
     {
@@ -1669,6 +2397,14 @@
       "pct_A": 84.2,
       "num_courses": 27,
       "total_students": 4890,
+      "ud_gpa": 3.736,
+      "ud_pctA": 83.7,
+      "ud_num_courses": 16,
+      "ud_total_students": 2450,
+      "ld_gpa": 3.753,
+      "ld_pctA": 84.7,
+      "ld_num_courses": 11,
+      "ld_total_students": 2440,
       "ability_proxy": 3.8824
     },
     {
@@ -1679,6 +2415,14 @@
       "pct_A": 92.0,
       "num_courses": 62,
       "total_students": 12004,
+      "ud_gpa": 3.847,
+      "ud_pctA": 89.2,
+      "ud_num_courses": 29,
+      "ud_total_students": 3376,
+      "ld_gpa": 3.893,
+      "ld_pctA": 93.0,
+      "ld_num_courses": 33,
+      "ld_total_students": 8628,
       "ability_proxy": 3.7788
     },
     {
@@ -1700,6 +2444,14 @@
       "pct_A": 91.6,
       "num_courses": 3,
       "total_students": 322,
+      "ud_gpa": 3.913,
+      "ud_pctA": 94.9,
+      "ud_num_courses": 1,
+      "ud_total_students": 117,
+      "ld_gpa": 3.859,
+      "ld_pctA": 89.8,
+      "ld_num_courses": 2,
+      "ld_total_students": 205,
       "ability_proxy": 3.849
     },
     {
@@ -1720,6 +2472,14 @@
       "pct_A": 95.0,
       "num_courses": 3,
       "total_students": 141,
+      "ud_gpa": 3.89,
+      "ud_pctA": 95.0,
+      "ud_num_courses": 3,
+      "ud_total_students": 141,
+      "ld_gpa": null,
+      "ld_pctA": null,
+      "ld_num_courses": 0,
+      "ld_total_students": 0,
       "ability_proxy": 3.755
     },
     {
@@ -1740,6 +2500,14 @@
       "pct_A": 70.9,
       "num_courses": 11,
       "total_students": 2396,
+      "ud_gpa": 3.685,
+      "ud_pctA": 74.8,
+      "ud_num_courses": 4,
+      "ud_total_students": 218,
+      "ld_gpa": 3.552,
+      "ld_pctA": 70.6,
+      "ld_num_courses": 7,
+      "ld_total_students": 2178,
       "ability_proxy": 3.7629
     },
     {
@@ -1770,6 +2538,14 @@
       "pct_A": 85.9,
       "num_courses": 17,
       "total_students": 1684,
+      "ud_gpa": 3.75,
+      "ud_pctA": 84.6,
+      "ud_num_courses": 4,
+      "ud_total_students": 234,
+      "ld_gpa": 3.751,
+      "ld_pctA": 86.1,
+      "ld_num_courses": 13,
+      "ld_total_students": 1450,
       "ability_proxy": 3.8274
     },
     {
@@ -1780,6 +2556,14 @@
       "pct_A": 85.2,
       "num_courses": 17,
       "total_students": 2551,
+      "ud_gpa": 3.543,
+      "ud_pctA": 71.2,
+      "ud_num_courses": 7,
+      "ud_total_students": 490,
+      "ld_gpa": 3.817,
+      "ld_pctA": 88.5,
+      "ld_num_courses": 10,
+      "ld_total_students": 2061,
       "ability_proxy": 3.7243
     },
     {
@@ -1790,6 +2574,14 @@
       "pct_A": 77.0,
       "num_courses": 1,
       "total_students": 61,
+      "ud_gpa": 3.749,
+      "ud_pctA": 77.0,
+      "ud_num_courses": 1,
+      "ud_total_students": 61,
+      "ld_gpa": null,
+      "ld_pctA": null,
+      "ld_num_courses": 0,
+      "ld_total_students": 0,
       "ability_proxy": 3.7563
     },
     {
@@ -1810,6 +2602,14 @@
       "pct_A": 86.6,
       "num_courses": 1,
       "total_students": 134,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.73,
+      "ld_pctA": 86.6,
+      "ld_num_courses": 1,
+      "ld_total_students": 134,
       "ability_proxy": 3.755
     },
     {
@@ -1831,6 +2631,14 @@
       "pct_A": 81.9,
       "num_courses": 4,
       "total_students": 636,
+      "ud_gpa": 3.834,
+      "ud_pctA": 86.7,
+      "ud_num_courses": 1,
+      "ud_total_students": 98,
+      "ld_gpa": 3.728,
+      "ld_pctA": 81.0,
+      "ld_num_courses": 3,
+      "ld_total_students": 538,
       "ability_proxy": 3.76
     },
     {
@@ -1841,6 +2649,14 @@
       "pct_A": 94.9,
       "num_courses": 3,
       "total_students": 608,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.917,
+      "ld_pctA": 94.9,
+      "ld_num_courses": 3,
+      "ld_total_students": 608,
       "ability_proxy": 3.76
     },
     {
@@ -1851,6 +2667,14 @@
       "pct_A": 92.4,
       "num_courses": 3,
       "total_students": 131,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.909,
+      "ld_pctA": 92.4,
+      "ld_num_courses": 3,
+      "ld_total_students": 131,
       "ability_proxy": 3.76
     },
     {
@@ -1861,6 +2685,14 @@
       "pct_A": 93.0,
       "num_courses": 3,
       "total_students": 284,
+      "ud_gpa": 3.921,
+      "ud_pctA": 95.4,
+      "ud_num_courses": 2,
+      "ud_total_students": 152,
+      "ld_gpa": 3.805,
+      "ld_pctA": 90.2,
+      "ld_num_courses": 1,
+      "ld_total_students": 132,
       "ability_proxy": 3.76
     },
     {
@@ -1871,6 +2703,14 @@
       "pct_A": 83.7,
       "num_courses": 6,
       "total_students": 688,
+      "ud_gpa": 3.663,
+      "ud_pctA": 71.1,
+      "ud_num_courses": 1,
+      "ud_total_students": 97,
+      "ld_gpa": 3.783,
+      "ld_pctA": 85.8,
+      "ld_num_courses": 5,
+      "ld_total_students": 591,
       "ability_proxy": 3.825
     },
     {
@@ -1881,6 +2721,14 @@
       "pct_A": 97.2,
       "num_courses": 3,
       "total_students": 144,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.972,
+      "ld_pctA": 97.2,
+      "ld_num_courses": 3,
+      "ld_total_students": 144,
       "ability_proxy": 3.76
     },
     {
@@ -1891,6 +2739,14 @@
       "pct_A": 89.4,
       "num_courses": 80,
       "total_students": 9046,
+      "ud_gpa": 3.81,
+      "ud_pctA": 88.1,
+      "ud_num_courses": 49,
+      "ud_total_students": 5064,
+      "ld_gpa": 3.861,
+      "ld_pctA": 91.0,
+      "ld_num_courses": 31,
+      "ld_total_students": 3982,
       "ability_proxy": 3.8086
     },
     {
@@ -1901,6 +2757,14 @@
       "pct_A": 97.5,
       "num_courses": 11,
       "total_students": 1148,
+      "ud_gpa": 4.0,
+      "ud_pctA": 100.0,
+      "ud_num_courses": 3,
+      "ud_total_students": 148,
+      "ld_gpa": 3.943,
+      "ld_pctA": 97.1,
+      "ld_num_courses": 8,
+      "ld_total_students": 1000,
       "ability_proxy": 3.8418
     },
     {
@@ -1988,6 +2852,14 @@
       "pct_A": 79.3,
       "num_courses": 1,
       "total_students": 58,
+      "ud_gpa": 3.714,
+      "ud_pctA": 79.3,
+      "ud_num_courses": 1,
+      "ud_total_students": 58,
+      "ld_gpa": null,
+      "ld_pctA": null,
+      "ld_num_courses": 0,
+      "ld_total_students": 0,
       "ability_proxy": 3.795
     },
     {
@@ -1998,6 +2870,14 @@
       "pct_A": 75.0,
       "num_courses": 21,
       "total_students": 2593,
+      "ud_gpa": 3.66,
+      "ud_pctA": 76.9,
+      "ud_num_courses": 7,
+      "ud_total_students": 758,
+      "ld_gpa": 3.575,
+      "ld_pctA": 74.3,
+      "ld_num_courses": 14,
+      "ld_total_students": 1835,
       "ability_proxy": 3.7432
     },
     {
@@ -2041,6 +2921,14 @@
       "pct_A": 80.8,
       "num_courses": 2,
       "total_students": 286,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.72,
+      "ld_pctA": 80.8,
+      "ld_num_courses": 2,
+      "ld_total_students": 286,
       "ability_proxy": 3.7575
     },
     {
@@ -2115,6 +3003,14 @@
       "pct_A": 77.4,
       "num_courses": 18,
       "total_students": 4103,
+      "ud_gpa": 3.685,
+      "ud_pctA": 75.9,
+      "ud_num_courses": 14,
+      "ud_total_students": 3571,
+      "ld_gpa": 3.813,
+      "ld_pctA": 87.2,
+      "ld_num_courses": 4,
+      "ld_total_students": 532,
       "ability_proxy": 3.765
     },
     {
@@ -2156,6 +3052,14 @@
       "pct_A": 85.0,
       "num_courses": 9,
       "total_students": 1008,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.755,
+      "ld_pctA": 85.0,
+      "ld_num_courses": 9,
+      "ld_total_students": 1008,
       "ability_proxy": 3.78
     },
     {
@@ -2166,6 +3070,14 @@
       "pct_A": 91.7,
       "num_courses": 10,
       "total_students": 2301,
+      "ud_gpa": 3.921,
+      "ud_pctA": 95.3,
+      "ud_num_courses": 7,
+      "ud_total_students": 903,
+      "ld_gpa": 3.792,
+      "ld_pctA": 89.4,
+      "ld_num_courses": 3,
+      "ld_total_students": 1398,
       "ability_proxy": 3.7469
     },
     {
@@ -2176,6 +3088,14 @@
       "pct_A": 90.9,
       "num_courses": 27,
       "total_students": 4243,
+      "ud_gpa": 3.869,
+      "ud_pctA": 91.8,
+      "ud_num_courses": 18,
+      "ud_total_students": 1823,
+      "ld_gpa": 3.835,
+      "ld_pctA": 90.3,
+      "ld_num_courses": 9,
+      "ld_total_students": 2420,
       "ability_proxy": 3.7792
     },
     {
@@ -2207,6 +3127,14 @@
       "pct_A": 85.8,
       "num_courses": 26,
       "total_students": 7554,
+      "ud_gpa": 3.657,
+      "ud_pctA": 80.3,
+      "ud_num_courses": 13,
+      "ud_total_students": 783,
+      "ld_gpa": 3.786,
+      "ld_pctA": 86.5,
+      "ld_num_courses": 13,
+      "ld_total_students": 6771,
       "ability_proxy": 3.6544
     },
     {
@@ -2271,6 +3199,14 @@
       "pct_A": 72.0,
       "num_courses": 3,
       "total_students": 710,
+      "ud_gpa": null,
+      "ud_pctA": null,
+      "ud_num_courses": 0,
+      "ud_total_students": 0,
+      "ld_gpa": 3.596,
+      "ld_pctA": 72.0,
+      "ld_num_courses": 3,
+      "ld_total_students": 710,
       "ability_proxy": 3.785
     },
     {
@@ -2345,6 +3281,14 @@
       "pct_A": 81.1,
       "num_courses": 5,
       "total_students": 264,
+      "ud_gpa": 3.655,
+      "ud_pctA": 80.1,
+      "ud_num_courses": 3,
+      "ud_total_students": 171,
+      "ld_gpa": 3.737,
+      "ld_pctA": 82.8,
+      "ld_num_courses": 2,
+      "ld_total_students": 93,
       "ability_proxy": 3.6641
     },
     {
@@ -2420,6 +3364,14 @@
       "pct_A": 92.7,
       "num_courses": 9,
       "total_students": 2781,
+      "ud_gpa": 3.878,
+      "ud_pctA": 92.7,
+      "ud_num_courses": 9,
+      "ud_total_students": 2781,
+      "ld_gpa": null,
+      "ld_pctA": null,
+      "ld_num_courses": 0,
+      "ld_total_students": 0,
       "ability_proxy": 3.6528
     },
     {
@@ -2592,6 +3544,14 @@
       "pct_A": 83.8,
       "num_courses": 37,
       "total_students": 9086,
+      "ud_gpa": 3.758,
+      "ud_pctA": 82.6,
+      "ud_num_courses": 32,
+      "ud_total_students": 6561,
+      "ld_gpa": 3.796,
+      "ld_pctA": 87.0,
+      "ld_num_courses": 5,
+      "ld_total_students": 2525,
       "ability_proxy": 3.855
     },
     {
@@ -2612,6 +3572,14 @@
       "pct_A": 87.8,
       "num_courses": 22,
       "total_students": 1768,
+      "ud_gpa": 3.829,
+      "ud_pctA": 87.7,
+      "ud_num_courses": 19,
+      "ud_total_students": 1502,
+      "ld_gpa": 3.805,
+      "ld_pctA": 88.7,
+      "ld_num_courses": 3,
+      "ld_total_students": 266,
       "ability_proxy": 3.82
     },
     {
@@ -2655,6 +3623,14 @@
       "pct_A": 87.4,
       "num_courses": 28,
       "total_students": 7198,
+      "ud_gpa": 3.632,
+      "ud_pctA": 76.3,
+      "ud_num_courses": 10,
+      "ud_total_students": 1181,
+      "ld_gpa": 3.815,
+      "ld_pctA": 89.5,
+      "ld_num_courses": 18,
+      "ld_total_students": 6017,
       "ability_proxy": 3.8163
     },
     {
@@ -2804,6 +3780,14 @@
       "pct_A": 94.5,
       "num_courses": 27,
       "total_students": 3460,
+      "ud_gpa": 3.955,
+      "ud_pctA": 97.2,
+      "ud_num_courses": 17,
+      "ud_total_students": 1917,
+      "ld_gpa": 3.873,
+      "ld_pctA": 91.1,
+      "ld_num_courses": 10,
+      "ld_total_students": 1543,
       "ability_proxy": 3.655
     },
     {
@@ -2825,6 +3809,14 @@
       "pct_A": 94.3,
       "num_courses": 29,
       "total_students": 3386,
+      "ud_gpa": 3.876,
+      "ud_pctA": 92.4,
+      "ud_num_courses": 5,
+      "ud_total_students": 433,
+      "ld_gpa": 3.912,
+      "ld_pctA": 94.5,
+      "ld_num_courses": 24,
+      "ld_total_students": 2953,
       "ability_proxy": 3.815
     }
   ],
