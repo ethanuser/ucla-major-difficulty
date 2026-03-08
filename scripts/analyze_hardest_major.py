@@ -908,6 +908,8 @@ def generate_html(graph_data, output_path):
             <a href="https://admission.ucla.edu/apply/transfer/transfer-profile/2025/major" target="_blank">Transfer Admit Data: UCLA Admissions</a>
             <span class="dot">|</span>
             <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
+            <span class="dot">|</span>
+            <a href="https://forms.gle/GWFnP91cfFyLt5aL7" target="_blank">Feedback</a>
         </div>
         <div>Grade data from 2021–2024 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
         <div style="margin-top:4px">Rankings are based on weighted average GPA. See the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology</a> for assumptions and limitations.</div>
