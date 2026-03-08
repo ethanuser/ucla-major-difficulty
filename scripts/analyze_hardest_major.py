@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UCLA Hardest Major Analysis
+UCLA Major Difficulty Analysis
 ============================
 Reads scraped major requirements (from scrape_ucla_catalog.py) and
 parsed grade data (from parse_grades.py) to:
@@ -34,10 +34,12 @@ from collections import defaultdict
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(SCRIPT_DIR)  # Project root (one level up from scripts/)
 PROCESSED_DIR = os.path.join(BASE_DIR, 'data', 'processed')
+RAW_DATA_DIR = os.path.join(BASE_DIR, 'data', 'raw')
 REQUIREMENTS_FILE = os.path.join(PROCESSED_DIR, 'ucla_major_requirements.json')
 GRADE_STATS_FILE = os.path.join(PROCESSED_DIR, 'course_grade_stats.csv')
 RANKINGS_FILE = os.path.join(PROCESSED_DIR, 'major_difficulty_rankings.csv')
 GRAPH_DATA_FILE = os.path.join(PROCESSED_DIR, 'graph_data.json')
+BRUINWALK_SLUGS_FILE = os.path.join(PROCESSED_DIR, 'bruinwalk_slugs.json')
 HTML_FILE = os.path.join(BASE_DIR, 'index.html')
 
 
@@ -93,6 +95,142 @@ def load_grade_stats(path):
     df = pd.read_csv(path)
     print(f"  Loaded {len(df)} courses with grade statistics")
     return df
+
+
+# Grade mapping for professor aggregation (from raw grade data)
+GPA_MAP = {
+    'A+': 4.0, 'A': 4.0, 'A-': 3.7,
+    'B+': 3.3, 'B': 3.0, 'B-': 2.7,
+    'C+': 2.3, 'C': 2.0, 'C-': 1.7,
+    'D+': 1.3, 'D': 1.0, 'D-': 0.7,
+    'F': 0.0
+}
+LETTER_GRADES = {'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'}
+
+
+def load_raw_grades_with_instructor():
+    """Load raw grade CSVs with instructor info for professor-level aggregation."""
+    if not os.path.isdir(RAW_DATA_DIR):
+        return None
+    dfs = []
+    for fname in sorted(os.listdir(RAW_DATA_DIR)):
+        if not (fname.endswith('.csv') and 'ucla_grades' in fname.lower()):
+            continue
+        fpath = os.path.join(RAW_DATA_DIR, fname)
+        df = pd.read_csv(fpath, dtype=str)
+        df.columns = df.columns.str.strip()
+        # Detect instructor column (21-22: INSTR NAME; 23-24 may differ)
+        instr_col = None
+        for c in df.columns:
+            if 'instr' in c.lower() and ('name' in c.lower() or 'nm' in c.lower()):
+                instr_col = c
+                break
+        if instr_col is None and 'INSTR NAME' in df.columns:
+            instr_col = 'INSTR NAME'
+        if instr_col is None:
+            continue
+        # Standardize column names
+        renames = {}
+        if 'SUBJECT AREA' in df.columns:
+            renames['SUBJECT AREA'] = 'subject_area'
+        if 'CATLG NBR' in df.columns:
+            renames['CATLG NBR'] = 'catalog_number'
+        if 'GRD OFF' in df.columns:
+            renames['GRD OFF'] = 'grade'
+        if 'GRD COUNT' in df.columns:
+            renames['GRD COUNT'] = 'grade_count'
+        if 'subj_area_cd' in df.columns:
+            renames['subj_area_cd'] = 'subject_area'
+        if 'disp_catlg_no' in df.columns:
+            renames['disp_catlg_no'] = 'catalog_number'
+        if 'grd_cd' in df.columns:
+            renames['grd_cd'] = 'grade'
+        if 'num_grd' in df.columns:
+            renames['num_grd'] = 'grade_count'
+        # Enrollment term for counting class sections (21-22: ENROLLMENT TERM; 23-24 may differ)
+        term_col = None
+        for c in df.columns:
+            if 'enroll' in c.lower() and 'term' in c.lower():
+                term_col = c
+                break
+        if term_col is None and 'ENROLLMENT TERM' in df.columns:
+            term_col = 'ENROLLMENT TERM'
+        if term_col:
+            renames[term_col] = 'enrollment_term'
+        df = df.rename(columns={**renames, instr_col: 'instr_name'})
+        df['subject_area'] = df['subject_area'].str.strip()
+        df['catalog_number'] = df['catalog_number'].str.strip()
+        df['course_id'] = df['subject_area'] + ' ' + df['catalog_number']
+        df['grade'] = df['grade'].str.strip()
+        df['grade_count'] = pd.to_numeric(df['grade_count'], errors='coerce').fillna(0).astype(int)
+        df['instr_name'] = df['instr_name'].fillna('').astype(str).str.strip()
+        df = df[df['instr_name'].str.len() > 0]
+        if 'enrollment_term' not in df.columns:
+            year_slug = fname.replace('.csv', '').split('_')[-2:] if '_' in fname else ['unknown']
+            df['enrollment_term'] = '-'.join(year_slug) if year_slug else 'unknown'
+        cols = ['subject_area', 'course_id', 'grade', 'grade_count', 'instr_name', 'enrollment_term']
+        dfs.append(df[[c for c in cols if c in df.columns]])
+    if not dfs:
+        return None
+    return pd.concat(dfs, ignore_index=True)
+
+
+def compute_professor_rankings(min_classes=10):
+    """
+    Compute professor rankings by average GPA, within department only.
+    Only includes professors with min_classes+ class sections taught (same course in different terms counts separately).
+    Returns dict: { dept: [ { name, avg_gpa, pct_A, num_classes, total_students, rank, dept_min_gpa, dept_max_gpa }, ... ] }
+    """
+    raw = load_raw_grades_with_instructor()
+    if raw is None or len(raw) == 0:
+        return {}
+    letter = raw[raw['grade'].isin(LETTER_GRADES)].copy()
+    letter['gpa_points'] = letter['grade'].map(GPA_MAP)
+    letter['weighted_gpa'] = letter['gpa_points'] * letter['grade_count']
+    letter['is_A'] = letter['grade'].isin({'A+', 'A', 'A-'}).astype(int) * letter['grade_count']
+    # Per (dept, instr, course, term) = one class section
+    section = letter.groupby(['subject_area', 'instr_name', 'course_id', 'enrollment_term']).agg(
+        total_letter=('grade_count', 'sum'),
+        weighted_gpa=('weighted_gpa', 'sum'),
+        total_A=('is_A', 'sum'),
+    ).reset_index()
+    section['avg_gpa'] = section['weighted_gpa'] / section['total_letter']
+    section['pct_A'] = section['total_A'] / section['total_letter'] * 100
+    # Per professor (dept, instr) - count class sections (not distinct courses)
+    prof = section.groupby(['subject_area', 'instr_name']).agg(
+        num_classes=('course_id', 'count'),
+        total_letter_grades=('total_letter', 'sum'),
+        weighted_gpa=('weighted_gpa', 'sum'),
+        total_A=('total_A', 'sum'),
+    ).reset_index()
+    prof = prof[prof['num_classes'] >= min_classes]
+    prof['avg_gpa'] = prof['weighted_gpa'] / prof['total_letter_grades']
+    prof['pct_A'] = prof['total_A'] / prof['total_letter_grades'] * 100
+    # Dept min/max for range display
+    dept_range = prof.groupby('subject_area').agg(
+        dept_min_gpa=('avg_gpa', 'min'),
+        dept_max_gpa=('avg_gpa', 'max'),
+    ).to_dict('index')
+    # Rank within department
+    result = {}
+    for dept, grp in prof.groupby('subject_area'):
+        grp = grp.sort_values('avg_gpa', ascending=True).reset_index(drop=True)
+        grp['rank'] = range(1, len(grp) + 1)
+        rng = dept_range.get(dept, {})
+        result[dept] = []
+        for _, row in grp.iterrows():
+            result[dept].append({
+                'name': row['instr_name'],
+                'avg_gpa': round(row['avg_gpa'], 3),
+                'pct_A': round(row['pct_A'], 1),
+                'num_classes': int(row['num_classes']),
+                'total_students': int(row['total_letter_grades']),
+                'rank': int(row['rank']),
+                'dept_min_gpa': round(rng.get('dept_min_gpa', row['avg_gpa']), 3),
+                'dept_max_gpa': round(rng.get('dept_max_gpa', row['avg_gpa']), 3),
+            })
+    print(f"  Professor rankings: {sum(len(v) for v in result.values())} professors across {len(result)} departments (10+ classes each)")
+    return result
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -351,7 +489,7 @@ def score_majors(matched_data, course_stats):
 # STEP 4: Build graph data
 # ═══════════════════════════════════════════════════════════════════
 
-def build_graph_data(major_df, course_stats, major_reqs=None):
+def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings=None):
     """Build bipartite graph data structure for visualization."""
     nodes = []
     edges = []
@@ -482,6 +620,7 @@ def build_graph_data(major_df, course_stats, major_reqs=None):
         'all_courses_sorted': all_courses_sorted,
         'major_details': major_details,
         'total_student_grades': int(course_stats['total_letter_grades'].sum()),
+        'professor_rankings': professor_rankings or {},
     }
     
     return graph_data
@@ -513,7 +652,7 @@ def generate_html(graph_data, output_path):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UCLA Hardest Major Analysis</title>
+    <title>UCLA Major Difficulty Analysis</title>
     <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2024). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
     <link rel="icon" href="favicon.ico" type="image/png">
     <style>
@@ -574,6 +713,7 @@ def generate_html(graph_data, output_path):
         <div class="tabs">
             <button class="tab active" onclick="switchTab('rankings')">Major Rankings</button>
             <button class="tab" onclick="switchTab('dept-rankings')">Department Rankings</button>
+            <button class="tab" onclick="switchTab('prof-rankings')">Professors</button>
             <button class="tab" onclick="switchTab('graph')">Bipartite Graph</button>
             <button class="tab" onclick="switchTab('courses')">Course Deep Dive</button>
         </div>
@@ -618,6 +758,29 @@ def generate_html(graph_data, output_path):
                     <th data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
                 </tr></thead>
                 <tbody id="dept-rankings-body"></tbody>
+            </table>
+            </div>
+        </div>
+
+        <!-- Professors panel -->
+        <div class="panel" id="panel-prof-rankings">
+            <div class="section-title">Professors by Average GPA (Within Department)</div>
+            <div class="prof-caveats">
+                <strong>Important caveats:</strong> This comparison reflects average GPA of courses taught, <em>not</em> teaching quality. Lower GPA may reflect course difficulty (e.g., required weed-out courses), student population, or department norms, not instructor effectiveness. Comparisons are within department only; professors with 10+ class sections taught are included. Use for exploratory context only.
+            </div>
+            <div class="table-scroll-wrapper">
+            <table class="rankings-table">
+                <thead><tr>
+                    <th data-tip="Rank within this department (lower GPA = lower rank).">Rank</th>
+                    <th data-tip="Subject area / department.">Dept</th>
+                    <th data-tip="Instructor name from grade records.">Professor</th>
+                    <th data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
+                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th data-tip="Department GPA range (min–max) for context.">Dept Range</th>
+                    <th data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
+                    <th data-tip="Total letter grades recorded across all courses.">Grade Records</th>
+                </tr></thead>
+                <tbody id="prof-rankings-body"></tbody>
             </table>
             </div>
         </div>
@@ -775,16 +938,30 @@ def main():
     major_df[[c for c in save_cols if c in major_df.columns]].to_csv(RANKINGS_FILE, index=False)
     print(f"\n✅ Saved: {RANKINGS_FILE}")
     
-    # Step 5: Build and save graph data
+    # Step 5: Professor rankings (from raw grade data with instructor)
+    prof_rankings = compute_professor_rankings(min_classes=10)
+    
+    # Enrich with resolved Bruinwalk slugs if available (from resolve_bruinwalk_links.py)
+    bruinwalk_slugs_file = os.path.join(PROCESSED_DIR, 'bruinwalk_slugs.json')
+    if os.path.exists(bruinwalk_slugs_file):
+        with open(bruinwalk_slugs_file) as f:
+            bruinwalk_slugs = json.load(f)
+        for dept_profs in prof_rankings.values():
+            for p in dept_profs:
+                if p['name'] in bruinwalk_slugs:
+                    p['bruinwalk_slug'] = bruinwalk_slugs[p['name']]
+        print(f"  Enriched {sum(1 for dp in prof_rankings.values() for p in dp if p.get('bruinwalk_slug'))} professors with Bruinwalk links")
+    
+    # Step 6: Build and save graph data
     print(f"\n🕸 Building bipartite graph...")
-    graph_data = build_graph_data(major_df, course_stats, major_reqs)
+    graph_data = build_graph_data(major_df, course_stats, major_reqs, prof_rankings)
     
     with open(GRAPH_DATA_FILE, 'w') as f:
         json.dump(graph_data, f, indent=2)
     print(f"  Saved: {GRAPH_DATA_FILE}")
     print(f"  Graph: {len(graph_data['nodes'])} nodes, {len(graph_data['edges'])} edges")
     
-    # Step 6: Generate HTML
+    # Step 7: Generate HTML
     if not args.no_html:
         print(f"\n🎨 Generating interactive visualization...")
         generate_html(graph_data, HTML_FILE)

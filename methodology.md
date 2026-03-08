@@ -1,4 +1,4 @@
-# Methodology: UCLA Hardest Major Analysis
+# Methodology: UCLA Major Difficulty Analysis
 
 A detailed account of every step in the analysis pipeline — from raw data acquisition to the final difficulty rankings.
 
@@ -12,7 +12,7 @@ A detailed account of every step in the analysis pipeline — from raw data acqu
 4. [Web Scraping](#4-web-scraping)
 5. [Course Matching](#5-course-matching)
 6. [Difficulty Scoring](#6-difficulty-scoring)
-7. [Graph Construction](#7-graph-construction) — includes [Department GPA & % A](#73-department-subject-area-gpa-and--a) — includes [Department GPA & % A](#73-department-subject-area-gpa-and--a) (incl. [Department GPA](#73-department-subject-area-gpa-and--a)) (includes [Department GPA](#73-department-subject-area-gpa-and--a))
+7. [Graph Construction](#7-graph-construction) — includes [Department GPA & % A](#73-department-subject-area-gpa-and--a), [Professor Comparison](#74-professor-comparison-exploratory)
 8. [Key Results](#8-key-results)
 9. [Assumptions & Limitations](#9-assumptions--limitations)
 10. [Possible Extensions](#10-possible-extensions)
@@ -386,6 +386,22 @@ where *n_c* = `total_letter_grades` for course *c* (the number of letter-grade o
 
 **Interpretation:** Courses with more students contribute more to the department average. A 500-student gateway course like ECON 1 has proportionally more influence than a 20-student seminar. Departments with zero courses in the grade dataset (e.g., some scraped but never-graded subject areas) are excluded from the Department Rankings and appear gray in the graph.
 
+### 7.4 Professor Comparison (Exploratory)
+
+The dashboard includes an **optional Professor tab** that compares instructors within each department by the average GPA of courses they taught. This is **exploratory context only**, not a ranking of teaching quality.
+
+**Data source:** Raw grade files must include instructor identifiers (e.g., `INSTR NAME`). Not all years or schemas provide this; the professor tab shows data only when available.
+
+**Computation:**
+- Each (instructor, course, term) combination counts as one class section
+- Professors must have **10+ class sections** taught in a department to appear (same course in different terms counts separately)
+- Average GPA and % A-range are enrollment-weighted across all sections taught by that instructor in that department
+- **Rank is within department only** (not across the university)
+
+**Display:** The table shows each professor's average GPA, % A/A+, and department GPA range for context. Links to Bruinwalk (when resolvable) provide student reviews as a separate signal.
+
+**Intended use:** Exploratory context. A lower average GPA may reflect the types of courses assigned (e.g., required weed-out courses), student population, or department norms, not instructor effectiveness. Do not use this for professor rankings or hiring/tenure decisions.
+
 ---
 
 ## 8. Key Results
@@ -505,6 +521,18 @@ Cross-listed courses (e.g., `COM SCI M51A` = `EC ENGR M16`) may be counted under
 
 ### 9.8 No Time-Per-Unit Measure
 The analysis does not account for hours spent studying or total workload. Engineering majors typically require more total units and more laboratory hours than humanities majors. Without survey data (like NSSE or CIRP), time investment cannot be quantified from grade data alone.
+
+### 9.9 Professor Comparison: Not for Ranking Professors
+
+The Professor tab compares instructors by average GPA of courses taught. **It is not intended for, and should not be used as, a ranking of teaching quality or instructor effectiveness.**
+
+**Why average GPA is a poor proxy for teaching quality:**
+- **Course assignment:** Instructors who teach required gateway or weed-out courses (e.g., MATH 31A, organic chemistry) will have lower average GPAs than those who teach electives or advanced seminars. This reflects course difficulty, not teaching.
+- **Student population:** Different courses attract different student pools. An instructor teaching honors sections may have higher GPAs regardless of teaching.
+- **Department norms:** Grading standards vary by department. A "strict" grader in one department may still yield higher GPAs than a "lenient" one in another due to departmental culture.
+- **Selection effects:** Students may avoid instructors perceived as difficult before enrolling. Observed GPAs capture only those who took the course.
+
+**Limitations:** The comparison is within-department only, excludes instructors with fewer than 10 class sections, and aggregates across all courses an instructor teaches. It does not control for course mix, class size, or student ability. Use for exploratory context only (e.g., noticing which courses a professor teaches), not for evaluations, rankings, or personnel decisions.
 
 ---
 

@@ -148,6 +148,69 @@ function renderDeptRankings() {
 
 renderDeptRankings();
 
+// ─── Professors (within department, 5+ courses) ───────
+
+function bruinwalkSlug(name) {
+    // Convert "LASTNAME, FIRSTNAME [MIDDLE]" to bruinwalk.com/professors/firstname-lastname/
+    // Bruinwalk typically uses first name only (no middle), e.g. john-smith not john-robert-smith
+    const parts = String(name || '').split(',').map(s => s.trim());
+    if (parts.length >= 2) {
+        const firstFull = parts[1], last = parts[0];
+        const firstOnly = firstFull.split(/\s+/)[0] || firstFull;  // drop middle name(s)
+        return (firstOnly + '-' + last).toLowerCase().replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    }
+    return (name || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
+function renderProfessorRankings() {
+    const tbody = document.getElementById('prof-rankings-body');
+    if (!tbody) return;
+    const profData = DATA.professor_rankings || {};
+    const depts = Object.keys(profData).sort();
+    const rows = [];
+    depts.forEach(dept => {
+        (profData[dept] || []).forEach(p => {
+            rows.push({ ...p, dept });
+        });
+    });
+    if (rows.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="color:var(--text-muted);padding:24px;text-align:center">No professor data available. Raw grade files must include instructor information (e.g. INSTR NAME).</td></tr>';
+        return;
+    }
+    let html = '';
+    let lastDept = '';
+    let deptGroup = 0;
+    rows.forEach(p => {
+        if (p.dept !== lastDept) {
+            lastDept = p.dept;
+            deptGroup++;
+        }
+        const deptRowClass = deptGroup % 2 === 1 ? 'prof-dept-odd' : 'prof-dept-even';
+        const badgeClass = 'rank-default';  // No 1/2/3 highlight for professor rankings
+        const gpaPct = ((p.avg_gpa / 4.0) * 100).toFixed(0);
+        const color = gpaColor(p.avg_gpa);
+        const rangeStr = `${p.dept_min_gpa.toFixed(2)}–${p.dept_max_gpa.toFixed(2)}`;
+        const slug = p.bruinwalk_slug || bruinwalkSlug(p.name);
+        const profCell = slug
+            ? `<a href="https://bruinwalk.com/professors/${slug}/" target="_blank" rel="noopener noreferrer" class="major-link">${p.name}</a>`
+            : p.name;
+        html += `
+        <tr class="${deptRowClass}">
+            <td><div class="rank-badge ${badgeClass}">${p.rank}</div></td>
+            <td class="stat-small">${p.dept}</td>
+            <td class="major-name">${profCell}</td>
+            <td><div class="gpa-bar-container"><div class="gpa-bar"><div class="gpa-bar-fill" style="width:${gpaPct}%; background:${color}"></div></div><div class="gpa-value" style="color:${color}">${p.avg_gpa.toFixed(3)}</div></div></td>
+            <td class="pct-a" style="color:${color}">${p.pct_A.toFixed(1)}%</td>
+            <td class="stat-small" style="color:var(--text-muted);font-size:0.8rem">${rangeStr}</td>
+            <td class="stat-small">${p.num_classes ?? p.num_courses}</td>
+            <td class="stat-small">${p.total_students.toLocaleString()}</td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+
+renderProfessorRankings();
+
 // ─── Course Deep Dive ────────────────────────────────────────
 
 let courseSortDir = 'asc';

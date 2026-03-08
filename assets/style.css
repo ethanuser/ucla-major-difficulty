@@ -647,10 +647,38 @@ a:hover {
    COURSES PANEL
    ============================================================ */
 
+.prof-caveats {
+    background: var(--bg-light-blue);
+    border: 1px solid var(--border-blue);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.prof-caveats strong {
+    color: var(--text-primary);
+}
+
+/* Professor rankings: alternate row background by department */
+#prof-rankings-body tr.prof-dept-odd td {
+    background: #F0F2F5;
+}
+#prof-rankings-body tr.prof-dept-even td {
+    background: var(--bg-white);
+}
+#prof-rankings-body tr:hover td {
+    background: var(--bg-hover) !important;
+}
+
 .section-title {
     font-size: 1.3rem;
     font-weight: 800;
     margin-bottom: 18px;
+    color: var(--text-secondary);
+    line-height: 1.5;
     color: var(--ucla-dark-blue);
 }
 
@@ -881,8 +909,8 @@ a:hover {
         overflow-x: hidden;
     }
 
-    /* Hide bipartite graph on mobile */
-    .tabs .tab:nth-child(3),
+    /* Hide bipartite graph on mobile (show Professors instead) */
+    .tabs .tab:nth-child(4),
     #panel-graph {
         display: none !important;
     }

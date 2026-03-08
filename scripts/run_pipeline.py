@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UCLA Hardest Major Analysis - Pipeline Runner
+UCLA Major Difficulty Analysis - Pipeline Runner
 ==============================================
 Runs the full pipeline or individual steps:
 
@@ -72,7 +72,7 @@ def main():
             print(f"   Available: {', '.join(STEPS.keys())}")
             sys.exit(1)
     
-    print("🚀 UCLA Hardest Major Analysis Pipeline")
+    print("🚀 UCLA Major Difficulty Analysis Pipeline")
     print(f"   Steps: {' → '.join(steps)}")
     
     for step in steps:

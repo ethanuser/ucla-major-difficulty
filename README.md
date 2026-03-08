@@ -1,4 +1,4 @@
-# UCLA Hardest Major Analysis
+# UCLA Major Difficulty Analysis
 
 **Determining the hardest UCLA undergraduate major using grade distribution data and scraped course catalog requirements.**
 
