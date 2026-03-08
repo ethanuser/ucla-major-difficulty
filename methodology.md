@@ -12,7 +12,7 @@ A detailed account of every step in the analysis pipeline — from raw data acqu
 4. [Web Scraping](#4-web-scraping)
 5. [Course Matching](#5-course-matching)
 6. [Difficulty Scoring](#6-difficulty-scoring)
-7. [Graph Construction](#7-graph-construction)
+7. [Graph Construction](#7-graph-construction) — includes [Department GPA & % A](#73-department-subject-area-gpa-and--a) — includes [Department GPA & % A](#73-department-subject-area-gpa-and--a) (incl. [Department GPA](#73-department-subject-area-gpa-and--a)) (includes [Department GPA](#73-department-subject-area-gpa-and--a))
 8. [Key Results](#8-key-results)
 9. [Assumptions & Limitations](#9-assumptions--limitations)
 10. [Possible Extensions](#10-possible-extensions)
@@ -270,7 +270,7 @@ Each major is scored across three orthogonal, data-driven dimensions:
 GPA_exact(m) = Σ(AvgGPA(c) × n_c) / Σ(n_c)    for c ∈ exact matches
 ```
 
-**Signal 2 — Department GPA (weight: 40%):** The enrollment-weighted average GPA across ALL courses in the subject areas linked to the major.
+**Signal 2 — Department GPA (weight: 40%):** The enrollment-weighted average GPA across ALL courses in the subject areas linked to the major. (See [Section 7.3](#73-department-subject-area-gpa-and--a) for the full formula and how department-level metrics are computed.)
 
 ```
 GPA_dept(m) = Σ(AvgGPA(c) × n_c) / Σ(n_c)      for c ∈ department courses
@@ -364,6 +364,27 @@ The force simulation uses:
 - Repulsive force between all nodes (prevents overlap)
 - Spring force along edges (pulls connected nodes toward ~250px distance)
 - Velocity damping (0.85) for smooth settling
+
+### 7.3 Department (Subject Area) GPA and % A
+
+Each subject area (department) is assigned an **enrollment-weighted average GPA** and **% A-range** across all courses in that department with grade data. This same computation is used for:
+
+- **Bipartite graph subject nodes** — the color and tooltip for each department node
+- **Department Rankings tab** — the standalone ranking of departments by GPA
+- **Blended major scoring** (Section 6.1) — the 40% department component when exact course matches are unavailable
+
+**Formula:**
+
+For each subject area *s*, let *C_s* be the set of all courses in the grade dataset where `subject_area = s`. Then:
+
+```
+GPA_dept(s) = Σ(AvgGPA(c) × n_c) / Σ(n_c)    for c ∈ C_s
+PctA_dept(s) = Σ(PctA(c) × n_c) / Σ(n_c)     for c ∈ C_s
+```
+
+where *n_c* = `total_letter_grades` for course *c* (the number of letter-grade observations).
+
+**Interpretation:** Courses with more students contribute more to the department average. A 500-student gateway course like ECON 1 has proportionally more influence than a 20-student seminar. Departments with zero courses in the grade dataset (e.g., some scraped but never-graded subject areas) are excluded from the Department Rankings and appear gray in the graph.
 
 ---
 
