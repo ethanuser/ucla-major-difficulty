@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCLA Hardest Major Analysis</title>
-    <meta name="description" content="Interactive analysis of UCLA's hardest majors based on grade distribution data from 2021-2024. Rankings, bipartite graph, and course-level breakdowns.">
+    <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2024). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
     <link rel="icon" href="favicon.ico" type="image/png">
     <style>
 /* ============================================================
@@ -1122,17 +1122,12 @@ a:hover {
             <div class="site-header__divider"></div>
             <span class="site-header__subtitle">Grade Distribution Analysis</span>
         </div>
-        <nav class="site-header__links">
-            <a href="https://catalog.registrar.ucla.edu" target="_blank" class="site-header__link">Course Catalog</a>
-            <a href="https://uclagrades.com" target="_blank" class="site-header__link">Grade Data</a>
-            <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank" class="site-header__link">Methodology</a>
-        </nav>
     </header>
 
     <!-- Hero -->
     <section class="hero">
-        <h1 class="hero__title">Hardest Major Analysis</h1>
-        <p class="hero__desc">Grade distribution analysis across 2021-2024 | Mapping majors to courses via bipartite graph</p>
+        <h1 class="hero__title">UCLA Major Difficulty</h1>
+        <p class="hero__desc">An exploratory visualization of publicly available UCLA grade data (2021–2024). This site presents patterns in the dataset. It is not intended as a definitive ranking of major difficulty. The full methodology and data processing pipeline are documented in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
         <div class="hero__stats">
             <div>
                 <div class="hero__stat-num" id="stat-majors">0</div>
@@ -1159,7 +1154,7 @@ a:hover {
         <div class="winner-banner" id="winner-banner">
             <div class="winner-banner__icon">#1</div>
             <div>
-                <div class="winner-banner__label">Hardest UCLA Major</div>
+                <div class="winner-banner__label">Hardest major in this analysis</div>
                 <div class="winner-banner__name" id="winner-name">Loading...</div>
                 <div class="winner-banner__detail" id="winner-detail"></div>
             </div>
@@ -1185,10 +1180,10 @@ a:hover {
             <div class="table-scroll-wrapper">
             <table class="rankings-table">
                 <thead><tr>
-                    <th data-tip="Difficulty rank based on weighted average GPA (lower GPA = harder). Rank 1 is the hardest major.">Rank</th>
+                    <th data-tip="Rank based on weighted average GPA in this dataset (lower GPA = lower rank). Rank 1 has the lowest average GPA.">Rank</th>
                     <th data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
-                    <th data-tip="Weighted average GPA across all courses in this major. Blends 60% exact required-course GPAs with 40% department-wide averages. Lower GPA = harder grading.">Avg GPA</th>
-                    <th data-tip="Percentage of all letter grades that were A or A+. Lower values indicate tougher grading curves.">% A/A+</th>
+                    <th data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
+                    <th data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
                     <th data-tip="Number of required courses matched to grade data.">Courses</th>
                     <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2024. Higher count means more statistical confidence.">Grade Records</th>
                 </tr></thead>
@@ -1262,9 +1257,9 @@ a:hover {
             <span class="dot">|</span>
             <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
         </div>
-        <div>Grade distributions from 2021-2024. Major requirements from the 2025 UCLA General Catalog.</div>
-        <div style="margin-top:4px">Difficulty is measured by weighted average GPA - see the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology page</a> for full details.</div>
-        <div style="margin-top:12px;opacity:0.6;font-size:0.76rem">This is an independent student project and is not affiliated with, endorsed by, or officially associated with UCLA or the University of California.</div>
+        <div>Grade data from 2021–2024 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
+        <div style="margin-top:4px">Rankings are based on weighted average GPA. See the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology</a> for assumptions and limitations.</div>
+        <div style="margin-top:12px;opacity:0.6;font-size:0.76rem">Independent project. Not affiliated with UCLA or the University of California.</div>
     </footer>
 
     <div class="tooltip" id="tooltip"></div>
@@ -1327,7 +1322,7 @@ document.getElementById('stat-grades').textContent = DATA.total_student_grades.t
 const winner = DATA.rankings[0];
 document.getElementById('winner-name').textContent = winner.major;
 document.getElementById('winner-detail').textContent =
-    `Avg GPA: ${winner.avg_gpa.toFixed(3)}  |  Only ${winner.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${winner.num_courses} required courses and ${winner.total_students.toLocaleString()} grade records`;
+    `Avg GPA: ${winner.avg_gpa.toFixed(3)}  |  ${winner.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${winner.num_courses} required courses and ${winner.total_students.toLocaleString()} grade records in this dataset`;
 
 // ─── Rankings (with filter modes) ────────────────────────────
 

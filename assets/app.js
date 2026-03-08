@@ -53,7 +53,7 @@ document.getElementById('stat-grades').textContent = DATA.total_student_grades.t
 const winner = DATA.rankings[0];
 document.getElementById('winner-name').textContent = winner.major;
 document.getElementById('winner-detail').textContent =
-    `Avg GPA: ${winner.avg_gpa.toFixed(3)}  |  Only ${winner.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${winner.num_courses} required courses and ${winner.total_students.toLocaleString()} grade records`;
+    `Avg GPA: ${winner.avg_gpa.toFixed(3)}  |  ${winner.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${winner.num_courses} required courses and ${winner.total_students.toLocaleString()} grade records in this dataset`;
 
 // ─── Rankings (with filter modes) ────────────────────────────
 
