@@ -2,7 +2,7 @@
 """
 UCLA Grade Data Parser
 ======================
-Parses the UCLA grade distribution CSV files (2021-2024), normalizes
+Parses the UCLA grade distribution CSV files (2021-2025), normalizes
 schemas, computes per-course grade metrics, and outputs a unified dataset.
 
 Outputs: course_grade_stats.csv

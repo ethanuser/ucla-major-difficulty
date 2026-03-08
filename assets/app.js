@@ -618,7 +618,7 @@ function drawGraph() {
             const adjLabel = abilityAdjusted ? ' (adj)' : '';
             let html = `<div style="font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--ucla-dark-blue)">${hover.label}</div>`;
             html += hover.type === 'major'
-                ? `<div style="color:${gpaColor(hGpa)}">GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.pct_A.toFixed(1)}% A/A+</div><div style="color:var(--text-muted);margin-top:4px">Rank #${hover.rank} | ${hover.num_courses} courses</div>`
+                ? `<div style="color:${gpaColor(hGpa)}">GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.pct_A.toFixed(1)}% A/A+</div><div style="color:var(--text-muted);margin-top:4px">#${hover.rank} | ${hover.num_courses} courses</div>`
                 : `<div style="color:var(--ucla-blue)">Dept GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.num_courses} courses</div>`;
             tooltip.innerHTML = html; tooltip.style.display = 'block';
             tooltip.style.left = (e.clientX + 16) + 'px'; tooltip.style.top = (e.clientY - 10) + 'px';

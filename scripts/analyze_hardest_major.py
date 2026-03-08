@@ -698,7 +698,7 @@ def generate_html(graph_data, output_path):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCLA Major Difficulty</title>
-    <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2025). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
+    <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2025). Interactive tables, bipartite graph, and course-level data. Not a definitive difficulty measure.">
     <link rel="icon" href="favicon.ico" type="image/png">
     <style>
 ''' + css_content + '''
@@ -720,8 +720,8 @@ def generate_html(graph_data, output_path):
 
     <!-- Hero -->
     <section class="hero">
-        <h1 class="hero__title">UCLA Hardest Majors</h1>
-        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021-2025). A rough ability adjustment using transfer-admit GPA is available, but the primary ranking does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
+        <h1 class="hero__title">UCLA Major Difficulty Analysis</h1>
+        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021-2025). A rough ability adjustment using transfer-admit GPA is available, but the primary view does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
         <div class="hero__stats">
             <div>
                 <div class="hero__stat-num" id="stat-majors">0</div>
@@ -748,7 +748,7 @@ def generate_html(graph_data, output_path):
         <div class="winner-banner" id="winner-banner">
             <div class="winner-banner__icon">#1</div>
             <div>
-                <div class="winner-banner__label">Hardest major in this analysis</div>
+                <div class="winner-banner__label">Hardest Major in this Analysis</div>
                 <div class="winner-banner__name" id="winner-name">Loading...</div>
                 <div class="winner-banner__detail" id="winner-detail"></div>
             </div>
@@ -762,15 +762,15 @@ def generate_html(graph_data, output_path):
             </label>
             <span class="ability-toggle__label">
                 <strong>Adjust for student ability</strong>
-                <span class="ability-toggle__hint">Uses transfer-admit GPA as a rough proxy. Majors with higher transfer GPA admits are penalized in average GPA/boosted in ranking, reflecting that low GPAs are harder to achieve when students are strong. Note: transfer GPA also reflects pre-transfer course difficulty, not just ability. <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md#921-transfer-admit-gpa-robustness-check" target="_blank" rel="noopener noreferrer">Details</a></span>
+                <span class="ability-toggle__hint">Uses transfer-admit GPA as a rough proxy. Majors with higher-GPA admits are penalized, reflecting that low course GPAs are more notable when admit GPAs are high. Note: transfer GPA also reflects pre-transfer course difficulty, not just ability. <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md#921-transfer-admit-gpa-robustness-check" target="_blank" rel="noopener noreferrer">Details</a></span>
             </span>
         </div>
 
         <!-- Tabs -->
         <div class="tabs">
-            <button class="tab active" onclick="switchTab('rankings')">Major Rankings</button>
-            <button class="tab" onclick="switchTab('dept-rankings')">Department Rankings</button>
-            <button class="tab" onclick="switchTab('prof-rankings')">Professors</button>
+            <button class="tab active" onclick="switchTab('rankings')">Majors</button>
+            <button class="tab" onclick="switchTab('dept-rankings')">Departments</button>
+            <!-- <button class="tab" onclick="switchTab('prof-rankings')">Professors</button> -->
             <button class="tab" onclick="switchTab('graph')">Bipartite Graph</button>
             <button class="tab" onclick="switchTab('courses')">Course Deep Dive</button>
         </div>
@@ -788,12 +788,12 @@ def generate_html(graph_data, output_path):
             <div class="table-scroll-wrapper">
             <table class="rankings-table">
                 <thead><tr>
-                    <th data-tip="Rank based on weighted average GPA in this dataset (lower GPA = lower rank). Rank 1 has the lowest average GPA.">Rank</th>
+                    <th data-tip="Position by weighted average GPA in this dataset (lower GPA = higher position). #1 has the lowest average GPA.">#</th>
                     <th data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
                     <th data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
                     <th data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
                     <th data-tip="Number of required courses matched to grade data.">Courses</th>
-                    <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2024. Higher count means more statistical confidence.">Grade Records</th>
+                    <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
                 </tr></thead>
                 <tbody id="rankings-body"></tbody>
             </table>
@@ -803,11 +803,11 @@ def generate_html(graph_data, output_path):
         <!-- Department Rankings panel -->
         <div class="panel" id="panel-dept-rankings">
             <div class="section-title">Departments by Average GPA</div>
-            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">Subject areas (departments) ranked by weighted average GPA across all their courses in this dataset. Lower GPA may indicate stricter grading.</p>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">Subject areas (departments) sorted by weighted average GPA across all their courses in this dataset. Lower GPA may indicate stricter grading.</p>
             <div class="table-scroll-wrapper">
             <table class="rankings-table">
                 <thead><tr>
-                    <th data-tip="Rank by average GPA (lower GPA = lower rank).">Rank</th>
+                    <th data-tip="Position by average GPA (lower GPA = higher position).">#</th>
                     <th data-tip="Subject area / department code.">Department</th>
                     <th data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
                     <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
@@ -819,7 +819,7 @@ def generate_html(graph_data, output_path):
             </div>
         </div>
 
-        <!-- Professors panel -->
+        <!-- Professors panel (temporarily hidden)
         <div class="panel" id="panel-prof-rankings">
             <div class="section-title">Professors by Average GPA (Within Department)</div>
             <div class="prof-caveats">
@@ -828,7 +828,7 @@ def generate_html(graph_data, output_path):
             <div class="table-scroll-wrapper">
             <table class="rankings-table">
                 <thead><tr>
-                    <th data-tip="Rank within this department (lower GPA = lower rank).">Rank</th>
+                    <th data-tip="Position within this department (lower GPA = higher position).">#</th>
                     <th data-tip="Subject area / department.">Dept</th>
                     <th data-tip="Instructor name from grade records.">Professor</th>
                     <th data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
@@ -841,6 +841,7 @@ def generate_html(graph_data, output_path):
             </table>
             </div>
         </div>
+        -->
 
         <div class="panel" id="panel-graph">
             <div id="graph-container">
@@ -875,7 +876,7 @@ def generate_html(graph_data, output_path):
                     <option value="all">All</option>
                 </select>
                 <div class="sort-group">
-                    <button id="sort-hard" class="active-sort" onclick="setSortDir('asc')">Hardest First</button>
+                    <button id="sort-hard" class="active-sort" onclick="setSortDir('asc')">Lowest GPA First</button>
                     <button id="sort-easy" onclick="setSortDir('desc')">Easiest First</button>
                 </div>
                 <span class="course-count-info" id="course-count-info"></span>
@@ -888,7 +889,7 @@ def generate_html(graph_data, output_path):
                     <th data-tip="Official course title from the UCLA catalog.">Title</th>
                     <th data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
                     <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Total letter grades recorded for this course from 2021 to 2024.">Students</th>
+                    <th data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
                     <th data-tip="Subject area / department this course belongs to.">Dept</th>
                 </tr></thead>
                 <tbody id="courses-tbody"></tbody>
@@ -911,8 +912,8 @@ def generate_html(graph_data, output_path):
             <span class="dot">|</span>
             <a href="https://forms.gle/GWFnP91cfFyLt5aL7" target="_blank">Feedback</a>
         </div>
-        <div>Grade data from 2021–2024 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
-        <div style="margin-top:4px">Rankings are based on weighted average GPA. See the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology</a> for assumptions and limitations.</div>
+        <div>Grade data from 2021-2025 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
+        <div style="margin-top:4px">Tables are sorted by weighted average GPA. See the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology</a> for assumptions and limitations.</div>
         <div style="margin-top:12px;opacity:0.6;font-size:0.76rem">Independent project. Not affiliated with UCLA or the University of California.</div>
     </footer>
 

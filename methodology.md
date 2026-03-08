@@ -29,7 +29,7 @@ A major is "harder" if its required courses yield lower average GPAs, fewer A-ra
 - **DFW rate** (D/F/Withdrawn percentage)
 - **Shared vs. major-specific course decomposition**
 
-This captures *observed* difficulty — how grades actually distribute — not an abstract measure of rigor. A rough ability adjustment using transfer-admit GPA data is available (see [Section 9.2.1](#921-transfer-admit-gpa-robustness-check)), but the primary ranking does not adjust for student preparedness, curved grading, or workload. See [Section 9](#9-assumptions--limitations) for a full discussion.
+This captures *observed* difficulty — how grades actually distribute rather than an abstract measure of rigor. A rough ability adjustment using transfer-admit GPA data is available (see [Section 9.2.1](#921-transfer-admit-gpa-robustness-check)), but the primary view does not adjust for student preparedness, curved grading, or workload. See [Section 9](#9-assumptions--limitations) for a full discussion.
 
 ---
 
@@ -125,11 +125,11 @@ A bipartite graph connects 137 major nodes to ~100 subject area nodes (916 edges
 
 ### 7.2 Department GPA
 
-Each department's enrollment-weighted average GPA and % A-range is used for graph tooltips, the Department Rankings tab, and the 40% department component of major scoring.
+Each department's enrollment-weighted average GPA and % A-range is used for graph tooltips, the Departments tab, and the 40% department component of major scoring.
 
 ### 7.3 Professor Comparison (Exploratory)
 
-The Professor tab compares instructors within each department by average GPA of courses taught. **This is exploratory context, not a ranking of teaching quality.**
+The Professor tab compares instructors within each department by average GPA of courses taught. **This is exploratory context, not a measure of teaching quality.**
 
 - Each (instructor, course, term) = one class section; 10+ sections required to appear
 - Average GPA and % A-range are enrollment-weighted; rank is within department only
@@ -195,11 +195,11 @@ Students who struggle often drop courses or elect P/NP, so remaining grades may 
 
 Student preparedness varies between majors, and we cannot fully adjust for it. No public dataset links UCLA grades to individual student ability (FERPA protects transcripts). Available proxies (admission rates, SAT/ACT) are too noisy or unavailable at the major level.
 
-The literature suggests grading standards matter more than student ability: Rojstaczer & Healy found SAT/ACT explain <14% of cross-department GPA variance; Valen Johnson (Duke, 2003) found stronger departments grade *more* strictly; Baucks et al. (2025) confirmed STEM > humanities difficulty persists after ability adjustment.
+The literature suggests grading standards matter more than student ability: Rojstaczer & Healy found SAT/ACT explain <14% of cross-department GPA variance; Valen Johnson (Duke, 2003) found departments with higher-ability students grade *more* strictly; Baucks et al. (2025) confirmed STEM > humanities difficulty persists after ability adjustment.
 
 **The Economics puzzle:** Economics (#1) is open declaration while CS has ~4% acceptance. Econ's low GPA could partly reflect a less selective student pool rather than strict grading alone. We treat this as unresolved.
 
-**Curved grading:** In curved STEM classes with strong students, competition for limited A's makes experienced difficulty higher than GPA alone suggests. The 45% A-range in STEM vs. 90%+ in humanities is too large to explain by curving alone.
+**Curved grading:** In curved STEM classes with high-performing students, competition for limited A's makes experienced difficulty higher than GPA alone suggests. The 45% A-range in STEM vs. 90%+ in humanities is too large to explain by curving alone.
 
 #### 9.2.1 Transfer-Admit GPA Robustness Check
 
@@ -207,7 +207,7 @@ To partially address the ability confound, we use UCLA's [Transfer Admission Pro
 
 **Key stats:** Pearson r = −0.35 (p < 0.001), OLS slope = −0.46, R² = 0.12. Higher-ability-admit majors tend to have lower course GPAs.
 
-**Site toggle method:** `adjusted_gpa = raw_gpa - 0.46 * (ability_proxy - mean)`. This penalizes majors with strong admits, reflecting that low GPAs are more notable when students are strong. CS rises from #16 to #6; engineering majors rise similarly. Economics stays #1. A separate residual-based analysis is in `data/processed/ability_adjusted_rankings.csv`.
+**Site toggle method:** `adjusted_gpa = raw_gpa - 0.46 * (ability_proxy - mean)`. This penalizes majors with higher-GPA admits, reflecting that low course GPAs are more notable when admit GPAs are high. CS rises from #16 to #6; engineering majors rise similarly. Economics stays #1. A separate residual-based analysis is in `data/processed/ability_adjusted_rankings.csv`.
 
 **Limitations:** Transfer-admit GPA reflects community college performance, not enrolled student ability. It conflates student ability with pre-transfer course difficulty (a 4.0 in pre-CS coursework is harder to earn than a 3.95 in pre-Econ). Many majors hit a ceiling near 4.00, compressing variance. R² = 0.12 means the proxy explains little of the GPA variation. This is a rough robustness check, not a causal estimate.
 
