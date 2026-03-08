@@ -770,7 +770,7 @@ def generate_html(graph_data, output_path):
         <div class="tabs">
             <button class="tab active" onclick="switchTab('rankings')">Majors</button>
             <button class="tab" onclick="switchTab('dept-rankings')">Departments</button>
-            <!-- <button class="tab" onclick="switchTab('prof-rankings')">Professors</button> -->
+            <button class="tab" onclick="switchTab('prof-rankings')">Professors</button>
             <button class="tab" onclick="switchTab('graph')">Bipartite Graph</button>
             <button class="tab" onclick="switchTab('courses')">Course Deep Dive</button>
         </div>
@@ -819,7 +819,7 @@ def generate_html(graph_data, output_path):
             </div>
         </div>
 
-        <!-- Professors panel (temporarily hidden)
+        <!-- Professors panel -->
         <div class="panel" id="panel-prof-rankings">
             <div class="section-title">Professors by Average GPA (Within Department)</div>
             <div class="prof-caveats">
@@ -841,7 +841,6 @@ def generate_html(graph_data, output_path):
             </table>
             </div>
         </div>
-        -->
 
         <div class="panel" id="panel-graph">
             <div id="graph-container">
