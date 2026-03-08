@@ -1119,6 +1119,7 @@ a:hover {
     border: 1px solid #D0E3F5;
     border-radius: 10px;
     padding: 12px 18px;
+    margin-top: 24px;
     margin-bottom: 16px;
     display: flex;
     align-items: flex-start;

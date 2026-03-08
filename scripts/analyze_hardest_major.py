@@ -744,16 +744,6 @@ def generate_html(graph_data, output_path):
 
     <div class="container">
 
-        <!-- Winner banner -->
-        <div class="winner-banner" id="winner-banner">
-            <div class="winner-banner__icon">#1</div>
-            <div>
-                <div class="winner-banner__label">Hardest Major in this Analysis</div>
-                <div class="winner-banner__name" id="winner-name">Loading...</div>
-                <div class="winner-banner__detail" id="winner-detail"></div>
-            </div>
-        </div>
-
         <!-- Ability Adjustment Toggle -->
         <div class="ability-toggle-bar" id="ability-toggle-bar" style="display:none">
             <label class="ability-toggle">

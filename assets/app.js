@@ -35,21 +35,7 @@ function toggleAbilityAdjustment(on) {
     renderDeptRankings();
     renderProfessorRankings();
     renderCourseTable();
-    updateWinnerBanner();
     if (graphInitialized) drawGraph();
-}
-
-function updateWinnerBanner() {
-    const items = DATA.rankings.map(r => {
-        const gpa = adjustGpa(r.avg_gpa, r.ability_proxy);
-        return { ...r, _gpa: gpa };
-    }).filter(r => r._gpa != null);
-    items.sort((a, b) => a._gpa - b._gpa);
-    const w = items[0];
-    if (!w) return;
-    document.getElementById('winner-name').textContent = w.major;
-    document.getElementById('winner-detail').textContent =
-        `Avg GPA: ${w._gpa.toFixed(3)}${abilityAdjusted ? ' (adjusted)' : ''}  |  ${w.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${w.num_courses} required courses and ${w.total_students.toLocaleString()} grade records in this dataset`;
 }
 
 // ─── Tab switching ───────────────────────────────────────────
@@ -94,13 +80,6 @@ document.getElementById('stat-courses').textContent = DATA.nodes
     .reduce((s, n) => s + (n.num_courses || 0), 0)
     .toLocaleString();
 document.getElementById('stat-grades').textContent = DATA.total_student_grades.toLocaleString();
-
-// ─── Winner banner ───────────────────────────────────────────
-
-const winner = DATA.rankings[0];
-document.getElementById('winner-name').textContent = winner.major;
-document.getElementById('winner-detail').textContent =
-    `Avg GPA: ${winner.avg_gpa.toFixed(3)}  |  ${winner.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${winner.num_courses} required courses and ${winner.total_students.toLocaleString()} grade records in this dataset`;
 
 // ─── Rankings (with filter modes) ────────────────────────────
 
