@@ -905,7 +905,7 @@ def generate_html(graph_data, output_path):
             <span class="dot">|</span>
             <a href="https://catalog.registrar.ucla.edu" target="_blank">Major Requirements: UCLA Course Catalog</a>
             <span class="dot">|</span>
-            <a href="https://admission.ucla.edu/apply/transfer/transfer-profile" target="_blank">Transfer Admit Data: UCLA Admissions</a>
+            <a href="https://admission.ucla.edu/apply/transfer/transfer-profile/2025/major" target="_blank">Transfer Admit Data: UCLA Admissions</a>
             <span class="dot">|</span>
             <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
         </div>
