@@ -42,6 +42,7 @@ HTML_FILE = os.path.join(BASE_DIR, 'index.html')
 
 
 import re
+from urllib.parse import quote
 
 # ═══════════════════════════════════════════════════════════════════
 # STEP 1: Load data
@@ -350,7 +351,7 @@ def score_majors(matched_data, course_stats):
 # STEP 4: Build graph data
 # ═══════════════════════════════════════════════════════════════════
 
-def build_graph_data(major_df, course_stats):
+def build_graph_data(major_df, course_stats, major_reqs=None):
     """Build bipartite graph data structure for visualization."""
     nodes = []
     edges = []
@@ -423,11 +424,43 @@ def build_graph_data(major_df, course_stats):
             'num_upper_req': int(row.get('num_upper_req', 0)),
         })
     
+    # Build course_id -> catalog_url map from major requirements
+    course_catalog_urls = {}
+    if major_reqs:
+        for req in major_reqs.values():
+            for c in req.get('all_courses', []):
+                cid = c.get('course_id')
+                url = c.get('catalog_url')
+                if cid and url and cid not in course_catalog_urls:
+                    course_catalog_urls[cid] = url
+        # Also try normalized (no space) keys for courses that might match differently
+        for req in major_reqs.values():
+            for c in req.get('all_courses', []):
+                cid = c.get('course_id', '').replace(' ', '')
+                url = c.get('catalog_url')
+                if cid and url and cid not in course_catalog_urls:
+                    course_catalog_urls[cid] = url
+
     # All courses sorted by GPA ascending (hardest first)
     all_courses_sorted = course_stats.sort_values('avg_gpa', ascending=True)[
         ['course_id', 'course_title', 'avg_gpa', 'pct_A', 'total_letter_grades', 'subject_area']
     ].to_dict('records')
-    
+
+    # Add uclagrades_url and catalog_url to each course
+    for c in all_courses_sorted:
+        cid = c['course_id']
+        subj = c.get('subject_area', '')
+        # uclagrades: https://www.uclagrades.com/SUBJECT/NUMBER (course has grade data = exists there)
+        if subj:
+            num = cid[len(subj):].strip() if cid.startswith(subj) else cid.split(' ', 1)[-1] if ' ' in cid else cid
+            c['uclagrades_url'] = f"https://www.uclagrades.com/{quote(subj, safe='')}/{quote(num, safe='')}"
+        else:
+            parts = cid.split(' ', 1)
+            c['uclagrades_url'] = f"https://www.uclagrades.com/{quote(parts[0], safe='')}/{quote(parts[1], safe='')}" if len(parts) == 2 else ""
+        # catalog: use scraped URL if available, else build from course_id
+        c['catalog_url'] = course_catalog_urls.get(cid) or course_catalog_urls.get(cid.replace(' ', '')) or \
+            f"https://catalog.registrar.ucla.edu/course/2024/{cid.replace(' ', '').replace('&', '')}"
+
     # Major details
     major_details = {}
     for _, row in major_df.iterrows():
@@ -478,6 +511,7 @@ def generate_html(graph_data, output_path):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCLA Hardest Major Analysis</title>
     <meta name="description" content="Interactive analysis of UCLA's hardest majors based on grade distribution data from 2021-2024. Rankings, bipartite graph, and course-level breakdowns.">
+    <link rel="icon" href="favicon.ico" type="image/png">
     <style>
 ''' + css_content + '''
     </style>
@@ -569,24 +603,21 @@ def generate_html(graph_data, output_path):
             </div>
         </div>
 
-        <!-- Graph panel -->
         <div class="panel" id="panel-graph">
             <div id="graph-container">
                 <canvas id="graph-canvas"></canvas>
-                <div class="graph-legend">
-                    <div class="legend-title">Legend</div>
-                    <div class="legend-item"><div class="legend-dot" style="background: hsl(0, 75%, 42%);"></div> Major (red = harder)</div>
-                    <div class="legend-item"><div class="legend-dot" style="background: hsl(120, 75%, 42%);"></div> Major (green = easier)</div>
-                    <div class="legend-item"><div class="legend-dot" style="background: var(--ucla-blue);"></div> Department</div>
-                    <div class="legend-item" style="margin-top:6px;font-style:italic;opacity:0.7">Larger major = lower GPA</div>
-                    <div class="legend-item" style="font-style:italic;opacity:0.7">Larger dept = more courses</div>
-                    <div class="legend-item" style="font-style:italic;opacity:0.7">Hover to see labels</div>
-                </div>
                 <div class="graph-controls">
                     <button class="graph-btn" onclick="zoomGraph(1.2)" title="Zoom In">+</button>
                     <button class="graph-btn" onclick="zoomGraph(0.8)" title="Zoom Out">&minus;</button>
                     <button class="graph-btn" onclick="resetGraph()" title="Reset">&#x27F2;</button>
                 </div>
+            </div>
+            <div class="graph-legend-bar">
+                <div class="legend-item"><div class="legend-dot" style="background: hsl(0, 75%, 42%);"></div> Red = harder</div>
+                <div class="legend-item"><div class="legend-dot" style="background: hsl(60, 80%, 44%);"></div> Yellow = mid</div>
+                <div class="legend-item"><div class="legend-dot" style="background: hsl(120, 75%, 42%);"></div> Green = easier</div>
+                <span class="legend-sep">|</span>
+                <div class="legend-item" style="font-style:italic;opacity:0.6">Larger node = more courses · Hover for details</div>
             </div>
         </div>
 
@@ -635,10 +666,10 @@ def generate_html(graph_data, output_path):
             <span class="dot">|</span>
             <a href="https://catalog.registrar.ucla.edu" target="_blank">Major Requirements: UCLA Course Catalog</a>
             <span class="dot">|</span>
-            <a href="https://ethanuser.github.io/ucla-major-difficulty" target="_blank">Methodology &amp; Source Code</a>
+            <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
         </div>
         <div>Grade distributions from 2021-2024. Major requirements from the 2025 UCLA General Catalog.</div>
-        <div style="margin-top:4px">Difficulty is measured by weighted average GPA - see the <a href="https://ethanuser.github.io/ucla-major-difficulty" target="_blank">methodology page</a> for full details.</div>
+        <div style="margin-top:4px">Difficulty is measured by weighted average GPA - see the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology page</a> for full details.</div>
         <div style="margin-top:12px;opacity:0.6;font-size:0.76rem">This is an independent student project and is not affiliated with, endorsed by, or officially associated with UCLA or the University of California.</div>
     </footer>
 
@@ -727,7 +758,7 @@ def main():
     
     # Step 5: Build and save graph data
     print(f"\n🕸 Building bipartite graph...")
-    graph_data = build_graph_data(major_df, course_stats)
+    graph_data = build_graph_data(major_df, course_stats, major_reqs)
     
     with open(GRAPH_DATA_FILE, 'w') as f:
         json.dump(graph_data, f, indent=2)

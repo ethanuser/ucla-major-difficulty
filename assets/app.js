@@ -30,7 +30,8 @@ function gpaColor(gpa) {
 // ─── Graph node color: reuse the same red→green HSL scale ───
 
 function majorNodeColor(gpa) {
-    // Same red→green scale as gpaColor but tuned for graph visibility
+    // Same red→green scale for majors and departments (harder = red, easier = green)
+    if (gpa == null || Number.isNaN(gpa)) gpa = 3.2;
     const t = Math.max(0, Math.min(1, (gpa - 2.8) / 1.2));
     const h = t * 120;
     const s = 70 + 15 * Math.sin(t * Math.PI);
@@ -129,9 +130,14 @@ function renderCourseTable() {
     let html = '';
     sliced.forEach((c, i) => {
         const color = gpaColor(c.avg_gpa);
+        const hasGradeData = (c.total_letter_grades || 0) > 0;
+        const href = hasGradeData && c.uclagrades_url ? c.uclagrades_url : (c.catalog_url || '');
+        const cellContent = href
+            ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="course-link">${c.course_id}</a>`
+            : c.course_id;
         html += `<tr>
             <td style="color:var(--text-muted);font-weight:700;font-size:0.78rem">${i + 1}</td>
-            <td class="course-code-cell">${c.course_id}</td>
+            <td class="course-code-cell">${cellContent}</td>
             <td style="color:var(--text-secondary);max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.course_title || ''}</td>
             <td class="gpa-cell" style="color:${color}">${c.avg_gpa.toFixed(3)}</td>
             <td class="pct-cell" style="color:${color}">${c.pct_A.toFixed(1)}%</td>
@@ -151,45 +157,68 @@ renderCourseTable();
 let graphNodes = [], graphEdges = [], graphScale = 1, graphOffsetX = 0, graphOffsetY = 0;
 let isDragging = false, dragNode = null, lastMouse = { x: 0, y: 0 };
 let graphInitialized = false;
+let graphLastDims = null;
 let hoverNode = null;
-
 function drawGraph() {
     const canvas = document.getElementById('graph-canvas');
     const rect = canvas.parentElement.getBoundingClientRect();
-    canvas.width = rect.width * 2; canvas.height = rect.height * 2;
-    canvas.style.width = rect.width + 'px'; canvas.style.height = rect.height + 'px';
-    const ctx = canvas.getContext('2d'); ctx.scale(2, 2);
-    const W = rect.width, H = rect.height;
+    let W = rect.width, H = rect.height;
 
-    // Layout: two columns with moderate separation
+    // Retry if container has no dimensions yet (e.g. panel was hidden)
+    if (W < 50 || H < 50) {
+        requestAnimationFrame(drawGraph);
+        return;
+    }
+
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    const majors = DATA.nodes.filter(n => n.type === 'major').sort((a, b) => a.rank - b.rank);
+    const subjects = DATA.nodes.filter(n => n.type === 'subject');
+
+    const layoutH = H;
+    const dimsKey = W + 'x' + layoutH;
+    if (graphInitialized && (typeof graphLastDims !== 'undefined' && graphLastDims !== dimsKey)) {
+        graphInitialized = false;
+    }
+    graphLastDims = dimsKey;
+
     const PAD_Y = 25;
-    const MAJOR_X = W * 0.3;    // Majors at 30% from left
-    const SUBJ_X = W * 0.7;     // Subjects at 70% from left
+    const CTRL_RIGHT = 52;
+    const BOUND_L = 16;
+    const BOUND_R = W - CTRL_RIGHT;
+    const contentW = BOUND_R - BOUND_L;
+    const MAJOR_X = BOUND_L + contentW * 0.2;
+    const SUBJ_X = BOUND_L + contentW * 0.8;
 
     if (!graphInitialized) {
-        const majors = DATA.nodes.filter(n => n.type === 'major').sort((a, b) => a.rank - b.rank);
-        const subjects = DATA.nodes.filter(n => n.type === 'subject');
-        graphNodes = []; const nodeMap = {};
+        graphNodes = [];
+        const nodeMap = {};
+        const spread = 30;
+        const nodeRadius = 6;
 
-        // Spread majors evenly in the left column
         majors.forEach((n, i) => {
-            const yPos = PAD_Y + (i / Math.max(1, majors.length - 1)) * (H - PAD_Y * 2);
+            const yPos = PAD_Y + (i / Math.max(1, majors.length - 1)) * (layoutH - PAD_Y * 2);
             const node = {
                 ...n,
-                x: MAJOR_X + (Math.random() - 0.5) * 30,
+                x: MAJOR_X + (Math.random() - 0.5) * spread,
                 y: yPos,
                 vx: 0, vy: 0,
-                radius: Math.max(4, Math.min(9, 11 - (n.avg_gpa - 2.8) * 4))
+                radius: nodeRadius
             };
             graphNodes.push(node); nodeMap[n.id] = node;
         });
 
-        // Spread subjects evenly in the right column
         subjects.forEach((n, i) => {
-            const yPos = PAD_Y + (i / Math.max(1, subjects.length - 1)) * (H - PAD_Y * 2);
+            const yPos = PAD_Y + (i / Math.max(1, subjects.length - 1)) * (layoutH - PAD_Y * 2);
             const node = {
                 ...n,
-                x: SUBJ_X + (Math.random() - 0.5) * 30,
+                x: SUBJ_X + (Math.random() - 0.5) * spread,
                 y: yPos,
                 vx: 0, vy: 0,
                 radius: Math.max(3, Math.min(8, (n.num_courses || 1) / 10))
@@ -205,9 +234,7 @@ function drawGraph() {
         graphInitialized = true;
     }
 
-    // Safe bounds - generous padding from canvas edges
-    const BOUND_L = 20, BOUND_R = W - 20;
-    const BOUND_T = PAD_Y, BOUND_B = H - PAD_Y;
+    const BOUND_T = PAD_Y, BOUND_B = layoutH - PAD_Y;
 
     function tick() {
         // Repulsion between nearby nodes
@@ -297,11 +324,10 @@ function drawGraph() {
             ctx.beginPath();
             ctx.arc(n.x, n.y, isHovered ? n.radius + 2 : n.radius, 0, Math.PI * 2);
 
-            if (n.type === 'major') {
-                ctx.fillStyle = majorNodeColor(n.avg_gpa);
-            } else {
-                ctx.fillStyle = '#2774AE';
-            }
+            const fillColor = (n.type === 'subject' && (n.num_courses || 0) === 0)
+                ? '#9CA3AF'
+                : majorNodeColor(n.avg_gpa);
+            ctx.fillStyle = fillColor;
             ctx.fill();
 
             // Outline
@@ -327,9 +353,9 @@ function drawGraph() {
             });
 
             connectedNodes.forEach(n => {
-                const isMain = n === hoverNode;
-                const fontSize = isMain ? 11 : 8;
-                const fontWeight = isMain ? '700' : '500';
+                if (n === hoverNode) return; // tooltip already shows this
+                const fontSize = 8;
+                const fontWeight = '500';
                 ctx.font = `${fontWeight} ${fontSize}px Inter, sans-serif`;
 
                 const label = n.label;
@@ -350,20 +376,15 @@ function drawGraph() {
                 const pillY = n.y - fontSize / 2 - pillPadY;
 
                 // Background pill
-                ctx.fillStyle = isMain ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.88)';
+                ctx.fillStyle = 'rgba(255,255,255,0.88)';
                 const pillRadius = 3;
                 const pw = textWidth + pillPadX * 2;
                 ctx.beginPath();
                 ctx.roundRect(pillX, pillY, pw, pillH, pillRadius);
                 ctx.fill();
-                if (isMain) {
-                    ctx.strokeStyle = 'rgba(0,59,92,0.3)';
-                    ctx.lineWidth = 0.8;
-                    ctx.stroke();
-                }
 
                 // Text
-                ctx.fillStyle = isMain ? '#003B5C' : '#4A5A6A';
+                ctx.fillStyle = '#4A5A6A';
                 ctx.fillText(label, textX, n.y + fontSize * 0.35);
             });
         }
@@ -422,7 +443,19 @@ function drawGraph() {
     };
     canvas.onmouseup = () => { isDragging = false; dragNode = null; };
     canvas.onmouseleave = () => { isDragging = false; dragNode = null; hoverNode = null; document.getElementById('tooltip').style.display = 'none'; };
-    canvas.onwheel = (e) => { e.preventDefault(); graphScale *= e.deltaY > 0 ? 0.95 : 1.05; };
+
+    canvas.onwheel = (e) => {
+        e.preventDefault();
+        const r = canvas.getBoundingClientRect();
+        const factor = e.deltaY > 0 ? 0.95 : 1.05;
+        const oldScale = graphScale;
+        const newScale = graphScale * factor;
+        const gx = (e.clientX - r.left - graphOffsetX) / oldScale;
+        const gy = (e.clientY - r.top - graphOffsetY) / oldScale;
+        graphOffsetX = e.clientX - r.left - gx * newScale;
+        graphOffsetY = e.clientY - r.top - gy * newScale;
+        graphScale = newScale;
+    };
 }
 
 function zoomGraph(f) { graphScale *= f; }

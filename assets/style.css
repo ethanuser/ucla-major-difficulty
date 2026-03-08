@@ -578,40 +578,37 @@ a:hover {
     height: 100%;
 }
 
-.graph-legend {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    border-radius: var(--radius-md);
-    padding: 14px 18px;
+.graph-legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 16px;
+    margin-top: 8px;
+    background: var(--bg-white);
     border: 1px solid var(--border-light);
-    font-size: 0.8rem;
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
 }
 
-.legend-title {
-    font-weight: 700;
-    margin-bottom: 8px;
-    font-size: 0.85rem;
-    color: var(--text-primary);
-}
-
-.legend-item {
+.graph-legend-bar .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 5px 0;
-    color: var(--text-secondary);
-    font-size: 0.78rem;
+    gap: 6px;
 }
 
-.legend-dot {
-    width: 12px;
-    height: 12px;
+.graph-legend-bar .legend-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+.legend-sep {
+    color: var(--border-medium);
+    font-size: 0.85rem;
 }
 
 .graph-controls {
@@ -791,6 +788,15 @@ a:hover {
     white-space: nowrap;
 }
 
+.course-code-cell .course-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.course-code-cell .course-link:hover {
+    text-decoration: underline;
+}
+
 .gpa-cell {
     font-weight: 700;
 }
@@ -871,51 +877,133 @@ a:hover {
    ============================================================ */
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Hide bipartite graph on mobile */
+    .tabs .tab:nth-child(2),
+    #panel-graph {
+        display: none !important;
+    }
+
     .site-header {
-        padding: 0 16px;
+        padding: 12px 16px;
         flex-direction: column;
         height: auto;
-        padding: 12px 16px;
         gap: 8px;
+        align-items: flex-start;
     }
 
     .site-header__links {
         display: none;
     }
 
+    .site-header__logo {
+        font-size: 1.15rem;
+    }
+
+    .site-header__subtitle {
+        font-size: 0.78rem;
+    }
+
     .hero {
-        padding: 36px 20px 32px;
+        padding: 28px 16px 24px;
     }
 
     .hero__title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .hero__desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
     }
 
     .hero__stats {
-        gap: 24px;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero__stat-num {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .hero__stat-label {
+        font-size: 0.7rem;
     }
 
     .winner-banner {
         flex-direction: column;
         text-align: center;
-        margin: -16px 16px 24px;
-        padding: 20px;
+        margin: -12px 16px 20px;
+        padding: 16px;
+    }
+
+    .winner-banner__name {
+        font-size: 1.3rem;
+    }
+
+    .winner-banner__detail {
+        font-size: 0.8rem;
     }
 
     .container {
-        padding: 0 16px 40px;
+        padding: 0 12px 32px;
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+        padding-bottom: max(32px, env(safe-area-inset-bottom));
     }
 
     .tabs {
         flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        padding: 10px 14px;
+        font-size: 0.82rem;
     }
 
     .filter-bar {
         gap: 8px;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+    }
+
+    .filter-bar label {
+        width: 100%;
+    }
+
+    .filter-bar .filter-group {
+        flex-wrap: wrap;
+    }
+
+    .filter-bar button {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+    }
+
+    /* Tables: horizontal scroll on mobile */
+    .table-scroll-wrapper {
+        max-height: 450px;
+        overflow-x: auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -12px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .rankings-table,
+    .courses-table {
+        min-width: 520px;
+    }
+
+    .rankings-table th,
     }
 
     .gpa-bar {
