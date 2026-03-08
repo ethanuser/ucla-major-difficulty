@@ -698,7 +698,7 @@ def generate_html(graph_data, output_path):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCLA Major Difficulty</title>
-    <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2024). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
+    <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2025). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
     <link rel="icon" href="favicon.ico" type="image/png">
     <style>
 ''' + css_content + '''
