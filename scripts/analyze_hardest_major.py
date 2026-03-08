@@ -697,7 +697,7 @@ def generate_html(graph_data, output_path):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UCLA Major Difficulty Analysis</title>
+    <title>UCLA Major Difficulty</title>
     <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2024). Interactive rankings, bipartite graph, and course-level data. Not a definitive difficulty ranking.">
     <link rel="icon" href="favicon.ico" type="image/png">
     <style>
@@ -720,8 +720,8 @@ def generate_html(graph_data, output_path):
 
     <!-- Hero -->
     <section class="hero">
-        <h1 class="hero__title">UCLA Major Difficulty</h1>
-        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021–2024). A rough ability adjustment using transfer-admit GPA is available, but the primary ranking does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
+        <h1 class="hero__title">UCLA Hardest Majors</h1>
+        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021-2024). A rough ability adjustment using transfer-admit GPA is available, but the primary ranking does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
         <div class="hero__stats">
             <div>
                 <div class="hero__stat-num" id="stat-majors">0</div>
