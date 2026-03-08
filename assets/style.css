@@ -1004,9 +1004,98 @@ a:hover {
     }
 
     .rankings-table th,
+    .rankings-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .rankings-table .major-name {
+        font-size: 0.8rem;
+    }
+
+    .rank-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 0.72rem;
     }
 
     .gpa-bar {
-        width: 60px;
+        width: 50px;
+        height: 6px;
+    }
+
+    .gpa-value {
+        font-size: 0.8rem;
+        min-width: 44px;
+    }
+
+    /* Courses panel */
+    .courses-controls {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .courses-controls label {
+        width: 100%;
+    }
+
+    .courses-controls select,
+    .courses-controls button {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+    }
+
+    /* Prevent iOS zoom when focusing select */
+    .courses-controls select {
+        font-size: 16px;
+    }
+
+    .course-count-info {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+
+
+    .section-title {
+        font-size: 1.15rem;
+    }
+
+    /* Tooltip: prevent overflow on small screens */
+    .tooltip {
+        max-width: min(300px, calc(100vw - 32px));
+    }
+
+    .courses-table th,
+    .courses-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 24px 16px;
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+        font-size: 0.78rem;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+    .hero__stats {
+        gap: 16px;
+    }
+
+    .hero__stat-num {
+        font-size: 1.2rem;
+    }
+
+    .tab {
+        padding: 8px 10px;
+        font-size: 0.78rem;
     }
 }
