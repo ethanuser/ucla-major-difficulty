@@ -5,6 +5,53 @@
 // DATA is injected by the Python script as a global variable
 // in a <script> tag before this file is loaded.
 
+// ─── Ability Adjustment ─────────────────────────────────────
+
+let abilityAdjusted = false;
+const ADJ = DATA.ability_adjustment || null;
+
+// Build dept label → ability_proxy lookup from subject nodes
+const deptAbilityProxy = {};
+DATA.nodes.forEach(n => {
+    if (n.type === 'subject' && n.ability_proxy != null) {
+        deptAbilityProxy[n.label] = n.ability_proxy;
+    }
+});
+
+if (ADJ) {
+    document.getElementById('ability-toggle-bar').style.display = 'flex';
+}
+
+function adjustGpa(rawGpa, abilityProxy) {
+    if (!abilityAdjusted || !ADJ || abilityProxy == null) return rawGpa;
+    return rawGpa - ADJ.k * (abilityProxy - ADJ.mean_ability);
+}
+
+function toggleAbilityAdjustment(on) {
+    abilityAdjusted = on;
+    const bar = document.getElementById('ability-toggle-bar');
+    bar.classList.toggle('active', on);
+    renderRankings();
+    renderDeptRankings();
+    renderProfessorRankings();
+    renderCourseTable();
+    updateWinnerBanner();
+    if (graphInitialized) drawGraph();
+}
+
+function updateWinnerBanner() {
+    const items = DATA.rankings.map(r => {
+        const gpa = adjustGpa(r.avg_gpa, r.ability_proxy);
+        return { ...r, _gpa: gpa };
+    }).filter(r => r._gpa != null);
+    items.sort((a, b) => a._gpa - b._gpa);
+    const w = items[0];
+    if (!w) return;
+    document.getElementById('winner-name').textContent = w.major;
+    document.getElementById('winner-detail').textContent =
+        `Avg GPA: ${w._gpa.toFixed(3)}${abilityAdjusted ? ' (adjusted)' : ''}  |  ${w.pct_A.toFixed(1)}% A/A+ grades  |  Based on ${w.num_courses} required courses and ${w.total_students.toLocaleString()} grade records in this dataset`;
+}
+
 // ─── Tab switching ───────────────────────────────────────────
 
 function switchTab(name) {
@@ -79,6 +126,7 @@ function renderRankings() {
             gpa = r.avg_gpa; pctA = r.pct_A;
             students = r.total_students; courses = r.num_courses;
         }
+        if (gpa != null) gpa = adjustGpa(gpa, r.ability_proxy);
         return { ...r, _gpa: gpa, _pctA: pctA, _students: students, _courses: courses };
     }).filter(r => r._gpa != null);
 
@@ -116,7 +164,8 @@ function renderDeptRankings() {
         .filter(n => n.type === 'subject' && (n.num_courses || 0) > 0)
         .map(n => ({
             label: n.label,
-            avg_gpa: n.avg_gpa,
+            avg_gpa: adjustGpa(n.avg_gpa, n.ability_proxy),
+            raw_gpa: n.avg_gpa,
             pct_A: n.pct_A,
             num_courses: n.num_courses || 0,
             total_students: n.total_students || 0,
@@ -177,6 +226,25 @@ function renderProfessorRankings() {
         tbody.innerHTML = '<tr><td colspan="8" style="color:var(--text-muted);padding:24px;text-align:center">No professor data available. Raw grade files must include instructor information (e.g. INSTR NAME).</td></tr>';
         return;
     }
+    // Apply ability adjustment and re-rank within each department
+    rows.forEach(p => {
+        const proxy = deptAbilityProxy[p.dept];
+        p._gpa = adjustGpa(p.avg_gpa, proxy);
+    });
+    if (abilityAdjusted) {
+        const byDept = {};
+        rows.forEach(p => {
+            if (!byDept[p.dept]) byDept[p.dept] = [];
+            byDept[p.dept].push(p);
+        });
+        rows.length = 0;
+        Object.keys(byDept).sort().forEach(dept => {
+            const deptRows = byDept[dept].sort((a, b) => a._gpa - b._gpa);
+            deptRows.forEach((p, i) => { p._rank = i + 1; });
+            rows.push(...deptRows);
+        });
+    }
+
     let html = '';
     let lastDept = '';
     let deptGroup = 0;
@@ -186,20 +254,22 @@ function renderProfessorRankings() {
             deptGroup++;
         }
         const deptRowClass = deptGroup % 2 === 1 ? 'prof-dept-odd' : 'prof-dept-even';
-        const badgeClass = 'rank-default';  // No 1/2/3 highlight for professor rankings
-        const gpaPct = ((p.avg_gpa / 4.0) * 100).toFixed(0);
-        const color = gpaColor(p.avg_gpa);
-        const rangeStr = `${p.dept_min_gpa.toFixed(2)}–${p.dept_max_gpa.toFixed(2)}`;
+        const badgeClass = 'rank-default';
+        const displayGpa = p._gpa;
+        const gpaPct = ((displayGpa / 4.0) * 100).toFixed(0);
+        const color = gpaColor(displayGpa);
+        const rangeStr = `${(p.prof_min_gpa ?? p.avg_gpa).toFixed(2)}–${(p.prof_max_gpa ?? p.avg_gpa).toFixed(2)}`;
         const slug = p.bruinwalk_slug || bruinwalkSlug(p.name);
         const profCell = slug
             ? `<a href="https://bruinwalk.com/professors/${slug}/" target="_blank" rel="noopener noreferrer" class="major-link">${p.name}</a>`
             : p.name;
+        const rank = abilityAdjusted ? (p._rank || p.rank) : p.rank;
         html += `
         <tr class="${deptRowClass}">
-            <td><div class="rank-badge ${badgeClass}">${p.rank}</div></td>
+            <td><div class="rank-badge ${badgeClass}">${rank}</div></td>
             <td class="stat-small">${p.dept}</td>
             <td class="major-name">${profCell}</td>
-            <td><div class="gpa-bar-container"><div class="gpa-bar"><div class="gpa-bar-fill" style="width:${gpaPct}%; background:${color}"></div></div><div class="gpa-value" style="color:${color}">${p.avg_gpa.toFixed(3)}</div></div></td>
+            <td><div class="gpa-bar-container"><div class="gpa-bar"><div class="gpa-bar-fill" style="width:${gpaPct}%; background:${color}"></div></div><div class="gpa-value" style="color:${color}">${displayGpa.toFixed(3)}</div></div></td>
             <td class="pct-a" style="color:${color}">${p.pct_A.toFixed(1)}%</td>
             <td class="stat-small" style="color:var(--text-muted);font-size:0.8rem">${rangeStr}</td>
             <td class="stat-small">${p.num_classes ?? p.num_courses}</td>
@@ -226,12 +296,20 @@ function setSortDir(dir) {
 function renderCourseTable() {
     const sel = document.getElementById('course-count').value;
     const limit = sel === 'all' ? allCourses.length : parseInt(sel);
-    const sorted = courseSortDir === 'asc' ? allCourses : [...allCourses].reverse();
-    const sliced = sorted.slice(0, Math.min(limit, sorted.length));
+
+    // Build adjusted copies so we can re-sort by adjusted GPA
+    const adjusted = allCourses.map(c => {
+        const proxy = deptAbilityProxy[c.subject_area];
+        const gpa = adjustGpa(c.avg_gpa, proxy);
+        return { ...c, _gpa: gpa };
+    });
+    adjusted.sort((a, b) => courseSortDir === 'asc' ? a._gpa - b._gpa : b._gpa - a._gpa);
+
+    const sliced = adjusted.slice(0, Math.min(limit, adjusted.length));
     const tbody = document.getElementById('courses-tbody');
     let html = '';
     sliced.forEach((c, i) => {
-        const color = gpaColor(c.avg_gpa);
+        const color = gpaColor(c._gpa);
         const hasGradeData = (c.total_letter_grades || 0) > 0;
         const href = hasGradeData && c.uclagrades_url ? c.uclagrades_url : (c.catalog_url || '');
         const cellContent = href
@@ -241,7 +319,7 @@ function renderCourseTable() {
             <td style="color:var(--text-muted);font-weight:700;font-size:0.78rem">${i + 1}</td>
             <td class="course-code-cell">${cellContent}</td>
             <td style="color:var(--text-secondary);max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.course_title || ''}</td>
-            <td class="gpa-cell" style="color:${color}">${c.avg_gpa.toFixed(3)}</td>
+            <td class="gpa-cell" style="color:${color}">${c._gpa.toFixed(3)}</td>
             <td class="pct-cell" style="color:${color}">${c.pct_A.toFixed(1)}%</td>
             <td class="students-cell">${(c.total_letter_grades || 0).toLocaleString()}</td>
             <td class="dept-cell">${c.subject_area || ''}</td>
@@ -426,9 +504,10 @@ function drawGraph() {
             ctx.beginPath();
             ctx.arc(n.x, n.y, isHovered ? n.radius + 2 : n.radius, 0, Math.PI * 2);
 
+            const adjGpa = adjustGpa(n.avg_gpa, n.ability_proxy);
             const fillColor = (n.type === 'subject' && (n.num_courses || 0) === 0)
                 ? '#9CA3AF'
-                : majorNodeColor(n.avg_gpa);
+                : majorNodeColor(adjGpa);
             ctx.fillStyle = fillColor;
             ctx.fill();
 
@@ -535,10 +614,12 @@ function drawGraph() {
         hoverNode = hover || null;
         const tooltip = document.getElementById('tooltip');
         if (hover) {
+            const hGpa = adjustGpa(hover.avg_gpa, hover.ability_proxy);
+            const adjLabel = abilityAdjusted ? ' (adj)' : '';
             let html = `<div style="font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--ucla-dark-blue)">${hover.label}</div>`;
             html += hover.type === 'major'
-                ? `<div style="color:${gpaColor(hover.avg_gpa)}">GPA: ${hover.avg_gpa.toFixed(3)} | ${hover.pct_A.toFixed(1)}% A/A+</div><div style="color:var(--text-muted);margin-top:4px">Rank #${hover.rank} | ${hover.num_courses} courses</div>`
-                : `<div style="color:var(--ucla-blue)">Dept GPA: ${hover.avg_gpa.toFixed(3)} | ${hover.num_courses} courses</div>`;
+                ? `<div style="color:${gpaColor(hGpa)}">GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.pct_A.toFixed(1)}% A/A+</div><div style="color:var(--text-muted);margin-top:4px">Rank #${hover.rank} | ${hover.num_courses} courses</div>`
+                : `<div style="color:var(--ucla-blue)">Dept GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.num_courses} courses</div>`;
             tooltip.innerHTML = html; tooltip.style.display = 'block';
             tooltip.style.left = (e.clientX + 16) + 'px'; tooltip.style.top = (e.clientY - 10) + 'px';
         } else { tooltip.style.display = 'none'; }

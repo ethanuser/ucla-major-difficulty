@@ -1,0 +1,134 @@
+transfer_name,rankings_name,match_type,match_score
+African American Studies,African American Studies BA,suffix_match,1.0
+African and Middle Eastern Studies,African and Middle Eastern Studies BA,suffix_match,1.0
+American Indian Studies,American Indian Studies BA,suffix_match,1.0
+American Literature and Culture,American Literature and Culture BA,suffix_match,1.0
+Ancient Near East and Egyptology,Ancient Near East and Egyptology BA,suffix_match,1.0
+Anthropology B.A.,Anthropology BA,exact,1.0
+Anthropology B.S.,Anthropology BS,exact,1.0
+Applied Linguistics,Applied Linguistics BA,manual,1.0
+"Applied Mathematics, Pre",Applied Mathematics BS,suffix_match,1.0
+Arabic,Arabic BA,suffix_match,1.0
+Art History,Art History BA,suffix_match,1.0
+Asian American Studies,Asian American Studies BA,suffix_match,1.0
+Asian Humanities,Asian Humanities BA,suffix_match,1.0
+Asian Languages and Linguistics,Asian Languages and Linguistics BA,suffix_match,1.0
+Asian Religions,Asian Religions BA,suffix_match,1.0
+Asian Studies,Asian Studies BA,suffix_match,1.0
+Astrophysics,Astrophysics BS,manual,1.0
+Atmospheric and Oceanic Sciences,Atmospheric and Oceanic Sciences BS,manual,1.0
+Atmospheric and Oceanic Sciences/Mathematics,Atmospheric and Oceanic Sciences/Mathematics BS,manual,1.0
+Biochemistry,Biochemistry BS,manual,1.0
+Biology,Biology BS,manual,1.0
+Biophysics,Biophysics BS,manual,1.0
+"Business Economics, Pre",Business Economics BA,suffix_match,1.0
+Central and East European Languages and Cultures,Central and East European Languages and Cultures BA,suffix_match,1.0
+Chemistry,Chemistry BS,manual,1.0
+Chemistry/Materials Science,Chemistry/Materials Science BS,manual,1.0
+Chicana and Chicano Studies,Chicana and Chicano Studies BA,suffix_match,1.0
+Chinese,Chinese BA,suffix_match,1.0
+Classical Civilization,Classical Civilization BA,suffix_match,1.0
+Climate Sciences,Climate Science BS,fuzzy,0.941
+"Cognitive Science, Pre",Cognitive Science BS,suffix_match,1.0
+Communication,Communication BA,manual,1.0
+Comparative Literature,Comparative Literature BA,suffix_match,1.0
+Computational Biology,Computational Biology BS,manual,1.0
+"Data Theory, Pre",Data Theory BS,suffix_match,1.0
+Disability Studies,Disability Studies BA,suffix_match,1.0
+Earth and Environmental Science,Earth and Environmental Science BA,suffix_match,1.0
+"Ecology, Behavior and Evolution","Ecology, Behavior, and Evolution BS",manual,1.0
+"Economics, Pre",Economics BA,suffix_match,1.0
+"Education and Social Transformation, Pre",Education and Social Transformation BA,suffix_match,1.0
+Engineering Geology,Engineering Geology BS,manual,1.0
+English,English BA,suffix_match,1.0
+Environmental Science,Environmental Science BS,manual,1.0
+European Language and Transcultural Studies,European Languages and Transcultural Studies BA,manual,1.0
+European Language and Transcultural Studies with French and Francophone,European Languages and Transcultural Studies with French and Francophone BA,manual,1.0
+European Language and Transcultural Studies with German,European Languages and Transcultural Studies with German BA,manual,1.0
+European Language and Transcultural Studies with Italian,European Languages and Transcultural Studies with Italian BA,manual,1.0
+European Language and Transcultural Studies with Scandinavian,European Languages and Transcultural Studies with Scandinavian BA,manual,1.0
+"European Studies, Pre",European Studies BA,suffix_match,1.0
+"Financial Actuarial Mathematics, Pre",Financial Actuarial Mathematics BS,suffix_match,1.0
+Gender Studies,Gender Studies BA,suffix_match,1.0
+Geography,Geography BA,suffix_match,1.0
+Geography/Environmental Studies,Geography/Environmental Studies BA,suffix_match,1.0
+Geology,Geology BS,manual,1.0
+Geophysics,Geophysics BS,manual,1.0
+"Global Studies, Pre",Global Studies BA,suffix_match,1.0
+Greek,Greek BA,suffix_match,1.0
+Greek and Latin,Greek and Latin BA,suffix_match,1.0
+History,History BA,suffix_match,1.0
+"Human Biology and Society B.A., Pre",Human Biology and Society BA,exact,1.0
+"Human Biology and Society B.S., Pre",Human Biology and Society BS,exact,1.0
+"International Development Studies, Pre",International Development Studies BA,suffix_match,1.0
+Iranian Studies,Iranian Studies BA,suffix_match,1.0
+Japanese,Japanese BA,suffix_match,1.0
+Jewish Studies,Jewish Studies BA,suffix_match,1.0
+Korean,Korean BA,suffix_match,1.0
+Labor Studies,Labor Studies BA,suffix_match,1.0
+Latin,Latin BA,suffix_match,1.0
+Latin American Studies,Latin American Studies BA,suffix_match,1.0
+Linguistics,Linguistics BA,manual,1.0
+Linguistics and Anthropology,Linguistics and Anthropology BA,suffix_match,1.0
+Linguistics and Asian Languages and Cultures,Linguistics and Asian Languages and Cultures BA,suffix_match,1.0
+Linguistics and Computer Science,Linguistics and Computer Science BA,suffix_match,1.0
+Linguistics and English,Linguistics and English BA,suffix_match,1.0
+Linguistics and Philosophy,Linguistics and Philosophy BA,suffix_match,1.0
+Linguistics and Psychology,Linguistics and Psychology BA,suffix_match,1.0
+Linguistics and Spanish,Linguistics and Spanish BA,suffix_match,1.0
+Marine Biology,Marine Biology BS,manual,1.0
+"Mathematics, Pre",Mathematics BS,suffix_match,1.0
+"Mathematics for Teaching, Pre",Mathematics for Teaching BS,suffix_match,1.0
+"Mathematics of Computation, Pre",Mathematics of Computation BS,suffix_match,1.0
+"Mathematics/Applied Science, Pre",Mathematics/Applied Science BS,suffix_match,1.0
+"Mathematics/Economics, Pre",Mathematics/Economics BS,suffix_match,1.0
+"Microbiology, Immunology and Molecular Genetics, Pre","Microbiology, Immunology, and Molecular Genetics BS",manual,1.0
+Middle Eastern Studies,Middle Eastern Studies BA,suffix_match,1.0
+"Molecular, Cell, and Developmental Biology","Molecular, Cell, and Developmental Biology BS",manual,1.0
+Neuroscience,Neuroscience BS,manual,1.0
+Nordic Studies,Nordic Studies BA,suffix_match,1.0
+Philosophy,Philosophy BA,suffix_match,1.0
+Physics,Physics BS,manual,1.0
+Physiological Science,Physiological Science BS,manual,1.0
+"Political Science, Pre",Political Science BA,suffix_match,1.0
+Portuguese and Brazilian Studies,Portuguese and Brazilian Studies BA,suffix_match,1.0
+"Psychobiology, Pre",Psychobiology BS,suffix_match,1.0
+"Psychology, Pre",Psychology BA,suffix_match,1.0
+"Public Affairs, Pre",Public Affairs BA,suffix_match,1.0
+"Public Health B.A., Pre",Public Health BA,exact,1.0
+"Public Health B.S., Pre",Public Health BS,exact,1.0
+Russian Language and Literature,Russian Language and Literature BA,suffix_match,1.0
+Russian Studies,Russian Studies BA,suffix_match,1.0
+"Sociology, Pre",Sociology BA,suffix_match,1.0
+Southeast Asian Studies,Southeast Asian Studies BA,suffix_match,1.0
+Spanish,Spanish BA,suffix_match,1.0
+Spanish and Community and Culture,Spanish and Community and Culture BA,suffix_match,1.0
+Spanish and Linguistics,Spanish and Linguistics BA,suffix_match,1.0
+Spanish and Portuguese,Spanish and Portuguese BA,suffix_match,1.0
+Statistics and Data Science,Statistics and Data Science BS,manual,1.0
+Study of Religion,Study of Religion BA,manual,1.0
+Architectural Studies,Architectural Studies BA,manual,1.0
+Art,Art BA,manual,1.0
+Dance,Dance BA,manual,1.0
+Design | Media Arts,Design|Media Arts BA,manual,1.0
+World Arts and Cultures,World Arts and Cultures BA,manual,1.0
+Aerospace Engineering,Aerospace Engineering BS,manual,1.0
+Bioengineering,Bioengineering BS,manual,1.0
+Chemical Engineering,Chemical Engineering BS,manual,1.0
+Civil Engineering,Civil Engineering BS,manual,1.0
+Computer Engineering,Computer Engineering BS,manual,1.0
+Computer Science,Computer Science BS,manual,1.0
+Computer Science and Engineering,Computer Science and Engineering BS,manual,1.0
+Electrical Engineering,Electrical Engineering BS,manual,1.0
+Materials Engineering,Materials Engineering BS,manual,1.0
+Mechanical Engineering,Mechanical Engineering BS,manual,1.0
+Ethnomusicology,Ethnomusicology BA,manual,1.0
+Global Jazz Studies,Global Jazz Studies BA,manual,1.0
+Music Composition,Music Composition BA,manual,1.0
+Music Education,Music Education BA,manual,1.0
+Music Industry,Music Industry BA,manual,1.0
+Music Performance,Music Performance BM,manual,1.0
+Musicology,Musicology BA,manual,1.0
+Nursing Prelicensure,Nursing BS Prelicensure,manual,1.0
+Film and Television,Film and Television BA,manual,1.0
+Theater,Theater BA,manual,1.0

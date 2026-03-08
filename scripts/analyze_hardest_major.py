@@ -179,7 +179,7 @@ def compute_professor_rankings(min_classes=10):
     """
     Compute professor rankings by average GPA, within department only.
     Only includes professors with min_classes+ class sections taught (same course in different terms counts separately).
-    Returns dict: { dept: [ { name, avg_gpa, pct_A, num_classes, total_students, rank, dept_min_gpa, dept_max_gpa }, ... ] }
+    Returns dict: { dept: [ { name, avg_gpa, pct_A, num_classes, total_students, rank, prof_min_gpa, prof_max_gpa }, ... ] }
     """
     raw = load_raw_grades_with_instructor()
     if raw is None or len(raw) == 0:
@@ -206,17 +206,17 @@ def compute_professor_rankings(min_classes=10):
     prof = prof[prof['num_classes'] >= min_classes]
     prof['avg_gpa'] = prof['weighted_gpa'] / prof['total_letter_grades']
     prof['pct_A'] = prof['total_A'] / prof['total_letter_grades'] * 100
-    # Dept min/max for range display
-    dept_range = prof.groupby('subject_area').agg(
-        dept_min_gpa=('avg_gpa', 'min'),
-        dept_max_gpa=('avg_gpa', 'max'),
-    ).to_dict('index')
+    # Per-professor min/max GPA across their sections (range of grades they give)
+    prof_range = section.groupby(['subject_area', 'instr_name']).agg(
+        prof_min_gpa=('avg_gpa', 'min'),
+        prof_max_gpa=('avg_gpa', 'max'),
+    ).reset_index()
+    prof = prof.merge(prof_range, on=['subject_area', 'instr_name'], how='left')
     # Rank within department
     result = {}
     for dept, grp in prof.groupby('subject_area'):
         grp = grp.sort_values('avg_gpa', ascending=True).reset_index(drop=True)
         grp['rank'] = range(1, len(grp) + 1)
-        rng = dept_range.get(dept, {})
         result[dept] = []
         for _, row in grp.iterrows():
             result[dept].append({
@@ -226,8 +226,8 @@ def compute_professor_rankings(min_classes=10):
                 'num_classes': int(row['num_classes']),
                 'total_students': int(row['total_letter_grades']),
                 'rank': int(row['rank']),
-                'dept_min_gpa': round(rng.get('dept_min_gpa', row['avg_gpa']), 3),
-                'dept_max_gpa': round(rng.get('dept_max_gpa', row['avg_gpa']), 3),
+                'prof_min_gpa': round(row['prof_min_gpa'], 3) if pd.notna(row['prof_min_gpa']) else row['avg_gpa'],
+                'prof_max_gpa': round(row['prof_max_gpa'], 3) if pd.notna(row['prof_max_gpa']) else row['avg_gpa'],
             })
     print(f"  Professor rankings: {sum(len(v) for v in result.values())} professors across {len(result)} departments (10+ classes each)")
     return result
@@ -489,8 +489,9 @@ def score_majors(matched_data, course_stats):
 # STEP 4: Build graph data
 # ═══════════════════════════════════════════════════════════════════
 
-def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings=None):
+def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings=None, ability_proxy=None):
     """Build bipartite graph data structure for visualization."""
+    ability_proxy = ability_proxy or {}
     nodes = []
     edges = []
     node_set = set()
@@ -498,7 +499,7 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
     for _, row in major_df.iterrows():
         major_id = f"major_{row['major']}"
         if major_id not in node_set:
-            nodes.append({
+            node = {
                 'id': major_id,
                 'label': row['major'],
                 'type': 'major',
@@ -507,7 +508,10 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
                 'rank': int(row['rank']),
                 'num_courses': int(row['num_exact_courses']),
                 'total_students': int(row['total_students']),
-            })
+            }
+            if row['major'] in ability_proxy:
+                node['ability_proxy'] = ability_proxy[row['major']]
+            nodes.append(node)
             node_set.add(major_id)
         
         for subj in row['subject_areas']:
@@ -547,7 +551,7 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
     
     rankings = []
     for _, row in major_df.iterrows():
-        rankings.append({
+        entry = {
             'rank': int(row['rank']),
             'major': row['major'],
             'catalog_url': row.get('catalog_url', '') or '',
@@ -564,7 +568,10 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
             'ud_req_students': _safe(row.get('ud_req_students')),
             'num_upper_exact': int(row.get('num_upper_exact', 0)),
             'num_upper_req': int(row.get('num_upper_req', 0)),
-        })
+        }
+        if row['major'] in ability_proxy:
+            entry['ability_proxy'] = ability_proxy[row['major']]
+        rankings.append(entry)
     
     # Build course_id -> catalog_url map from major requirements
     course_catalog_urls = {}
@@ -611,6 +618,42 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
             'easiest_courses': row['easiest_courses'],
         }
     
+    # Compute ability adjustment parameters (OLS: avg_gpa ~ ability_proxy)
+    ability_adj = None
+    if ability_proxy:
+        proxy_pairs = [(row['avg_gpa'], ability_proxy[row['major']])
+                       for _, row in major_df.iterrows() if row['major'] in ability_proxy]
+        if len(proxy_pairs) >= 10:
+            gpas = [p[0] for p in proxy_pairs]
+            abilities = [p[1] for p in proxy_pairs]
+            n = len(gpas)
+            mean_gpa = sum(gpas) / n
+            mean_ab = sum(abilities) / n
+            sxx = sum((a - mean_ab)**2 for a in abilities)
+            sxy = sum((a - mean_ab)*(g - mean_gpa) for a, g in zip(abilities, gpas))
+            slope = sxy / sxx if sxx else 0
+            ability_adj = {
+                'k': round(abs(slope), 4),
+                'mean_ability': round(mean_ab, 4),
+                'slope': round(slope, 4),
+                'n_majors': n,
+            }
+
+        # Compute department-level ability proxy (weighted average from connected majors)
+        dept_major_map = {}
+        for _, row in major_df.iterrows():
+            if row['major'] in ability_proxy:
+                for subj in row['subject_areas']:
+                    if subj not in dept_major_map:
+                        dept_major_map[subj] = []
+                    dept_major_map[subj].append((ability_proxy[row['major']], int(row['total_students'])))
+        for node in nodes:
+            if node['type'] == 'subject' and node['label'] in dept_major_map:
+                pairs = dept_major_map[node['label']]
+                total_w = sum(w for _, w in pairs)
+                if total_w > 0:
+                    node['ability_proxy'] = round(sum(a * w for a, w in pairs) / total_w, 4)
+
     graph_data = {
         'nodes': nodes,
         'edges': edges,
@@ -622,6 +665,8 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
         'total_student_grades': int(course_stats['total_letter_grades'].sum()),
         'professor_rankings': professor_rankings or {},
     }
+    if ability_adj:
+        graph_data['ability_adjustment'] = ability_adj
     
     return graph_data
 
@@ -676,7 +721,7 @@ def generate_html(graph_data, output_path):
     <!-- Hero -->
     <section class="hero">
         <h1 class="hero__title">UCLA Major Difficulty</h1>
-        <p class="hero__desc">An exploratory visualization of publicly available UCLA grade data (2021–2024). This site presents patterns in the dataset. It is not intended as a definitive ranking of major difficulty. The full methodology and data processing pipeline are documented in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
+        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021–2024). A rough ability adjustment using transfer-admit GPA is available, but the primary ranking does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
         <div class="hero__stats">
             <div>
                 <div class="hero__stat-num" id="stat-majors">0</div>
@@ -707,6 +752,18 @@ def generate_html(graph_data, output_path):
                 <div class="winner-banner__name" id="winner-name">Loading...</div>
                 <div class="winner-banner__detail" id="winner-detail"></div>
             </div>
+        </div>
+
+        <!-- Ability Adjustment Toggle -->
+        <div class="ability-toggle-bar" id="ability-toggle-bar" style="display:none">
+            <label class="ability-toggle">
+                <input type="checkbox" id="ability-toggle-check" onchange="toggleAbilityAdjustment(this.checked)">
+                <span class="ability-toggle__slider"></span>
+            </label>
+            <span class="ability-toggle__label">
+                <strong>Adjust for student ability</strong>
+                <span class="ability-toggle__hint">Uses transfer-admit GPA as a rough proxy. Majors with higher transfer GPA admits are penalized in average GPA/boosted in ranking, reflecting that low GPAs are harder to achieve when students are strong. Note: transfer GPA also reflects pre-transfer course difficulty, not just ability. <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md#921-transfer-admit-gpa-robustness-check" target="_blank" rel="noopener noreferrer">Details</a></span>
+            </span>
         </div>
 
         <!-- Tabs -->
@@ -776,7 +833,7 @@ def generate_html(graph_data, output_path):
                     <th data-tip="Instructor name from grade records.">Professor</th>
                     <th data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
                     <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Department GPA range (min–max) for context.">Dept Range</th>
+                    <th data-tip="GPA range across this professor's sections (lowest–highest course average).">Grade Range</th>
                     <th data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
                     <th data-tip="Total letter grades recorded across all courses.">Grade Records</th>
                 </tr></thead>
@@ -952,9 +1009,21 @@ def main():
                     p['bruinwalk_slug'] = bruinwalk_slugs[p['name']]
         print(f"  Enriched {sum(1 for dp in prof_rankings.values() for p in dp if p.get('bruinwalk_slug'))} professors with Bruinwalk links")
     
+    # Step 5b: Load ability proxy data (transfer-admit GPA)
+    merged_proxy_file = os.path.join(PROCESSED_DIR, 'merged_major_difficulty_with_transfer_proxy.csv')
+    ability_proxy = {}
+    if os.path.exists(merged_proxy_file):
+        proxy_df = pd.read_csv(merged_proxy_file)
+        for _, row in proxy_df.iterrows():
+            if pd.notna(row.get('ability_proxy_mid')):
+                ability_proxy[row['major']] = float(row['ability_proxy_mid'])
+        print(f"  Loaded ability proxy for {len(ability_proxy)} majors")
+    else:
+        print(f"  No ability proxy file found (run scrape/merge transfer scripts first)")
+
     # Step 6: Build and save graph data
     print(f"\n🕸 Building bipartite graph...")
-    graph_data = build_graph_data(major_df, course_stats, major_reqs, prof_rankings)
+    graph_data = build_graph_data(major_df, course_stats, major_reqs, prof_rankings, ability_proxy)
     
     with open(GRAPH_DATA_FILE, 'w') as f:
         json.dump(graph_data, f, indent=2)
