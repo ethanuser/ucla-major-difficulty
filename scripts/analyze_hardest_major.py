@@ -905,6 +905,8 @@ def generate_html(graph_data, output_path):
             <span class="dot">|</span>
             <a href="https://catalog.registrar.ucla.edu" target="_blank">Major Requirements: UCLA Course Catalog</a>
             <span class="dot">|</span>
+            <a href="https://admission.ucla.edu/apply/transfer/transfer-profile" target="_blank">Transfer Admit Data: UCLA Admissions</a>
+            <span class="dot">|</span>
             <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
         </div>
         <div>Grade data from 2021–2024 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
