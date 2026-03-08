@@ -161,7 +161,7 @@ The Professor tab compares instructors within each department by average GPA of 
 | 14 | Physics BA | 3.348 | 58.6% | 3.9% | 29/29 |
 | 15 | Astrophysics BS | 3.351 | 58.7% | 3.9% | 44/51 |
 
-### Top 10 Easiest Majors
+### Top 10 Highest GPA Majors
 
 | Rank | Major | GPA | % A | DFW | Matched/Total |
 |------|-------|-----|-----|-----|---------------|

@@ -165,7 +165,7 @@ def main():
         change = d['rank'] - d['adjusted_rank']
         print(f"{d['adjusted_rank']:>7} {d['rank']:>7} {change:>+7}  {d['major']:<50} {d['avg_gpa']:.3f} {d['ability_proxy_mid']:.2f} {d['residual']:>+7.4f}")
 
-    print(f"\n--- Top 15 Easiest (after ability adjustment) ---")
+    print(f"\n--- Top 15 Highest GPA (after ability adjustment) ---")
     for d in data[-15:]:
         change = d['rank'] - d['adjusted_rank']
         print(f"{d['adjusted_rank']:>7} {d['rank']:>7} {change:>+7}  {d['major']:<50} {d['avg_gpa']:.3f} {d['ability_proxy_mid']:.2f} {d['residual']:>+7.4f}")

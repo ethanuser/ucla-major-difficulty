@@ -43,7 +43,7 @@ python scripts/run_pipeline.py parse analyze # Re-parse grades and re-analyze
 | 4 | Linguistics & Computer Science BA | 3.254 | 41.1% |
 | 5 | Financial Actuarial Mathematics BS | 3.270 | 39.8% |
 
-| Rank | Easiest Majors | Avg GPA | % A-range |
+| Rank | Highest GPA Majors | Avg GPA | % A-range |
 |------|---------------|---------|-----------|
 | 137 | Dance BA | 3.914 | 89.6% |
 | 136 | Art BA | 3.897 | 84.0% |

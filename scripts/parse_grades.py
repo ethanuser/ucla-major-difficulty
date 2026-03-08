@@ -239,7 +239,7 @@ def main():
     print(f"  Median avg GPA:   {course_stats['avg_gpa'].median():.3f}")
     print(f"  Hardest course:   {course_stats.loc[course_stats['avg_gpa'].idxmin(), 'course_id']} "
           f"(GPA: {course_stats['avg_gpa'].min():.3f})")
-    print(f"  Easiest course:   {course_stats.loc[course_stats['avg_gpa'].idxmax(), 'course_id']} "
+    print(f"  Highest GPA course:   {course_stats.loc[course_stats['avg_gpa'].idxmax(), 'course_id']} "
           f"(GPA: {course_stats['avg_gpa'].max():.3f})")
     
     return course_stats

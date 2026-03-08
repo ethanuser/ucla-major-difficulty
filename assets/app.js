@@ -115,7 +115,7 @@ function renderRankings() {
     let html = '';
     items.forEach((r, idx) => {
         const rank = idx + 1;
-        const badgeClass = rank <= 3 ? `rank-${rank}` : 'rank-default';
+        const badgeClass = 'rank-default';
         const gpaPct = ((r._gpa / 4.0) * 100).toFixed(0);
         const color = gpaColor(r._gpa);
         const majorHtml = r.catalog_url
@@ -156,7 +156,7 @@ function renderDeptRankings() {
     let html = '';
     depts.forEach((d, idx) => {
         const rank = idx + 1;
-        const badgeClass = rank <= 3 ? `rank-${rank}` : 'rank-default';
+        const badgeClass = 'rank-default';
         const gpaPct = ((d.avg_gpa / 4.0) * 100).toFixed(0);
         const color = gpaColor(d.avg_gpa);
         const catalogSlug = d.label.replace(/\s+/g, '').replace(/&/g, '');
