@@ -4,7 +4,7 @@
 
 This project combines 4 years of official UCLA grade data (2021–2025) with web-scraped major requirements from the UCLA General Catalog to rank all 137 undergraduate majors by academic difficulty. The result is an interactive HTML dashboard with rankings, a bipartite graph visualization, and per-course deep dives.
 
-🔗 **[View the live dashboard →](https://YOUR_USERNAME.github.io/ucla-grades/)** *(update after deploying to GitHub Pages)*
+🔗 **[View the live dashboard](https://ethanuser.github.io/ucla-major-difficulty/)**
 
 ---
 
