@@ -377,10 +377,13 @@ def build_graph_data(major_df, course_stats, major_reqs=None):
             if subj_id not in node_set:
                 subj_courses = course_stats[course_stats['subject_area'] == subj]
                 if len(subj_courses) > 0:
-                    s_gpa = (subj_courses['avg_gpa'] * subj_courses['total_letter_grades']).sum() / subj_courses['total_letter_grades'].sum()
-                    s_pct = (subj_courses['pct_A'] * subj_courses['total_letter_grades']).sum() / subj_courses['total_letter_grades'].sum()
+                    total_letter = subj_courses['total_letter_grades'].sum()
+                    s_gpa = (subj_courses['avg_gpa'] * subj_courses['total_letter_grades']).sum() / total_letter
+                    s_pct = (subj_courses['pct_A'] * subj_courses['total_letter_grades']).sum() / total_letter
+                    total_students = int(total_letter)
                 else:
                     s_gpa = s_pct = 0
+                    total_students = 0
                 nodes.append({
                     'id': subj_id,
                     'label': subj,
@@ -388,6 +391,7 @@ def build_graph_data(major_df, course_stats, major_reqs=None):
                     'avg_gpa': round(s_gpa, 3),
                     'pct_A': round(s_pct, 1),
                     'num_courses': int(len(subj_courses)),
+                    'total_students': total_students,
                 })
                 node_set.add(subj_id)
             
@@ -568,12 +572,13 @@ def generate_html(graph_data, output_path):
 
         <!-- Tabs -->
         <div class="tabs">
-            <button class="tab active" onclick="switchTab('rankings')">Rankings</button>
+            <button class="tab active" onclick="switchTab('rankings')">Major Rankings</button>
+            <button class="tab" onclick="switchTab('dept-rankings')">Department Rankings</button>
             <button class="tab" onclick="switchTab('graph')">Bipartite Graph</button>
             <button class="tab" onclick="switchTab('courses')">Course Deep Dive</button>
         </div>
 
-        <!-- Rankings panel -->
+        <!-- Major Rankings panel -->
         <div class="panel active" id="panel-rankings">
             <div class="filter-bar">
                 <label>Course Filter:</label>
@@ -594,6 +599,25 @@ def generate_html(graph_data, output_path):
                     <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2024. Higher count means more statistical confidence.">Grade Records</th>
                 </tr></thead>
                 <tbody id="rankings-body"></tbody>
+            </table>
+            </div>
+        </div>
+
+        <!-- Department Rankings panel -->
+        <div class="panel" id="panel-dept-rankings">
+            <div class="section-title">Departments by Average GPA</div>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">Subject areas (departments) ranked by weighted average GPA across all their courses in this dataset. Lower GPA may indicate stricter grading.</p>
+            <div class="table-scroll-wrapper">
+            <table class="rankings-table">
+                <thead><tr>
+                    <th data-tip="Rank by average GPA (lower GPA = lower rank).">Rank</th>
+                    <th data-tip="Subject area / department code.">Department</th>
+                    <th data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
+                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th data-tip="Number of courses with grade data in this department.">Courses</th>
+                    <th data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
+                </tr></thead>
+                <tbody id="dept-rankings-body"></tbody>
             </table>
             </div>
         </div>

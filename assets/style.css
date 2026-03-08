@@ -882,7 +882,7 @@ a:hover {
     }
 
     /* Hide bipartite graph on mobile */
-    .tabs .tab:nth-child(2),
+    .tabs .tab:nth-child(3),
     #panel-graph {
         display: none !important;
     }

@@ -16,7 +16,8 @@
       "type": "subject",
       "avg_gpa": 3.259,
       "pct_A": 48.6,
-      "num_courses": 126
+      "num_courses": 126,
+      "total_students": 69501
     },
     {
       "id": "subj_MATH",
@@ -24,7 +25,8 @@
       "type": "subject",
       "avg_gpa": 3.267,
       "pct_A": 55.9,
-      "num_courses": 107
+      "num_courses": 107,
+      "total_students": 59457
     },
     {
       "id": "subj_MGMT",
@@ -32,7 +34,8 @@
       "type": "subject",
       "avg_gpa": 3.463,
       "pct_A": 56.5,
-      "num_courses": 111
+      "num_courses": 111,
+      "total_students": 47531
     },
     {
       "id": "major_Business Economics BA",
@@ -50,7 +53,8 @@
       "type": "subject",
       "avg_gpa": 3.656,
       "pct_A": 75.5,
-      "num_courses": 28
+      "num_courses": 28,
+      "total_students": 16145
     },
     {
       "id": "major_Mathematics/Economics BS",
@@ -68,7 +72,8 @@
       "type": "subject",
       "avg_gpa": 3.441,
       "pct_A": 64.3,
-      "num_courses": 7
+      "num_courses": 7,
+      "total_students": 6228
     },
     {
       "id": "subj_STATS",
@@ -76,7 +81,8 @@
       "type": "subject",
       "avg_gpa": 3.553,
       "pct_A": 69.4,
-      "num_courses": 63
+      "num_courses": 63,
+      "total_students": 35640
     },
     {
       "id": "major_Linguistics and Computer Science BA",
@@ -94,7 +100,8 @@
       "type": "subject",
       "avg_gpa": 3.383,
       "pct_A": 57.9,
-      "num_courses": 79
+      "num_courses": 79,
+      "total_students": 49704
     },
     {
       "id": "subj_LING",
@@ -102,7 +109,8 @@
       "type": "subject",
       "avg_gpa": 3.55,
       "pct_A": 71.6,
-      "num_courses": 30
+      "num_courses": 30,
+      "total_students": 15249
     },
     {
       "id": "major_Financial Actuarial Mathematics BS",
@@ -130,7 +138,8 @@
       "type": "subject",
       "avg_gpa": 3.579,
       "pct_A": 73.1,
-      "num_courses": 32
+      "num_courses": 32,
+      "total_students": 7185
     },
     {
       "id": "subj_CHEM",
@@ -138,7 +147,8 @@
       "type": "subject",
       "avg_gpa": 3.381,
       "pct_A": 58.4,
-      "num_courses": 89
+      "num_courses": 89,
+      "total_students": 77413
     },
     {
       "id": "subj_PHYSICS",
@@ -146,7 +156,8 @@
       "type": "subject",
       "avg_gpa": 3.424,
       "pct_A": 60.8,
-      "num_courses": 65
+      "num_courses": 65,
+      "total_students": 47733
     },
     {
       "id": "major_Mathematics for Teaching BS",
@@ -204,7 +215,8 @@
       "type": "subject",
       "avg_gpa": 3.469,
       "pct_A": 61.3,
-      "num_courses": 43
+      "num_courses": 43,
+      "total_students": 5806
     },
     {
       "id": "major_Linguistics and Philosophy BA",
@@ -222,7 +234,8 @@
       "type": "subject",
       "avg_gpa": 3.537,
       "pct_A": 67.5,
-      "num_courses": 71
+      "num_courses": 71,
+      "total_students": 15840
     },
     {
       "id": "major_Physics BS",
@@ -260,7 +273,8 @@
       "type": "subject",
       "avg_gpa": 3.289,
       "pct_A": 53.5,
-      "num_courses": 16
+      "num_courses": 16,
+      "total_students": 5586
     },
     {
       "id": "subj_EPS SCI",
@@ -268,7 +282,8 @@
       "type": "subject",
       "avg_gpa": 3.54,
       "pct_A": 68.3,
-      "num_courses": 31
+      "num_courses": 31,
+      "total_students": 12658
     },
     {
       "id": "major_Computer Science BS",
@@ -286,7 +301,8 @@
       "type": "subject",
       "avg_gpa": 3.584,
       "pct_A": 68.9,
-      "num_courses": 68
+      "num_courses": 68,
+      "total_students": 9630
     },
     {
       "id": "subj_EC ENGR",
@@ -294,7 +310,8 @@
       "type": "subject",
       "avg_gpa": 3.558,
       "pct_A": 68.5,
-      "num_courses": 102
+      "num_courses": 102,
+      "total_students": 30003
     },
     {
       "id": "major_Statistics and Data Science BS",
@@ -322,7 +339,8 @@
       "type": "subject",
       "avg_gpa": 3.556,
       "pct_A": 68.6,
-      "num_courses": 17
+      "num_courses": 17,
+      "total_students": 73132
     },
     {
       "id": "major_Mathematics BS",
@@ -360,7 +378,8 @@
       "type": "subject",
       "avg_gpa": 3.621,
       "pct_A": 70.6,
-      "num_courses": 33
+      "num_courses": 33,
+      "total_students": 6899
     },
     {
       "id": "subj_MECH&AE",
@@ -368,7 +387,8 @@
       "type": "subject",
       "avg_gpa": 3.516,
       "pct_A": 66.1,
-      "num_courses": 91
+      "num_courses": 91,
+      "total_students": 21198
     },
     {
       "id": "major_Electrical Engineering BS",
@@ -396,7 +416,8 @@
       "type": "subject",
       "avg_gpa": 3.7,
       "pct_A": 80.6,
-      "num_courses": 30
+      "num_courses": 30,
+      "total_students": 13903
     },
     {
       "id": "major_Climate Science BS",
@@ -434,7 +455,8 @@
       "type": "subject",
       "avg_gpa": 3.8,
       "pct_A": 85.8,
-      "num_courses": 39
+      "num_courses": 39,
+      "total_students": 42369
     },
     {
       "id": "subj_GEOG",
@@ -442,7 +464,8 @@
       "type": "subject",
       "avg_gpa": 3.567,
       "pct_A": 70.9,
-      "num_courses": 67
+      "num_courses": 67,
+      "total_students": 17342
     },
     {
       "id": "major_Linguistics and Anthropology BA",
@@ -460,7 +483,8 @@
       "type": "subject",
       "avg_gpa": 3.609,
       "pct_A": 75.9,
-      "num_courses": 78
+      "num_courses": 78,
+      "total_students": 23966
     },
     {
       "id": "subj_COMM",
@@ -468,7 +492,8 @@
       "type": "subject",
       "avg_gpa": 3.517,
       "pct_A": 67.1,
-      "num_courses": 62
+      "num_courses": 62,
+      "total_students": 21034
     },
     {
       "id": "subj_SOCIOL",
@@ -476,7 +501,8 @@
       "type": "subject",
       "avg_gpa": 3.362,
       "pct_A": 57.8,
-      "num_courses": 67
+      "num_courses": 67,
+      "total_students": 37993
     },
     {
       "id": "major_Linguistics and English BA",
@@ -494,7 +520,8 @@
       "type": "subject",
       "avg_gpa": 3.697,
       "pct_A": 78.8,
-      "num_courses": 131
+      "num_courses": 131,
+      "total_students": 19619
     },
     {
       "id": "major_Computer Engineering BS",
@@ -512,7 +539,8 @@
       "type": "subject",
       "avg_gpa": 3.835,
       "pct_A": 86.8,
-      "num_courses": 46
+      "num_courses": 46,
+      "total_students": 12325
     },
     {
       "id": "major_Aerospace Engineering BS",
@@ -550,7 +578,8 @@
       "type": "subject",
       "avg_gpa": 3.591,
       "pct_A": 73.1,
-      "num_courses": 49
+      "num_courses": 49,
+      "total_students": 6399
     },
     {
       "id": "major_Biochemistry BS",
@@ -568,7 +597,8 @@
       "type": "subject",
       "avg_gpa": 3.404,
       "pct_A": 58.7,
-      "num_courses": 24
+      "num_courses": 24,
+      "total_students": 8978
     },
     {
       "id": "major_Geology BS",
@@ -596,7 +626,8 @@
       "type": "subject",
       "avg_gpa": 3.597,
       "pct_A": 71.3,
-      "num_courses": 9
+      "num_courses": 9,
+      "total_students": 1361
     },
     {
       "id": "subj_CHIN",
@@ -604,7 +635,8 @@
       "type": "subject",
       "avg_gpa": 3.716,
       "pct_A": 81.6,
-      "num_courses": 29
+      "num_courses": 29,
+      "total_students": 4639
     },
     {
       "id": "subj_JAPAN",
@@ -612,7 +644,8 @@
       "type": "subject",
       "avg_gpa": 3.709,
       "pct_A": 80.6,
-      "num_courses": 23
+      "num_courses": 23,
+      "total_students": 5162
     },
     {
       "id": "subj_KOREA",
@@ -620,7 +653,8 @@
       "type": "subject",
       "avg_gpa": 3.76,
       "pct_A": 84.8,
-      "num_courses": 30
+      "num_courses": 30,
+      "total_students": 4248
     },
     {
       "id": "major_General Chemistry BS",
@@ -638,7 +672,8 @@
       "type": "subject",
       "avg_gpa": 3.896,
       "pct_A": 93.1,
-      "num_courses": 162
+      "num_courses": 162,
+      "total_students": 27097
     },
     {
       "id": "subj_ENV HLT",
@@ -646,7 +681,8 @@
       "type": "subject",
       "avg_gpa": 3.867,
       "pct_A": 90.0,
-      "num_courses": 10
+      "num_courses": 10,
+      "total_students": 1133
     },
     {
       "id": "subj_SCI EDU",
@@ -654,7 +690,8 @@
       "type": "subject",
       "avg_gpa": 3.97,
       "pct_A": 97.7,
-      "num_courses": 1
+      "num_courses": 1,
+      "total_students": 87
     },
     {
       "id": "major_Bioengineering BS",
@@ -682,7 +719,8 @@
       "type": "subject",
       "avg_gpa": 3.744,
       "pct_A": 81.5,
-      "num_courses": 29
+      "num_courses": 29,
+      "total_students": 11378
     },
     {
       "id": "subj_NEUROSC",
@@ -690,7 +728,8 @@
       "type": "subject",
       "avg_gpa": 3.462,
       "pct_A": 63.1,
-      "num_courses": 24
+      "num_courses": 24,
+      "total_students": 8705
     },
     {
       "id": "major_Engineering Geology BS",
@@ -718,7 +757,8 @@
       "type": "subject",
       "avg_gpa": 3.754,
       "pct_A": 81.5,
-      "num_courses": 28
+      "num_courses": 28,
+      "total_students": 7030
     },
     {
       "id": "major_Geophysics BS",
@@ -746,7 +786,8 @@
       "type": "subject",
       "avg_gpa": 3.67,
       "pct_A": 75.5,
-      "num_courses": 47
+      "num_courses": 47,
+      "total_students": 16487
     },
     {
       "id": "major_Applied Linguistics BA",
@@ -764,7 +805,8 @@
       "type": "subject",
       "avg_gpa": 3.794,
       "pct_A": 86.4,
-      "num_courses": 8
+      "num_courses": 8,
+      "total_students": 787
     },
     {
       "id": "subj_ARMENIA",
@@ -772,7 +814,8 @@
       "type": "subject",
       "avg_gpa": 3.942,
       "pct_A": 98.5,
-      "num_courses": 6
+      "num_courses": 6,
+      "total_students": 405
     },
     {
       "id": "subj_CCAS",
@@ -780,7 +823,8 @@
       "type": "subject",
       "avg_gpa": 3.76,
       "pct_A": 85.1,
-      "num_courses": 72
+      "num_courses": 72,
+      "total_students": 14897
     },
     {
       "id": "subj_FRNCH",
@@ -788,7 +832,8 @@
       "type": "subject",
       "avg_gpa": 3.681,
       "pct_A": 77.8,
-      "num_courses": 22
+      "num_courses": 22,
+      "total_students": 3716
     },
     {
       "id": "subj_GERMAN",
@@ -796,7 +841,8 @@
       "type": "subject",
       "avg_gpa": 3.702,
       "pct_A": 82.8,
-      "num_courses": 8
+      "num_courses": 8,
+      "total_students": 1543
     },
     {
       "id": "subj_HEBREW",
@@ -804,7 +850,8 @@
       "type": "subject",
       "avg_gpa": 3.927,
       "pct_A": 94.1,
-      "num_courses": 4
+      "num_courses": 4,
+      "total_students": 205
     },
     {
       "id": "subj_IRANIAN",
@@ -812,7 +859,8 @@
       "type": "subject",
       "avg_gpa": 3.893,
       "pct_A": 93.8,
-      "num_courses": 15
+      "num_courses": 15,
+      "total_students": 1151
     },
     {
       "id": "subj_PORTGSE",
@@ -820,7 +868,8 @@
       "type": "subject",
       "avg_gpa": 3.673,
       "pct_A": 81.0,
-      "num_courses": 6
+      "num_courses": 6,
+      "total_students": 705
     },
     {
       "id": "subj_PSYCH",
@@ -828,7 +877,8 @@
       "type": "subject",
       "avg_gpa": 3.574,
       "pct_A": 70.3,
-      "num_courses": 115
+      "num_courses": 115,
+      "total_students": 82026
     },
     {
       "id": "subj_SLAVC",
@@ -836,7 +886,8 @@
       "type": "subject",
       "avg_gpa": 3.581,
       "pct_A": 70.4,
-      "num_courses": 4
+      "num_courses": 4,
+      "total_students": 405
     },
     {
       "id": "major_Computational Biology BS",
@@ -854,7 +905,8 @@
       "type": "subject",
       "avg_gpa": 3.928,
       "pct_A": 96.3,
-      "num_courses": 10
+      "num_courses": 10,
+      "total_students": 565
     },
     {
       "id": "subj_C&S BIO",
@@ -862,7 +914,8 @@
       "type": "subject",
       "avg_gpa": 3.835,
       "pct_A": 89.8,
-      "num_courses": 6
+      "num_courses": 6,
+      "total_students": 1624
     },
     {
       "id": "subj_EE BIOL",
@@ -870,7 +923,8 @@
       "type": "subject",
       "avg_gpa": 3.604,
       "pct_A": 72.7,
-      "num_courses": 60
+      "num_courses": 60,
+      "total_students": 19164
     },
     {
       "id": "subj_EPIDEM",
@@ -878,7 +932,8 @@
       "type": "subject",
       "avg_gpa": 3.758,
       "pct_A": 83.1,
-      "num_courses": 30
+      "num_courses": 30,
+      "total_students": 3679
     },
     {
       "id": "subj_NEURO",
@@ -886,7 +941,8 @@
       "type": "subject",
       "avg_gpa": 3.8,
       "pct_A": 82.0,
-      "num_courses": 7
+      "num_courses": 7,
+      "total_students": 1023
     },
     {
       "id": "major_Mathematics/Applied Science BS",
@@ -904,7 +960,8 @@
       "type": "subject",
       "avg_gpa": 3.794,
       "pct_A": 83.5,
-      "num_courses": 31
+      "num_courses": 31,
+      "total_students": 4114
     },
     {
       "id": "subj_HIST",
@@ -912,7 +969,8 @@
       "type": "subject",
       "avg_gpa": 3.675,
       "pct_A": 78.4,
-      "num_courses": 142
+      "num_courses": 142,
+      "total_students": 33536
     },
     {
       "id": "major_Sociology BA",
@@ -930,7 +988,8 @@
       "type": "subject",
       "avg_gpa": 3.611,
       "pct_A": 73.5,
-      "num_courses": 80
+      "num_courses": 80,
+      "total_students": 39203
     },
     {
       "id": "major_Linguistics BA",
@@ -968,7 +1027,8 @@
       "type": "subject",
       "avg_gpa": 3.857,
       "pct_A": 89.7,
-      "num_courses": 16
+      "num_courses": 16,
+      "total_students": 992
     },
     {
       "id": "major_Molecular, Cell, and Developmental Biology BS",
@@ -986,7 +1046,8 @@
       "type": "subject",
       "avg_gpa": 3.894,
       "pct_A": 93.0,
-      "num_courses": 7
+      "num_courses": 7,
+      "total_students": 4221
     },
     {
       "id": "major_Ecology, Behavior, and Evolution BS",
@@ -1014,7 +1075,8 @@
       "type": "subject",
       "avg_gpa": 3.828,
       "pct_A": 88.4,
-      "num_courses": 76
+      "num_courses": 76,
+      "total_students": 16571
     },
     {
       "id": "major_Neuroscience BS",
@@ -1032,7 +1094,8 @@
       "type": "subject",
       "avg_gpa": 3.852,
       "pct_A": 92.3,
-      "num_courses": 11
+      "num_courses": 11,
+      "total_students": 1866
     },
     {
       "id": "subj_MSC IND",
@@ -1040,7 +1103,8 @@
       "type": "subject",
       "avg_gpa": 3.848,
       "pct_A": 90.3,
-      "num_courses": 41
+      "num_courses": 41,
+      "total_students": 4951
     },
     {
       "id": "subj_PSYCTRY",
@@ -1048,7 +1112,8 @@
       "type": "subject",
       "avg_gpa": 3.814,
       "pct_A": 86.6,
-      "num_courses": 8
+      "num_courses": 8,
+      "total_students": 2605
     },
     {
       "id": "major_Marine Biology BS",
@@ -1066,7 +1131,8 @@
       "type": "subject",
       "avg_gpa": 3.883,
       "pct_A": 92.1,
-      "num_courses": 24
+      "num_courses": 24,
+      "total_students": 8434
     },
     {
       "id": "major_Communication BA",
@@ -1084,7 +1150,8 @@
       "type": "subject",
       "avg_gpa": 3.825,
       "pct_A": 89.2,
-      "num_courses": 53
+      "num_courses": 53,
+      "total_students": 6928
     },
     {
       "id": "subj_FILM TV",
@@ -1092,7 +1159,8 @@
       "type": "subject",
       "avg_gpa": 3.828,
       "pct_A": 89.2,
-      "num_courses": 78
+      "num_courses": 78,
+      "total_students": 20507
     },
     {
       "id": "major_Linguistics and Psychology BA",
@@ -1120,7 +1188,8 @@
       "type": "subject",
       "avg_gpa": 3.82,
       "pct_A": 87.1,
-      "num_courses": 40
+      "num_courses": 40,
+      "total_students": 4880
     },
     {
       "id": "subj_HLT POL",
@@ -1128,7 +1197,8 @@
       "type": "subject",
       "avg_gpa": 3.859,
       "pct_A": 89.6,
-      "num_courses": 42
+      "num_courses": 42,
+      "total_students": 4173
     },
     {
       "id": "subj_PUB HLT",
@@ -1136,7 +1206,8 @@
       "type": "subject",
       "avg_gpa": 3.848,
       "pct_A": 89.4,
-      "num_courses": 11
+      "num_courses": 11,
+      "total_students": 6328
     },
     {
       "id": "major_Psychobiology BS",
@@ -1164,7 +1235,8 @@
       "type": "subject",
       "avg_gpa": 3.763,
       "pct_A": 83.9,
-      "num_courses": 55
+      "num_courses": 55,
+      "total_students": 14281
     },
     {
       "id": "subj_URBN PL",
@@ -1172,7 +1244,8 @@
       "type": "subject",
       "avg_gpa": 3.803,
       "pct_A": 85.4,
-      "num_courses": 44
+      "num_courses": 44,
+      "total_students": 4439
     },
     {
       "id": "major_Biology BS",
@@ -1210,7 +1283,8 @@
       "type": "subject",
       "avg_gpa": 3.611,
       "pct_A": 77.9,
-      "num_courses": 15
+      "num_courses": 15,
+      "total_students": 6647
     },
     {
       "id": "subj_ART HIS",
@@ -1218,7 +1292,8 @@
       "type": "subject",
       "avg_gpa": 3.645,
       "pct_A": 77.5,
-      "num_courses": 40
+      "num_courses": 40,
+      "total_students": 7766
     },
     {
       "id": "subj_COM LIT",
@@ -1226,7 +1301,8 @@
       "type": "subject",
       "avg_gpa": 3.639,
       "pct_A": 75.7,
-      "num_courses": 17
+      "num_courses": 17,
+      "total_students": 3008
     },
     {
       "id": "subj_ETHNMUS",
@@ -1234,7 +1310,8 @@
       "type": "subject",
       "avg_gpa": 3.85,
       "pct_A": 90.3,
-      "num_courses": 43
+      "num_courses": 43,
+      "total_students": 7773
     },
     {
       "id": "subj_HNRS",
@@ -1242,7 +1319,8 @@
       "type": "subject",
       "avg_gpa": 3.904,
       "pct_A": 94.4,
-      "num_courses": 29
+      "num_courses": 29,
+      "total_students": 2556
     },
     {
       "id": "subj_I A STD",
@@ -1250,7 +1328,8 @@
       "type": "subject",
       "avg_gpa": 3.595,
       "pct_A": 70.5,
-      "num_courses": 7
+      "num_courses": 7,
+      "total_students": 1103
     },
     {
       "id": "subj_INTL DV",
@@ -1258,7 +1337,8 @@
       "type": "subject",
       "avg_gpa": 3.696,
       "pct_A": 79.3,
-      "num_courses": 8
+      "num_courses": 8,
+      "total_students": 3084
     },
     {
       "id": "subj_ISLM ST",
@@ -1266,7 +1346,8 @@
       "type": "subject",
       "avg_gpa": 3.624,
       "pct_A": 77.6,
-      "num_courses": 2
+      "num_courses": 2,
+      "total_students": 918
     },
     {
       "id": "subj_JEWISH",
@@ -1274,7 +1355,8 @@
       "type": "subject",
       "avg_gpa": 3.698,
       "pct_A": 79.0,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 290
     },
     {
       "id": "subj_M E STD",
@@ -1282,7 +1364,8 @@
       "type": "subject",
       "avg_gpa": 3.332,
       "pct_A": 55.2,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 286
     },
     {
       "id": "subj_TURKIC",
@@ -1290,7 +1373,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_WL ARTS",
@@ -1298,7 +1382,8 @@
       "type": "subject",
       "avg_gpa": 3.894,
       "pct_A": 93.3,
-      "num_courses": 20
+      "num_courses": 20,
+      "total_students": 3239
     },
     {
       "id": "major_Psychology BA",
@@ -1336,7 +1421,8 @@
       "type": "subject",
       "avg_gpa": 3.729,
       "pct_A": 83.1,
-      "num_courses": 36
+      "num_courses": 36,
+      "total_students": 6011
     },
     {
       "id": "subj_AM IND",
@@ -1344,7 +1430,8 @@
       "type": "subject",
       "avg_gpa": 3.665,
       "pct_A": 80.5,
-      "num_courses": 2
+      "num_courses": 2,
+      "total_students": 631
     },
     {
       "id": "subj_FOOD ST",
@@ -1352,7 +1439,8 @@
       "type": "subject",
       "avg_gpa": 3.869,
       "pct_A": 90.2,
-      "num_courses": 6
+      "num_courses": 6,
+      "total_students": 428
     },
     {
       "id": "subj_GENDER",
@@ -1360,7 +1448,8 @@
       "type": "subject",
       "avg_gpa": 3.831,
       "pct_A": 89.4,
-      "num_courses": 29
+      "num_courses": 29,
+      "total_students": 6526
     },
     {
       "id": "subj_GLBL ST",
@@ -1368,7 +1457,8 @@
       "type": "subject",
       "avg_gpa": 3.788,
       "pct_A": 85.0,
-      "num_courses": 17
+      "num_courses": 17,
+      "total_students": 3953
     },
     {
       "id": "subj_LGBTQS",
@@ -1376,7 +1466,8 @@
       "type": "subject",
       "avg_gpa": 3.835,
       "pct_A": 90.5,
-      "num_courses": 5
+      "num_courses": 5,
+      "total_students": 1550
     },
     {
       "id": "subj_MED HIS",
@@ -1384,7 +1475,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_NEURBIO",
@@ -1392,7 +1484,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_SOC WLF",
@@ -1400,7 +1493,8 @@
       "type": "subject",
       "avg_gpa": 3.926,
       "pct_A": 95.0,
-      "num_courses": 43
+      "num_courses": 43,
+      "total_students": 7920
     },
     {
       "id": "major_Latin American Studies BA",
@@ -1418,7 +1512,8 @@
       "type": "subject",
       "avg_gpa": 3.745,
       "pct_A": 84.2,
-      "num_courses": 27
+      "num_courses": 27,
+      "total_students": 4890
     },
     {
       "id": "subj_MUSC",
@@ -1426,7 +1521,8 @@
       "type": "subject",
       "avg_gpa": 3.88,
       "pct_A": 92.0,
-      "num_courses": 62
+      "num_courses": 62,
+      "total_students": 12004
     },
     {
       "id": "major_European Studies BA",
@@ -1444,7 +1540,8 @@
       "type": "subject",
       "avg_gpa": 3.879,
       "pct_A": 91.6,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 322
     },
     {
       "id": "subj_CZCH",
@@ -1452,7 +1549,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_DUTCH",
@@ -1460,7 +1558,8 @@
       "type": "subject",
       "avg_gpa": 3.89,
       "pct_A": 95.0,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 141
     },
     {
       "id": "subj_HNGAR",
@@ -1468,7 +1567,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_ITALIAN",
@@ -1476,7 +1576,8 @@
       "type": "subject",
       "avg_gpa": 3.564,
       "pct_A": 70.9,
-      "num_courses": 11
+      "num_courses": 11,
+      "total_students": 2396
     },
     {
       "id": "subj_POLSH",
@@ -1484,7 +1585,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_ROMANIA",
@@ -1492,7 +1594,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_RUSSN",
@@ -1500,7 +1603,8 @@
       "type": "subject",
       "avg_gpa": 3.751,
       "pct_A": 85.9,
-      "num_courses": 17
+      "num_courses": 17,
+      "total_students": 1684
     },
     {
       "id": "subj_SCAND",
@@ -1508,7 +1612,8 @@
       "type": "subject",
       "avg_gpa": 3.764,
       "pct_A": 85.2,
-      "num_courses": 17
+      "num_courses": 17,
+      "total_students": 2551
     },
     {
       "id": "subj_SRB CRO",
@@ -1516,7 +1621,8 @@
       "type": "subject",
       "avg_gpa": 3.749,
       "pct_A": 77.0,
-      "num_courses": 1
+      "num_courses": 1,
+      "total_students": 61
     },
     {
       "id": "subj_UKRN",
@@ -1524,7 +1630,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "subj_YIDDSH",
@@ -1532,7 +1639,8 @@
       "type": "subject",
       "avg_gpa": 3.73,
       "pct_A": 86.6,
-      "num_courses": 1
+      "num_courses": 1,
+      "total_students": 134
     },
     {
       "id": "major_Asian Studies BA",
@@ -1550,7 +1658,8 @@
       "type": "subject",
       "avg_gpa": 3.744,
       "pct_A": 81.9,
-      "num_courses": 4
+      "num_courses": 4,
+      "total_students": 636
     },
     {
       "id": "subj_HIN-URD",
@@ -1558,7 +1667,8 @@
       "type": "subject",
       "avg_gpa": 3.917,
       "pct_A": 94.9,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 608
     },
     {
       "id": "subj_INDO",
@@ -1566,7 +1676,8 @@
       "type": "subject",
       "avg_gpa": 3.909,
       "pct_A": 92.4,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 131
     },
     {
       "id": "subj_S ASIAN",
@@ -1574,7 +1685,8 @@
       "type": "subject",
       "avg_gpa": 3.867,
       "pct_A": 93.0,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 284
     },
     {
       "id": "subj_SEASIAN",
@@ -1582,7 +1694,8 @@
       "type": "subject",
       "avg_gpa": 3.767,
       "pct_A": 83.7,
-      "num_courses": 6
+      "num_courses": 6,
+      "total_students": 688
     },
     {
       "id": "subj_THAI",
@@ -1590,7 +1703,8 @@
       "type": "subject",
       "avg_gpa": 3.972,
       "pct_A": 97.2,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 144
     },
     {
       "id": "subj_THEATER",
@@ -1598,7 +1712,8 @@
       "type": "subject",
       "avg_gpa": 3.833,
       "pct_A": 89.4,
-      "num_courses": 80
+      "num_courses": 80,
+      "total_students": 9046
     },
     {
       "id": "subj_VIETMSE",
@@ -1606,7 +1721,8 @@
       "type": "subject",
       "avg_gpa": 3.951,
       "pct_A": 97.5,
-      "num_courses": 11
+      "num_courses": 11,
+      "total_students": 1148
     },
     {
       "id": "major_International Development Studies BA",
@@ -1684,7 +1800,8 @@
       "type": "subject",
       "avg_gpa": 3.714,
       "pct_A": 79.3,
-      "num_courses": 1
+      "num_courses": 1,
+      "total_students": 58
     },
     {
       "id": "subj_RELIGN",
@@ -1692,7 +1809,8 @@
       "type": "subject",
       "avg_gpa": 3.6,
       "pct_A": 75.0,
-      "num_courses": 21
+      "num_courses": 21,
+      "total_students": 2593
     },
     {
       "id": "major_Art History BA",
@@ -1730,7 +1848,8 @@
       "type": "subject",
       "avg_gpa": 3.72,
       "pct_A": 80.8,
-      "num_courses": 2
+      "num_courses": 2,
+      "total_students": 286
     },
     {
       "id": "subj_SEMITIC",
@@ -1738,7 +1857,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "major_Anthropology BA",
@@ -1796,7 +1916,8 @@
       "type": "subject",
       "avg_gpa": 3.702,
       "pct_A": 77.4,
-      "num_courses": 18
+      "num_courses": 18,
+      "total_students": 4103
     },
     {
       "id": "major_Ancient Near East and Egyptology BA",
@@ -1814,7 +1935,8 @@
       "type": "subject",
       "avg_gpa": 0,
       "pct_A": 0,
-      "num_courses": 0
+      "num_courses": 0,
+      "total_students": 0
     },
     {
       "id": "major_Disability Studies BA",
@@ -1832,7 +1954,8 @@
       "type": "subject",
       "avg_gpa": 3.755,
       "pct_A": 85.0,
-      "num_courses": 9
+      "num_courses": 9,
+      "total_students": 1008
     },
     {
       "id": "subj_CESC",
@@ -1840,7 +1963,8 @@
       "type": "subject",
       "avg_gpa": 3.843,
       "pct_A": 91.7,
-      "num_courses": 10
+      "num_courses": 10,
+      "total_students": 2301
     },
     {
       "id": "subj_DESMA",
@@ -1848,7 +1972,8 @@
       "type": "subject",
       "avg_gpa": 3.85,
       "pct_A": 90.9,
-      "num_courses": 27
+      "num_courses": 27,
+      "total_students": 4243
     },
     {
       "id": "major_Russian Studies BA",
@@ -1876,7 +2001,8 @@
       "type": "subject",
       "avg_gpa": 3.773,
       "pct_A": 85.8,
-      "num_courses": 26
+      "num_courses": 26,
+      "total_students": 7554
     },
     {
       "id": "major_Asian Languages and Linguistics BA",
@@ -1934,7 +2060,8 @@
       "type": "subject",
       "avg_gpa": 3.596,
       "pct_A": 72.0,
-      "num_courses": 3
+      "num_courses": 3,
+      "total_students": 710
     },
     {
       "id": "major_Greek and Latin BA",
@@ -2002,7 +2129,8 @@
       "type": "subject",
       "avg_gpa": 3.684,
       "pct_A": 81.1,
-      "num_courses": 5
+      "num_courses": 5,
+      "total_students": 264
     },
     {
       "id": "major_History BA",
@@ -2070,7 +2198,8 @@
       "type": "subject",
       "avg_gpa": 3.878,
       "pct_A": 92.7,
-      "num_courses": 9
+      "num_courses": 9,
+      "total_students": 2781
     },
     {
       "id": "major_Japanese BA",
@@ -2228,7 +2357,8 @@
       "type": "subject",
       "avg_gpa": 3.768,
       "pct_A": 83.8,
-      "num_courses": 37
+      "num_courses": 37,
+      "total_students": 9086
     },
     {
       "id": "major_Global Jazz Studies BA",
@@ -2246,7 +2376,8 @@
       "type": "subject",
       "avg_gpa": 3.825,
       "pct_A": 87.8,
-      "num_courses": 22
+      "num_courses": 22,
+      "total_students": 1768
     },
     {
       "id": "major_Film and Television BA",
@@ -2284,7 +2415,8 @@
       "type": "subject",
       "avg_gpa": 3.785,
       "pct_A": 87.4,
-      "num_courses": 28
+      "num_courses": 28,
+      "total_students": 7198
     },
     {
       "id": "major_Asian American Studies BA",
@@ -2422,7 +2554,8 @@
       "type": "subject",
       "avg_gpa": 3.919,
       "pct_A": 94.5,
-      "num_courses": 27
+      "num_courses": 27,
+      "total_students": 3460
     },
     {
       "id": "major_Dance BA",
@@ -2440,7 +2573,8 @@
       "type": "subject",
       "avg_gpa": 3.907,
       "pct_A": 94.3,
-      "num_courses": 29
+      "num_courses": 29,
+      "total_students": 3386
     }
   ],
   "edges": [

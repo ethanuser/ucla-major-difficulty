@@ -109,6 +109,45 @@ function renderRankings() {
 
 renderRankings();
 
+// ─── Department Rankings ─────────────────────────────────────
+
+function renderDeptRankings() {
+    const depts = DATA.nodes
+        .filter(n => n.type === 'subject' && (n.num_courses || 0) > 0)
+        .map(n => ({
+            label: n.label,
+            avg_gpa: n.avg_gpa,
+            pct_A: n.pct_A,
+            num_courses: n.num_courses || 0,
+            total_students: n.total_students || 0,
+        }))
+        .sort((a, b) => a.avg_gpa - b.avg_gpa);
+
+    const tbody = document.getElementById('dept-rankings-body');
+    if (!tbody) return;
+    let html = '';
+    depts.forEach((d, idx) => {
+        const rank = idx + 1;
+        const badgeClass = rank <= 3 ? `rank-${rank}` : 'rank-default';
+        const gpaPct = ((d.avg_gpa / 4.0) * 100).toFixed(0);
+        const color = gpaColor(d.avg_gpa);
+        const catalogSlug = d.label.replace(/\s+/g, '').replace(/&/g, '');
+        const deptUrl = `https://catalog.registrar.ucla.edu/browse/Subject%20Areas/${catalogSlug}?siteYear=2024`;
+        html += `
+        <tr>
+            <td><div class="rank-badge ${badgeClass}">${rank}</div></td>
+            <td class="major-name"><a href="${deptUrl}" target="_blank" rel="noopener noreferrer" class="major-link">${d.label}</a></td>
+            <td><div class="gpa-bar-container"><div class="gpa-bar"><div class="gpa-bar-fill" style="width:${gpaPct}%; background:${color}"></div></div><div class="gpa-value" style="color:${color}">${d.avg_gpa.toFixed(3)}</div></div></td>
+            <td class="pct-a" style="color:${color}">${d.pct_A.toFixed(1)}%</td>
+            <td class="stat-small">${d.num_courses}</td>
+            <td class="stat-small">${d.total_students.toLocaleString()}</td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+
+renderDeptRankings();
+
 // ─── Course Deep Dive ────────────────────────────────────────
 
 let courseSortDir = 'asc';
