@@ -8580,6 +8580,14 @@
       "ud_req_students": 27024.0,
       "num_upper_exact": 12,
       "num_upper_req": 12,
+      "ud_elec_gpa": 3.463,
+      "ud_elec_pctA": 59.4,
+      "ud_elec_students": 91072.0,
+      "num_upper_elec": 298,
+      "ld_all_gpa": 3.084,
+      "ld_all_pctA": 44.6,
+      "ld_all_students": 28388,
+      "num_lower_exact": 7,
       "ability_proxy": 3.955
     },
     {
@@ -8599,6 +8607,14 @@
       "ud_req_students": 21466.0,
       "num_upper_exact": 7,
       "num_upper_req": 7,
+      "ud_elec_gpa": 3.457,
+      "ud_elec_pctA": 59.3,
+      "ud_elec_students": 99719.0,
+      "num_upper_elec": 317,
+      "ld_all_gpa": 3.128,
+      "ld_all_pctA": 46.9,
+      "ld_all_students": 33324,
+      "num_lower_exact": 9,
       "ability_proxy": 3.945
     },
     {
@@ -8618,6 +8634,14 @@
       "ud_req_students": 27637.0,
       "num_upper_exact": 19,
       "num_upper_req": 19,
+      "ud_elec_gpa": 3.485,
+      "ud_elec_pctA": 62.5,
+      "ud_elec_students": 65253.0,
+      "num_upper_elec": 233,
+      "ld_all_gpa": 3.242,
+      "ld_all_pctA": 53.5,
+      "ld_all_students": 52109,
+      "num_lower_exact": 18,
       "ability_proxy": 3.955
     },
     {
@@ -8637,6 +8661,14 @@
       "ud_req_students": 12629.0,
       "num_upper_exact": 18,
       "num_upper_req": 18,
+      "ud_elec_gpa": 3.377,
+      "ud_elec_pctA": 58.9,
+      "ud_elec_students": 41648.0,
+      "num_upper_elec": 144,
+      "ld_all_gpa": 3.243,
+      "ld_all_pctA": 54.1,
+      "ld_all_students": 29963,
+      "num_lower_exact": 10,
       "ability_proxy": 3.765
     },
     {
@@ -8656,6 +8688,14 @@
       "ud_req_students": 10478.0,
       "num_upper_exact": 12,
       "num_upper_req": 12,
+      "ud_elec_gpa": 3.431,
+      "ud_elec_pctA": 57.5,
+      "ud_elec_students": 124363.0,
+      "num_upper_elec": 347,
+      "ld_all_gpa": 3.24,
+      "ld_all_pctA": 53.4,
+      "ld_all_students": 55574,
+      "num_lower_exact": 21,
       "ability_proxy": 3.94
     },
     {
@@ -8675,6 +8715,14 @@
       "ud_req_students": 12964.0,
       "num_upper_exact": 16,
       "num_upper_req": 16,
+      "ud_elec_gpa": 3.418,
+      "ud_elec_pctA": 60.1,
+      "ud_elec_students": 65313.0,
+      "num_upper_elec": 221,
+      "ld_all_gpa": 3.321,
+      "ld_all_pctA": 56.8,
+      "ld_all_students": 69260,
+      "num_lower_exact": 24,
       "ability_proxy": 4.0
     },
     {
@@ -8694,6 +8742,14 @@
       "ud_req_students": 13739.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.472,
+      "ud_elec_pctA": 65.0,
+      "ud_elec_students": 54987.0,
+      "num_upper_elec": 196,
+      "ld_all_gpa": 3.336,
+      "ld_all_pctA": 57.6,
+      "ld_all_students": 76587,
+      "num_lower_exact": 22,
       "ability_proxy": 3.94
     },
     {
@@ -8713,6 +8769,14 @@
       "ud_req_students": 22326.0,
       "num_upper_exact": 21,
       "num_upper_req": 21,
+      "ud_elec_gpa": 3.464,
+      "ud_elec_pctA": 64.5,
+      "ud_elec_students": 46400.0,
+      "num_upper_elec": 197,
+      "ld_all_gpa": 3.323,
+      "ld_all_pctA": 57.1,
+      "ld_all_students": 57704,
+      "num_lower_exact": 19,
       "ability_proxy": 3.94
     },
     {
@@ -8732,6 +8796,14 @@
       "ud_req_students": 19601.0,
       "num_upper_exact": 15,
       "num_upper_req": 15,
+      "ud_elec_gpa": 3.443,
+      "ud_elec_pctA": 63.6,
+      "ud_elec_students": 49125.0,
+      "num_upper_elec": 203,
+      "ld_all_gpa": 3.317,
+      "ld_all_pctA": 56.8,
+      "ld_all_students": 55728,
+      "num_lower_exact": 16,
       "ability_proxy": 3.935
     },
     {
@@ -8751,6 +8823,14 @@
       "ud_req_students": 11617.0,
       "num_upper_exact": 11,
       "num_upper_req": 11,
+      "ud_elec_gpa": 3.394,
+      "ud_elec_pctA": 59.3,
+      "ud_elec_students": 64913.0,
+      "num_upper_elec": 210,
+      "ld_all_gpa": 3.342,
+      "ld_all_pctA": 57.9,
+      "ld_all_students": 65104,
+      "num_lower_exact": 32,
       "ability_proxy": 3.9
     },
     {
@@ -8770,6 +8850,14 @@
       "ud_req_students": 5681.0,
       "num_upper_exact": 21,
       "num_upper_req": 21,
+      "ud_elec_gpa": 3.386,
+      "ud_elec_pctA": 59.0,
+      "ud_elec_students": 76198.0,
+      "num_upper_elec": 238,
+      "ld_all_gpa": 3.34,
+      "ld_all_pctA": 57.8,
+      "ld_all_students": 64308,
+      "num_lower_exact": 30,
       "ability_proxy": 3.6
     },
     {
@@ -8789,6 +8877,14 @@
       "ud_req_students": 4533.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.362,
+      "ud_elec_pctA": 57.6,
+      "ud_elec_students": 54801.0,
+      "num_upper_elec": 186,
+      "ld_all_gpa": 3.338,
+      "ld_all_pctA": 58.7,
+      "ld_all_students": 22810,
+      "num_lower_exact": 15,
       "ability_proxy": 3.75
     },
     {
@@ -8808,6 +8904,14 @@
       "ud_req_students": 7176.0,
       "num_upper_exact": 21,
       "num_upper_req": 21,
+      "ud_elec_gpa": 3.386,
+      "ud_elec_pctA": 59.0,
+      "ud_elec_students": 69354.0,
+      "num_upper_elec": 200,
+      "ld_all_gpa": 3.348,
+      "ld_all_pctA": 58.9,
+      "ld_all_students": 62171,
+      "num_lower_exact": 24,
       "ability_proxy": 3.92
     },
     {
@@ -8826,7 +8930,15 @@
       "ud_req_pctA": 48.9,
       "ud_req_students": 3620.0,
       "num_upper_exact": 8,
-      "num_upper_req": 8
+      "num_upper_req": 8,
+      "ud_elec_gpa": 3.383,
+      "ud_elec_pctA": 58.8,
+      "ud_elec_students": 72910.0,
+      "num_upper_elec": 213,
+      "ld_all_gpa": 3.348,
+      "ld_all_pctA": 58.9,
+      "ld_all_students": 61994,
+      "num_lower_exact": 21
     },
     {
       "rank": 15,
@@ -8845,6 +8957,14 @@
       "ud_req_students": 4587.0,
       "num_upper_exact": 19,
       "num_upper_req": 19,
+      "ud_elec_gpa": 3.384,
+      "ud_elec_pctA": 58.8,
+      "ud_elec_students": 73774.0,
+      "num_upper_elec": 226,
+      "ld_all_gpa": 3.351,
+      "ld_all_pctA": 59.1,
+      "ld_all_students": 62298,
+      "num_lower_exact": 25,
       "ability_proxy": 3.85
     },
     {
@@ -8864,6 +8984,14 @@
       "ud_req_students": 15813.0,
       "num_upper_exact": 11,
       "num_upper_req": 11,
+      "ud_elec_gpa": 3.483,
+      "ud_elec_pctA": 64.4,
+      "ud_elec_students": 86674.0,
+      "num_upper_elec": 351,
+      "ld_all_gpa": 3.345,
+      "ld_all_pctA": 58.7,
+      "ld_all_students": 67698,
+      "num_lower_exact": 21,
       "ability_proxy": 4.0
     },
     {
@@ -8883,6 +9011,14 @@
       "ud_req_students": 17087.0,
       "num_upper_exact": 15,
       "num_upper_req": 15,
+      "ud_elec_gpa": 3.401,
+      "ud_elec_pctA": 62.9,
+      "ud_elec_students": 23967.0,
+      "num_upper_elec": 120,
+      "ld_all_gpa": 3.321,
+      "ld_all_pctA": 58.9,
+      "ld_all_students": 27111,
+      "num_lower_exact": 6,
       "ability_proxy": 3.97
     },
     {
@@ -8902,6 +9038,14 @@
       "ud_req_students": 991.0,
       "num_upper_exact": 6,
       "num_upper_req": 6,
+      "ud_elec_gpa": 3.419,
+      "ud_elec_pctA": 61.1,
+      "ud_elec_students": 86453.0,
+      "num_upper_elec": 237,
+      "ld_all_gpa": 3.353,
+      "ld_all_pctA": 58.3,
+      "ld_all_students": 98273,
+      "num_lower_exact": 30,
       "ability_proxy": 3.61
     },
     {
@@ -8921,6 +9065,14 @@
       "ud_req_students": 18699.0,
       "num_upper_exact": 18,
       "num_upper_req": 18,
+      "ud_elec_gpa": 3.435,
+      "ud_elec_pctA": 60.7,
+      "ud_elec_students": 116087.0,
+      "num_upper_elec": 364,
+      "ld_all_gpa": 3.348,
+      "ld_all_pctA": 57.8,
+      "ld_all_students": 90332,
+      "num_lower_exact": 24,
       "ability_proxy": 3.945
     },
     {
@@ -8940,6 +9092,14 @@
       "ud_req_students": 19581.0,
       "num_upper_exact": 14,
       "num_upper_req": 14,
+      "ud_elec_gpa": 3.499,
+      "ud_elec_pctA": 65.2,
+      "ud_elec_students": 82906.0,
+      "num_upper_elec": 348,
+      "ld_all_gpa": 3.358,
+      "ld_all_pctA": 59.4,
+      "ld_all_students": 70903,
+      "num_lower_exact": 23,
       "ability_proxy": 3.97
     },
     {
@@ -8959,6 +9119,14 @@
       "ud_req_students": 15618.0,
       "num_upper_exact": 37,
       "num_upper_req": 37,
+      "ud_elec_gpa": 3.468,
+      "ud_elec_pctA": 63.3,
+      "ud_elec_students": 133195.0,
+      "num_upper_elec": 484,
+      "ld_all_gpa": 3.343,
+      "ld_all_pctA": 57.9,
+      "ld_all_students": 61193,
+      "num_lower_exact": 23,
       "ability_proxy": 3.76
     },
     {
@@ -8978,6 +9146,14 @@
       "ud_req_students": 8075.0,
       "num_upper_exact": 13,
       "num_upper_req": 13,
+      "ud_elec_gpa": 3.418,
+      "ud_elec_pctA": 60.7,
+      "ud_elec_students": 90214.0,
+      "num_upper_elec": 288,
+      "ld_all_gpa": 3.352,
+      "ld_all_pctA": 59.0,
+      "ld_all_students": 66583,
+      "num_lower_exact": 21,
       "ability_proxy": 3.965
     },
     {
@@ -8997,6 +9173,14 @@
       "ud_req_students": 4070.0,
       "num_upper_exact": 15,
       "num_upper_req": 15,
+      "ud_elec_gpa": 3.361,
+      "ud_elec_pctA": 57.7,
+      "ud_elec_students": 53142.0,
+      "num_upper_elec": 160,
+      "ld_all_gpa": 3.359,
+      "ld_all_pctA": 60.9,
+      "ld_all_students": 20459,
+      "num_lower_exact": 12,
       "ability_proxy": 3.68
     },
     {
@@ -9015,7 +9199,15 @@
       "ud_req_pctA": 69.6,
       "ud_req_students": 345.0,
       "num_upper_exact": 5,
-      "num_upper_req": 5
+      "num_upper_req": 5,
+      "ud_elec_gpa": 3.448,
+      "ud_elec_pctA": 62.8,
+      "ud_elec_students": 103844.0,
+      "num_upper_elec": 287,
+      "ld_all_gpa": 3.362,
+      "ld_all_pctA": 58.8,
+      "ld_all_students": 104582,
+      "num_lower_exact": 32
     },
     {
       "rank": 25,
@@ -9034,6 +9226,14 @@
       "ud_req_students": 25980.0,
       "num_upper_exact": 28,
       "num_upper_req": 28,
+      "ud_elec_gpa": 3.471,
+      "ud_elec_pctA": 67.7,
+      "ud_elec_students": 15074.0,
+      "num_upper_elec": 107,
+      "ld_all_gpa": 3.362,
+      "ld_all_pctA": 60.9,
+      "ld_all_students": 43071,
+      "num_lower_exact": 14,
       "ability_proxy": 3.86
     },
     {
@@ -9053,6 +9253,14 @@
       "ud_req_students": 466.0,
       "num_upper_exact": 7,
       "num_upper_req": 7,
+      "ud_elec_gpa": 3.406,
+      "ud_elec_pctA": 60.8,
+      "ud_elec_students": 68505.0,
+      "num_upper_elec": 279,
+      "ld_all_gpa": 3.375,
+      "ld_all_pctA": 59.5,
+      "ld_all_students": 55952,
+      "num_lower_exact": 21,
       "ability_proxy": 3.64
     },
     {
@@ -9072,6 +9280,14 @@
       "ud_req_students": 4803.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.409,
+      "ud_elec_pctA": 60.6,
+      "ud_elec_students": 102754.0,
+      "num_upper_elec": 311,
+      "ld_all_gpa": 3.358,
+      "ld_all_pctA": 60.3,
+      "ld_all_students": 21219,
+      "num_lower_exact": 12,
       "ability_proxy": 3.8
     },
     {
@@ -9091,6 +9307,14 @@
       "ud_req_students": 4466.0,
       "num_upper_exact": 20,
       "num_upper_req": 20,
+      "ud_elec_gpa": 3.396,
+      "ud_elec_pctA": 59.7,
+      "ud_elec_students": 60439.0,
+      "num_upper_elec": 231,
+      "ld_all_gpa": 3.363,
+      "ld_all_pctA": 60.8,
+      "ld_all_students": 21446,
+      "num_lower_exact": 12,
       "ability_proxy": 3.285
     },
     {
@@ -9110,6 +9334,14 @@
       "ud_req_students": 17009.0,
       "num_upper_exact": 15,
       "num_upper_req": 15,
+      "ud_elec_gpa": 3.508,
+      "ud_elec_pctA": 65.9,
+      "ud_elec_students": 93446.0,
+      "num_upper_elec": 371,
+      "ld_all_gpa": 3.365,
+      "ld_all_pctA": 59.9,
+      "ld_all_students": 70983,
+      "num_lower_exact": 24,
       "ability_proxy": 3.965
     },
     {
@@ -9129,6 +9361,14 @@
       "ud_req_students": 15050.0,
       "num_upper_exact": 30,
       "num_upper_req": 30,
+      "ud_elec_gpa": 3.433,
+      "ud_elec_pctA": 61.4,
+      "ud_elec_students": 103972.0,
+      "num_upper_elec": 367,
+      "ld_all_gpa": 3.368,
+      "ld_all_pctA": 59.6,
+      "ld_all_students": 60835,
+      "num_lower_exact": 28,
       "ability_proxy": 3.935
     },
     {
@@ -9148,6 +9388,14 @@
       "ud_req_students": 16805.0,
       "num_upper_exact": 32,
       "num_upper_req": 32,
+      "ud_elec_gpa": 3.431,
+      "ud_elec_pctA": 61.3,
+      "ud_elec_students": 102217.0,
+      "num_upper_elec": 365,
+      "ld_all_gpa": 3.368,
+      "ld_all_pctA": 59.6,
+      "ld_all_students": 60835,
+      "num_lower_exact": 28,
       "ability_proxy": 3.96
     },
     {
@@ -9167,6 +9415,14 @@
       "ud_req_students": 13611.0,
       "num_upper_exact": 23,
       "num_upper_req": 23,
+      "ud_elec_gpa": 3.42,
+      "ud_elec_pctA": 61.3,
+      "ud_elec_students": 75844.0,
+      "num_upper_elec": 338,
+      "ld_all_gpa": 3.366,
+      "ld_all_pctA": 59.2,
+      "ld_all_students": 61926,
+      "num_lower_exact": 29,
       "ability_proxy": 3.885
     },
     {
@@ -9186,6 +9442,14 @@
       "ud_req_students": 15647.0,
       "num_upper_exact": 8,
       "num_upper_req": 8,
+      "ud_elec_gpa": 3.449,
+      "ud_elec_pctA": 62.9,
+      "ud_elec_students": 77460.0,
+      "num_upper_elec": 238,
+      "ld_all_gpa": 3.384,
+      "ld_all_pctA": 58.9,
+      "ld_all_students": 129720,
+      "num_lower_exact": 38,
       "ability_proxy": 3.895
     },
     {
@@ -9205,6 +9469,14 @@
       "ud_req_students": 800.0,
       "num_upper_exact": 13,
       "num_upper_req": 13,
+      "ud_elec_gpa": 3.384,
+      "ud_elec_pctA": 59.6,
+      "ud_elec_students": 59849.0,
+      "num_upper_elec": 222,
+      "ld_all_gpa": 3.399,
+      "ld_all_pctA": 61.2,
+      "ld_all_students": 82969,
+      "num_lower_exact": 28,
       "ability_proxy": 3.745
     },
     {
@@ -9224,6 +9496,14 @@
       "ud_req_students": 4230.0,
       "num_upper_exact": 30,
       "num_upper_req": 30,
+      "ud_elec_gpa": 3.417,
+      "ud_elec_pctA": 61.5,
+      "ud_elec_students": 66140.0,
+      "num_upper_elec": 232,
+      "ld_all_gpa": 3.39,
+      "ld_all_pctA": 62.7,
+      "ld_all_students": 22626,
+      "num_lower_exact": 14,
       "ability_proxy": 3.72
     },
     {
@@ -9242,7 +9522,15 @@
       "ud_req_pctA": 56.9,
       "ud_req_students": 12084.0,
       "num_upper_exact": 16,
-      "num_upper_req": 16
+      "num_upper_req": 16,
+      "ud_elec_gpa": 3.543,
+      "ud_elec_pctA": 69.2,
+      "ud_elec_students": 99045.0,
+      "num_upper_elec": 394,
+      "ld_all_gpa": 3.387,
+      "ld_all_pctA": 59.9,
+      "ld_all_students": 88980,
+      "num_lower_exact": 33
     },
     {
       "rank": 37,
@@ -9261,6 +9549,14 @@
       "ud_req_students": 7054.0,
       "num_upper_exact": 23,
       "num_upper_req": 23,
+      "ud_elec_gpa": 3.457,
+      "ud_elec_pctA": 62.9,
+      "ud_elec_students": 132512.0,
+      "num_upper_elec": 453,
+      "ld_all_gpa": 3.396,
+      "ld_all_pctA": 60.2,
+      "ld_all_students": 93496,
+      "num_lower_exact": 36,
       "ability_proxy": 3.98
     },
     {
@@ -9280,6 +9576,14 @@
       "ud_req_students": 12838.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.477,
+      "ud_elec_pctA": 65.7,
+      "ud_elec_students": 73435.0,
+      "num_upper_elec": 251,
+      "ld_all_gpa": 3.398,
+      "ld_all_pctA": 60.9,
+      "ld_all_students": 72686,
+      "num_lower_exact": 27,
       "ability_proxy": 3.885
     },
     {
@@ -9299,6 +9603,14 @@
       "ud_req_students": 1986.0,
       "num_upper_exact": 14,
       "num_upper_req": 14,
+      "ud_elec_gpa": 3.39,
+      "ud_elec_pctA": 60.0,
+      "ud_elec_students": 58663.0,
+      "num_upper_elec": 221,
+      "ld_all_gpa": 3.412,
+      "ld_all_pctA": 62.2,
+      "ld_all_students": 56652,
+      "num_lower_exact": 20,
       "ability_proxy": 3.55
     },
     {
@@ -9318,6 +9630,14 @@
       "ud_req_students": 10892.0,
       "num_upper_exact": 33,
       "num_upper_req": 33,
+      "ud_elec_gpa": 3.458,
+      "ud_elec_pctA": 63.2,
+      "ud_elec_students": 124385.0,
+      "num_upper_elec": 428,
+      "ld_all_gpa": 3.404,
+      "ld_all_pctA": 61.2,
+      "ld_all_students": 82313,
+      "num_lower_exact": 31,
       "ability_proxy": 3.845
     },
     {
@@ -9337,6 +9657,14 @@
       "ud_req_students": 2340.0,
       "num_upper_exact": 11,
       "num_upper_req": 11,
+      "ud_elec_gpa": 3.329,
+      "ud_elec_pctA": 57.6,
+      "ud_elec_students": 32145.0,
+      "num_upper_elec": 148,
+      "ld_all_gpa": 3.426,
+      "ld_all_pctA": 63.8,
+      "ld_all_students": 51262,
+      "num_lower_exact": 18,
       "ability_proxy": 3.82
     },
     {
@@ -9356,6 +9684,14 @@
       "ud_req_students": 12612.0,
       "num_upper_exact": 5,
       "num_upper_req": 5,
+      "ud_elec_gpa": 3.494,
+      "ud_elec_pctA": 66.5,
+      "ud_elec_students": 76122.0,
+      "num_upper_elec": 253,
+      "ld_all_gpa": 3.409,
+      "ld_all_pctA": 60.6,
+      "ld_all_students": 164325,
+      "num_lower_exact": 35,
       "ability_proxy": 3.865
     },
     {
@@ -9375,6 +9711,14 @@
       "ud_req_students": 5996.0,
       "num_upper_exact": 25,
       "num_upper_req": 25,
+      "ud_elec_gpa": 3.535,
+      "ud_elec_pctA": 68.3,
+      "ud_elec_students": 157640.0,
+      "num_upper_elec": 433,
+      "ld_all_gpa": 3.387,
+      "ld_all_pctA": 62.0,
+      "ld_all_students": 27459,
+      "num_lower_exact": 14,
       "ability_proxy": 3.735
     },
     {
@@ -9394,6 +9738,14 @@
       "ud_req_students": 51653.0,
       "num_upper_exact": 41,
       "num_upper_req": 41,
+      "ud_elec_gpa": 3.573,
+      "ud_elec_pctA": 70.2,
+      "ud_elec_students": 195661.0,
+      "num_upper_elec": 608,
+      "ld_all_gpa": 3.394,
+      "ld_all_pctA": 59.8,
+      "ld_all_students": 156129,
+      "num_lower_exact": 54,
       "ability_proxy": 3.905
     },
     {
@@ -9413,6 +9765,14 @@
       "ud_req_students": 20048.0,
       "num_upper_exact": 15,
       "num_upper_req": 15,
+      "ud_elec_gpa": 3.516,
+      "ud_elec_pctA": 67.1,
+      "ud_elec_students": 137278.0,
+      "num_upper_elec": 519,
+      "ld_all_gpa": 3.404,
+      "ld_all_pctA": 60.3,
+      "ld_all_students": 103199,
+      "num_lower_exact": 34,
       "ability_proxy": 3.985
     },
     {
@@ -9432,6 +9792,14 @@
       "ud_req_students": 17744.0,
       "num_upper_exact": 28,
       "num_upper_req": 28,
+      "ud_elec_gpa": 3.614,
+      "ud_elec_pctA": 73.4,
+      "ud_elec_students": 48209.0,
+      "num_upper_elec": 137,
+      "ld_all_gpa": 3.442,
+      "ld_all_pctA": 63.7,
+      "ld_all_students": 31765,
+      "num_lower_exact": 18,
       "ability_proxy": 3.86
     },
     {
@@ -9451,6 +9819,14 @@
       "ud_req_students": 9569.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.508,
+      "ud_elec_pctA": 66.7,
+      "ud_elec_students": 131487.0,
+      "num_upper_elec": 346,
+      "ld_all_gpa": 3.362,
+      "ld_all_pctA": 60.5,
+      "ld_all_students": 27920,
+      "num_lower_exact": 10,
       "ability_proxy": 3.78
     },
     {
@@ -9470,6 +9846,14 @@
       "ud_req_students": 2682.0,
       "num_upper_exact": 12,
       "num_upper_req": 12,
+      "ud_elec_gpa": 3.48,
+      "ud_elec_pctA": 65.9,
+      "ud_elec_students": 88481.0,
+      "num_upper_elec": 273,
+      "ld_all_gpa": 3.417,
+      "ld_all_pctA": 61.2,
+      "ld_all_students": 137197,
+      "num_lower_exact": 31,
       "ability_proxy": 3.73
     },
     {
@@ -9489,6 +9873,14 @@
       "ud_req_students": 40743.0,
       "num_upper_exact": 44,
       "num_upper_req": 44,
+      "ud_elec_gpa": 3.524,
+      "ud_elec_pctA": 67.5,
+      "ud_elec_students": 119908.0,
+      "num_upper_elec": 456,
+      "ld_all_gpa": 3.407,
+      "ld_all_pctA": 60.4,
+      "ld_all_students": 166822,
+      "num_lower_exact": 49,
       "ability_proxy": 3.905
     },
     {
@@ -9508,6 +9900,14 @@
       "ud_req_students": 32402.0,
       "num_upper_exact": 30,
       "num_upper_req": 30,
+      "ud_elec_gpa": 3.512,
+      "ud_elec_pctA": 66.4,
+      "ud_elec_students": 119737.0,
+      "num_upper_elec": 411,
+      "ld_all_gpa": 3.406,
+      "ld_all_pctA": 60.6,
+      "ld_all_students": 165429,
+      "num_lower_exact": 40,
       "ability_proxy": 3.935
     },
     {
@@ -9527,6 +9927,14 @@
       "ud_req_students": 21552.0,
       "num_upper_exact": 46,
       "num_upper_req": 46,
+      "ud_elec_gpa": 3.543,
+      "ud_elec_pctA": 68.7,
+      "ud_elec_students": 204265.0,
+      "num_upper_elec": 528,
+      "ld_all_gpa": 3.406,
+      "ld_all_pctA": 60.6,
+      "ld_all_students": 165281,
+      "num_lower_exact": 42,
       "ability_proxy": 3.765
     },
     {
@@ -9546,6 +9954,14 @@
       "ud_req_students": 5470.0,
       "num_upper_exact": 18,
       "num_upper_req": 18,
+      "ud_elec_gpa": 3.552,
+      "ud_elec_pctA": 69.7,
+      "ud_elec_students": 150685.0,
+      "num_upper_elec": 360,
+      "ld_all_gpa": 3.39,
+      "ld_all_pctA": 59.4,
+      "ld_all_students": 64616,
+      "num_lower_exact": 18,
       "ability_proxy": 3.815
     },
     {
@@ -9565,6 +9981,14 @@
       "ud_req_students": 28773.0,
       "num_upper_exact": 40,
       "num_upper_req": 40,
+      "ud_elec_gpa": 3.556,
+      "ud_elec_pctA": 69.7,
+      "ud_elec_students": 135929.0,
+      "num_upper_elec": 367,
+      "ld_all_gpa": 3.409,
+      "ld_all_pctA": 60.7,
+      "ld_all_students": 183846,
+      "num_lower_exact": 58,
       "ability_proxy": 3.875
     },
     {
@@ -9584,6 +10008,14 @@
       "ud_req_students": 31775.0,
       "num_upper_exact": 52,
       "num_upper_req": 52,
+      "ud_elec_gpa": 3.555,
+      "ud_elec_pctA": 69.4,
+      "ud_elec_students": 226154.0,
+      "num_upper_elec": 664,
+      "ld_all_gpa": 3.409,
+      "ld_all_pctA": 60.9,
+      "ld_all_students": 163192,
+      "num_lower_exact": 47,
       "ability_proxy": 3.795
     },
     {
@@ -9603,6 +10035,14 @@
       "ud_req_students": 25823.0,
       "num_upper_exact": 64,
       "num_upper_req": 64,
+      "ud_elec_gpa": 3.529,
+      "ud_elec_pctA": 66.8,
+      "ud_elec_students": 237865.0,
+      "num_upper_elec": 643,
+      "ld_all_gpa": 3.399,
+      "ld_all_pctA": 61.9,
+      "ld_all_students": 65555,
+      "num_lower_exact": 28,
       "ability_proxy": 3.96
     },
     {
@@ -9622,6 +10062,14 @@
       "ud_req_students": 34042.0,
       "num_upper_exact": 29,
       "num_upper_req": 29,
+      "ud_elec_gpa": 3.461,
+      "ud_elec_pctA": 63.6,
+      "ud_elec_students": 88687.0,
+      "num_upper_elec": 232,
+      "ld_all_gpa": 3.319,
+      "ld_all_pctA": 57.5,
+      "ld_all_students": 29057,
+      "num_lower_exact": 12,
       "ability_proxy": 3.74
     },
     {
@@ -9641,6 +10089,14 @@
       "ud_req_students": 540.0,
       "num_upper_exact": 5,
       "num_upper_req": 5,
+      "ud_elec_gpa": 3.527,
+      "ud_elec_pctA": 68.3,
+      "ud_elec_students": 111420.0,
+      "num_upper_elec": 401,
+      "ld_all_gpa": 3.432,
+      "ld_all_pctA": 61.7,
+      "ld_all_students": 147611,
+      "num_lower_exact": 32,
       "ability_proxy": 3.965
     },
     {
@@ -9660,6 +10116,14 @@
       "ud_req_students": 71574.0,
       "num_upper_exact": 54,
       "num_upper_req": 54,
+      "ud_elec_gpa": 3.566,
+      "ud_elec_pctA": 70.4,
+      "ud_elec_students": 121530.0,
+      "num_upper_elec": 403,
+      "ld_all_gpa": 3.401,
+      "ld_all_pctA": 60.2,
+      "ld_all_students": 172001,
+      "num_lower_exact": 45,
       "ability_proxy": 3.905
     },
     {
@@ -9679,6 +10143,14 @@
       "ud_req_students": 45456.0,
       "num_upper_exact": 104,
       "num_upper_req": 104,
+      "ud_elec_gpa": 3.596,
+      "ud_elec_pctA": 72.7,
+      "ud_elec_students": 146084.0,
+      "num_upper_elec": 715,
+      "ld_all_gpa": 3.425,
+      "ld_all_pctA": 61.7,
+      "ld_all_students": 166562,
+      "num_lower_exact": 72,
       "ability_proxy": 3.755
     },
     {
@@ -9698,6 +10170,14 @@
       "ud_req_students": 66942.0,
       "num_upper_exact": 112,
       "num_upper_req": 112,
+      "ud_elec_gpa": 3.568,
+      "ud_elec_pctA": 70.2,
+      "ud_elec_students": 182060.0,
+      "num_upper_elec": 561,
+      "ld_all_gpa": 3.409,
+      "ld_all_pctA": 60.7,
+      "ld_all_students": 173506,
+      "num_lower_exact": 68,
       "ability_proxy": 3.91
     },
     {
@@ -9717,6 +10197,14 @@
       "ud_req_students": 51093.0,
       "num_upper_exact": 47,
       "num_upper_req": 47,
+      "ud_elec_gpa": 3.524,
+      "ud_elec_pctA": 67.8,
+      "ud_elec_students": 176025.0,
+      "num_upper_elec": 587,
+      "ld_all_gpa": 3.41,
+      "ld_all_pctA": 61.4,
+      "ld_all_students": 89008,
+      "num_lower_exact": 45,
       "ability_proxy": 3.885
     },
     {
@@ -9736,6 +10224,14 @@
       "ud_req_students": 14169.0,
       "num_upper_exact": 58,
       "num_upper_req": 58,
+      "ud_elec_gpa": 3.534,
+      "ud_elec_pctA": 65.9,
+      "ud_elec_students": 211698.0,
+      "num_upper_elec": 757,
+      "ld_all_gpa": 3.447,
+      "ld_all_pctA": 65.0,
+      "ld_all_students": 25314,
+      "num_lower_exact": 33,
       "ability_proxy": 3.5
     },
     {
@@ -9755,6 +10251,14 @@
       "ud_req_students": 44175.0,
       "num_upper_exact": 28,
       "num_upper_req": 28,
+      "ud_elec_gpa": 3.594,
+      "ud_elec_pctA": 71.5,
+      "ud_elec_students": 93759.0,
+      "num_upper_elec": 284,
+      "ld_all_gpa": 3.418,
+      "ld_all_pctA": 61.0,
+      "ld_all_students": 70746,
+      "num_lower_exact": 26,
       "ability_proxy": 3.895
     },
     {
@@ -9774,6 +10278,14 @@
       "ud_req_students": 540.0,
       "num_upper_exact": 5,
       "num_upper_req": 5,
+      "ud_elec_gpa": 3.612,
+      "ud_elec_pctA": 73.0,
+      "ud_elec_students": 79668.0,
+      "num_upper_elec": 272,
+      "ld_all_gpa": 3.466,
+      "ld_all_pctA": 64.0,
+      "ld_all_students": 42323,
+      "num_lower_exact": 10,
       "ability_proxy": 3.935
     },
     {
@@ -9793,6 +10305,14 @@
       "ud_req_students": 58517.0,
       "num_upper_exact": 91,
       "num_upper_req": 91,
+      "ud_elec_gpa": 3.588,
+      "ud_elec_pctA": 71.9,
+      "ud_elec_students": 317328.0,
+      "num_upper_elec": 1227,
+      "ld_all_gpa": 3.454,
+      "ld_all_pctA": 63.9,
+      "ld_all_students": 208482,
+      "num_lower_exact": 103,
       "ability_proxy": 3.95
     },
     {
@@ -9811,7 +10331,15 @@
       "ud_req_pctA": 64.7,
       "ud_req_students": 12739.0,
       "num_upper_exact": 45,
-      "num_upper_req": 45
+      "num_upper_req": 45,
+      "ud_elec_gpa": 3.564,
+      "ud_elec_pctA": 68.4,
+      "ud_elec_students": 240898.0,
+      "num_upper_elec": 905,
+      "ld_all_gpa": 3.485,
+      "ld_all_pctA": 67.2,
+      "ld_all_students": 28607,
+      "num_lower_exact": 40
     },
     {
       "rank": 67,
@@ -9830,6 +10358,14 @@
       "ud_req_students": 15438.0,
       "num_upper_exact": 65,
       "num_upper_req": 65,
+      "ud_elec_gpa": 3.541,
+      "ud_elec_pctA": 66.6,
+      "ud_elec_students": 224394.0,
+      "num_upper_elec": 859,
+      "ld_all_gpa": 3.484,
+      "ld_all_pctA": 67.1,
+      "ld_all_students": 29871,
+      "num_lower_exact": 52,
       "ability_proxy": 3.755
     },
     {
@@ -9849,6 +10385,14 @@
       "ud_req_students": 14395.0,
       "num_upper_exact": 68,
       "num_upper_req": 68,
+      "ud_elec_gpa": 3.549,
+      "ud_elec_pctA": 67.1,
+      "ud_elec_students": 224278.0,
+      "num_upper_elec": 865,
+      "ld_all_gpa": 3.507,
+      "ld_all_pctA": 68.5,
+      "ld_all_students": 30971,
+      "num_lower_exact": 55,
       "ability_proxy": 3.745
     },
     {
@@ -9868,6 +10412,14 @@
       "ud_req_students": 36034.0,
       "num_upper_exact": 94,
       "num_upper_req": 94,
+      "ud_elec_gpa": 3.641,
+      "ud_elec_pctA": 75.1,
+      "ud_elec_students": 215955.0,
+      "num_upper_elec": 1066,
+      "ld_all_gpa": 3.497,
+      "ld_all_pctA": 68.0,
+      "ld_all_students": 58295,
+      "num_lower_exact": 60,
       "ability_proxy": 3.895
     },
     {
@@ -9887,6 +10439,14 @@
       "ud_req_students": 1514.0,
       "num_upper_exact": 3,
       "num_upper_req": 3,
+      "ud_elec_gpa": 3.533,
+      "ud_elec_pctA": 68.3,
+      "ud_elec_students": 3543.0,
+      "num_upper_elec": 38,
+      "ld_all_gpa": 3.479,
+      "ld_all_pctA": 63.8,
+      "ld_all_students": 4250,
+      "num_lower_exact": 4,
       "ability_proxy": 3.76
     },
     {
@@ -9906,6 +10466,14 @@
       "ud_req_students": null,
       "num_upper_exact": 0,
       "num_upper_req": 0,
+      "ud_elec_gpa": 3.634,
+      "ud_elec_pctA": 74.3,
+      "ud_elec_students": 41503.0,
+      "num_upper_elec": 114,
+      "ld_all_gpa": 3.495,
+      "ld_all_pctA": 66.9,
+      "ld_all_students": 19491,
+      "num_lower_exact": 8,
       "ability_proxy": 3.915
     },
     {
@@ -9925,6 +10493,14 @@
       "ud_req_students": null,
       "num_upper_exact": 0,
       "num_upper_req": 0,
+      "ud_elec_gpa": 3.584,
+      "ud_elec_pctA": 70.6,
+      "ud_elec_students": 25067.0,
+      "num_upper_elec": 100,
+      "ld_all_gpa": 3.531,
+      "ld_all_pctA": 69.0,
+      "ld_all_students": 3694,
+      "num_lower_exact": 6,
       "ability_proxy": 3.79
     },
     {
@@ -9944,6 +10520,14 @@
       "ud_req_students": 51916.0,
       "num_upper_exact": 90,
       "num_upper_req": 90,
+      "ud_elec_gpa": 3.623,
+      "ud_elec_pctA": 74.0,
+      "ud_elec_students": 319385.0,
+      "num_upper_elec": 1180,
+      "ld_all_gpa": 3.535,
+      "ld_all_pctA": 68.4,
+      "ld_all_students": 112011,
+      "num_lower_exact": 95,
       "ability_proxy": 3.935
     },
     {
@@ -9963,6 +10547,14 @@
       "ud_req_students": 6676.0,
       "num_upper_exact": 35,
       "num_upper_req": 35,
+      "ud_elec_gpa": 3.616,
+      "ud_elec_pctA": 72.5,
+      "ud_elec_students": 18391.0,
+      "num_upper_elec": 65,
+      "ld_all_gpa": 3.567,
+      "ld_all_pctA": 71.3,
+      "ld_all_students": 9209,
+      "num_lower_exact": 15,
       "ability_proxy": 3.765
     },
     {
@@ -9982,6 +10574,14 @@
       "ud_req_students": 16664.0,
       "num_upper_exact": 63,
       "num_upper_req": 63,
+      "ud_elec_gpa": 3.624,
+      "ud_elec_pctA": 73.8,
+      "ud_elec_students": 234567.0,
+      "num_upper_elec": 1049,
+      "ld_all_gpa": 3.576,
+      "ld_all_pctA": 72.6,
+      "ld_all_students": 70701,
+      "num_lower_exact": 61,
       "ability_proxy": 3.795
     },
     {
@@ -10001,6 +10601,14 @@
       "ud_req_students": 945.0,
       "num_upper_exact": 11,
       "num_upper_req": 11,
+      "ud_elec_gpa": 3.755,
+      "ud_elec_pctA": 86.0,
+      "ud_elec_students": 378.0,
+      "num_upper_elec": 2,
+      "ld_all_gpa": 3.602,
+      "ld_all_pctA": 75.3,
+      "ld_all_students": 1049,
+      "num_lower_exact": 15,
       "ability_proxy": 3.755
     },
     {
@@ -10020,6 +10628,14 @@
       "ud_req_students": 3044.0,
       "num_upper_exact": 9,
       "num_upper_req": 9,
+      "ud_elec_gpa": 3.58,
+      "ud_elec_pctA": 74.2,
+      "ud_elec_students": 5310.0,
+      "num_upper_elec": 28,
+      "ld_all_gpa": 3.646,
+      "ld_all_pctA": 78.1,
+      "ld_all_students": 5364,
+      "num_lower_exact": 7,
       "ability_proxy": 3.485
     },
     {
@@ -10039,6 +10655,14 @@
       "ud_req_students": 3757.0,
       "num_upper_exact": 24,
       "num_upper_req": 24,
+      "ud_elec_gpa": 3.519,
+      "ud_elec_pctA": 66.0,
+      "ud_elec_students": 112358.0,
+      "num_upper_elec": 420,
+      "ld_all_gpa": 3.593,
+      "ld_all_pctA": 75.1,
+      "ld_all_students": 9229,
+      "num_lower_exact": 30,
       "ability_proxy": 3.715
     },
     {
@@ -10058,6 +10682,14 @@
       "ud_req_students": 3461.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.64,
+      "ud_elec_pctA": 77.2,
+      "ud_elec_students": 9809.0,
+      "num_upper_elec": 44,
+      "ld_all_gpa": 3.562,
+      "ld_all_pctA": 73.9,
+      "ld_all_students": 9551,
+      "num_lower_exact": 7,
       "ability_proxy": 3.735
     },
     {
@@ -10077,6 +10709,14 @@
       "ud_req_students": 3778.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.621,
+      "ud_elec_pctA": 74.5,
+      "ud_elec_students": 145402.0,
+      "num_upper_elec": 684,
+      "ld_all_gpa": 3.614,
+      "ld_all_pctA": 74.3,
+      "ld_all_students": 9509,
+      "num_lower_exact": 8,
       "ability_proxy": 3.495
     },
     {
@@ -10095,7 +10735,15 @@
       "ud_req_pctA": 73.0,
       "ud_req_students": 522.0,
       "num_upper_exact": 5,
-      "num_upper_req": 5
+      "num_upper_req": 5,
+      "ud_elec_gpa": 3.659,
+      "ud_elec_pctA": 76.3,
+      "ud_elec_students": 51305.0,
+      "num_upper_elec": 267,
+      "ld_all_gpa": 3.631,
+      "ld_all_pctA": 76.0,
+      "ld_all_students": 2066,
+      "num_lower_exact": 11
     },
     {
       "rank": 82,
@@ -10114,6 +10762,14 @@
       "ud_req_students": 213.0,
       "num_upper_exact": 1,
       "num_upper_req": 1,
+      "ud_elec_gpa": 3.758,
+      "ud_elec_pctA": 86.0,
+      "ud_elec_students": 356.0,
+      "num_upper_elec": 5,
+      "ld_all_gpa": 3.614,
+      "ld_all_pctA": 73.3,
+      "ld_all_students": 1849,
+      "num_lower_exact": 6,
       "ability_proxy": 3.77
     },
     {
@@ -10133,6 +10789,14 @@
       "ud_req_students": 5299.0,
       "num_upper_exact": 20,
       "num_upper_req": 20,
+      "ud_elec_gpa": 3.512,
+      "ud_elec_pctA": 65.8,
+      "ud_elec_students": 145042.0,
+      "num_upper_elec": 521,
+      "ld_all_gpa": 3.679,
+      "ld_all_pctA": 79.6,
+      "ld_all_students": 13381,
+      "num_lower_exact": 25,
       "ability_proxy": 3.765
     },
     {
@@ -10151,7 +10815,15 @@
       "ud_req_pctA": 76.4,
       "ud_req_students": 1240.0,
       "num_upper_exact": 6,
-      "num_upper_req": 6
+      "num_upper_req": 6,
+      "ud_elec_gpa": 3.661,
+      "ud_elec_pctA": 77.3,
+      "ud_elec_students": 24021.0,
+      "num_upper_elec": 158,
+      "ld_all_gpa": 3.63,
+      "ld_all_pctA": 78.3,
+      "ld_all_students": 7198,
+      "num_lower_exact": 20
     },
     {
       "rank": 85,
@@ -10170,6 +10842,14 @@
       "ud_req_students": 9102.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.673,
+      "ud_elec_pctA": 77.5,
+      "ud_elec_students": 290012.0,
+      "num_upper_elec": 1160,
+      "ld_all_gpa": 3.624,
+      "ld_all_pctA": 75.3,
+      "ld_all_students": 53751,
+      "num_lower_exact": 49,
       "ability_proxy": 3.78
     },
     {
@@ -10188,7 +10868,15 @@
       "ud_req_pctA": 72.5,
       "ud_req_students": 1095.0,
       "num_upper_exact": 8,
-      "num_upper_req": 8
+      "num_upper_req": 8,
+      "ud_elec_gpa": 3.653,
+      "ud_elec_pctA": 76.2,
+      "ud_elec_students": 38331.0,
+      "num_upper_elec": 153,
+      "ld_all_gpa": 3.689,
+      "ld_all_pctA": 81.2,
+      "ld_all_students": 829,
+      "num_lower_exact": 8
     },
     {
       "rank": 87,
@@ -10207,6 +10895,14 @@
       "ud_req_students": 2666.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.656,
+      "ud_elec_pctA": 76.8,
+      "ud_elec_students": 48777.0,
+      "num_upper_elec": 360,
+      "ld_all_gpa": 3.653,
+      "ld_all_pctA": 77.5,
+      "ld_all_students": 13478,
+      "num_lower_exact": 32,
       "ability_proxy": 3.61
     },
     {
@@ -10226,6 +10922,14 @@
       "ud_req_students": 267.0,
       "num_upper_exact": 3,
       "num_upper_req": 3,
+      "ud_elec_gpa": 3.543,
+      "ud_elec_pctA": 71.4,
+      "ud_elec_students": 8470.0,
+      "num_upper_elec": 67,
+      "ld_all_gpa": 3.669,
+      "ld_all_pctA": 78.6,
+      "ld_all_students": 8464,
+      "num_lower_exact": 21,
       "ability_proxy": 3.79
     },
     {
@@ -10245,6 +10949,14 @@
       "ud_req_students": 4604.0,
       "num_upper_exact": 41,
       "num_upper_req": 41,
+      "ud_elec_gpa": 3.751,
+      "ud_elec_pctA": 82.8,
+      "ud_elec_students": 9113.0,
+      "num_upper_elec": 62,
+      "ld_all_gpa": 3.649,
+      "ld_all_pctA": 75.0,
+      "ld_all_students": 11523,
+      "num_lower_exact": 21,
       "ability_proxy": 3.79
     },
     {
@@ -10264,6 +10976,14 @@
       "ud_req_students": 3810.0,
       "num_upper_exact": 14,
       "num_upper_req": 14,
+      "ud_elec_gpa": 3.418,
+      "ud_elec_pctA": 61.7,
+      "ud_elec_students": 30914.0,
+      "num_upper_elec": 89,
+      "ld_all_gpa": 3.669,
+      "ld_all_pctA": 79.4,
+      "ld_all_students": 4010,
+      "num_lower_exact": 12,
       "ability_proxy": 3.705
     },
     {
@@ -10283,6 +11003,14 @@
       "ud_req_students": 6311.0,
       "num_upper_exact": 43,
       "num_upper_req": 43,
+      "ud_elec_gpa": 3.775,
+      "ud_elec_pctA": 84.2,
+      "ud_elec_students": 7406.0,
+      "num_upper_elec": 60,
+      "ld_all_gpa": 3.662,
+      "ld_all_pctA": 76.0,
+      "ld_all_students": 10191,
+      "num_lower_exact": 23,
       "ability_proxy": 3.605
     },
     {
@@ -10301,7 +11029,15 @@
       "ud_req_pctA": 61.2,
       "ud_req_students": 1076.0,
       "num_upper_exact": 6,
-      "num_upper_req": 6
+      "num_upper_req": 6,
+      "ud_elec_gpa": 3.664,
+      "ud_elec_pctA": 77.2,
+      "ud_elec_students": 14141.0,
+      "num_upper_elec": 99,
+      "ld_all_gpa": 3.738,
+      "ld_all_pctA": 83.3,
+      "ld_all_students": 3143,
+      "num_lower_exact": 7
     },
     {
       "rank": 93,
@@ -10319,7 +11055,15 @@
       "ud_req_pctA": 61.2,
       "ud_req_students": 1076.0,
       "num_upper_exact": 6,
-      "num_upper_req": 6
+      "num_upper_req": 6,
+      "ud_elec_gpa": 3.664,
+      "ud_elec_pctA": 77.2,
+      "ud_elec_students": 14141.0,
+      "num_upper_elec": 99,
+      "ld_all_gpa": 3.738,
+      "ld_all_pctA": 83.3,
+      "ld_all_students": 3143,
+      "num_lower_exact": 7
     },
     {
       "rank": 94,
@@ -10338,6 +11082,14 @@
       "ud_req_students": 725.0,
       "num_upper_exact": 9,
       "num_upper_req": 9,
+      "ud_elec_gpa": 3.605,
+      "ud_elec_pctA": 71.5,
+      "ud_elec_students": 597.0,
+      "num_upper_elec": 6,
+      "ld_all_gpa": 3.653,
+      "ld_all_pctA": 76.9,
+      "ld_all_students": 2146,
+      "num_lower_exact": 10,
       "ability_proxy": 3.835
     },
     {
@@ -10357,6 +11109,14 @@
       "ud_req_students": 1022.0,
       "num_upper_exact": 8,
       "num_upper_req": 8,
+      "ud_elec_gpa": 3.644,
+      "ud_elec_pctA": 75.8,
+      "ud_elec_students": 13824.0,
+      "num_upper_elec": 90,
+      "ld_all_gpa": 3.643,
+      "ld_all_pctA": 77.5,
+      "ld_all_students": 484,
+      "num_lower_exact": 7,
       "ability_proxy": 3.795
     },
     {
@@ -10376,6 +11136,14 @@
       "ud_req_students": 602.0,
       "num_upper_exact": 11,
       "num_upper_req": 11,
+      "ud_elec_gpa": 3.604,
+      "ud_elec_pctA": 69.2,
+      "ud_elec_students": 688.0,
+      "num_upper_elec": 7,
+      "ld_all_gpa": 3.674,
+      "ld_all_pctA": 78.9,
+      "ld_all_students": 1558,
+      "num_lower_exact": 8,
       "ability_proxy": 3.705
     },
     {
@@ -10394,7 +11162,15 @@
       "ud_req_pctA": 61.2,
       "ud_req_students": 1076.0,
       "num_upper_exact": 6,
-      "num_upper_req": 6
+      "num_upper_req": 6,
+      "ud_elec_gpa": 3.664,
+      "ud_elec_pctA": 77.2,
+      "ud_elec_students": 14141.0,
+      "num_upper_elec": 99,
+      "ld_all_gpa": 3.767,
+      "ld_all_pctA": 85.6,
+      "ld_all_students": 2433,
+      "num_lower_exact": 4
     },
     {
       "rank": 98,
@@ -10413,6 +11189,14 @@
       "ud_req_students": 580.0,
       "num_upper_exact": 8,
       "num_upper_req": 8,
+      "ud_elec_gpa": 3.535,
+      "ud_elec_pctA": 64.2,
+      "ud_elec_students": 81.0,
+      "num_upper_elec": 2,
+      "ld_all_gpa": 3.789,
+      "ld_all_pctA": 88.0,
+      "ld_all_students": 302,
+      "num_lower_exact": 4,
       "ability_proxy": 3.95
     },
     {
@@ -10432,6 +11216,14 @@
       "ud_req_students": 2024.0,
       "num_upper_exact": 13,
       "num_upper_req": 13,
+      "ud_elec_gpa": 3.633,
+      "ud_elec_pctA": 75.2,
+      "ud_elec_students": 12410.0,
+      "num_upper_elec": 79,
+      "ld_all_gpa": 3.696,
+      "ld_all_pctA": 80.2,
+      "ld_all_students": 17197,
+      "num_lower_exact": 33,
       "ability_proxy": 3.84
     },
     {
@@ -10451,6 +11243,14 @@
       "ud_req_students": null,
       "num_upper_exact": 0,
       "num_upper_req": 0,
+      "ud_elec_gpa": 3.738,
+      "ud_elec_pctA": 80.8,
+      "ud_elec_students": 3318.0,
+      "num_upper_elec": 46,
+      "ld_all_gpa": 3.692,
+      "ld_all_pctA": 79.9,
+      "ld_all_students": 1445,
+      "num_lower_exact": 9,
       "ability_proxy": 3.785
     },
     {
@@ -10470,6 +11270,14 @@
       "ud_req_students": 1802.0,
       "num_upper_exact": 13,
       "num_upper_req": 13,
+      "ud_elec_gpa": 3.647,
+      "ud_elec_pctA": 76.2,
+      "ud_elec_students": 52842.0,
+      "num_upper_elec": 229,
+      "ld_all_gpa": 3.67,
+      "ld_all_pctA": 78.8,
+      "ld_all_students": 2363,
+      "num_lower_exact": 9,
       "ability_proxy": 3.89
     },
     {
@@ -10489,6 +11297,14 @@
       "ud_req_students": 501.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.981,
+      "ud_elec_pctA": 98.5,
+      "ud_elec_students": 2402.0,
+      "num_upper_elec": 10,
+      "ld_all_gpa": 3.565,
+      "ld_all_pctA": 70.8,
+      "ld_all_students": 389,
+      "num_lower_exact": 6,
       "ability_proxy": 3.62
     },
     {
@@ -10507,7 +11323,15 @@
       "ud_req_pctA": 75.0,
       "ud_req_students": 869.0,
       "num_upper_exact": 4,
-      "num_upper_req": 4
+      "num_upper_req": 4,
+      "ud_elec_gpa": 3.767,
+      "ud_elec_pctA": 84.5,
+      "ud_elec_students": 2066.0,
+      "num_upper_elec": 9,
+      "ld_all_gpa": 3.709,
+      "ld_all_pctA": 82.1,
+      "ld_all_students": 3247,
+      "num_lower_exact": 7
     },
     {
       "rank": 104,
@@ -10526,6 +11350,14 @@
       "ud_req_students": 1456.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.691,
+      "ud_elec_pctA": 78.8,
+      "ud_elec_students": 66168.0,
+      "num_upper_elec": 351,
+      "ld_all_gpa": 3.705,
+      "ld_all_pctA": 80.8,
+      "ld_all_students": 6701,
+      "num_lower_exact": 26,
       "ability_proxy": 3.42
     },
     {
@@ -10545,6 +11377,14 @@
       "ud_req_students": 716.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.57,
+      "ud_elec_pctA": 68.5,
+      "ud_elec_students": 505.0,
+      "num_upper_elec": 4,
+      "ld_all_gpa": 3.714,
+      "ld_all_pctA": 80.8,
+      "ld_all_students": 3382,
+      "num_lower_exact": 9,
       "ability_proxy": 3.75
     },
     {
@@ -10564,6 +11404,14 @@
       "ud_req_students": null,
       "num_upper_exact": 0,
       "num_upper_req": 0,
+      "ud_elec_gpa": 3.738,
+      "ud_elec_pctA": 80.8,
+      "ud_elec_students": 3318.0,
+      "num_upper_elec": 46,
+      "ld_all_gpa": 3.713,
+      "ld_all_pctA": 81.1,
+      "ld_all_students": 5853,
+      "num_lower_exact": 16,
       "ability_proxy": 3.825
     },
     {
@@ -10582,7 +11430,15 @@
       "ud_req_pctA": 83.2,
       "ud_req_students": 1009.0,
       "num_upper_exact": 9,
-      "num_upper_req": 9
+      "num_upper_req": 9,
+      "ud_elec_gpa": 3.654,
+      "ud_elec_pctA": 76.7,
+      "ud_elec_students": 56087.0,
+      "num_upper_elec": 265,
+      "ld_all_gpa": 3.708,
+      "ld_all_pctA": 80.6,
+      "ld_all_students": 1096,
+      "num_lower_exact": 7
     },
     {
       "rank": 108,
@@ -10601,6 +11457,14 @@
       "ud_req_students": 2070.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.872,
+      "ud_elec_pctA": 92.7,
+      "ud_elec_students": 424.0,
+      "num_upper_elec": 5,
+      "ld_all_gpa": 3.649,
+      "ld_all_pctA": 77.6,
+      "ld_all_students": 3003,
+      "num_lower_exact": 15,
       "ability_proxy": 3.35
     },
     {
@@ -10619,7 +11483,15 @@
       "ud_req_pctA": 82.8,
       "ud_req_students": 1456.0,
       "num_upper_exact": 22,
-      "num_upper_req": 22
+      "num_upper_req": 22,
+      "ud_elec_gpa": 3.691,
+      "ud_elec_pctA": 78.8,
+      "ud_elec_students": 66168.0,
+      "num_upper_elec": 351,
+      "ld_all_gpa": 3.718,
+      "ld_all_pctA": 81.8,
+      "ld_all_students": 5419,
+      "num_lower_exact": 23
     },
     {
       "rank": 110,
@@ -10638,6 +11510,14 @@
       "ud_req_students": 1456.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.691,
+      "ud_elec_pctA": 78.8,
+      "ud_elec_students": 66168.0,
+      "num_upper_elec": 351,
+      "ld_all_gpa": 3.718,
+      "ld_all_pctA": 81.8,
+      "ld_all_students": 5419,
+      "num_lower_exact": 23,
       "ability_proxy": 3.79
     },
     {
@@ -10656,7 +11536,15 @@
       "ud_req_pctA": 82.8,
       "ud_req_students": 1456.0,
       "num_upper_exact": 22,
-      "num_upper_req": 22
+      "num_upper_req": 22,
+      "ud_elec_gpa": 3.691,
+      "ud_elec_pctA": 78.8,
+      "ud_elec_students": 66168.0,
+      "num_upper_elec": 351,
+      "ld_all_gpa": 3.718,
+      "ld_all_pctA": 81.8,
+      "ld_all_students": 5419,
+      "num_lower_exact": 23
     },
     {
       "rank": 112,
@@ -10675,6 +11563,14 @@
       "ud_req_students": 1580.0,
       "num_upper_exact": 24,
       "num_upper_req": 24,
+      "ud_elec_gpa": 3.691,
+      "ud_elec_pctA": 78.8,
+      "ud_elec_students": 66044.0,
+      "num_upper_elec": 349,
+      "ld_all_gpa": 3.718,
+      "ld_all_pctA": 81.7,
+      "ld_all_students": 5642,
+      "num_lower_exact": 24,
       "ability_proxy": 3.785
     },
     {
@@ -10694,6 +11590,14 @@
       "ud_req_students": 234.0,
       "num_upper_exact": 4,
       "num_upper_req": 4,
+      "ud_elec_gpa": null,
+      "ud_elec_pctA": null,
+      "ud_elec_students": null,
+      "num_upper_elec": 0,
+      "ld_all_gpa": 3.721,
+      "ld_all_pctA": 84.0,
+      "ld_all_students": 878,
+      "num_lower_exact": 9,
       "ability_proxy": 3.64
     },
     {
@@ -10713,6 +11617,14 @@
       "ud_req_students": 786.0,
       "num_upper_exact": 3,
       "num_upper_req": 3,
+      "ud_elec_gpa": 3.766,
+      "ud_elec_pctA": 84.1,
+      "ud_elec_students": 2149.0,
+      "num_upper_elec": 10,
+      "ld_all_gpa": 3.744,
+      "ld_all_pctA": 84.3,
+      "ld_all_students": 2458,
+      "num_lower_exact": 4,
       "ability_proxy": 3.74
     },
     {
@@ -10732,6 +11644,14 @@
       "ud_req_students": 4575.0,
       "num_upper_exact": 25,
       "num_upper_req": 25,
+      "ud_elec_gpa": 3.776,
+      "ud_elec_pctA": 85.0,
+      "ud_elec_students": 5699.0,
+      "num_upper_elec": 27,
+      "ld_all_gpa": 3.764,
+      "ld_all_pctA": 85.4,
+      "ld_all_students": 6801,
+      "num_lower_exact": 26,
       "ability_proxy": 3.595
     },
     {
@@ -10751,6 +11671,14 @@
       "ud_req_students": 4939.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.809,
+      "ud_elec_pctA": 86.4,
+      "ud_elec_students": 2335.0,
+      "num_upper_elec": 23,
+      "ld_all_gpa": 3.693,
+      "ld_all_pctA": 79.1,
+      "ld_all_students": 5716,
+      "num_lower_exact": 9,
       "ability_proxy": 3.705
     },
     {
@@ -10770,6 +11698,14 @@
       "ud_req_students": 38.0,
       "num_upper_exact": 1,
       "num_upper_req": 1,
+      "ud_elec_gpa": 3.649,
+      "ud_elec_pctA": 79.6,
+      "ud_elec_students": 745.0,
+      "num_upper_elec": 12,
+      "ld_all_gpa": 3.761,
+      "ld_all_pctA": 84.6,
+      "ld_all_students": 5735,
+      "num_lower_exact": 8,
       "ability_proxy": 3.785
     },
     {
@@ -10789,6 +11725,14 @@
       "ud_req_students": 717.0,
       "num_upper_exact": 9,
       "num_upper_req": 9,
+      "ud_elec_gpa": 3.646,
+      "ud_elec_pctA": 75.9,
+      "ud_elec_students": 40364.0,
+      "num_upper_elec": 167,
+      "ld_all_gpa": 3.76,
+      "ld_all_pctA": 85.3,
+      "ld_all_students": 831,
+      "num_lower_exact": 11,
       "ability_proxy": 3.78
     },
     {
@@ -10808,6 +11752,14 @@
       "ud_req_students": 868.0,
       "num_upper_exact": 9,
       "num_upper_req": 9,
+      "ud_elec_gpa": 3.767,
+      "ud_elec_pctA": 83.2,
+      "ud_elec_students": 5693.0,
+      "num_upper_elec": 23,
+      "ld_all_gpa": 3.803,
+      "ld_all_pctA": 87.7,
+      "ld_all_students": 2313,
+      "num_lower_exact": 3,
       "ability_proxy": 3.855
     },
     {
@@ -10826,7 +11778,15 @@
       "ud_req_pctA": 83.0,
       "ud_req_students": 1313.0,
       "num_upper_exact": 18,
-      "num_upper_req": 18
+      "num_upper_req": 18,
+      "ud_elec_gpa": 3.873,
+      "ud_elec_pctA": 91.6,
+      "ud_elec_students": 11712.0,
+      "num_upper_elec": 92,
+      "ld_all_gpa": 3.804,
+      "ld_all_pctA": 87.5,
+      "ld_all_students": 996,
+      "num_lower_exact": 9
     },
     {
       "rank": 121,
@@ -10845,6 +11805,14 @@
       "ud_req_students": 3535.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.869,
+      "ud_elec_pctA": 91.6,
+      "ud_elec_students": 12658.0,
+      "num_upper_elec": 92,
+      "ld_all_gpa": 3.807,
+      "ld_all_pctA": 88.3,
+      "ld_all_students": 9455,
+      "num_lower_exact": 12,
       "ability_proxy": 3.845
     },
     {
@@ -10864,6 +11832,14 @@
       "ud_req_students": 408.0,
       "num_upper_exact": 3,
       "num_upper_req": 3,
+      "ud_elec_gpa": 3.819,
+      "ud_elec_pctA": 88.7,
+      "ud_elec_students": 4656.0,
+      "num_upper_elec": 46,
+      "ld_all_gpa": 3.836,
+      "ld_all_pctA": 89.3,
+      "ld_all_students": 1409,
+      "num_lower_exact": 7,
       "ability_proxy": 3.93
     },
     {
@@ -10883,6 +11859,14 @@
       "ud_req_students": 7612.0,
       "num_upper_exact": 45,
       "num_upper_req": 45,
+      "ud_elec_gpa": 3.575,
+      "ud_elec_pctA": 69.8,
+      "ud_elec_students": 19660.0,
+      "num_upper_elec": 114,
+      "ld_all_gpa": 3.823,
+      "ld_all_pctA": 89.2,
+      "ld_all_students": 16635,
+      "num_lower_exact": 47,
       "ability_proxy": 3.82
     },
     {
@@ -10902,6 +11886,14 @@
       "ud_req_students": 2197.0,
       "num_upper_exact": 29,
       "num_upper_req": 29,
+      "ud_elec_gpa": 3.752,
+      "ud_elec_pctA": 80.5,
+      "ud_elec_students": 266.0,
+      "num_upper_elec": 5,
+      "ld_all_gpa": 3.851,
+      "ld_all_pctA": 91.2,
+      "ld_all_students": 4156,
+      "num_lower_exact": 17,
       "ability_proxy": 3.73
     },
     {
@@ -10920,7 +11912,15 @@
       "ud_req_pctA": null,
       "ud_req_students": null,
       "num_upper_exact": 0,
-      "num_upper_req": 0
+      "num_upper_req": 0,
+      "ud_elec_gpa": null,
+      "ud_elec_pctA": null,
+      "ud_elec_students": null,
+      "num_upper_elec": 0,
+      "ld_all_gpa": 3.829,
+      "ld_all_pctA": 89.9,
+      "ld_all_students": 214,
+      "num_lower_exact": 1
     },
     {
       "rank": 126,
@@ -10939,6 +11939,14 @@
       "ud_req_students": 3165.0,
       "num_upper_exact": 22,
       "num_upper_req": 22,
+      "ud_elec_gpa": 3.73,
+      "ud_elec_pctA": 80.7,
+      "ud_elec_students": 1392.0,
+      "num_upper_elec": 17,
+      "ld_all_gpa": 3.849,
+      "ld_all_pctA": 90.0,
+      "ld_all_students": 4587,
+      "num_lower_exact": 15,
       "ability_proxy": 3.8
     },
     {
@@ -10957,7 +11965,15 @@
       "ud_req_pctA": 87.0,
       "ud_req_students": 2859.0,
       "num_upper_exact": 9,
-      "num_upper_req": 9
+      "num_upper_req": 9,
+      "ud_elec_gpa": 3.76,
+      "ud_elec_pctA": 83.9,
+      "ud_elec_students": 1698.0,
+      "num_upper_elec": 30,
+      "ld_all_gpa": 3.86,
+      "ld_all_pctA": 90.9,
+      "ld_all_students": 4342,
+      "num_lower_exact": 12
     },
     {
       "rank": 128,
@@ -10976,6 +11992,14 @@
       "ud_req_students": 1178.0,
       "num_upper_exact": 4,
       "num_upper_req": 4,
+      "ud_elec_gpa": 3.85,
+      "ud_elec_pctA": 90.3,
+      "ud_elec_students": 2559.0,
+      "num_upper_elec": 13,
+      "ld_all_gpa": 3.833,
+      "ld_all_pctA": 89.8,
+      "ld_all_students": 1901,
+      "num_lower_exact": 1,
       "ability_proxy": 3.77
     },
     {
@@ -10995,6 +12019,14 @@
       "ud_req_students": 2053.0,
       "num_upper_exact": 12,
       "num_upper_req": 12,
+      "ud_elec_gpa": 3.921,
+      "ud_elec_pctA": 94.7,
+      "ud_elec_students": 20722.0,
+      "num_upper_elec": 141,
+      "ld_all_gpa": 3.812,
+      "ld_all_pctA": 87.8,
+      "ld_all_students": 2493,
+      "num_lower_exact": 3,
       "ability_proxy": 3.75
     },
     {
@@ -11014,6 +12046,14 @@
       "ud_req_students": 1065.0,
       "num_upper_exact": 7,
       "num_upper_req": 7,
+      "ud_elec_gpa": 3.868,
+      "ud_elec_pctA": 91.6,
+      "ud_elec_students": 758.0,
+      "num_upper_elec": 11,
+      "ld_all_gpa": 3.846,
+      "ld_all_pctA": 90.7,
+      "ld_all_students": 1646,
+      "num_lower_exact": 7,
       "ability_proxy": 3.76
     },
     {
@@ -11033,6 +12073,14 @@
       "ud_req_students": 3763.0,
       "num_upper_exact": 17,
       "num_upper_req": 17,
+      "ud_elec_gpa": 3.767,
+      "ud_elec_pctA": 83.9,
+      "ud_elec_students": 5046.0,
+      "num_upper_elec": 68,
+      "ld_all_gpa": 3.874,
+      "ld_all_pctA": 92.2,
+      "ld_all_students": 6282,
+      "num_lower_exact": 16,
       "ability_proxy": 3.82
     },
     {
@@ -11051,7 +12099,15 @@
       "ud_req_pctA": 93.0,
       "ud_req_students": 4404.0,
       "num_upper_exact": 19,
-      "num_upper_req": 19
+      "num_upper_req": 19,
+      "ud_elec_gpa": 3.744,
+      "ud_elec_pctA": 81.9,
+      "ud_elec_students": 4405.0,
+      "num_upper_elec": 66,
+      "ld_all_gpa": 3.875,
+      "ld_all_pctA": 92.2,
+      "ld_all_students": 6363,
+      "num_lower_exact": 16
     },
     {
       "rank": 133,
@@ -11069,7 +12125,15 @@
       "ud_req_pctA": 93.6,
       "ud_req_students": 2093.0,
       "num_upper_exact": 5,
-      "num_upper_req": 5
+      "num_upper_req": 5,
+      "ud_elec_gpa": 3.736,
+      "ud_elec_pctA": 82.0,
+      "ud_elec_students": 1283.0,
+      "num_upper_elec": 24,
+      "ld_all_gpa": 3.875,
+      "ld_all_pctA": 91.6,
+      "ld_all_students": 4458,
+      "num_lower_exact": 13
     },
     {
       "rank": 134,
@@ -11088,6 +12152,14 @@
       "ud_req_students": 2217.0,
       "num_upper_exact": 8,
       "num_upper_req": 8,
+      "ud_elec_gpa": 3.768,
+      "ud_elec_pctA": 83.9,
+      "ud_elec_students": 1159.0,
+      "num_upper_elec": 21,
+      "ld_all_gpa": 3.886,
+      "ld_all_pctA": 92.5,
+      "ld_all_students": 6601,
+      "num_lower_exact": 22,
       "ability_proxy": 3.6
     },
     {
@@ -11107,6 +12179,14 @@
       "ud_req_students": 955.0,
       "num_upper_exact": 5,
       "num_upper_req": 5,
+      "ud_elec_gpa": 3.841,
+      "ud_elec_pctA": 90.3,
+      "ud_elec_students": 517.0,
+      "num_upper_elec": 5,
+      "ld_all_gpa": 3.791,
+      "ld_all_pctA": 87.2,
+      "ld_all_students": 427,
+      "num_lower_exact": 5,
       "ability_proxy": 3.705
     },
     {
@@ -11126,6 +12206,14 @@
       "ud_req_students": 871.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.991,
+      "ud_elec_pctA": 99.5,
+      "ud_elec_students": 1046.0,
+      "num_upper_elec": 7,
+      "ld_all_gpa": 3.868,
+      "ld_all_pctA": 90.8,
+      "ld_all_students": 1454,
+      "num_lower_exact": 9,
       "ability_proxy": 3.655
     },
     {
@@ -11145,6 +12233,14 @@
       "ud_req_students": 1317.0,
       "num_upper_exact": 10,
       "num_upper_req": 10,
+      "ud_elec_gpa": 3.804,
+      "ud_elec_pctA": 85.7,
+      "ud_elec_students": 588.0,
+      "num_upper_elec": 5,
+      "ld_all_gpa": 3.907,
+      "ld_all_pctA": 94.3,
+      "ld_all_students": 2953,
+      "num_lower_exact": 24,
       "ability_proxy": 3.815
     }
   ],

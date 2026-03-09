@@ -412,6 +412,29 @@ def score_majors(matched_data, course_stats):
                 ud_req_gpa = ud_req_pctA = ud_req_students = None
         else:
             ud_req_gpa = ud_req_pctA = ud_req_students = None
+
+        # === MODE 4: Upper-div electives (upper-div courses not in required_ids) ===
+        upper_elective = [c for c in (upper_exact + upper_subj) if c['course_id'] not in required_ids]
+        if upper_elective:
+            uef = pd.DataFrame(upper_elective)
+            ue_total = uef['total_letter_grades'].sum()
+            if ue_total > 0:
+                ud_elec_gpa = (uef['avg_gpa'] * uef['total_letter_grades']).sum() / ue_total
+                ud_elec_pctA = (uef['pct_A'] * uef['total_letter_grades']).sum() / ue_total
+                ud_elec_students = int(ue_total)
+                num_upper_elec = int(len(upper_elective))
+            else:
+                ud_elec_gpa = ud_elec_pctA = ud_elec_students = None
+                num_upper_elec = 0
+        else:
+            ud_elec_gpa = ud_elec_pctA = ud_elec_students = None
+            num_upper_elec = 0
+
+        # === MODE 5: Lower-division all (required + dept electives, number < 100) ===
+        lower_exact = [c for c in exact if not is_upper_division(c['course_id'])]
+        lower_subj = [c for c in all_subj if not is_upper_division(c['course_id'])]
+        ld_all_gpa, ld_all_pctA, ld_all_students = _compute_blend(lower_exact, lower_subj)
+        num_lower_exact = len(lower_exact)
         
         # ── DFW Rate ──
         all_courses = exact + [c for c in all_subj if c['course_id'] not in {e['course_id'] for e in exact}]
@@ -462,6 +485,14 @@ def score_majors(matched_data, course_stats):
             'ud_req_students': int(ud_req_students) if ud_req_students else None,
             'num_upper_exact': len(upper_exact),
             'num_upper_req': len(upper_req),
+            'ud_elec_gpa': round(ud_elec_gpa, 3) if ud_elec_gpa else None,
+            'ud_elec_pctA': round(ud_elec_pctA, 1) if ud_elec_pctA else None,
+            'ud_elec_students': ud_elec_students if ud_elec_students else None,
+            'num_upper_elec': num_upper_elec,
+            'ld_all_gpa': round(ld_all_gpa, 3) if ld_all_gpa else None,
+            'ld_all_pctA': round(ld_all_pctA, 1) if ld_all_pctA else None,
+            'ld_all_students': int(ld_all_students) if ld_all_students else None,
+            'num_lower_exact': num_lower_exact,
             'exact_gpa': round(blend_gpa, 3),  # keep for csv compat
             'dept_gpa': None,
             'dfw_rate': round(major_dfw, 1),
@@ -594,6 +625,14 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
             'ud_req_students': _safe(row.get('ud_req_students')),
             'num_upper_exact': int(row.get('num_upper_exact', 0)),
             'num_upper_req': int(row.get('num_upper_req', 0)),
+            'ud_elec_gpa': _safe(row.get('ud_elec_gpa')),
+            'ud_elec_pctA': _safe(row.get('ud_elec_pctA')),
+            'ud_elec_students': _safe(row.get('ud_elec_students')),
+            'num_upper_elec': int(row.get('num_upper_elec', 0)),
+            'ld_all_gpa': _safe(row.get('ld_all_gpa')),
+            'ld_all_pctA': _safe(row.get('ld_all_pctA')),
+            'ld_all_students': _safe(row.get('ld_all_students')),
+            'num_lower_exact': int(row.get('num_lower_exact', 0)),
         }
         if row['major'] in ability_proxy:
             entry['ability_proxy'] = ability_proxy[row['major']]
@@ -799,6 +838,8 @@ def generate_html(graph_data, output_path):
                     <button id="filter-all" class="active-filter" onclick="setFilter('all')">All Courses</button>
                     <button id="filter-ud-all" onclick="setFilter('ud_all')">Upper-Div (All)</button>
                     <button id="filter-ud-req" onclick="setFilter('ud_req')">Upper-Div (Required)</button>
+                    <button id="filter-ld-all" onclick="setFilter('ld_all')">Lower-Div (All)</button>
+                    <button id="filter-ud-elec" onclick="setFilter('ud_elec')">Upper-Div (Electives)</button>
                 </div>
             </div>
             <div class="table-scroll-wrapper">

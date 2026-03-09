@@ -113,6 +113,12 @@ function renderRankings() {
         } else if (currentFilter === 'ud_req') {
             gpa = r.ud_req_gpa; pctA = r.ud_req_pctA;
             students = r.ud_req_students; courses = r.num_upper_req;
+        } else if (currentFilter === 'ld_all') {
+            gpa = r.ld_all_gpa; pctA = r.ld_all_pctA;
+            students = r.ld_all_students; courses = r.num_lower_exact;
+        } else if (currentFilter === 'ud_elec') {
+            gpa = r.ud_elec_gpa; pctA = r.ud_elec_pctA;
+            students = r.ud_elec_students; courses = r.num_upper_elec;
         } else {
             gpa = r.avg_gpa; pctA = r.pct_A;
             students = r.total_students; courses = r.num_courses;
