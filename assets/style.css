@@ -434,6 +434,74 @@ a:hover {
     position: relative;
 }
 
+.rankings-table th.sortable,
+.courses-table th.sortable {
+    cursor: help; /* keep question-mark cursor even when sortable */
+    user-select: none;
+    white-space: nowrap; /* keep label + icons on same line */
+}
+
+.rankings-table th.sortable:hover,
+.courses-table th.sortable:hover {
+    color: var(--ucla-dark-blue);
+}
+
+.sort-icons {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-left: 6px;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-1px);
+}
+
+.sort-icons .sort-up,
+.sort-icons .sort-down {
+    font-size: 9px;
+    line-height: 9px;
+    color: rgba(90, 110, 130, 0.45);
+}
+
+/* Active sort indicator rules (your convention):
+   - highlight UP when highest values are at the top (desc)
+   - highlight DOWN when lowest values are at the top (asc) */
+.th-sort-active .sort-icons .sort-up,
+.th-sort-active .sort-icons .sort-down {
+    color: rgba(90, 110, 130, 0.35);
+}
+.th-sort-active.th-sort-desc .sort-icons .sort-up {
+    color: var(--ucla-dark-blue);
+}
+.th-sort-active.th-sort-asc .sort-icons .sort-down {
+    color: var(--ucla-dark-blue);
+}
+
+/* Give narrow sortable columns a bit more room so icons don’t wrap */
+#panel-rankings .rankings-table th:nth-child(2) { min-width: 200px; } /* Major */
+#panel-rankings .rankings-table th:nth-child(4) { min-width: 86px; }  /* % A/A+ */
+#panel-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* Courses */
+#panel-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Records */
+
+#panel-dept-rankings .rankings-table th:nth-child(2) { min-width: 130px; } /* Department */
+#panel-dept-rankings .rankings-table th:nth-child(4) { min-width: 86px; }  /* % A/A+ */
+#panel-dept-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* Courses */
+#panel-dept-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Records */
+
+#panel-prof-rankings .rankings-table th:nth-child(2) { min-width: 90px; }  /* Dept */
+#panel-prof-rankings .rankings-table th:nth-child(3) { min-width: 180px; } /* Professor */
+#panel-prof-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* % A/A+ */
+#panel-prof-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Range */
+#panel-prof-rankings .rankings-table th:nth-child(7) { min-width: 86px; }  /* Classes */
+#panel-prof-rankings .rankings-table th:nth-child(8) { min-width: 120px; } /* Grade Records */
+
+#panel-courses .courses-table th:nth-child(2) { min-width: 110px; } /* Course */
+#panel-courses .courses-table th:nth-child(4) { min-width: 90px; }  /* Avg GPA */
+#panel-courses .courses-table th:nth-child(5) { min-width: 86px; }  /* % A/A+ */
+#panel-courses .courses-table th:nth-child(6) { min-width: 105px; } /* Students */
+#panel-courses .courses-table th:nth-child(7) { min-width: 90px; }  /* Dept */
+
 .rankings-table th[data-tip]:hover::after {
     content: attr(data-tip);
     position: absolute;

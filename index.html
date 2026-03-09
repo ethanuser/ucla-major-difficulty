@@ -443,6 +443,74 @@ a:hover {
     position: relative;
 }
 
+.rankings-table th.sortable,
+.courses-table th.sortable {
+    cursor: help; /* keep question-mark cursor even when sortable */
+    user-select: none;
+    white-space: nowrap; /* keep label + icons on same line */
+}
+
+.rankings-table th.sortable:hover,
+.courses-table th.sortable:hover {
+    color: var(--ucla-dark-blue);
+}
+
+.sort-icons {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-left: 6px;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-1px);
+}
+
+.sort-icons .sort-up,
+.sort-icons .sort-down {
+    font-size: 9px;
+    line-height: 9px;
+    color: rgba(90, 110, 130, 0.45);
+}
+
+/* Active sort indicator rules (your convention):
+   - highlight UP when highest values are at the top (desc)
+   - highlight DOWN when lowest values are at the top (asc) */
+.th-sort-active .sort-icons .sort-up,
+.th-sort-active .sort-icons .sort-down {
+    color: rgba(90, 110, 130, 0.35);
+}
+.th-sort-active.th-sort-desc .sort-icons .sort-up {
+    color: var(--ucla-dark-blue);
+}
+.th-sort-active.th-sort-asc .sort-icons .sort-down {
+    color: var(--ucla-dark-blue);
+}
+
+/* Give narrow sortable columns a bit more room so icons don’t wrap */
+#panel-rankings .rankings-table th:nth-child(2) { min-width: 200px; } /* Major */
+#panel-rankings .rankings-table th:nth-child(4) { min-width: 86px; }  /* % A/A+ */
+#panel-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* Courses */
+#panel-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Records */
+
+#panel-dept-rankings .rankings-table th:nth-child(2) { min-width: 130px; } /* Department */
+#panel-dept-rankings .rankings-table th:nth-child(4) { min-width: 86px; }  /* % A/A+ */
+#panel-dept-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* Courses */
+#panel-dept-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Records */
+
+#panel-prof-rankings .rankings-table th:nth-child(2) { min-width: 90px; }  /* Dept */
+#panel-prof-rankings .rankings-table th:nth-child(3) { min-width: 180px; } /* Professor */
+#panel-prof-rankings .rankings-table th:nth-child(5) { min-width: 86px; }  /* % A/A+ */
+#panel-prof-rankings .rankings-table th:nth-child(6) { min-width: 120px; } /* Grade Range */
+#panel-prof-rankings .rankings-table th:nth-child(7) { min-width: 86px; }  /* Classes */
+#panel-prof-rankings .rankings-table th:nth-child(8) { min-width: 120px; } /* Grade Records */
+
+#panel-courses .courses-table th:nth-child(2) { min-width: 110px; } /* Course */
+#panel-courses .courses-table th:nth-child(4) { min-width: 90px; }  /* Avg GPA */
+#panel-courses .courses-table th:nth-child(5) { min-width: 86px; }  /* % A/A+ */
+#panel-courses .courses-table th:nth-child(6) { min-width: 105px; } /* Students */
+#panel-courses .courses-table th:nth-child(7) { min-width: 90px; }  /* Dept */
+
 .rankings-table th[data-tip]:hover::after {
     content: attr(data-tip);
     position: absolute;
@@ -1304,11 +1372,11 @@ a:hover {
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position by weighted average GPA in this dataset (lower GPA = higher position). #1 has the lowest average GPA.">#</th>
-                    <th data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
-                    <th data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
-                    <th data-tip="Number of required courses matched to grade data.">Courses</th>
-                    <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
+                    <th class="sortable" data-sort="major" data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
+                    <th class="sortable" data-sort="courses" data-tip="Number of required courses matched to grade data.">Courses</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
                 </tr></thead>
                 <tbody id="rankings-body"></tbody>
             </table>
@@ -1331,11 +1399,11 @@ a:hover {
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position by average GPA (lower GPA = higher position).">#</th>
-                    <th data-tip="Subject area / department code.">Department</th>
-                    <th data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Number of courses with grade data in this department.">Courses</th>
-                    <th data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department code.">Department</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="courses" data-tip="Number of courses with grade data in this department.">Courses</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
                 </tr></thead>
                 <tbody id="dept-rankings-body"></tbody>
             </table>
@@ -1352,13 +1420,13 @@ a:hover {
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position within this department (lower GPA = higher position).">#</th>
-                    <th data-tip="Subject area / department.">Dept</th>
-                    <th data-tip="Instructor name from grade records.">Professor</th>
-                    <th data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="GPA range across this professor's sections (lowest–highest course average).">Grade Range</th>
-                    <th data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
-                    <th data-tip="Total letter grades recorded across all courses.">Grade Records</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department.">Dept</th>
+                    <th class="sortable" data-sort="name" data-tip="Instructor name from grade records.">Professor</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="range" data-tip="GPA range across this professor's sections (lowest–highest course average). Click to toggle sorting by lowest vs highest section GPA (within department).">Grade Range</th>
+                    <th class="sortable" data-sort="classes" data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses.">Grade Records</th>
                 </tr></thead>
                 <tbody id="prof-rankings-body"></tbody>
             </table>
@@ -1407,12 +1475,12 @@ a:hover {
             <table class="courses-table">
                 <thead><tr>
                     <th data-tip="Row number in the current sort order.">#</th>
-                    <th data-tip="Course ID (e.g. MATH 31A). Format is SUBJECT + NUMBER.">Course</th>
-                    <th data-tip="Official course title from the UCLA catalog.">Title</th>
-                    <th data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
-                    <th data-tip="Subject area / department this course belongs to.">Dept</th>
+                    <th class="sortable" data-sort="course" data-tip="Course ID (e.g. MATH 31A). Format is SUBJECT + NUMBER.">Course</th>
+                    <th class="sortable" data-sort="title" data-tip="Official course title from the UCLA catalog.">Title</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department this course belongs to.">Dept</th>
                 </tr></thead>
                 <tbody id="courses-tbody"></tbody>
             </table>
@@ -1530,11 +1598,23 @@ document.getElementById('stat-grades').textContent = DATA.total_student_grades.t
 // ─── Rankings (with filter modes) ────────────────────────────
 
 let currentFilter = 'all';
+let majorSort = { key: 'gpa', dir: 'asc' };
 
 function setFilter(mode) {
     currentFilter = mode;
     document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active-filter'));
     document.getElementById('filter-' + mode.replace('_', '-')).classList.add('active-filter');
+    renderRankings();
+}
+
+function setMajorSort(key) {
+    if (majorSort.key === key) {
+        majorSort.dir = majorSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        majorSort.key = key;
+        majorSort.dir = (key === 'major') ? 'asc' : 'asc';
+    }
+    updateSortIndicators();
     renderRankings();
 }
 
@@ -1555,7 +1635,14 @@ function renderRankings() {
         return { ...r, _gpa: gpa, _pctA: pctA, _students: students, _courses: courses };
     }).filter(r => r._gpa != null);
 
-    items.sort((a, b) => a._gpa - b._gpa);
+    const dirMul = majorSort.dir === 'asc' ? 1 : -1;
+    items.sort((a, b) => {
+        if (majorSort.key === 'major') return dirMul * String(a.major).localeCompare(String(b.major));
+        if (majorSort.key === 'pctA') return dirMul * ((a._pctA ?? 0) - (b._pctA ?? 0));
+        if (majorSort.key === 'courses') return dirMul * ((a._courses ?? 0) - (b._courses ?? 0));
+        if (majorSort.key === 'students') return dirMul * ((a._students ?? 0) - (b._students ?? 0));
+        return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
+    });
 
     const tbody = document.getElementById('rankings-body');
     let html = '';
@@ -1585,6 +1672,7 @@ renderRankings();
 // ─── Department Rankings (with course filter: all / upper / lower div) ───
 
 let currentDeptFilter = 'all';
+let deptSort = { key: 'gpa', dir: 'asc' };
 
 function setDeptFilter(mode) {
     currentDeptFilter = mode;
@@ -1592,6 +1680,17 @@ function setDeptFilter(mode) {
     const id = mode === 'ud' ? 'dept-filter-ud' : mode === 'ld' ? 'dept-filter-ld' : 'dept-filter-all';
     const btn = document.getElementById(id);
     if (btn) btn.classList.add('active-filter');
+    renderDeptRankings();
+}
+
+function setDeptSort(key) {
+    if (deptSort.key === key) {
+        deptSort.dir = deptSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        deptSort.key = key;
+        deptSort.dir = (key === 'dept') ? 'asc' : 'asc';
+    }
+    updateSortIndicators();
     renderDeptRankings();
 }
 
@@ -1617,7 +1716,16 @@ function renderDeptRankings() {
             num_courses: numCourses,
             total_students: totalStudents,
         };
-    }).filter(Boolean).sort((a, b) => a.avg_gpa - b.avg_gpa);
+    }).filter(Boolean);
+
+    const dirMul = deptSort.dir === 'asc' ? 1 : -1;
+    depts.sort((a, b) => {
+        if (deptSort.key === 'dept') return dirMul * String(a.label).localeCompare(String(b.label));
+        if (deptSort.key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+        if (deptSort.key === 'courses') return dirMul * ((a.num_courses ?? 0) - (b.num_courses ?? 0));
+        if (deptSort.key === 'students') return dirMul * ((a.total_students ?? 0) - (b.total_students ?? 0));
+        return dirMul * ((a.avg_gpa ?? 0) - (b.avg_gpa ?? 0));
+    });
 
     const tbody = document.getElementById('dept-rankings-body');
     if (!tbody) return;
@@ -1673,24 +1781,42 @@ function renderProfessorRankings() {
         tbody.innerHTML = '<tr><td colspan="8" style="color:var(--text-muted);padding:24px;text-align:center">No professor data available. Raw grade files must include instructor information (e.g. INSTR NAME).</td></tr>';
         return;
     }
-    // Apply ability adjustment and re-rank within each department
+    // Sort within department (never mixes departments)
+    if (!window.profSort) {
+        window.profSort = { key: 'gpa', dir: 'asc', rangeMode: 'min' }; // rangeMode: 'min' | 'max'
+    }
     rows.forEach(p => {
         const proxy = deptAbilityProxy[p.dept];
         p._gpa = adjustGpa(p.avg_gpa, proxy);
+        p._range_min = (p.prof_min_gpa ?? p.avg_gpa);
+        p._range_max = (p.prof_max_gpa ?? p.avg_gpa);
     });
-    if (abilityAdjusted) {
-        const byDept = {};
-        rows.forEach(p => {
-            if (!byDept[p.dept]) byDept[p.dept] = [];
-            byDept[p.dept].push(p);
+    const byDept = {};
+    rows.forEach(p => {
+        if (!byDept[p.dept]) byDept[p.dept] = [];
+        byDept[p.dept].push(p);
+    });
+    rows.length = 0;
+    Object.keys(byDept).sort().forEach(dept => {
+        const deptRows = byDept[dept];
+        const dirMul = window.profSort.dir === 'asc' ? 1 : -1;
+        deptRows.sort((a, b) => {
+            const key = window.profSort.key;
+            if (key === 'name') return dirMul * String(a.name).localeCompare(String(b.name));
+            if (key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+            if (key === 'classes') return dirMul * (((a.num_classes ?? a.num_courses) ?? 0) - (((b.num_classes ?? b.num_courses) ?? 0)));
+            if (key === 'students') return dirMul * ((a.total_students ?? 0) - (b.total_students ?? 0));
+            if (key === 'range') {
+                const av = window.profSort.rangeMode === 'max' ? a._range_max : a._range_min;
+                const bv = window.profSort.rangeMode === 'max' ? b._range_max : b._range_min;
+                return dirMul * ((av ?? 0) - (bv ?? 0));
+            }
+            // gpa
+            return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
         });
-        rows.length = 0;
-        Object.keys(byDept).sort().forEach(dept => {
-            const deptRows = byDept[dept].sort((a, b) => a._gpa - b._gpa);
-            deptRows.forEach((p, i) => { p._rank = i + 1; });
-            rows.push(...deptRows);
-        });
-    }
+        deptRows.forEach((p, i) => { p._rank = i + 1; });
+        rows.push(...deptRows);
+    });
 
     let html = '';
     let lastDept = '';
@@ -1710,7 +1836,7 @@ function renderProfessorRankings() {
         const profCell = slug
             ? `<a href="https://bruinwalk.com/professors/${slug}/" target="_blank" rel="noopener noreferrer" class="major-link">${p.name}</a>`
             : p.name;
-        const rank = abilityAdjusted ? (p._rank || p.rank) : p.rank;
+        const rank = (p._rank || p.rank);
         html += `
         <tr class="${deptRowClass}">
             <td><div class="rank-badge ${badgeClass}">${rank}</div></td>
@@ -1732,11 +1858,31 @@ renderProfessorRankings();
 
 let courseSortDir = 'asc';
 const allCourses = DATA.all_courses_sorted;
+let courseSort = { key: 'gpa', dir: 'asc' };
 
 function setSortDir(dir) {
     courseSortDir = dir;
     document.getElementById('sort-hard').classList.toggle('active-sort', dir === 'asc');
     document.getElementById('sort-easy').classList.toggle('active-sort', dir === 'desc');
+    courseSort = { key: 'gpa', dir };
+    renderCourseTable();
+}
+
+function setCourseSort(key) {
+    if (courseSort.key === key) {
+        courseSort.dir = courseSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        courseSort.key = key;
+        courseSort.dir = (key === 'course' || key === 'title' || key === 'dept') ? 'asc' : 'asc';
+    }
+    // Keep the button UI in sync only when sorting by GPA
+    if (courseSort.key === 'gpa') {
+        setSortDir(courseSort.dir);
+        return;
+    }
+    document.getElementById('sort-hard').classList.toggle('active-sort', false);
+    document.getElementById('sort-easy').classList.toggle('active-sort', false);
+    updateSortIndicators();
     renderCourseTable();
 }
 
@@ -1750,7 +1896,15 @@ function renderCourseTable() {
         const gpa = adjustGpa(c.avg_gpa, proxy);
         return { ...c, _gpa: gpa };
     });
-    adjusted.sort((a, b) => courseSortDir === 'asc' ? a._gpa - b._gpa : b._gpa - a._gpa);
+    const dirMul = courseSort.dir === 'asc' ? 1 : -1;
+    adjusted.sort((a, b) => {
+        if (courseSort.key === 'course') return dirMul * String(a.course_id).localeCompare(String(b.course_id));
+        if (courseSort.key === 'title') return dirMul * String(a.course_title || '').localeCompare(String(b.course_title || ''));
+        if (courseSort.key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+        if (courseSort.key === 'students') return dirMul * (((a.total_letter_grades || 0)) - ((b.total_letter_grades || 0)));
+        if (courseSort.key === 'dept') return dirMul * String(a.subject_area || '').localeCompare(String(b.subject_area || ''));
+        return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
+    });
 
     const sliced = adjusted.slice(0, Math.min(limit, adjusted.length));
     const tbody = document.getElementById('courses-tbody');
@@ -1778,6 +1932,95 @@ function renderCourseTable() {
 }
 
 renderCourseTable();
+
+// ─── Sortable header wiring ──────────────────────────────────
+
+function initSortableHeaders() {
+    // Inject icons into headers
+    document.querySelectorAll('th.sortable').forEach(th => {
+        if (th.querySelector('.sort-icons')) return;
+        const wrap = document.createElement('span');
+        wrap.className = 'sort-icons';
+        const up = document.createElement('span');
+        up.className = 'sort-up';
+        up.textContent = '▲';
+        const down = document.createElement('span');
+        down.className = 'sort-down';
+        down.textContent = '▼';
+        wrap.appendChild(up);
+        wrap.appendChild(down);
+        th.appendChild(wrap);
+    });
+
+    // Majors
+    document.querySelectorAll('#panel-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => setMajorSort(th.dataset.sort));
+    });
+    // Departments
+    document.querySelectorAll('#panel-dept-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => setDeptSort(th.dataset.sort));
+    });
+    // Professors
+    document.querySelectorAll('#panel-prof-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+            if (!window.profSort) window.profSort = { key: 'gpa', dir: 'asc', rangeMode: 'min' };
+            const key = th.dataset.sort;
+            if (key === 'range') {
+                window.profSort.key = 'range';
+                window.profSort.dir = 'asc';
+                window.profSort.rangeMode = window.profSort.rangeMode === 'min' ? 'max' : 'min';
+            } else if (window.profSort.key === key) {
+                window.profSort.dir = window.profSort.dir === 'asc' ? 'desc' : 'asc';
+            } else {
+                window.profSort.key = key;
+                window.profSort.dir = (key === 'name') ? 'asc' : 'asc';
+            }
+            updateSortIndicators();
+            renderProfessorRankings();
+        });
+    });
+    // Courses
+    document.querySelectorAll('#panel-courses th.sortable').forEach(th => {
+        th.addEventListener('click', () => setCourseSort(th.dataset.sort));
+    });
+}
+
+initSortableHeaders();
+
+function updateSortIndicators() {
+    // Clear all
+    document.querySelectorAll('th.sortable').forEach(th => {
+        th.classList.remove('th-sort-active', 'th-sort-asc', 'th-sort-desc');
+    });
+
+    // Helper: mark one header active with dir
+    const mark = (panelSel, key, dir) => {
+        const th = document.querySelector(`${panelSel} th.sortable[data-sort="${key}"]`);
+        if (!th) return;
+        th.classList.add('th-sort-active');
+        th.classList.add(dir === 'desc' ? 'th-sort-desc' : 'th-sort-asc');
+    };
+
+    mark('#panel-rankings', majorSort.key, majorSort.dir);
+    mark('#panel-dept-rankings', deptSort.key, deptSort.dir);
+
+    if (window.profSort) {
+        // range toggles min/max; treat it as asc/desc for indicator:
+        // - rangeMode=min => lowest-min at top (asc)
+        // - rangeMode=max => highest-max at top (desc)
+        if (window.profSort.key === 'range') {
+            mark('#panel-prof-rankings', 'range', window.profSort.rangeMode === 'max' ? 'desc' : 'asc');
+        } else {
+            mark('#panel-prof-rankings', window.profSort.key, window.profSort.dir);
+        }
+    } else {
+        mark('#panel-prof-rankings', 'gpa', 'asc');
+    }
+
+    mark('#panel-courses', courseSort.key, courseSort.dir);
+}
+
+updateSortIndicators();
 
 // ─── Bipartite Graph ─────────────────────────────────────────
 

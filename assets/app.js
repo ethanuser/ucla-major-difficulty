@@ -84,11 +84,23 @@ document.getElementById('stat-grades').textContent = DATA.total_student_grades.t
 // ─── Rankings (with filter modes) ────────────────────────────
 
 let currentFilter = 'all';
+let majorSort = { key: 'gpa', dir: 'asc' };
 
 function setFilter(mode) {
     currentFilter = mode;
     document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active-filter'));
     document.getElementById('filter-' + mode.replace('_', '-')).classList.add('active-filter');
+    renderRankings();
+}
+
+function setMajorSort(key) {
+    if (majorSort.key === key) {
+        majorSort.dir = majorSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        majorSort.key = key;
+        majorSort.dir = (key === 'major') ? 'asc' : 'asc';
+    }
+    updateSortIndicators();
     renderRankings();
 }
 
@@ -109,7 +121,14 @@ function renderRankings() {
         return { ...r, _gpa: gpa, _pctA: pctA, _students: students, _courses: courses };
     }).filter(r => r._gpa != null);
 
-    items.sort((a, b) => a._gpa - b._gpa);
+    const dirMul = majorSort.dir === 'asc' ? 1 : -1;
+    items.sort((a, b) => {
+        if (majorSort.key === 'major') return dirMul * String(a.major).localeCompare(String(b.major));
+        if (majorSort.key === 'pctA') return dirMul * ((a._pctA ?? 0) - (b._pctA ?? 0));
+        if (majorSort.key === 'courses') return dirMul * ((a._courses ?? 0) - (b._courses ?? 0));
+        if (majorSort.key === 'students') return dirMul * ((a._students ?? 0) - (b._students ?? 0));
+        return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
+    });
 
     const tbody = document.getElementById('rankings-body');
     let html = '';
@@ -139,6 +158,7 @@ renderRankings();
 // ─── Department Rankings (with course filter: all / upper / lower div) ───
 
 let currentDeptFilter = 'all';
+let deptSort = { key: 'gpa', dir: 'asc' };
 
 function setDeptFilter(mode) {
     currentDeptFilter = mode;
@@ -146,6 +166,17 @@ function setDeptFilter(mode) {
     const id = mode === 'ud' ? 'dept-filter-ud' : mode === 'ld' ? 'dept-filter-ld' : 'dept-filter-all';
     const btn = document.getElementById(id);
     if (btn) btn.classList.add('active-filter');
+    renderDeptRankings();
+}
+
+function setDeptSort(key) {
+    if (deptSort.key === key) {
+        deptSort.dir = deptSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        deptSort.key = key;
+        deptSort.dir = (key === 'dept') ? 'asc' : 'asc';
+    }
+    updateSortIndicators();
     renderDeptRankings();
 }
 
@@ -171,7 +202,16 @@ function renderDeptRankings() {
             num_courses: numCourses,
             total_students: totalStudents,
         };
-    }).filter(Boolean).sort((a, b) => a.avg_gpa - b.avg_gpa);
+    }).filter(Boolean);
+
+    const dirMul = deptSort.dir === 'asc' ? 1 : -1;
+    depts.sort((a, b) => {
+        if (deptSort.key === 'dept') return dirMul * String(a.label).localeCompare(String(b.label));
+        if (deptSort.key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+        if (deptSort.key === 'courses') return dirMul * ((a.num_courses ?? 0) - (b.num_courses ?? 0));
+        if (deptSort.key === 'students') return dirMul * ((a.total_students ?? 0) - (b.total_students ?? 0));
+        return dirMul * ((a.avg_gpa ?? 0) - (b.avg_gpa ?? 0));
+    });
 
     const tbody = document.getElementById('dept-rankings-body');
     if (!tbody) return;
@@ -227,24 +267,42 @@ function renderProfessorRankings() {
         tbody.innerHTML = '<tr><td colspan="8" style="color:var(--text-muted);padding:24px;text-align:center">No professor data available. Raw grade files must include instructor information (e.g. INSTR NAME).</td></tr>';
         return;
     }
-    // Apply ability adjustment and re-rank within each department
+    // Sort within department (never mixes departments)
+    if (!window.profSort) {
+        window.profSort = { key: 'gpa', dir: 'asc', rangeMode: 'min' }; // rangeMode: 'min' | 'max'
+    }
     rows.forEach(p => {
         const proxy = deptAbilityProxy[p.dept];
         p._gpa = adjustGpa(p.avg_gpa, proxy);
+        p._range_min = (p.prof_min_gpa ?? p.avg_gpa);
+        p._range_max = (p.prof_max_gpa ?? p.avg_gpa);
     });
-    if (abilityAdjusted) {
-        const byDept = {};
-        rows.forEach(p => {
-            if (!byDept[p.dept]) byDept[p.dept] = [];
-            byDept[p.dept].push(p);
+    const byDept = {};
+    rows.forEach(p => {
+        if (!byDept[p.dept]) byDept[p.dept] = [];
+        byDept[p.dept].push(p);
+    });
+    rows.length = 0;
+    Object.keys(byDept).sort().forEach(dept => {
+        const deptRows = byDept[dept];
+        const dirMul = window.profSort.dir === 'asc' ? 1 : -1;
+        deptRows.sort((a, b) => {
+            const key = window.profSort.key;
+            if (key === 'name') return dirMul * String(a.name).localeCompare(String(b.name));
+            if (key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+            if (key === 'classes') return dirMul * (((a.num_classes ?? a.num_courses) ?? 0) - (((b.num_classes ?? b.num_courses) ?? 0)));
+            if (key === 'students') return dirMul * ((a.total_students ?? 0) - (b.total_students ?? 0));
+            if (key === 'range') {
+                const av = window.profSort.rangeMode === 'max' ? a._range_max : a._range_min;
+                const bv = window.profSort.rangeMode === 'max' ? b._range_max : b._range_min;
+                return dirMul * ((av ?? 0) - (bv ?? 0));
+            }
+            // gpa
+            return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
         });
-        rows.length = 0;
-        Object.keys(byDept).sort().forEach(dept => {
-            const deptRows = byDept[dept].sort((a, b) => a._gpa - b._gpa);
-            deptRows.forEach((p, i) => { p._rank = i + 1; });
-            rows.push(...deptRows);
-        });
-    }
+        deptRows.forEach((p, i) => { p._rank = i + 1; });
+        rows.push(...deptRows);
+    });
 
     let html = '';
     let lastDept = '';
@@ -264,7 +322,7 @@ function renderProfessorRankings() {
         const profCell = slug
             ? `<a href="https://bruinwalk.com/professors/${slug}/" target="_blank" rel="noopener noreferrer" class="major-link">${p.name}</a>`
             : p.name;
-        const rank = abilityAdjusted ? (p._rank || p.rank) : p.rank;
+        const rank = (p._rank || p.rank);
         html += `
         <tr class="${deptRowClass}">
             <td><div class="rank-badge ${badgeClass}">${rank}</div></td>
@@ -286,11 +344,31 @@ renderProfessorRankings();
 
 let courseSortDir = 'asc';
 const allCourses = DATA.all_courses_sorted;
+let courseSort = { key: 'gpa', dir: 'asc' };
 
 function setSortDir(dir) {
     courseSortDir = dir;
     document.getElementById('sort-hard').classList.toggle('active-sort', dir === 'asc');
     document.getElementById('sort-easy').classList.toggle('active-sort', dir === 'desc');
+    courseSort = { key: 'gpa', dir };
+    renderCourseTable();
+}
+
+function setCourseSort(key) {
+    if (courseSort.key === key) {
+        courseSort.dir = courseSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+        courseSort.key = key;
+        courseSort.dir = (key === 'course' || key === 'title' || key === 'dept') ? 'asc' : 'asc';
+    }
+    // Keep the button UI in sync only when sorting by GPA
+    if (courseSort.key === 'gpa') {
+        setSortDir(courseSort.dir);
+        return;
+    }
+    document.getElementById('sort-hard').classList.toggle('active-sort', false);
+    document.getElementById('sort-easy').classList.toggle('active-sort', false);
+    updateSortIndicators();
     renderCourseTable();
 }
 
@@ -304,7 +382,15 @@ function renderCourseTable() {
         const gpa = adjustGpa(c.avg_gpa, proxy);
         return { ...c, _gpa: gpa };
     });
-    adjusted.sort((a, b) => courseSortDir === 'asc' ? a._gpa - b._gpa : b._gpa - a._gpa);
+    const dirMul = courseSort.dir === 'asc' ? 1 : -1;
+    adjusted.sort((a, b) => {
+        if (courseSort.key === 'course') return dirMul * String(a.course_id).localeCompare(String(b.course_id));
+        if (courseSort.key === 'title') return dirMul * String(a.course_title || '').localeCompare(String(b.course_title || ''));
+        if (courseSort.key === 'pctA') return dirMul * ((a.pct_A ?? 0) - (b.pct_A ?? 0));
+        if (courseSort.key === 'students') return dirMul * (((a.total_letter_grades || 0)) - ((b.total_letter_grades || 0)));
+        if (courseSort.key === 'dept') return dirMul * String(a.subject_area || '').localeCompare(String(b.subject_area || ''));
+        return dirMul * ((a._gpa ?? 0) - (b._gpa ?? 0));
+    });
 
     const sliced = adjusted.slice(0, Math.min(limit, adjusted.length));
     const tbody = document.getElementById('courses-tbody');
@@ -332,6 +418,95 @@ function renderCourseTable() {
 }
 
 renderCourseTable();
+
+// ─── Sortable header wiring ──────────────────────────────────
+
+function initSortableHeaders() {
+    // Inject icons into headers
+    document.querySelectorAll('th.sortable').forEach(th => {
+        if (th.querySelector('.sort-icons')) return;
+        const wrap = document.createElement('span');
+        wrap.className = 'sort-icons';
+        const up = document.createElement('span');
+        up.className = 'sort-up';
+        up.textContent = '▲';
+        const down = document.createElement('span');
+        down.className = 'sort-down';
+        down.textContent = '▼';
+        wrap.appendChild(up);
+        wrap.appendChild(down);
+        th.appendChild(wrap);
+    });
+
+    // Majors
+    document.querySelectorAll('#panel-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => setMajorSort(th.dataset.sort));
+    });
+    // Departments
+    document.querySelectorAll('#panel-dept-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => setDeptSort(th.dataset.sort));
+    });
+    // Professors
+    document.querySelectorAll('#panel-prof-rankings th.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+            if (!window.profSort) window.profSort = { key: 'gpa', dir: 'asc', rangeMode: 'min' };
+            const key = th.dataset.sort;
+            if (key === 'range') {
+                window.profSort.key = 'range';
+                window.profSort.dir = 'asc';
+                window.profSort.rangeMode = window.profSort.rangeMode === 'min' ? 'max' : 'min';
+            } else if (window.profSort.key === key) {
+                window.profSort.dir = window.profSort.dir === 'asc' ? 'desc' : 'asc';
+            } else {
+                window.profSort.key = key;
+                window.profSort.dir = (key === 'name') ? 'asc' : 'asc';
+            }
+            updateSortIndicators();
+            renderProfessorRankings();
+        });
+    });
+    // Courses
+    document.querySelectorAll('#panel-courses th.sortable').forEach(th => {
+        th.addEventListener('click', () => setCourseSort(th.dataset.sort));
+    });
+}
+
+initSortableHeaders();
+
+function updateSortIndicators() {
+    // Clear all
+    document.querySelectorAll('th.sortable').forEach(th => {
+        th.classList.remove('th-sort-active', 'th-sort-asc', 'th-sort-desc');
+    });
+
+    // Helper: mark one header active with dir
+    const mark = (panelSel, key, dir) => {
+        const th = document.querySelector(`${panelSel} th.sortable[data-sort="${key}"]`);
+        if (!th) return;
+        th.classList.add('th-sort-active');
+        th.classList.add(dir === 'desc' ? 'th-sort-desc' : 'th-sort-asc');
+    };
+
+    mark('#panel-rankings', majorSort.key, majorSort.dir);
+    mark('#panel-dept-rankings', deptSort.key, deptSort.dir);
+
+    if (window.profSort) {
+        // range toggles min/max; treat it as asc/desc for indicator:
+        // - rangeMode=min => lowest-min at top (asc)
+        // - rangeMode=max => highest-max at top (desc)
+        if (window.profSort.key === 'range') {
+            mark('#panel-prof-rankings', 'range', window.profSort.rangeMode === 'max' ? 'desc' : 'asc');
+        } else {
+            mark('#panel-prof-rankings', window.profSort.key, window.profSort.dir);
+        }
+    } else {
+        mark('#panel-prof-rankings', 'gpa', 'asc');
+    }
+
+    mark('#panel-courses', courseSort.key, courseSort.dir);
+}
+
+updateSortIndicators();
 
 // ─── Bipartite Graph ─────────────────────────────────────────
 

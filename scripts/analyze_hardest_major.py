@@ -805,11 +805,11 @@ def generate_html(graph_data, output_path):
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position by weighted average GPA in this dataset (lower GPA = higher position). #1 has the lowest average GPA.">#</th>
-                    <th data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
-                    <th data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
-                    <th data-tip="Number of required courses matched to grade data.">Courses</th>
-                    <th data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
+                    <th class="sortable" data-sort="major" data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
+                    <th class="sortable" data-sort="courses" data-tip="Number of required courses matched to grade data.">Courses</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
                 </tr></thead>
                 <tbody id="rankings-body"></tbody>
             </table>
@@ -832,11 +832,11 @@ def generate_html(graph_data, output_path):
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position by average GPA (lower GPA = higher position).">#</th>
-                    <th data-tip="Subject area / department code.">Department</th>
-                    <th data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Number of courses with grade data in this department.">Courses</th>
-                    <th data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department code.">Department</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="courses" data-tip="Number of courses with grade data in this department.">Courses</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
                 </tr></thead>
                 <tbody id="dept-rankings-body"></tbody>
             </table>
@@ -853,13 +853,13 @@ def generate_html(graph_data, output_path):
             <table class="rankings-table">
                 <thead><tr>
                     <th data-tip="Position within this department (lower GPA = higher position).">#</th>
-                    <th data-tip="Subject area / department.">Dept</th>
-                    <th data-tip="Instructor name from grade records.">Professor</th>
-                    <th data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="GPA range across this professor's sections (lowest–highest course average).">Grade Range</th>
-                    <th data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
-                    <th data-tip="Total letter grades recorded across all courses.">Grade Records</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department.">Dept</th>
+                    <th class="sortable" data-sort="name" data-tip="Instructor name from grade records.">Professor</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="range" data-tip="GPA range across this professor's sections (lowest–highest course average). Click to toggle sorting by lowest vs highest section GPA (within department).">Grade Range</th>
+                    <th class="sortable" data-sort="classes" data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses.">Grade Records</th>
                 </tr></thead>
                 <tbody id="prof-rankings-body"></tbody>
             </table>
@@ -908,12 +908,12 @@ def generate_html(graph_data, output_path):
             <table class="courses-table">
                 <thead><tr>
                     <th data-tip="Row number in the current sort order.">#</th>
-                    <th data-tip="Course ID (e.g. MATH 31A). Format is SUBJECT + NUMBER.">Course</th>
-                    <th data-tip="Official course title from the UCLA catalog.">Title</th>
-                    <th data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
-                    <th data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
-                    <th data-tip="Subject area / department this course belongs to.">Dept</th>
+                    <th class="sortable" data-sort="course" data-tip="Course ID (e.g. MATH 31A). Format is SUBJECT + NUMBER.">Course</th>
+                    <th class="sortable" data-sort="title" data-tip="Official course title from the UCLA catalog.">Title</th>
+                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
+                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
+                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
+                    <th class="sortable" data-sort="dept" data-tip="Subject area / department this course belongs to.">Dept</th>
                 </tr></thead>
                 <tbody id="courses-tbody"></tbody>
             </table>
