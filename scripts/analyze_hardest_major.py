@@ -898,10 +898,6 @@ def generate_html(graph_data, output_path):
                     <option value="1000">1000</option>
                     <option value="all">All</option>
                 </select>
-                <div class="sort-group">
-                    <button id="sort-hard" class="active-sort" onclick="setSortDir('asc')">Lowest GPA First</button>
-                    <button id="sort-easy" onclick="setSortDir('desc')">Highest GPA First</button>
-                </div>
                 <span class="course-count-info" id="course-count-info"></span>
             </div>
             <div class="table-scroll-wrapper">

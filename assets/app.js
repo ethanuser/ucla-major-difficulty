@@ -342,17 +342,8 @@ renderProfessorRankings();
 
 // ─── Course Deep Dive ────────────────────────────────────────
 
-let courseSortDir = 'asc';
 const allCourses = DATA.all_courses_sorted;
 let courseSort = { key: 'gpa', dir: 'asc' };
-
-function setSortDir(dir) {
-    courseSortDir = dir;
-    document.getElementById('sort-hard').classList.toggle('active-sort', dir === 'asc');
-    document.getElementById('sort-easy').classList.toggle('active-sort', dir === 'desc');
-    courseSort = { key: 'gpa', dir };
-    renderCourseTable();
-}
 
 function setCourseSort(key) {
     if (courseSort.key === key) {
@@ -361,13 +352,6 @@ function setCourseSort(key) {
         courseSort.key = key;
         courseSort.dir = (key === 'course' || key === 'title' || key === 'dept') ? 'asc' : 'asc';
     }
-    // Keep the button UI in sync only when sorting by GPA
-    if (courseSort.key === 'gpa') {
-        setSortDir(courseSort.dir);
-        return;
-    }
-    document.getElementById('sort-hard').classList.toggle('active-sort', false);
-    document.getElementById('sort-easy').classList.toggle('active-sort', false);
     updateSortIndicators();
     renderCourseTable();
 }
