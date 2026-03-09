@@ -431,7 +431,6 @@ a:hover {
 
 .rankings-table th[data-tip] {
     cursor: help;
-    position: relative;
 }
 
 .rankings-table th.sortable,
@@ -846,7 +845,6 @@ a:hover {
 
 .courses-table th[data-tip] {
     cursor: help;
-    position: relative;
 }
 
 .courses-table th[data-tip]:hover::after {
