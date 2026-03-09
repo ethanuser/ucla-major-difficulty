@@ -898,6 +898,16 @@ def generate_html(graph_data, output_path):
                     <option value="1000">1000</option>
                     <option value="all">All</option>
                 </select>
+                <div class="course-div-group">
+                    <span class="course-div-label">Course Level:</span>
+                    <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
+                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
+                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
+                </div>
+                <label for="course-dept-filter">Dept:</label>
+                <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">
+                    <!-- Options populated in app.js from DATA.all_courses_sorted -->
+                </select>
                 <span class="course-count-info" id="course-count-info"></span>
             </div>
             <div class="table-scroll-wrapper">

@@ -803,6 +803,18 @@ a:hover {
     margin-left: auto;
 }
 
+.course-div-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.course-div-label {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
 
 /* --- Courses table --- */
 

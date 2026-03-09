@@ -344,6 +344,33 @@ renderProfessorRankings();
 
 const allCourses = DATA.all_courses_sorted;
 let courseSort = { key: 'gpa', dir: 'asc' };
+let courseDivisionFilter = 'all'; // 'all' | 'ud' | 'ld'
+let courseDeptFilter = 'all';     // 'all' or subject_area code
+
+function getCourseNumberFromId(courseId) {
+    if (!courseId) return 0;
+    const parts = String(courseId).split(' ');
+    if (parts.length < 2) return 0;
+    const m = parts[1].match(/(\d+)/);
+    return m ? parseInt(m[1], 10) : 0;
+}
+
+function isUpperDivisionCourse(courseId) {
+    return getCourseNumberFromId(courseId) >= 100;
+}
+
+function setCourseDivisionFilter(mode) {
+    courseDivisionFilter = mode;
+    document.querySelectorAll('.course-div-btn').forEach(btn => btn.classList.remove('active-filter'));
+    const active = document.querySelector(`.course-div-btn[onclick*="setCourseDivisionFilter('${mode}'"]`);
+    if (active) active.classList.add('active-filter');
+    renderCourseTable();
+}
+
+function setCourseDeptFilter(value) {
+    courseDeptFilter = value || 'all';
+    renderCourseTable();
+}
 
 function setCourseSort(key) {
     if (courseSort.key === key) {
@@ -358,10 +385,18 @@ function setCourseSort(key) {
 
 function renderCourseTable() {
     const sel = document.getElementById('course-count').value;
-    const limit = sel === 'all' ? allCourses.length : parseInt(sel);
+    const limit = sel === 'all' ? allCourses.length : parseInt(sel, 10);
+
+    // Filter by division and department first
+    const filtered = allCourses.filter(c => {
+        if (courseDivisionFilter === 'ud' && !isUpperDivisionCourse(c.course_id)) return false;
+        if (courseDivisionFilter === 'ld' && isUpperDivisionCourse(c.course_id)) return false;
+        if (courseDeptFilter !== 'all' && c.subject_area !== courseDeptFilter) return false;
+        return true;
+    });
 
     // Build adjusted copies so we can re-sort by adjusted GPA
-    const adjusted = allCourses.map(c => {
+    const adjusted = filtered.map(c => {
         const proxy = deptAbilityProxy[c.subject_area];
         const gpa = adjustGpa(c.avg_gpa, proxy);
         return { ...c, _gpa: gpa };
@@ -456,6 +491,25 @@ function initSortableHeaders() {
 }
 
 initSortableHeaders();
+
+// Initialize course dept dropdown options
+(function initCourseDeptFilter() {
+    const sel = document.getElementById('course-dept-filter');
+    if (!sel) return;
+    const depts = Array.from(new Set(allCourses.map(c => c.subject_area).filter(Boolean))).sort();
+    sel.innerHTML = '';
+    const optAll = document.createElement('option');
+    optAll.value = 'all';
+    optAll.textContent = 'All departments';
+    sel.appendChild(optAll);
+    depts.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        sel.appendChild(opt);
+    });
+    sel.value = 'all';
+})();
 
 function updateSortIndicators() {
     // Clear all
