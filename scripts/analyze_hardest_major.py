@@ -836,9 +836,9 @@ def generate_html(graph_data, output_path):
                 <label>Course Filter:</label>
                 <div class="filter-group">
                     <button id="filter-all" class="active-filter" onclick="setFilter('all')">All Courses</button>
+                    <button id="filter-ld-all" onclick="setFilter('ld_all')">Lower-Div (All)</button>
                     <button id="filter-ud-all" onclick="setFilter('ud_all')">Upper-Div (All)</button>
                     <button id="filter-ud-req" onclick="setFilter('ud_req')">Upper-Div (Required)</button>
-                    <button id="filter-ld-all" onclick="setFilter('ld_all')">Lower-Div (All)</button>
                     <button id="filter-ud-elec" onclick="setFilter('ud_elec')">Upper-Div (Electives)</button>
                 </div>
             </div>
@@ -865,8 +865,8 @@ def generate_html(graph_data, output_path):
                 <label>Course Filter:</label>
                 <div class="filter-group">
                     <button id="dept-filter-all" class="active-filter" onclick="setDeptFilter('all')">All Courses</button>
-                    <button id="dept-filter-ud" onclick="setDeptFilter('ud')">Upper Division</button>
                     <button id="dept-filter-ld" onclick="setDeptFilter('ld')">Lower Division</button>
+                    <button id="dept-filter-ud" onclick="setDeptFilter('ud')">Upper Division</button>
                 </div>
             </div>
             <div class="table-scroll-wrapper">
@@ -942,8 +942,8 @@ def generate_html(graph_data, output_path):
                 <div class="course-div-group">
                     <span class="course-div-label">Course Level:</span>
                     <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
-                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
                     <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
+                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
                 </div>
                 <label for="course-dept-filter">Dept:</label>
                 <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">
