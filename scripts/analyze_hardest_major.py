@@ -944,6 +944,7 @@ def generate_html(graph_data, output_path):
                     <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
                     <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
                     <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
+                    <button class="course-div-btn" onclick="setCourseDivisionFilter('grad')">Grad</button>
                 </div>
                 <label for="course-dept-filter">Dept:</label>
                 <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">

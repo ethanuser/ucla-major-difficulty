@@ -350,7 +350,7 @@ renderProfessorRankings();
 
 const allCourses = DATA.all_courses_sorted;
 let courseSort = { key: 'gpa', dir: 'asc' };
-let courseDivisionFilter = 'all'; // 'all' | 'ud' | 'ld'
+let courseDivisionFilter = 'all'; // 'all' | 'ud' | 'ld' | 'grad'
 let courseDeptFilter = 'all';     // 'all' or subject_area code
 
 function getCourseNumberFromId(courseId) {
@@ -363,6 +363,10 @@ function getCourseNumberFromId(courseId) {
 
 function isUpperDivisionCourse(courseId) {
     return getCourseNumberFromId(courseId) >= 100;
+}
+
+function isGradCourse(courseId) {
+    return getCourseNumberFromId(courseId) >= 200;
 }
 
 function setCourseDivisionFilter(mode) {
@@ -397,6 +401,7 @@ function renderCourseTable() {
     const filtered = allCourses.filter(c => {
         if (courseDivisionFilter === 'ud' && !isUpperDivisionCourse(c.course_id)) return false;
         if (courseDivisionFilter === 'ld' && isUpperDivisionCourse(c.course_id)) return false;
+        if (courseDivisionFilter === 'grad' && !isGradCourse(c.course_id)) return false;
         if (courseDeptFilter !== 'all' && c.subject_area !== courseDeptFilter) return false;
         return true;
     });
