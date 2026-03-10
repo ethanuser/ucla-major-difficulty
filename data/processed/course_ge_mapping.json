@@ -19,6 +19,66 @@
       "category": "Visual and Performance Arts Analysis and Practice"
     }
   ],
+  "AN N EA 10W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA 12W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA M50A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA M50B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA M70": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA M130": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
   "ANTHRO M67W": [
     {
       "foundation": "Foundations of Arts and Humanities",
@@ -149,6 +209,40 @@
     {
       "foundation": "Foundations of Society and Culture",
       "category": "Social Analysis"
+    }
+  ],
+  "ASIAN M20": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "ASIAN 30": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "ASIAN 40": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "ASIAN M60": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "ASIAN M60W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
     }
   ],
   "ASIA AM 30": [
@@ -289,6 +383,402 @@
       "category": "Philosophical and Linguistic Analysis"
     }
   ],
+  "CLUSTER 2A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 2B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 2CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 10A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 10B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 10CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 20A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 20B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 20CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M27A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M27B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M27CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 48A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 48B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 48CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 60A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 60B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 60CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M71A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M71B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M71CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 73A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 73B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 73CW": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
   "COM LIT 1B": [
     {
       "foundation": "Foundations of Arts and Humanities",
@@ -346,6 +836,32 @@
     }
   ],
   "DANCE 44": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "DESMA 7": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "DESMA 9": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "DESMA 10": [
     {
       "foundation": "Foundations of Arts and Humanities",
       "category": "Visual and Performance Arts Analysis and Practice"
@@ -484,6 +1000,70 @@
     }
   ],
   "ENGCOMP 7W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ENVIRON M30": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "ETHNMUS 5": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M25": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS 30": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "ETHNMUS 45": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M50A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M50B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M110A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M116": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "ETHNMUS M119": [
     {
       "foundation": "Foundations of Arts and Humanities",
       "category": "Visual and Performance Arts Analysis and Practice"
@@ -665,6 +1245,44 @@
       "category": "Historical Analysis"
     }
   ],
+  "HNRS 11W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "HNRS 43W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "HNRS 65W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "HNRS 78": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "IRANIAN 55": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
   "JAPAN 50": [
     {
       "foundation": "Foundations of Arts and Humanities",
@@ -697,6 +1315,12 @@
       "category": "Visual and Performance Arts Analysis and Practice"
     }
   ],
+  "JEWISH M10": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
   "LING 1": [
     {
       "foundation": "Foundations of Arts and Humanities",
@@ -727,6 +1351,102 @@
     {
       "foundation": "Foundations of Arts and Humanities",
       "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "MUSCLG 5": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 7": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 9": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 13": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 35": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 60": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 68": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 70": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 71": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG M82": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG 94": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG M112": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG M136": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "MUSCLG M137": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
     }
   ],
   "PHILOS 2": [
@@ -813,6 +1533,168 @@
       "category": "Philosophical and Linguistic Analysis"
     }
   ],
+  "PORTGSE M35": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "PORTGSE 46": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "RELIGN M10": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "RELIGN M20": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "RELIGN M50": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "RELIGN M60D": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "RELIGN M70": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "RELIGN 113": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "RELIGN M115": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "RELIGN M132": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    }
+  ],
+  "RUSSN 25": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "RUSSN 31": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
+  "RUSSN 90A": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "RUSSN 90B": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "SCAND 40": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "SCAND 40W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "SCAND 50": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "SCAND 50W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "SCAND 60": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    }
+  ],
   "SPAN M35": [
     {
       "foundation": "Foundations of Arts and Humanities",
@@ -823,6 +1705,36 @@
     {
       "foundation": "Foundations of Arts and Humanities",
       "category": "Literary and Cultural Analysis"
+    }
+  ],
+  "WL ARTS 33": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Philosophical and Linguistic Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "WL ARTS 51W": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Literary and Cultural Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "WL ARTS M79": [
+    {
+      "foundation": "Foundations of Arts and Humanities",
+      "category": "Visual and Performance Arts Analysis and Practice"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
     }
   ],
   "AF AMER 2C": [
@@ -851,6 +1763,36 @@
     {
       "foundation": "Foundations of Society and Culture",
       "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA 14W": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA 15": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA 15W": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA M60W": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "AN N EA 162": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
     }
   ],
   "ANTHRO 2": [
@@ -921,10 +1863,190 @@
       "category": "Social Analysis"
     }
   ],
+  "CLUSTER M1A": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M1B": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M1CW": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M72A": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M72B": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER M72CW": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 80A": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 80BX": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "CLUSTER 80CW": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "COMM 10": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "DESMA 8": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
   "ECON 5": [
     {
       "foundation": "Foundations of Society and Culture",
       "category": "Social Analysis"
+    }
+  ],
+  "EDUC 10": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "EDUC 11": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "EDUC 35": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "ETHNMUS 46W": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "ETHNMUS M80": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
     }
   ],
   "GENDER 10": [
@@ -1137,6 +2259,24 @@
       "category": "Historical Analysis"
     }
   ],
+  "IRANIAN M60W": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "JEWISH M80": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
+  "MUSCLG M80": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    }
+  ],
   "POL SCI 10": [
     {
       "foundation": "Foundations of Society and Culture",
@@ -1167,6 +2307,56 @@
       "category": "Social Analysis"
     }
   ],
+  "PUB AFF 10": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "PUB AFF 30": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "PUB AFF M130": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "RELIGN 11": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "RELIGN M40": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "RELIGN 55": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
+  "SCAND 138": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Historical Analysis"
+    },
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
+    }
+  ],
   "SOCIOL 1": [
     {
       "foundation": "Foundations of Society and Culture",
@@ -1187,6 +2377,12 @@
     {
       "foundation": "Foundations of Society and Culture",
       "category": "Historical Analysis"
+    }
+  ],
+  "STATS 12": [
+    {
+      "foundation": "Foundations of Society and Culture",
+      "category": "Social Analysis"
     }
   ],
   "ANTHRO 1": [
@@ -1303,6 +2499,36 @@
       "category": "Physical Sciences"
     }
   ],
+  "CLUSTER 70A": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
+  "CLUSTER 70B": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
+  "CLUSTER 70CW": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
   "COM SCI 30": [
     {
       "foundation": "Foundations of Scientific Inquiry",
@@ -1387,6 +2613,16 @@
       "category": "Physical Sciences"
     }
   ],
+  "ENVIRON 25": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
   "GEOG 1": [
     {
       "foundation": "Foundations of Scientific Inquiry",
@@ -1407,6 +2643,12 @@
     {
       "foundation": "Foundations of Scientific Inquiry",
       "category": "Physical Sciences"
+    }
+  ],
+  "HNRS 70A": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
     }
   ],
   "LIFESCI 7A": [
@@ -1493,10 +2735,60 @@
       "category": "Physical Sciences"
     }
   ],
+  "PHYSCI 3": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    }
+  ],
+  "PHYSCI 5": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    }
+  ],
+  "PHYSCI 7": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
+  "PHYSCI 13": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    }
+  ],
   "PSYCH 15": [
     {
       "foundation": "Foundations of Scientific Inquiry",
       "category": "Life Sciences"
+    }
+  ],
+  "STATS 10": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    },
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
+    }
+  ],
+  "STATS 13": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Life Sciences"
+    }
+  ],
+  "STATS 15": [
+    {
+      "foundation": "Foundations of Scientific Inquiry",
+      "category": "Physical Sciences"
     }
   ]
 }

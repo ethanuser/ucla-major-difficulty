@@ -12355,7 +12355,12 @@
       "subject_area": "COMM",
       "uclagrades_url": "https://www.uclagrades.com/COMM/10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/COMM10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MATH 131B",
@@ -12696,7 +12701,12 @@
       "subject_area": "PHYSCI",
       "uclagrades_url": "https://www.uclagrades.com/PHYSCI/3",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/PHYSCI3",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        }
+      ]
     },
     {
       "course_id": "EDUC 119",
@@ -14018,7 +14028,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M50",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM50",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "MIMG 101",
@@ -14106,7 +14125,12 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/162",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA162",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "RUSSN M118",
@@ -14150,7 +14174,16 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/138",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/SCAND138",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MECH&AE 105A",
@@ -14260,7 +14293,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M110A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ETHNMUSM110A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "MATH 105A",
@@ -15779,7 +15817,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M119",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ETHNMUSM119",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "ECON 106V",
@@ -16221,7 +16264,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/M50A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ANNEAM50A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "C&EE 143",
@@ -16955,7 +17007,12 @@
       "subject_area": "RUSSN",
       "uclagrades_url": "https://www.uclagrades.com/RUSSN/25",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RUSSN25",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "EC ENGR 101A",
@@ -17180,7 +17237,16 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/30",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUS30",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MATH 32B",
@@ -17427,7 +17493,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/M50B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ANNEAM50B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "C&EE 120",
@@ -19210,7 +19285,16 @@
       "subject_area": "STATS",
       "uclagrades_url": "https://www.uclagrades.com/STATS/10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/STATS10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "CHEM 113A",
@@ -19474,7 +19558,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M40",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM40",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMT 165",
@@ -19600,7 +19693,12 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/15",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA15",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "SCAND 172A",
@@ -19902,7 +20000,12 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/40",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/SCAND40",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMTEX 414A",
@@ -20495,7 +20598,12 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/14W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA14W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "GEOG 148",
@@ -20955,7 +21063,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/M112",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLGM112",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "ENGL 122",
@@ -21032,7 +21145,12 @@
       "subject_area": "PORTGSE",
       "uclagrades_url": "https://www.uclagrades.com/PORTGSE/M35",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/PORTGSEM35",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMTFT 411",
@@ -21331,7 +21449,12 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "ECON 152",
@@ -22444,7 +22567,12 @@
       "subject_area": "STATS",
       "uclagrades_url": "https://www.uclagrades.com/STATS/13",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/STATS13",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        }
+      ]
     },
     {
       "course_id": "AN N EA M130",
@@ -22455,7 +22583,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/M130",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEAM130",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "CHEM C159",
@@ -23136,7 +23273,12 @@
       "subject_area": "STATS",
       "uclagrades_url": "https://www.uclagrades.com/STATS/12",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/STATS12",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "BIOENGR C101",
@@ -23180,7 +23322,12 @@
       "subject_area": "ASIAN",
       "uclagrades_url": "https://www.uclagrades.com/ASIAN/M60W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ASIANM60W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "FILM TV 112",
@@ -23427,7 +23574,16 @@
       "subject_area": "PHYSCI",
       "uclagrades_url": "https://www.uclagrades.com/PHYSCI/7",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/PHYSCI7",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "CCAS 191",
@@ -23482,7 +23638,12 @@
       "subject_area": "ASIAN",
       "uclagrades_url": "https://www.uclagrades.com/ASIAN/M60",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ASIANM60",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "HIST M155",
@@ -23864,7 +24025,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/70",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG70",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "MAT SCI C111",
@@ -24259,7 +24425,12 @@
       "subject_area": "EDUC",
       "uclagrades_url": "https://www.uclagrades.com/EDUC/35",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/EDUC35",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMTFT 403",
@@ -24641,7 +24812,12 @@
       "subject_area": "PHYSCI",
       "uclagrades_url": "https://www.uclagrades.com/PHYSCI/13",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/PHYSCI13",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        }
+      ]
     },
     {
       "course_id": "PSYCH 188A",
@@ -25108,7 +25284,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M115",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM115",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PSYCH 124A",
@@ -25651,7 +25836,20 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/113",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGN113",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ESL 20",
@@ -26788,7 +26986,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/80A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER80A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 249",
@@ -27035,7 +27246,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/12W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA12W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "ART HIS C139C",
@@ -27178,7 +27398,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M20",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM20",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "NEURO M220",
@@ -27244,7 +27473,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/35",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG35",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "HIST 125B",
@@ -27288,7 +27522,12 @@
       "subject_area": "PUB AFF",
       "uclagrades_url": "https://www.uclagrades.com/PUB%20AFF/M130",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/PUBAFFM130",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 119",
@@ -27952,7 +28191,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M132",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM132",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "ENGL M105A",
@@ -28593,7 +28841,12 @@
       "subject_area": "ASIAN",
       "uclagrades_url": "https://www.uclagrades.com/ASIAN/30",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ASIAN30",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "URBN PL 207",
@@ -28790,7 +29043,12 @@
       "subject_area": "IRANIAN",
       "uclagrades_url": "https://www.uclagrades.com/IRANIAN/M60W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/IRANIANM60W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "ANTHRO M126N",
@@ -28834,7 +29092,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/10W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA10W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMT 240F",
@@ -29296,7 +29563,12 @@
       "subject_area": "ENVIRON",
       "uclagrades_url": "https://www.uclagrades.com/ENVIRON/M30",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ENVIRONM30",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "COMM 188A",
@@ -29499,7 +29771,16 @@
       "subject_area": "ENVIRON",
       "uclagrades_url": "https://www.uclagrades.com/ENVIRON/25",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ENVIRON25",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "ECON 203A",
@@ -29832,7 +30113,16 @@
       "subject_area": "WL ARTS",
       "uclagrades_url": "https://www.uclagrades.com/WL%20ARTS/33",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/WLARTS33",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "SPAN 2",
@@ -30057,7 +30347,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/73A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER73A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PHILOS 100B",
@@ -30183,7 +30490,12 @@
       "subject_area": "PUB AFF",
       "uclagrades_url": "https://www.uclagrades.com/PUB%20AFF/30",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/PUBAFF30",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "AN N EA CM163",
@@ -30381,7 +30693,12 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/M60W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEAM60W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "MECH&AE C294A",
@@ -30633,7 +30950,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M116",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ETHNMUSM116",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "HIST 13A",
@@ -31572,7 +31894,16 @@
       "subject_area": "WL ARTS",
       "uclagrades_url": "https://www.uclagrades.com/WL%20ARTS/51W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/WLARTS51W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ENGCOMP 6W",
@@ -31764,7 +32095,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M72B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTERM72B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PUB HLT 10",
@@ -31863,7 +32207,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M80",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUSM80",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "NEUROSC 17",
@@ -32017,7 +32366,12 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/55",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGN55",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ASIA AM 140XP",
@@ -32263,7 +32617,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/80BX",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTER80BX",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PHILOS 155A",
@@ -32389,7 +32756,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/60A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER60A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PHILOS 10",
@@ -32493,7 +32877,12 @@
       "subject_area": "STATS",
       "uclagrades_url": "https://www.uclagrades.com/STATS/15",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/STATS15",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "RELIGN 101",
@@ -32793,7 +33182,12 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/11",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGN11",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ASIAN 100",
@@ -32837,7 +33231,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/13",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG13",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "MUSCLG 71",
@@ -32848,7 +33247,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/71",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG71",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "THEATER 107",
@@ -33263,7 +33667,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/5",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ETHNMUS5",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "AF AMER 1",
@@ -33331,7 +33740,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M72A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM72A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PUB AFF 70",
@@ -34140,7 +34562,12 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/40W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/SCAND40W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "C&EE 190",
@@ -34233,7 +34660,12 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/15W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEA15W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "ENGL 108",
@@ -34429,7 +34861,16 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/70A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER70A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "PHILOS M187",
@@ -34905,7 +35346,12 @@
       "subject_area": "PHYSCI",
       "uclagrades_url": "https://www.uclagrades.com/PHYSCI/5",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/PHYSCI5",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        }
+      ]
     },
     {
       "course_id": "I M STD 155",
@@ -34938,7 +35384,12 @@
       "subject_area": "JEWISH",
       "uclagrades_url": "https://www.uclagrades.com/JEWISH/M10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/JEWISHM10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "HUM GEN 430",
@@ -35665,7 +36116,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/9",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG9",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "NURSING 216C",
@@ -36525,7 +36981,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M71B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTERM71B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "CHIN 100B",
@@ -36904,7 +37377,12 @@
       "subject_area": "JEWISH",
       "uclagrades_url": "https://www.uclagrades.com/JEWISH/M80",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/JEWISHM80",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "ASL 5",
@@ -37572,7 +38050,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/M80",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLGM80",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "THEATER 14A",
@@ -37660,7 +38143,16 @@
       "subject_area": "RUSSN",
       "uclagrades_url": "https://www.uclagrades.com/RUSSN/90A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RUSSN90A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "MUSC M6C",
@@ -37826,7 +38318,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/60B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER60B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "EC ENGR 221A",
@@ -38227,7 +38736,16 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/M82",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLGM82",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "PSYCH 134K",
@@ -38314,7 +38832,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M70",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM70",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "CH ENGR 104A",
@@ -38711,7 +39238,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/7",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG7",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "ECON 181",
@@ -38766,7 +39298,12 @@
       "subject_area": "PUB AFF",
       "uclagrades_url": "https://www.uclagrades.com/PUB%20AFF/10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/PUBAFF10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "INF STD 432",
@@ -39038,7 +39575,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M27A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM27A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ANTHRO M166Q",
@@ -39159,7 +39709,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/73B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTER73B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "CLUSTER 70B",
@@ -39170,7 +39737,16 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/70B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER70B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "HNRS 132",
@@ -40868,7 +41444,12 @@
       "subject_area": "HNRS",
       "uclagrades_url": "https://www.uclagrades.com/HNRS/65W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/HNRS65W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "CCAS M155A",
@@ -41058,7 +41639,12 @@
       "subject_area": "DESMA",
       "uclagrades_url": "https://www.uclagrades.com/DESMA/9",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/DESMA9",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "NEUROSC 191A",
@@ -41433,7 +42019,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/2CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER2CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 555",
@@ -42146,7 +42749,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M72CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM72CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "GEOG 147",
@@ -42399,7 +43015,12 @@
       "subject_area": "HNRS",
       "uclagrades_url": "https://www.uclagrades.com/HNRS/11W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/HNRS11W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "IRANIAN 1B",
@@ -42591,7 +43212,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/60",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG60",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "WL ARTS 103",
@@ -42690,7 +43316,12 @@
       "subject_area": "ASIAN",
       "uclagrades_url": "https://www.uclagrades.com/ASIAN/M20",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ASIANM20",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "GERMAN 59",
@@ -43285,7 +43916,20 @@
       "subject_area": "DESMA",
       "uclagrades_url": "https://www.uclagrades.com/DESMA/7",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/DESMA7",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "RUSSN 31",
@@ -43296,7 +43940,16 @@
       "subject_area": "RUSSN",
       "uclagrades_url": "https://www.uclagrades.com/RUSSN/31",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RUSSN31",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "EC ENGR 188",
@@ -43643,7 +44296,16 @@
       "subject_area": "AN N EA",
       "uclagrades_url": "https://www.uclagrades.com/AN%20N%20EA/M70",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ANNEAM70",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "MECH&AE 261A",
@@ -43786,7 +44448,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M50B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUSM50B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "CLASSIC 10",
@@ -44575,7 +45242,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M50A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUSM50A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "CLUSTER M27B",
@@ -44586,7 +45258,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M27B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTERM27B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MATH 247A",
@@ -44630,7 +45315,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/48B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTER48B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "NURSING 163",
@@ -45240,7 +45938,16 @@
       "subject_area": "ASIAN",
       "uclagrades_url": "https://www.uclagrades.com/ASIAN/40",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ASIAN40",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "ECON 441B",
@@ -45520,7 +46227,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/2B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER2B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "THEATER 23B",
@@ -45674,7 +46398,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M71A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM71A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMTEX 445C",
@@ -46018,7 +46759,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M27CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM27CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "THEATER 135B",
@@ -46051,7 +46805,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/60CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER60CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "A&O SCI 145",
@@ -46214,7 +46985,12 @@
       "subject_area": "HNRS",
       "uclagrades_url": "https://www.uclagrades.com/HNRS/43W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/HNRS43W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "CCAS 100XP",
@@ -46412,7 +47188,16 @@
       "subject_area": "RELIGN",
       "uclagrades_url": "https://www.uclagrades.com/RELIGN/M60D",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RELIGNM60D",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        }
+      ]
     },
     {
       "course_id": "PUB AFF 187AX",
@@ -46668,7 +47453,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/2A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER2A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PUB AFF 148",
@@ -47303,7 +48105,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/10B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER10B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "PUB AFF 116",
@@ -47391,7 +48206,16 @@
       "subject_area": "IRANIAN",
       "uclagrades_url": "https://www.uclagrades.com/IRANIAN/55",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/IRANIAN55",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "CESC 152",
@@ -47424,7 +48248,12 @@
       "subject_area": "DESMA",
       "uclagrades_url": "https://www.uclagrades.com/DESMA/10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/DESMA10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "ENGR 202",
@@ -47589,7 +48418,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/10A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER10A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ENV HLT 120",
@@ -48009,7 +48851,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M1A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTERM1A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ASIA AM 10W",
@@ -48201,7 +49060,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/M25",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/ETHNMUSM25",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "INF STD 438A",
@@ -48300,7 +49164,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/48A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER48A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "C&EE C181",
@@ -48905,7 +49782,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/94",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG94",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "MATH 246C",
@@ -49392,7 +50274,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/46W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUS46W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "HNRS 138",
@@ -49689,7 +50576,12 @@
       "subject_area": "EDUC",
       "uclagrades_url": "https://www.uclagrades.com/EDUC/11",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/EDUC11",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "HUM GEN 400C",
@@ -49711,7 +50603,16 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/60",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/SCAND60",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "PSYCH 215B",
@@ -50040,7 +50941,16 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/70CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER70CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        }
+      ]
     },
     {
       "course_id": "EPIDEM 220",
@@ -50095,7 +51005,12 @@
       "subject_area": "ETHNMUS",
       "uclagrades_url": "https://www.uclagrades.com/ETHNMUS/45",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/ETHNMUS45",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "CCAS 153C",
@@ -50375,7 +51290,12 @@
       "subject_area": "DESMA",
       "uclagrades_url": "https://www.uclagrades.com/DESMA/8",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/DESMA8",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "NURSING M172",
@@ -50419,7 +51339,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M1B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM1B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "COM SCI CM221",
@@ -50518,7 +51455,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/5",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG5",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "LAW 515",
@@ -50628,7 +51570,20 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/M137",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLGM137",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "EDUC 171",
@@ -51183,7 +52138,12 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/50W",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/SCAND50W",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "MECH&AE 250H",
@@ -51381,7 +52341,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M1CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM1CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Physical Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "MGMT 424",
@@ -51540,7 +52517,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/48CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER48CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 543",
@@ -51738,7 +52728,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/20CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER20CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "DANCE 15",
@@ -52359,7 +53366,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/M71CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTERM71CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "HLT POL M434",
@@ -52414,7 +53438,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/M136",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLGM136",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "COM SCI 152B",
@@ -52436,7 +53465,16 @@
       "subject_area": "HNRS",
       "uclagrades_url": "https://www.uclagrades.com/HNRS/78",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/HNRS78",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "ETHNMUS 91K",
@@ -52799,7 +53837,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/80CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER80CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "CESC 100XP",
@@ -53580,7 +54631,20 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/10CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER10CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "CLUSTER 20B",
@@ -53591,7 +54655,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/20B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/CLUSTER20B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 727",
@@ -53734,7 +54815,12 @@
       "subject_area": "EDUC",
       "uclagrades_url": "https://www.uclagrades.com/EDUC/10",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/EDUC10",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "BIOINFO 275B",
@@ -53855,7 +54941,16 @@
       "subject_area": "PORTGSE",
       "uclagrades_url": "https://www.uclagrades.com/PORTGSE/46",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/PORTGSE46",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        }
+      ]
     },
     {
       "course_id": "DANCE 63",
@@ -53943,7 +55038,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/73CW",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER73CW",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Philosophical and Linguistic Analysis"
+        },
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "ART 11E",
@@ -54086,7 +55198,12 @@
       "subject_area": "MUSCLG",
       "uclagrades_url": "https://www.uclagrades.com/MUSCLG/68",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/MUSCLG68",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        }
+      ]
     },
     {
       "course_id": "EDUC 166",
@@ -54295,7 +55412,24 @@
       "subject_area": "CLUSTER",
       "uclagrades_url": "https://www.uclagrades.com/CLUSTER/20A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/CLUSTER20A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        },
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Historical Analysis"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "AF AMER M18",
@@ -55250,7 +56384,12 @@
       "subject_area": "SCAND",
       "uclagrades_url": "https://www.uclagrades.com/SCAND/50",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/SCAND50",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "ENGCOMP 130D",
@@ -56185,7 +57324,16 @@
       "subject_area": "WL ARTS",
       "uclagrades_url": "https://www.uclagrades.com/WL%20ARTS/M79",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2024/WLARTSM79",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Visual and Performance Arts Analysis and Practice"
+        },
+        {
+          "foundation": "Foundations of Society and Culture",
+          "category": "Social Analysis"
+        }
+      ]
     },
     {
       "course_id": "LAW 560",
@@ -57263,7 +58411,12 @@
       "subject_area": "RUSSN",
       "uclagrades_url": "https://www.uclagrades.com/RUSSN/90B",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/RUSSN90B",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Arts and Humanities",
+          "category": "Literary and Cultural Analysis"
+        }
+      ]
     },
     {
       "course_id": "ANTHRO 98T",
@@ -60744,7 +61897,12 @@
       "subject_area": "HNRS",
       "uclagrades_url": "https://www.uclagrades.com/HNRS/70A",
       "catalog_url": "https://catalog.registrar.ucla.edu/course/2025/HNRS70A",
-      "ge_categories": []
+      "ge_categories": [
+        {
+          "foundation": "Foundations of Scientific Inquiry",
+          "category": "Life Sciences"
+        }
+      ]
     },
     {
       "course_id": "HNRS M143",
