@@ -72,11 +72,14 @@ UCLA Grades/
 │   └── processed/                      # Generated intermediate data
 │       ├── course_grade_stats.csv      # Per-course grade metrics
 │       ├── ucla_major_requirements.json # Scraped major→course mappings
+│       ├── course_ge_mapping.json      # Course → GE categories mapping (optional)
 │       ├── major_difficulty_rankings.csv # Final ranked output
 │       └── graph_data.json             # Bipartite graph data
 └── scripts/
     ├── run_pipeline.py                 # Pipeline orchestrator
     ├── scrape_ucla_catalog.py          # Scrapes major requirements from UCLA catalog
+    ├── scrape_ge_courses.py            # Parses saved GE master list HTML → CSV
+    ├── merge_ge_courses.py             # Merges GE CSV into course_id → GE mapping JSON
     ├── parse_grades.py                 # Parses grade distribution CSVs
     └── analyze_hardest_major.py        # Matches courses, scores majors, generates dashboard
 ```
@@ -109,6 +112,11 @@ Downloaded from [uclagrades.com](https://uclagrades.com). Each CSV contains per-
 ### Catalog Data
 Scraped from `catalog.registrar.ucla.edu` using Playwright (headless Chromium). Each major's requirements page is loaded, and all `<a href="/course/...">` links are extracted to identify required courses and their departments.
 
+### GE (General Education) Data
+Pulled from the UCLA Registrar **GE Courses Master List** ([link](https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList)) (pulled **March 9, 2026**).
+
+GE data is used only for the dashboard’s **Course Deep Dive** feature (search + filter by GE category). It is mapped to our course IDs via department-name → subject-code mapping and catalog number matching, and may be incomplete when naming differs.
+
 ---
 
 ## How It Works
@@ -126,7 +134,7 @@ See [methodology.md](methodology.md) for the complete data science methodology, 
 2. **Parse** 4 years of grade data (176K records) → compute per-course GPA and DFW rate metrics for 4,573 courses
 3. **Match** scraped requirements to grade data using exact course ID matching (6,031 matches) with department-level fallback
 4. **Score** each major using a 60/40 blend of exact-match GPA and department-average GPA, weighted by enrollment
-5. **Visualize** results in an interactive HTML dashboard with bipartite graph
+5. **Visualize** results in an interactive HTML dashboard with bipartite graph and per-course GE filters
 
 ---
 

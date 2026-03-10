@@ -39,6 +39,7 @@ REQUIREMENTS_FILE = os.path.join(PROCESSED_DIR, 'ucla_major_requirements.json')
 GRADE_STATS_FILE = os.path.join(PROCESSED_DIR, 'course_grade_stats.csv')
 RANKINGS_FILE = os.path.join(PROCESSED_DIR, 'major_difficulty_rankings.csv')
 GRAPH_DATA_FILE = os.path.join(PROCESSED_DIR, 'graph_data.json')
+COURSE_GE_MAPPING_FILE = os.path.join(PROCESSED_DIR, 'course_ge_mapping.json')
 BRUINWALK_SLUGS_FILE = os.path.join(PROCESSED_DIR, 'bruinwalk_slugs.json')
 HTML_FILE = os.path.join(BASE_DIR, 'index.html')
 
@@ -675,6 +676,14 @@ def build_graph_data(major_df, course_stats, major_reqs=None, professor_rankings
         c['catalog_url'] = course_catalog_urls.get(cid) or course_catalog_urls.get(cid.replace(' ', '')) or \
             f"https://catalog.registrar.ucla.edu/course/2024/{cid.replace(' ', '').replace('&', '')}"
 
+    # Attach GE categories if mapping exists (from merge_ge_courses.py)
+    course_ge_mapping = {}
+    if os.path.exists(COURSE_GE_MAPPING_FILE):
+        with open(COURSE_GE_MAPPING_FILE, 'r') as f:
+            course_ge_mapping = json.load(f)
+    for c in all_courses_sorted:
+        c['ge_categories'] = course_ge_mapping.get(c['course_id'], [])
+
     # Major details
     major_details = {}
     for _, row in major_df.iterrows():
@@ -929,28 +938,48 @@ def generate_html(graph_data, output_path):
         <div class="panel" id="panel-courses">
             <div class="section-title">All Courses by GPA</div>
             <div class="courses-controls">
-                <label for="course-count">Show:</label>
-                <select id="course-count" onchange="renderCourseTable()">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50" selected>50</option>
-                    <option value="100">100</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                    <option value="all">All</option>
-                </select>
-                <div class="course-div-group">
-                    <span class="course-div-label">Course Level:</span>
-                    <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
-                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
-                    <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
-                    <button class="course-div-btn" onclick="setCourseDivisionFilter('grad')">Grad</button>
+                <div class="courses-controls-row courses-controls-top">
+                    <label for="course-count">Show:</label>
+                    <select id="course-count" onchange="renderCourseTable()">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="all">All</option>
+                    </select>
+                    <div class="course-div-group">
+                        <span class="course-div-label">Course Level:</span>
+                        <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
+                        <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
+                        <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
+                        <button class="course-div-btn" onclick="setCourseDivisionFilter('grad')">Grad</button>
+                    </div>
+                    <label for="course-dept-filter">Dept:</label>
+                    <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">
+                        <!-- Options populated in app.js from DATA.all_courses_sorted -->
+                    </select>
+                    <span class="course-count-info" id="course-count-info"></span>
                 </div>
-                <label for="course-dept-filter">Dept:</label>
-                <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">
-                    <!-- Options populated in app.js from DATA.all_courses_sorted -->
-                </select>
-                <span class="course-count-info" id="course-count-info"></span>
+                <div class="courses-controls-row courses-controls-bottom">
+                    <label for="course-search" class="course-search-label">Search:</label>
+                    <input
+                        type="text"
+                        id="course-search"
+                        placeholder="Search courses..."
+                        aria-label="Search courses by code or title">
+                    <label for="course-ge-filter">GE:</label>
+                    <select id="course-ge-filter" onchange="setCourseGeFilter(this.value)">
+                        <!-- Options populated in app.js -->
+                    </select>
+                    <span class="ge-source-note">
+                        From <a href="https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList" target="_blank" rel="noopener noreferrer">GE master list</a>
+                        <span
+                            class="ge-source-q"
+                            data-tooltip="Pulled March 9, 2026. May be missing if there is no 2021–2025 grade data for a course, or if department naming differs.">?</span>
+                    </span>
+                </div>
             </div>
             <div class="table-scroll-wrapper">
             <table class="courses-table">
@@ -962,6 +991,7 @@ def generate_html(graph_data, output_path):
                     <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
                     <th class="sortable" data-sort="students" data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
                     <th class="sortable" data-sort="dept" data-tip="Subject area / department this course belongs to.">Dept</th>
+                    <th data-tip="GE foundation categories this course satisfies (from UCLA GE master list, pulled March 9 2026).">GE</th>
                 </tr></thead>
                 <tbody id="courses-tbody"></tbody>
             </table>

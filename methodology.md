@@ -54,6 +54,12 @@ Each row is one (course section, grade) observation. The two schemas differ in c
 
 The catalog is JS-rendered; we use Playwright (headless Chromium) to load each major's page and extract course links. 137 of 141 majors returned data.
 
+### 2.3 GE (General Education) Courses (Dashboard Feature)
+
+**Source:** UCLA Registrar **GE Courses Master List** ([link](https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList)) (pulled **March 9, 2026**).
+
+GE data is used only for **Course Deep Dive filtering/search** (it does not affect major difficulty scoring). We extract course rows (department display name, catalog number, course title, and one or more GE foundation categories) and map them to our `course_id` using a department-name → subject-code mapping plus catalog-number matching.
+
 ---
 
 ## 3. Data Preprocessing
@@ -222,6 +228,8 @@ All courses linked from the catalog page are included. Majors with broad electiv
 
 ### 9.6 Incomplete Data
 4 of 141 majors returned no data. ~37% of scraped course references had no exact match in grade data (department-level fallback compensates). Cross-listed courses may be counted under one department but listed under another.
+
+**GE mapping completeness:** GE course rows are matched to grade-data courses via department-name → subject-code mapping and catalog-number matching. Some GE courses will not appear in the dashboard if they are not present in the 2021–2025 grade dataset or if department naming differs.
 
 ### 9.7 No Workload Measure
 The analysis does not account for study hours or total units. Engineering majors typically require more units and lab hours than humanities majors.

@@ -352,6 +352,19 @@ const allCourses = DATA.all_courses_sorted;
 let courseSort = { key: 'gpa', dir: 'asc' };
 let courseDivisionFilter = 'all'; // 'all' | 'ud' | 'ld' | 'grad'
 let courseDeptFilter = 'all';     // 'all' or subject_area code
+let courseSearchQuery = '';
+let courseGeFilter = 'none';      // 'none' | 'any' | GE category name
+
+// GE categories for filter dropdown (foundation > category order)
+const GE_CATEGORIES = [
+    'Literary and Cultural Analysis',
+    'Philosophical and Linguistic Analysis',
+    'Visual and Performance Arts Analysis and Practice',
+    'Historical Analysis',
+    'Social Analysis',
+    'Life Sciences',
+    'Physical Sciences',
+];
 
 function getCourseNumberFromId(courseId) {
     if (!courseId) return 0;
@@ -382,6 +395,11 @@ function setCourseDeptFilter(value) {
     renderCourseTable();
 }
 
+function setCourseGeFilter(value) {
+    courseGeFilter = value || 'none';
+    renderCourseTable();
+}
+
 function setCourseSort(key) {
     if (courseSort.key === key) {
         courseSort.dir = courseSort.dir === 'asc' ? 'desc' : 'asc';
@@ -397,8 +415,22 @@ function renderCourseTable() {
     const sel = document.getElementById('course-count').value;
     const limit = sel === 'all' ? allCourses.length : parseInt(sel, 10);
 
-    // Filter by division and department first
+    // Search: by course_id or course_title (case-insensitive)
+    const q = (courseSearchQuery || '').trim().toLowerCase();
+
+    // Filter by search, GE, division, and department
     const filtered = allCourses.filter(c => {
+        if (q) {
+            const id = (c.course_id || '').toLowerCase();
+            const title = (c.course_title || '').toLowerCase();
+            if (!id.includes(q) && !title.includes(q)) return false;
+        }
+        const ge = c.ge_categories || [];
+        if (courseGeFilter === 'any') {
+            if (!ge.length) return false;
+        } else if (courseGeFilter !== 'none') {
+            if (!ge.some(g => g.category === courseGeFilter)) return false;
+        }
         if (courseDivisionFilter === 'ud' && !isUpperDivisionCourse(c.course_id)) return false;
         if (courseDivisionFilter === 'ld' && isUpperDivisionCourse(c.course_id)) return false;
         if (courseDivisionFilter === 'grad' && !isGradCourse(c.course_id)) return false;
@@ -432,19 +464,26 @@ function renderCourseTable() {
         const cellContent = href
             ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="course-link">${c.course_id}</a>`
             : c.course_id;
+        const titleText = (c.course_title || '');
+        const titleCell = `<div class="title-scroll" title="${titleText.replace(/"/g, '&quot;')}">${titleText}</div>`;
+
+        const geLabels = (c.ge_categories || []).map(g => g.category).filter(Boolean);
+        const geCellText = geLabels.length ? geLabels.join(', ') : '—';
+        const geCell = `<div class="ge-scroll" title="${geCellText.replace(/"/g, '&quot;')}">${geCellText}</div>`;
         html += `<tr>
             <td style="color:var(--text-muted);font-weight:700;font-size:0.78rem">${i + 1}</td>
             <td class="course-code-cell">${cellContent}</td>
-            <td style="color:var(--text-secondary);max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.course_title || ''}</td>
+            <td class="title-cell">${titleCell}</td>
             <td class="gpa-cell" style="color:${color}">${c._gpa.toFixed(3)}</td>
             <td class="pct-cell" style="color:${color}">${c.pct_A.toFixed(1)}%</td>
             <td class="students-cell">${(c.total_letter_grades || 0).toLocaleString()}</td>
             <td class="dept-cell">${c.subject_area || ''}</td>
+            <td class="ge-cell">${geCell}</td>
         </tr>`;
     });
     tbody.innerHTML = html;
     document.getElementById('course-count-info').textContent =
-        `Showing ${sliced.length} of ${allCourses.length} courses`;
+        `Showing ${sliced.length} of ${filtered.length} courses`;
 }
 
 renderCourseTable();
@@ -520,6 +559,38 @@ initSortableHeaders();
         sel.appendChild(opt);
     });
     sel.value = 'all';
+})();
+
+// Initialize GE filter dropdown and search input
+(function initCourseSearchAndGe() {
+    const geSel = document.getElementById('course-ge-filter');
+    if (geSel) {
+        geSel.innerHTML = '';
+        const optNone = document.createElement('option');
+        optNone.value = 'none';
+        optNone.textContent = 'No GE filter';
+        geSel.appendChild(optNone);
+
+        const optAny = document.createElement('option');
+        optAny.value = 'any';
+        optAny.textContent = 'Any GE';
+        geSel.appendChild(optAny);
+
+        GE_CATEGORIES.forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = cat;
+            geSel.appendChild(opt);
+        });
+        geSel.value = 'none';
+    }
+    const searchEl = document.getElementById('course-search');
+    if (searchEl) {
+        searchEl.addEventListener('input', () => {
+            courseSearchQuery = searchEl.value;
+            renderCourseTable();
+        });
+    }
 })();
 
 function updateSortIndicators() {
