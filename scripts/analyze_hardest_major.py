@@ -917,6 +917,28 @@ def generate_html(graph_data, output_path):
         </div>
 
         <div class="panel" id="panel-graph">
+            <div class="graph-search-bar">
+                <label class="graph-search-bar__label" for="graph-search-input">Search:</label>
+                <input
+                    type="text"
+                    class="graph-search-input"
+                    id="graph-search-input"
+                    placeholder="Search majors..."
+                    oninput="handleGraphSearchInput(this.value)"
+                    aria-label="Search majors or departments in graph">
+                <div class="graph-search-modes">
+                    <button
+                        type="button"
+                        class="graph-search-mode active"
+                        data-mode="major"
+                        onclick="setGraphSearchMode('major')">Majors</button>
+                    <button
+                        type="button"
+                        class="graph-search-mode"
+                        data-mode="subject"
+                        onclick="setGraphSearchMode('subject')">Departments</button>
+                </div>
+            </div>
             <div id="graph-container">
                 <canvas id="graph-canvas"></canvas>
                 <div class="graph-controls">

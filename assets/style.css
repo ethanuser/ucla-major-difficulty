@@ -709,6 +709,68 @@ a:hover {
     color: white;
 }
 
+.graph-search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+}
+
+.graph-search-bar__label {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.graph-search-input {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    min-width: 0;
+    width: min(320px, 60vw);
+}
+
+.graph-search-input:focus {
+    outline: 2px solid var(--ucla-blue);
+    outline-offset: 1px;
+    border-color: var(--ucla-blue);
+}
+
+.graph-search-modes {
+    display: flex;
+    gap: 4px;
+}
+
+.graph-search-mode {
+    padding: 4px 6px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-page);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.graph-search-mode:hover {
+    border-color: var(--ucla-blue);
+    color: var(--ucla-blue);
+}
+
+.graph-search-mode.active {
+    background: var(--ucla-blue);
+    border-color: var(--ucla-blue);
+    color: var(--text-on-blue);
+}
+
 
 /* ============================================================
    COURSES PANEL

@@ -635,6 +635,89 @@ let isDragging = false, dragNode = null, lastMouse = { x: 0, y: 0 };
 let graphInitialized = false;
 let graphLastDims = null;
 let hoverNode = null;
+let selectedNode = null;
+let selectedNodeId = null;
+let graphSearchQuery = '';
+let graphSearchMode = 'major'; // 'major' | 'subject'
+let graphCanvasWidth = 0;
+let graphCanvasHeight = 0;
+
+function setGraphSearchMode(mode) {
+    graphSearchMode = mode;
+    document.querySelectorAll('.graph-search-mode').forEach(btn => {
+        const m = btn.getAttribute('data-mode');
+        btn.classList.toggle('active', m === mode);
+    });
+    const input = document.getElementById('graph-search-input');
+    if (input) {
+        input.placeholder = mode === 'subject' ? 'Search departments...' : 'Search majors...';
+    }
+    performGraphSearch();
+}
+
+function handleGraphSearchInput(value) {
+    graphSearchQuery = value || '';
+    performGraphSearch();
+}
+
+function setGraphSelectedNode(node) {
+    selectedNode = node || null;
+    selectedNodeId = node ? node.id : null;
+}
+
+function showPinnedTooltipForNode(node) {
+    const tooltip = document.getElementById('tooltip');
+    const canvas = document.getElementById('graph-canvas');
+    if (!tooltip || !canvas) return;
+    if (!node) {
+        tooltip.style.display = 'none';
+        return;
+    }
+    const r = canvas.getBoundingClientRect();
+    const sx = r.left + node.x * graphScale + graphOffsetX;
+    const sy = r.top + node.y * graphScale + graphOffsetY;
+
+    const hGpa = adjustGpa(node.avg_gpa, node.ability_proxy);
+    const adjLabel = abilityAdjusted ? ' (adj)' : '';
+    let html = `<div style="font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--ucla-dark-blue)">${node.label}</div>`;
+    html += node.type === 'major'
+        ? `<div style="color:${gpaColor(hGpa)}">GPA: ${hGpa.toFixed(3)}${adjLabel} | ${node.pct_A.toFixed(1)}% A/A+</div><div style="color:var(--text-muted);margin-top:4px">#${node.rank} | ${node.num_courses} courses</div>`
+        : `<div style="color:var(--ucla-blue)">Dept GPA: ${hGpa.toFixed(3)}${adjLabel} | ${node.num_courses} courses</div>`;
+    tooltip.innerHTML = html;
+    tooltip.style.display = 'block';
+
+    // Place it near the node but clamped to viewport
+    const desiredLeft = sx + 16;
+    const desiredTop = sy - 10;
+    const maxLeft = window.innerWidth - 16;
+    const maxTop = window.innerHeight - 16;
+    tooltip.style.left = Math.min(desiredLeft, maxLeft) + 'px';
+    tooltip.style.top = Math.min(Math.max(16, desiredTop), maxTop) + 'px';
+}
+
+function performGraphSearch() {
+    if (!graphNodes || graphNodes.length === 0) return;
+    const q = (graphSearchQuery || '').trim().toLowerCase();
+    if (!q) {
+        setGraphSelectedNode(null);
+        if (!hoverNode) showPinnedTooltipForNode(null);
+        return;
+    }
+    const candidates = graphNodes.filter(n => {
+        if (graphSearchMode === 'major' && n.type !== 'major') return false;
+        if (graphSearchMode === 'subject' && n.type !== 'subject') return false;
+        return String(n.label || '').toLowerCase().includes(q);
+    });
+    if (!candidates.length) {
+        setGraphSelectedNode(null);
+        if (!hoverNode) showPinnedTooltipForNode(null);
+        return;
+    }
+    const node = candidates[0];
+    setGraphSelectedNode(node);
+    if (!hoverNode) showPinnedTooltipForNode(node);
+}
+
 function drawGraph() {
     const canvas = document.getElementById('graph-canvas');
     const rect = canvas.parentElement.getBoundingClientRect();
@@ -651,6 +734,8 @@ function drawGraph() {
     canvas.height = H * dpr;
     canvas.style.width = W + 'px';
     canvas.style.height = H + 'px';
+    graphCanvasWidth = W;
+    graphCanvasHeight = H;
     const ctx = canvas.getContext('2d');
     ctx.scale(dpr, dpr);
 
@@ -708,6 +793,14 @@ function drawGraph() {
         })).filter(e => e.source && e.target);
 
         graphInitialized = true;
+        if (selectedNodeId) {
+            const found = graphNodes.find(n => n.id === selectedNodeId);
+            if (found) {
+                setGraphSelectedNode(found);
+            } else {
+                setGraphSelectedNode(null);
+            }
+        }
     }
 
     const BOUND_T = PAD_Y, BOUND_B = layoutH - PAD_Y;
@@ -772,9 +865,10 @@ function drawGraph() {
         ctx.fillText('MAJORS', MAJOR_X, 14);
         ctx.fillText('DEPARTMENTS', SUBJ_X, 14);
 
-        // Draw edges - highlight connected edges on hover
+        // Draw edges - highlight connected edges for hovered/selected node
+        const focusNode = hoverNode || selectedNode;
         graphEdges.forEach(e => {
-            const isHighlighted = hoverNode && (e.source === hoverNode || e.target === hoverNode);
+            const isHighlighted = focusNode && (e.source === focusNode || e.target === focusNode);
             ctx.beginPath();
             const midX = (e.source.x + e.target.x) / 2;
             ctx.moveTo(e.source.x, e.source.y);
@@ -792,13 +886,17 @@ function drawGraph() {
         // Draw nodes
         graphNodes.forEach(n => {
             const isHovered = n === hoverNode;
-            const isConnected = hoverNode && graphEdges.some(e =>
-                (e.source === hoverNode && e.target === n) ||
-                (e.target === hoverNode && e.source === n)
+            const isSelected = n === selectedNode;
+            const focus = hoverNode || selectedNode;
+            const isConnected = focus && graphEdges.some(e =>
+                (e.source === focus && e.target === n) ||
+                (e.target === focus && e.source === n)
             );
 
             ctx.beginPath();
-            ctx.arc(n.x, n.y, isHovered ? n.radius + 2 : n.radius, 0, Math.PI * 2);
+            const baseRadius = n.radius;
+            const drawRadius = (isHovered || isSelected) ? baseRadius + 3 : baseRadius;
+            ctx.arc(n.x, n.y, drawRadius, 0, Math.PI * 2);
 
             const adjGpa = adjustGpa(n.avg_gpa, n.ability_proxy);
             const fillColor = (n.type === 'subject' && (n.num_courses || 0) === 0)
@@ -808,9 +906,9 @@ function drawGraph() {
             ctx.fill();
 
             // Outline
-            if (isHovered) {
+            if (isHovered || isSelected) {
                 ctx.strokeStyle = '#003B5C';
-                ctx.lineWidth = 2;
+                ctx.lineWidth = (isSelected && !isHovered) ? 2.5 : 2;
             } else if (isConnected) {
                 ctx.strokeStyle = 'rgba(0,59,92,0.5)';
                 ctx.lineWidth = 1.5;
@@ -821,16 +919,17 @@ function drawGraph() {
             ctx.stroke();
         });
 
-        // Draw labels ONLY for hovered node and its neighbors
-        if (hoverNode) {
-            const connectedNodes = new Set([hoverNode]);
+        // Draw labels ONLY for hovered node and its neighbors (or selected node if none hovered)
+        const labelFocusNode = hoverNode || selectedNode;
+        if (labelFocusNode) {
+            const connectedNodes = new Set([labelFocusNode]);
             graphEdges.forEach(e => {
-                if (e.source === hoverNode) connectedNodes.add(e.target);
-                if (e.target === hoverNode) connectedNodes.add(e.source);
+                if (e.source === labelFocusNode) connectedNodes.add(e.target);
+                if (e.target === labelFocusNode) connectedNodes.add(e.source);
             });
 
             connectedNodes.forEach(n => {
-                if (n === hoverNode) return; // tooltip already shows this
+                if (n === hoverNode) return; // tooltip already shows this when hovered
                 const fontSize = 8;
                 const fontWeight = '500';
                 ctx.font = `${fontWeight} ${fontSize}px Inter, sans-serif`;
@@ -866,8 +965,8 @@ function drawGraph() {
             });
         }
 
-        // Instruction text when nothing is hovered
-        if (!hoverNode) {
+        // Instruction text when nothing is hovered or selected
+        if (!hoverNode && !selectedNode) {
             ctx.font = '400 11px Inter, sans-serif';
             ctx.fillStyle = '#AAB5C0';
             ctx.textAlign = 'center';
@@ -881,6 +980,7 @@ function drawGraph() {
     function animate() {
         if (fc < 400) { tick(); fc++; }
         render();
+        if (!hoverNode) showPinnedTooltipForNode(selectedNode);
         requestAnimationFrame(animate);
     }
     animate();
@@ -918,7 +1018,14 @@ function drawGraph() {
                 : `<div style="color:var(--ucla-blue)">Dept GPA: ${hGpa.toFixed(3)}${adjLabel} | ${hover.num_courses} courses</div>`;
             tooltip.innerHTML = html; tooltip.style.display = 'block';
             tooltip.style.left = (e.clientX + 16) + 'px'; tooltip.style.top = (e.clientY - 10) + 'px';
-        } else { tooltip.style.display = 'none'; }
+        } else {
+            // If a node was selected via search, keep its tooltip pinned.
+            if (selectedNode) {
+                showPinnedTooltipForNode(selectedNode);
+            } else {
+                tooltip.style.display = 'none';
+            }
+        }
     };
     canvas.onmouseup = () => { isDragging = false; dragNode = null; };
     canvas.onmouseleave = () => { isDragging = false; dragNode = null; hoverNode = null; document.getElementById('tooltip').style.display = 'none'; };
