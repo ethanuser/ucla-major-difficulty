@@ -773,274 +773,201 @@ def generate_html(graph_data, output_path):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCLA Major Difficulty</title>
     <meta name="description" content="Exploratory visualization of UCLA grade distribution patterns (2021-2025). Interactive tables, bipartite graph, and course-level data. Not a definitive difficulty measure.">
-    <link rel="icon" href="favicon.ico" type="image/png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
 ''' + css_content + '''
     </style>
 </head>
 <body>
 
-    <!-- UCLA-style gold topbar -->
-    <div class="ucla-topbar"></div>
+    <!-- Ability Adjustment Subpage: ability-adjustment.html -->
 
-    <!-- Site header -->
-    <header class="site-header">
-        <div class="site-header__brand">
-            <a href="https://ethanuser.github.io/ucla-major-difficulty" class="site-header__logo">UCLA Major Difficulty</a>
-            <div class="site-header__divider"></div>
-            <span class="site-header__subtitle">Grade Distribution Analysis</span>
-        </div>
-    </header>
+    <!-- Icons -->
+    <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="i-majors" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.2 2.2 3 5 3s5-1.8 5-3v-4.5"/></symbol>
+            <symbol id="i-departments" viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M3 20h18M9 20v-6h6v6"/></symbol>
+            <symbol id="i-professors" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.2-4 4.2-6 8-6s6.8 2 8 6"/></symbol>
+            <symbol id="i-graph" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.3 7.2l7.4 3.6M8.3 16.8l7.4-3.6"/></symbol>
+            <symbol id="i-courses" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6"/></symbol>
+            <symbol id="i-about" viewBox="0 0 24 24"><path d="M4 5h6.5c.9 0 1.5.6 1.5 1.5V20c0-.9-.6-1.5-1.5-1.5H4z"/><path d="M20 5h-6.5c-.9 0-1.5.6-1.5 1.5V20c0-.9.6-1.5 1.5-1.5H20z"/></symbol>
+            <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+            <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+            <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></symbol>
+            <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 7.5v.5"/></symbol>
+            <symbol id="i-external" viewBox="0 0 24 24"><path d="M10 6H5v13h13v-5"/><path d="M13 4h7v7M20 4l-9 9"/></symbol>
+            <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M4 20h16"/></symbol>
+            <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+            <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9L4 8.5"/><path d="M4 3.5v5h5"/></symbol>
+            <symbol id="i-bars" viewBox="0 0 24 24"><path d="M5 20v-7M12 20V5M19 20v-11"/></symbol>
+            <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h1M4 12h1M4 18h1"/></symbol>
+            <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5"/></symbol>
+            <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v12H10l-4 3.5V17H4z"/></symbol>
+        </defs>
+    </svg>
 
-    <!-- Hero -->
-    <section class="hero">
-        <h1 class="hero__title">UCLA Major Difficulty Analysis</h1>
-        <p class="hero__desc">Exploratory visualization of UCLA grade data (2021-2025). A rough ability adjustment using transfer-admit GPA is available, but the primary view does not control for student preparedness, course mix, or workload. Methodology in the <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">GitHub repository</a>.</p>
-        <div class="hero__stats">
-            <div>
-                <div class="hero__stat-num" id="stat-majors">0</div>
-                <div class="hero__stat-label">Majors Analyzed</div>
-            </div>
-            <div>
-                <div class="hero__stat-num" id="stat-courses">0</div>
-                <div class="hero__stat-label">Courses</div>
-            </div>
-            <div>
-                <div class="hero__stat-num" id="stat-grades">0</div>
-                <div class="hero__stat-label">Grade Records</div>
-            </div>
-            <div>
-                <div class="hero__stat-num" id="stat-years">4</div>
-                <div class="hero__stat-label">Academic Years</div>
-            </div>
-        </div>
-    </section>
+    <div class="app">
 
-    <div class="container">
-
-        <!-- Ability Adjustment Toggle -->
-        <div class="ability-toggle-bar" id="ability-toggle-bar" style="display:none">
-            <label class="ability-toggle">
-                <input type="checkbox" id="ability-toggle-check" onchange="toggleAbilityAdjustment(this.checked)">
-                <span class="ability-toggle__slider"></span>
-            </label>
-            <span class="ability-toggle__label">
-                <strong>Adjust for student ability</strong>
-                <span class="ability-toggle__hint">Uses transfer-admit GPA as a rough proxy. Majors with higher-GPA admits are penalized, reflecting that low course GPAs are more notable when admit GPAs are high. Note: transfer GPA also reflects pre-transfer course difficulty, not just ability. <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md#921-transfer-admit-gpa-robustness-check" target="_blank" rel="noopener noreferrer">Details</a></span>
-            </span>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab active" onclick="switchTab('rankings')">Majors</button>
-            <button class="tab" onclick="switchTab('dept-rankings')">Departments</button>
-            <button class="tab" onclick="switchTab('prof-rankings')">Professors</button>
-            <button class="tab" onclick="switchTab('graph')">Bipartite Graph</button>
-            <button class="tab" onclick="switchTab('courses')">Course Deep Dive</button>
-        </div>
-
-        <!-- Major Rankings panel -->
-        <div class="panel active" id="panel-rankings">
-            <div class="filter-bar">
-                <label>Course Filter:</label>
-                <div class="filter-group">
-                    <button id="filter-all" class="active-filter" onclick="setFilter('all')">All Courses</button>
-                    <button id="filter-ld-all" onclick="setFilter('ld_all')">Lower-Div (All)</button>
-                    <button id="filter-ud-all" onclick="setFilter('ud_all')">Upper-Div (All)</button>
-                    <button id="filter-ud-req" onclick="setFilter('ud_req')">Upper-Div (Required)</button>
-                    <button id="filter-ud-elec" onclick="setFilter('ud_elec')">Upper-Div (Electives)</button>
-                </div>
+        <!-- Header: brand, views and page actions -->
+        <header class="topbar">
+            <a class="brand" href="#/majors" data-view="majors">
+                <span class="brand__ucla">UCLA</span>
+                <span class="brand__name">Major Difficulty</span>
+            </a>
+            <nav class="views" aria-label="Views">
+                <button type="button" class="view" data-view-tab="majors"><svg class="icon" aria-hidden="true"><use href="#i-majors"></use></svg><span>Majors</span></button>
+                <button type="button" class="view" data-view-tab="departments"><svg class="icon" aria-hidden="true"><use href="#i-departments"></use></svg><span>Departments</span></button>
+                <button type="button" class="view" data-view-tab="professors"><svg class="icon" aria-hidden="true"><use href="#i-professors"></use></svg><span>Professors</span></button>
+                <button type="button" class="view view--graph" data-view-tab="graph" data-tip="How majors connect to departments"><svg class="icon" aria-hidden="true"><use href="#i-graph"></use></svg><span>Graph</span></button>
+                <button type="button" class="view" data-view-tab="courses"><svg class="icon" aria-hidden="true"><use href="#i-courses"></use></svg><span>Courses</span></button>
+                <button type="button" class="view" data-view-tab="about"><svg class="icon" aria-hidden="true"><use href="#i-about"></use></svg><span>About</span></button>
+            </nav>
+            <div class="topbar__end">
+                <button type="button" class="iconbtn" id="intro-show" data-act="show-intro" aria-label="Show introduction" data-tip="Show introduction" hidden><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg></button>
+                <button type="button" class="iconbtn" data-act="download" data-needs-table aria-label="Download this table as CSV" data-tip="Download this table as CSV"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></button>
+                <button type="button" class="iconbtn" data-act="copy-link" aria-label="Copy a link to this view" data-tip="Copy a link to this view"><svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg></button>
             </div>
-            <div class="table-scroll-wrapper">
-            <table class="rankings-table">
-                <thead><tr>
-                    <th data-tip="Position by weighted average GPA in this dataset (lower GPA = higher position). #1 has the lowest average GPA.">#</th>
-                    <th class="sortable" data-sort="major" data-tip="Official UCLA major name. Click to view in the UCLA Course Catalog.">Major</th>
-                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across matched courses. Blends 60% exact required-course GPAs with 40% department averages. Lower values may indicate stricter grading in this dataset.">Avg GPA</th>
-                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+. Lower values may indicate stricter grading curves in this dataset.">% A/A+</th>
-                    <th class="sortable" data-sort="courses" data-tip="Number of required courses matched to grade data.">Courses</th>
-                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all matched courses from 2021 to 2025. Higher count means more statistical confidence.">Grade Records</th>
-                </tr></thead>
-                <tbody id="rankings-body"></tbody>
-            </table>
+        </header>
+
+        <!-- Search, filters and the ability adjustment -->
+        <div class="toolbar" id="toolbar">
+            <div class="search">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input type="search" id="search" aria-label="Search" autocomplete="off" spellcheck="false">
+                <button type="button" class="search__clear" id="search-clear" data-act="clear-search" aria-label="Clear search" hidden><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+                <kbd class="search__key" aria-hidden="true">/</kbd>
             </div>
+            <div class="filters" id="filters"></div>
+            <div class="ability" id="ability-toggle" hidden>
+                <label class="switch">
+                    <input type="checkbox" id="ability-check">
+                    <span class="switch__track"></span>
+                    <span class="switch__label">Adjust<span class="wide-only"> for ability</span></span>
+                </label>
+                <button type="button" class="info" aria-label="About the ability adjustment" data-tip="Rough estimate of GPAs if majors admitted similar students, based on transfer-admit GPA."><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg></button>
+            </div>
+            <span class="count" data-count></span>
         </div>
 
-        <!-- Department Rankings panel -->
-        <div class="panel" id="panel-dept-rankings">
-            <div class="section-title">Departments by Average GPA</div>
-            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">Subject areas (departments) sorted by weighted average GPA across all their courses in this dataset. Lower GPA may indicate stricter grading.</p>
-            <div class="filter-bar">
-                <label>Course Filter:</label>
-                <div class="filter-group">
-                    <button id="dept-filter-all" class="active-filter" onclick="setDeptFilter('all')">All Courses</button>
-                    <button id="dept-filter-ld" onclick="setDeptFilter('ld')">Lower Division</button>
-                    <button id="dept-filter-ud" onclick="setDeptFilter('ud')">Upper Division</button>
-                </div>
-            </div>
-            <div class="table-scroll-wrapper">
-            <table class="rankings-table">
-                <thead><tr>
-                    <th data-tip="Position by average GPA (lower GPA = higher position).">#</th>
-                    <th class="sortable" data-sort="dept" data-tip="Subject area / department code.">Department</th>
-                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses in this department.">Avg GPA</th>
-                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th class="sortable" data-sort="courses" data-tip="Number of courses with grade data in this department.">Courses</th>
-                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses in this department.">Grade Records</th>
-                </tr></thead>
-                <tbody id="dept-rankings-body"></tbody>
-            </table>
-            </div>
-        </div>
+        <!-- Main workspace -->
+        <div class="workspace">
+            <main class="main">
 
-        <!-- Professors panel -->
-        <div class="panel" id="panel-prof-rankings">
-            <div class="section-title">Professors by Average GPA (Within Department)</div>
-            <div class="prof-caveats">
-                <strong>Important caveats:</strong> This comparison reflects average GPA of courses taught, <em>not</em> teaching quality. Lower GPA may reflect course difficulty (e.g., required weed-out courses), student population, or department norms, not instructor effectiveness. Comparisons are within department only; professors with 10+ class sections taught are included. Use for exploratory context only.
-            </div>
-            <div class="table-scroll-wrapper">
-            <table class="rankings-table">
-                <thead><tr>
-                    <th data-tip="Position within this department (lower GPA = higher position).">#</th>
-                    <th class="sortable" data-sort="dept" data-tip="Subject area / department.">Dept</th>
-                    <th class="sortable" data-sort="name" data-tip="Instructor name from grade records.">Professor</th>
-                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA across all courses taught by this instructor in this department.">Avg GPA</th>
-                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th class="sortable" data-sort="range" data-tip="GPA range across this professor's sections (lowest–highest course average). Click to toggle sorting by lowest vs highest section GPA (within department).">Grade Range</th>
-                    <th class="sortable" data-sort="classes" data-tip="Number of class sections taught (same course in different terms counts separately; 10+ required to appear).">Classes</th>
-                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded across all courses.">Grade Records</th>
-                </tr></thead>
-                <tbody id="prof-rankings-body"></tbody>
-            </table>
-            </div>
-        </div>
+                <div class="note" id="note" hidden></div>
 
-        <div class="panel" id="panel-graph">
-            <div class="graph-search-bar">
-                <label class="graph-search-bar__label" for="graph-search-input">Search:</label>
-                <input
-                    type="text"
-                    class="graph-search-input"
-                    id="graph-search-input"
-                    placeholder="Search majors..."
-                    oninput="handleGraphSearchInput(this.value)"
-                    aria-label="Search majors or departments in graph">
-                <div class="graph-search-modes">
-                    <button
-                        type="button"
-                        class="graph-search-mode active"
-                        data-mode="major"
-                        onclick="setGraphSearchMode('major')">Majors</button>
-                    <button
-                        type="button"
-                        class="graph-search-mode"
-                        data-mode="subject"
-                        onclick="setGraphSearchMode('subject')">Departments</button>
-                </div>
-            </div>
-            <div id="graph-container">
-                <canvas id="graph-canvas"></canvas>
-                <div class="graph-controls">
-                    <button class="graph-btn" onclick="zoomGraph(1.2)" title="Zoom In">+</button>
-                    <button class="graph-btn" onclick="zoomGraph(0.8)" title="Zoom Out">&minus;</button>
-                    <button class="graph-btn" onclick="resetGraph()" title="Reset">&#x27F2;</button>
-                </div>
-            </div>
-            <div class="graph-legend-bar">
-                <div class="legend-item"><div class="legend-dot" style="background: hsl(0, 75%, 42%);"></div> Red = harder</div>
-                <div class="legend-item"><div class="legend-dot" style="background: hsl(60, 80%, 44%);"></div> Yellow = mid</div>
-                <div class="legend-item"><div class="legend-dot" style="background: hsl(120, 75%, 42%);"></div> Green = easier</div>
-                <span class="legend-sep">|</span>
-                <div class="legend-item" style="font-style:italic;opacity:0.6">Larger node = more courses · Hover for details</div>
-            </div>
-        </div>
-
-        <!-- Courses panel -->
-        <div class="panel" id="panel-courses">
-            <div class="section-title">All Courses by GPA</div>
-            <div class="courses-controls">
-                <div class="courses-controls-row courses-controls-top">
-                    <label for="course-count">Show:</label>
-                    <select id="course-count" onchange="renderCourseTable()">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50" selected>50</option>
-                        <option value="100">100</option>
-                        <option value="500">500</option>
-                        <option value="1000">1000</option>
-                        <option value="all">All</option>
-                    </select>
-                    <div class="course-div-group">
-                        <span class="course-div-label">Course Level:</span>
-                        <button class="course-div-btn active-filter" onclick="setCourseDivisionFilter('all')">All</button>
-                        <button class="course-div-btn" onclick="setCourseDivisionFilter('ld')">Lower-Div</button>
-                        <button class="course-div-btn" onclick="setCourseDivisionFilter('ud')">Upper-Div</button>
-                        <button class="course-div-btn" onclick="setCourseDivisionFilter('grad')">Grad</button>
+                <!-- One table for majors, departments, professors and courses -->
+                <section class="table-view" id="table-view">
+                    <div class="table-wrap" id="table-wrap">
+                        <section class="intro" id="intro" aria-label="Introduction" hidden></section>
+                        <table class="table" id="table">
+                            <thead id="table-head"></thead>
+                            <tbody id="table-body"></tbody>
+                        </table>
+                        <div class="empty" id="table-empty" hidden>
+                            <p id="table-empty-text"></p>
+                            <button type="button" class="btn" data-act="clear-filters">Clear search and filters</button>
+                        </div>
                     </div>
-                    <label for="course-dept-filter">Dept:</label>
-                    <select id="course-dept-filter" onchange="setCourseDeptFilter(this.value)">
-                        <!-- Options populated in app.js from DATA.all_courses_sorted -->
-                    </select>
-                    <span class="course-count-info" id="course-count-info"></span>
-                </div>
-                <div class="courses-controls-row courses-controls-bottom">
-                    <label for="course-search" class="course-search-label">Search:</label>
-                    <input
-                        type="text"
-                        id="course-search"
-                        placeholder="Search courses..."
-                        aria-label="Search courses by code or title">
-                    <label for="course-ge-filter">GE:</label>
-                    <select id="course-ge-filter" onchange="setCourseGeFilter(this.value)">
-                        <!-- Options populated in app.js -->
-                    </select>
-                    <span class="ge-source-note">
-                        From <a href="https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList" target="_blank" rel="noopener noreferrer">GE master list</a>
-                        <span
-                            class="ge-source-q"
-                            data-tooltip="Pulled March 9, 2026. May be missing if there is no 2021–2025 grade data for a course, or if department naming differs.">?</span>
-                    </span>
-                </div>
-            </div>
-            <div class="table-scroll-wrapper">
-            <table class="courses-table">
-                <thead><tr>
-                    <th data-tip="Row number in the current sort order.">#</th>
-                    <th class="sortable" data-sort="course" data-tip="Course ID (e.g. MATH 31A). Format is SUBJECT + NUMBER.">Course</th>
-                    <th class="sortable" data-sort="title" data-tip="Official course title from the UCLA catalog.">Title</th>
-                    <th class="sortable" data-sort="gpa" data-tip="Weighted average GPA for this course across all sections (2021-2025).">Avg GPA</th>
-                    <th class="sortable" data-sort="pctA" data-tip="Percentage of letter grades that were A or A+.">% A/A+</th>
-                    <th class="sortable" data-sort="students" data-tip="Total letter grades recorded for this course from 2021 to 2025.">Students</th>
-                    <th class="sortable" data-sort="dept" data-tip="Subject area / department this course belongs to.">Dept</th>
-                    <th data-tip="GE foundation categories this course satisfies (from UCLA GE master list, pulled March 9 2026).">GE</th>
-                </tr></thead>
-                <tbody id="courses-tbody"></tbody>
-            </table>
-            </div>
+                </section>
+
+                <!-- Bipartite graph -->
+                <section class="graph-view" id="graph-view" hidden>
+                    <div class="graph-stage" id="graph-container">
+                        <canvas id="graph-canvas" aria-label="Graph connecting majors to the departments they draw on"></canvas>
+                        <div class="graph-controls">
+                            <button type="button" class="iconbtn iconbtn--box" data-graph="in" aria-label="Zoom in" data-tip="Zoom in"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+                            <button type="button" class="iconbtn iconbtn--box" data-graph="out" aria-label="Zoom out" data-tip="Zoom out"><svg class="icon" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+                            <button type="button" class="iconbtn iconbtn--box" data-graph="reset" aria-label="Reset the graph" data-tip="Reset the graph"><svg class="icon" aria-hidden="true"><use href="#i-reset"></use></svg></button>
+                        </div>
+                        <div class="graph-legend">
+                            <span>Lower GPA</span><i class="graph-legend__ramp"></i><span>Higher GPA</span>
+                            <span class="graph-legend__sep">Lines link majors to their departments. Larger dot means more courses. Click a dot for details.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Explainer -->
+                <article class="about" id="about-view" hidden>
+                    <div class="about__inner">
+                        <h1>How to read this data</h1>
+                        <p class="about__lede">UCLA grade data from 2021 to 2025. It shows what grades students received, not how hard a major will feel for you.</p>
+
+                        <h2>Choosing a major</h2>
+                        <ol class="steps">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><b>Find it</b><span>Select a major to see its GPA by course type.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg><b>Compare</b><span>Add up to four majors side by side.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-courses"></use></svg><b>Check classes</b><span>Look up courses, or filter by GE.</span></li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><b>Confirm</b><span>Read the catalog and talk to an advisor.</span></li>
+                        </ol>
+
+                        <h2>What each number means</h2>
+                        <dl class="terms">
+                            <div><dt>Avg GPA</dt><dd>Weighted average grade: 60% exact required courses, 40% department averages. The notch marks the median of the list.</dd></div>
+                            <div><dt>Rank</dt><dd>Position by GPA within the current filters. 1 is lowest.</dd></div>
+                            <div><dt>% A range</dt><dd>Share of letter grades that were A+, A or A−.</dd></div>
+                            <div><dt>Courses</dt><dd>Required courses matched to grade data.</dd></div>
+                            <div><dt>Grades</dt><dd>Letter grades counted. More means more reliable.</dd></div>
+                            <div><dt>Lower, Upper</dt><dd>Courses numbered below 100, and 100 to 199.</dd></div>
+                            <div><dt>Required, Electives</dt><dd>Upper-div courses the major requires, and others in its departments.</dd></div>
+                        </dl>
+
+                        <h2 id="about-caveats">What the numbers cannot tell you</h2>
+                        <ul class="cautions">
+                            <li><b>Why a GPA is low.</b> The main view does not control for preparation, course mix or workload.</li>
+                            <li><b>Everything about grades.</b> Averages use letter grades only, so pass/no pass and withdrawals are left out.</li>
+                            <li><b>The exact course list.</b> Linked courses come from catalog pages and may include options or prerequisites.</li>
+                            <li><b>Teaching quality.</b> Professor GPAs can reflect weed-out courses, students or department norms, not instructor effectiveness. They compare within a department only, for professors with 10 or more sections.</li>
+                        </ul>
+
+                        <h2 id="about-adjust">The ability adjustment</h2>
+                        <p class="callout">Uses transfer-admit GPA as a rough proxy for preparation and moves majors with higher-GPA admits down. It is a robustness check, not a causal estimate. Majors without transfer data stay unadjusted. <a href="ability-adjustment.html">See the model and every major's adjustment</a></p>
+
+                        <h2>Data and sources</h2>
+                        <div class="sources">
+                            <a class="source" href="https://uclagrades.com" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-bars"></use></svg><span><b>Grade data</b><small>uclagrades.com, 2021 to 2025</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://catalog.registrar.ucla.edu" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-courses"></use></svg><span><b>Major requirements</b><small>UCLA Course Catalog, 2025</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://admission.ucla.edu/apply/transfer/transfer-profile/2025/major" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-majors"></use></svg><span><b>Transfer admit data</b><small>UCLA Admissions</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg><span><b>GE master list</b><small>UCLA Registrar, March 9, 2026</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-about"></use></svg><span><b>Full methodology</b><small>Assumptions and limitations</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg><span><b>Source code</b><small>GitHub</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                            <a class="source" href="https://forms.gle/GWFnP91cfFyLt5aL7" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg><span><b>Send feedback</b><small>Short form</small></span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                        </div>
+                        <p class="about__fine">Your compare list is saved in this browser only. Independent project, not affiliated with UCLA or the University of California.</p>
+                    </div>
+                </article>
+
+                <div class="tray" id="tray" hidden></div>
+            </main>
+
+            <!-- Overview, or the details of whatever is selected -->
+            <div class="scrim" id="scrim"></div>
+            <aside class="dock" id="dock" aria-label="Details"></aside>
         </div>
 
+        <footer class="statusbar">
+            <span>Independent project, not affiliated with UCLA.</span>
+            <span>Grades 2021 to 2025 via uclagrades.com</span>
+            <button type="button" class="textlink" data-view="about">Sources and methods</button>
+        </footer>
+
+        <!-- Phone navigation -->
+        <nav class="tabbar" aria-label="Views">
+            <button type="button" class="tabbar__item" data-view-tab="majors"><svg class="icon" aria-hidden="true"><use href="#i-majors"></use></svg><span>Majors</span></button>
+            <button type="button" class="tabbar__item" data-view-tab="departments"><svg class="icon" aria-hidden="true"><use href="#i-departments"></use></svg><span>Depts</span></button>
+            <button type="button" class="tabbar__item" data-view-tab="professors"><svg class="icon" aria-hidden="true"><use href="#i-professors"></use></svg><span>Profs</span></button>
+            <button type="button" class="tabbar__item" data-view-tab="courses"><svg class="icon" aria-hidden="true"><use href="#i-courses"></use></svg><span>Courses</span></button>
+            <button type="button" class="tabbar__item" data-view-tab="about"><svg class="icon" aria-hidden="true"><use href="#i-about"></use></svg><span>About</span></button>
+        </nav>
     </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-links">
-            <a href="https://uclagrades.com" target="_blank">Grade Data: uclagrades.com</a>
-            <span class="dot">|</span>
-            <a href="https://catalog.registrar.ucla.edu" target="_blank">Major Requirements: UCLA Course Catalog</a>
-            <span class="dot">|</span>
-            <a href="https://admission.ucla.edu/apply/transfer/transfer-profile/2025/major" target="_blank">Transfer Admit Data: UCLA Admissions</a>
-            <span class="dot">|</span>
-            <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>
-            <span class="dot">|</span>
-            <a href="https://forms.gle/GWFnP91cfFyLt5aL7" target="_blank">Feedback</a>
-        </div>
-        <div>Grade data from 2021-2025 via uclagrades.com. Major requirements from the 2025 UCLA General Catalog.</div>
-        <div style="margin-top:4px">Tables are sorted by weighted average GPA. See the <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">methodology</a> for assumptions and limitations.</div>
-        <div style="margin-top:12px;opacity:0.6;font-size:0.76rem">Independent project. Not affiliated with UCLA or the University of California.</div>
-    </footer>
-
-    <div class="tooltip" id="tooltip"></div>
+    <div class="tip" id="tip" role="tooltip"></div>
+    <div class="graph-tip" id="graph-tip"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <!-- Inject data, then load app logic -->
     <script>const DATA = ''' + json.dumps(graph_data) + ''';</script>
@@ -1054,6 +981,58 @@ def generate_html(graph_data, output_path):
         f.write(html_content)
     
     print(f"  Generated: {output_path}")
+
+
+def generate_ability_page(graph_data, ability_proxy, major_df):
+    """Generate the ability-adjustment subpage with injected data."""
+    template_path = os.path.join(BASE_DIR, 'ability-adjustment.html')
+    if not os.path.exists(template_path):
+        print(f"  ⚠ ability-adjustment.html template not found, skipping subpage")
+        return
+    
+    with open(template_path, 'r') as f:
+        template = f.read()
+    
+    # Build data payload for the subpage
+    adj = graph_data.get('ability_adjustment')
+    if not adj or not ability_proxy:
+        print(f"  ⚠ No ability adjustment data, skipping subpage")
+        return
+    
+    majors_data = []
+    for _, row in major_df.iterrows():
+        if row['major'] in ability_proxy:
+            majors_data.append({
+                'major': row['major'],
+                'avg_gpa': round(row['avg_gpa'], 3),
+                'ability_proxy': round(ability_proxy[row['major']], 4),
+                'rank': int(row['rank']),
+            })
+    
+    payload = {
+        'k': adj['k'],
+        'mean_ability': adj['mean_ability'],
+        'slope': adj['slope'],
+        'n_majors': adj['n_majors'],
+        'majors': majors_data,
+    }
+    
+    data_json = json.dumps(payload)
+    
+    # Replace either the placeholder or previously injected data
+    # The pattern matches: const RAW_DATA = <anything>;
+    import re
+    output = re.sub(
+        r'const RAW_DATA = [^;]+;',
+        f'const RAW_DATA = {data_json};',
+        template,
+        count=1
+    )
+    
+    with open(template_path, 'w') as f:
+        f.write(output)
+    
+    print(f"  Generated: {template_path}")
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -1162,6 +1141,8 @@ def main():
     if not args.no_html:
         print(f"\n🎨 Generating interactive visualization...")
         generate_html(graph_data, HTML_FILE)
+        # Generate ability adjustment subpage
+        generate_ability_page(graph_data, ability_proxy, major_df)
     
     print(f"\n{'='*60}")
     print(f"  DONE!")

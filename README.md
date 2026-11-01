@@ -2,7 +2,7 @@
 
 **Determining the hardest UCLA undergraduate major using grade distribution data and scraped course catalog requirements.**
 
-This project combines 4 years of official UCLA grade data (2021–2025) with web-scraped major requirements from the UCLA General Catalog to rank all 137 undergraduate majors by academic difficulty. The result is an interactive HTML dashboard with rankings, a bipartite graph visualization, and per-course deep dives.
+This project combines 4 years of official UCLA grade data (2021–2025) with web-scraped major requirements from the UCLA General Catalog to rank all 137 undergraduate majors by academic difficulty. The result is an interactive web app with searchable rankings, a detail panel and side-by-side comparison for each major, a bipartite graph visualization, and course-level GPAs.
 
 🔗 **[View the live dashboard](https://ethanuser.github.io/ucla-major-difficulty/)**
 
@@ -59,7 +59,11 @@ python scripts/run_pipeline.py parse analyze # Re-parse grades and re-analyze
 
 ```
 UCLA Grades/
-├── index.html                          # Interactive dashboard (GitHub Pages entry point)
+├── index.html                          # Generated app (GitHub Pages entry point)
+├── ability-adjustment.html             # Ability adjustment explainer (data injected by the pipeline)
+├── assets/
+│   ├── app.js                          # App logic, inlined into index.html
+│   └── style.css                       # UCLA theme, inlined into index.html
 ├── README.md                           # This file
 ├── methodology.md                      # Full data science methodology
 ├── .gitignore
@@ -115,7 +119,7 @@ Scraped from `catalog.registrar.ucla.edu` using Playwright (headless Chromium). 
 ### GE (General Education) Data
 Pulled from the UCLA Registrar **GE Courses Master List** ([link](https://sa.ucla.edu/ro/Public/SOC/Search/GECoursesMasterList)) (pulled **March 9, 2026**).
 
-GE data is used only for the dashboard’s **Course Deep Dive** feature (search + filter by GE category). It is mapped to our course IDs via department-name → subject-code mapping and catalog number matching, and may be incomplete when naming differs.
+GE data is used only for the app’s **Courses** view (search + filter by GE category). It is mapped to our course IDs via department-name → subject-code mapping and catalog number matching, and may be incomplete when naming differs.
 
 ---
 

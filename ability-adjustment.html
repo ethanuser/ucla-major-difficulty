@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ability Adjustment — UCLA Major Difficulty</title>
+    <meta name="description"
+        content="Details on how transfer-admit GPA is used as a rough proxy for student ability to adjust UCLA major difficulty rankings.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <style>
+        /* ─── Design tokens (same as main site) ─── */
+        :root {
+            --ucla-blue: #2774AE;
+            --ucla-dark-blue: #003B5C;
+            --ucla-gold: #FFD100;
+            --ucla-darkest: #00243A;
+            --ucla-link: #00598C;
+            --bg-page: #F4F6F8;
+            --bg-card: #FFFFFF;
+            --bg-hover: #F0F5FB;
+            --text-primary: #333333;
+            --text-secondary: #4A5560;
+            --text-muted: #5F6B76;
+            --border-light: #DDE2E7;
+            --shadow-sm: none;
+            --shadow-md: none;
+            --radius: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* ─── UCLA top bar ─── */
+        .ucla-topbar {
+            height: 4px;
+            background: var(--ucla-gold);
+        }
+
+        /* ─── Site header ─── */
+        .site-header {
+            background: var(--bg-card);
+            color: var(--ucla-dark-blue);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .site-header__brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-header__logo {
+            font-weight: 700;
+            font-size: 1.1875rem;
+            color: var(--ucla-dark-blue);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .site-header__logo span {
+            color: var(--ucla-blue);
+        }
+
+        .site-header__logo:hover {
+            text-decoration: underline;
+        }
+
+        .site-header__divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border-light);
+        }
+
+        .site-header__subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ─── Content ─── */
+        .content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+
+        .breadcrumb {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: var(--ucla-link);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--ucla-dark-blue);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .subtitle a {
+            color: var(--ucla-blue);
+            text-decoration: none;
+        }
+
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--ucla-link);
+            margin-top: 36px;
+            margin-bottom: 12px;
+            padding-top: 10px;
+            border-top: 3px solid var(--ucla-gold);
+        }
+
+        p,
+        li {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        code {
+            background: #EDF4FA;
+            padding: 2px 6px;
+            font-size: 0.85rem;
+            color: var(--ucla-dark-blue);
+            font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+        }
+
+        .formula-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--ucla-blue);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin: 16px 0 24px;
+            font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+            font-size: 0.9rem;
+            color: var(--ucla-dark-blue);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 16px 0 28px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-card__value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--ucla-dark-blue);
+        }
+
+        .stat-card__label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+        }
+
+        /* ─── Chart card ─── */
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .chart-card__title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ucla-dark-blue);
+            margin-bottom: 16px;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .chart-container canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* ─── Table ─── */
+        .table-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 24px 0;
+        }
+
+        .table-card__header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .table-card__title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ucla-dark-blue);
+        }
+
+        .table-card__count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .adj-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .adj-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .adj-table th {
+            background: var(--ucla-dark-blue);
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .adj-table th:hover {
+            background: var(--ucla-blue);
+        }
+
+        .sort {
+            width: 8px;
+            height: 13px;
+            margin-left: 6px;
+            vertical-align: -2px;
+            fill: rgba(255, 255, 255, 0.4);
+        }
+
+        .sorted-desc .sort__up,
+        .sorted-asc .sort__down {
+            fill: var(--ucla-gold);
+        }
+
+        .adj-table td {
+            padding: 8px 14px;
+            border-bottom: 1px solid var(--border-light);
+            white-space: nowrap;
+        }
+
+        .adj-table tr:hover {
+            background: var(--bg-hover);
+        }
+
+        .adj-table .col-rank {
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-muted);
+            width: 40px;
+        }
+
+        .adj-table .col-major {
+            max-width: 280px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .adj-table .col-num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .adj-positive {
+            color: #2E7D32;
+            font-weight: 600;
+        }
+
+        .adj-negative {
+            color: #C62828;
+            font-weight: 600;
+        }
+
+        /* ─── Note card ─── */
+        .note-card {
+            background: #FFF8D6;
+            border: 1px solid #F0DE8A;
+            border-radius: var(--radius);
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .note-card strong {
+            color: var(--ucla-dark-blue);
+        }
+
+        .link-card {
+            background: #EDF4FA;
+            border: 1px solid #8BB8E8;
+            border-radius: var(--radius);
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 0.88rem;
+        }
+
+        .link-card a {
+            color: var(--ucla-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ─── Footer ─── */
+        .site-footer {
+            text-align: center;
+            padding: 28px 24px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            background: var(--ucla-dark-blue);
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .site-footer a {
+            color: var(--ucla-gold);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .content {
+                padding: 20px 16px 48px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .chart-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ucla-topbar"></div>
+    <header class="site-header">
+        <div class="site-header__brand">
+            <a href="index.html" class="site-header__logo"><span>UCLA</span> Major Difficulty</a>
+            <div class="site-header__divider"></div>
+            <span class="site-header__subtitle">Ability Adjustment Details</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="index.html">← Home</a>
+        </div>
+
+        <h1>Adjusting for Student Ability</h1>
+        <p class="subtitle">
+            The primary rankings measure <strong>observed grading difficulty</strong> — how grades actually distribute
+            in each major's required courses. However, major GPAs partly reflect the ability of students who select into
+            those majors, not just grading strictness. This page explains the rough adjustment we offer using
+            transfer-admit GPA data.
+        </p>
+
+        <h2>Why adjust?</h2>
+        <p>
+            A low average GPA in a major could mean (a) the courses are graded strictly, <em>or</em> (b) the students
+            who choose that major happen to be less prepared, <em>or</em> (c) some mix. Without individual transcript
+            data (which is protected by FERPA), we can't disentangle these effects perfectly. But we can use a proxy for
+            student ability to do a rough correction.
+        </p>
+
+        <h2>The proxy: transfer-admit GPA</h2>
+        <p>
+            UCLA publishes the <a href="https://admission.ucla.edu/apply/transfer/transfer-profile/2025/major"
+                target="_blank" rel="noopener noreferrer">Transfer Admission Profile</a> for each major. This includes
+            25th and 75th percentile GPA of admitted transfer students. We use the midpoint as a rough "ability proxy"
+            for each major.
+        </p>
+
+        <div class="note-card">
+            <strong>Limitation:</strong> Transfer-admit GPA reflects community college performance, not UCLA student
+            ability. It also conflates student ability with pre-transfer course difficulty — earning a 4.0 in pre-CS
+            coursework is harder than a 3.95 in pre-Econ. Many majors hit a ceiling near 4.00, compressing variance.
+            This is a rough robustness check, not a causal estimate.
+        </div>
+
+        <h2>The model</h2>
+        <p>
+            We run a simple OLS regression: <code>course_gpa ~ ability_proxy</code>. The key finding is that
+            <strong>majors with higher-ability admits tend to have lower course GPAs</strong> — consistent with STEM
+            departments grading more strictly even when their students are stronger.
+        </p>
+
+        <div class="stats-grid" id="stats-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <div class="formula-block">
+            adjusted_gpa = raw_gpa − k × (ability_proxy − mean_ability)
+        </div>
+
+        <p>
+            Where <code>k = |slope|</code> from the OLS fit. This penalizes majors with higher-GPA admits (making their
+            effective GPA lower) and helps majors with lower-GPA admits. In effect, CS and engineering majors rise in
+            the adjusted rankings because their high admit GPAs suggest their low course GPAs reflect genuinely strict
+            grading.
+        </p>
+
+        <h2>Scatter plot: transfer-admit GPA vs. course GPA</h2>
+        <p>
+            Each dot is a major with transfer data. The trend line shows the negative relationship — higher-ability
+            admits correlate with lower course GPAs.
+        </p>
+        <div class="chart-card">
+            <div class="chart-card__title">Transfer-Admit GPA (Ability Proxy) vs. Weighted Average Course GPA</div>
+            <div class="chart-container">
+                <canvas id="scatter-chart"></canvas>
+            </div>
+        </div>
+
+        <h2>Adjustment magnitudes by major</h2>
+        <p>
+            This table shows how much each major's GPA is shifted by the ability adjustment. Positive adjustment means
+            the major <em>benefits</em> (its raw GPA is boosted because its admits had lower GPAs). Negative adjustment
+            means the major is <em>penalized</em> (its admits had higher GPAs, so its low course GPA is less
+            surprising).
+        </p>
+
+        <div class="table-card">
+            <div class="table-card__header">
+                <span class="table-card__title">Ability Adjustment by Major</span>
+                <span class="table-card__count" id="table-count"></span>
+            </div>
+            <div class="table-scroll">
+                <table class="adj-table" id="adj-table">
+                    <thead>
+                        <tr>
+                            <th class="col-rank" data-col="rank">#</th>
+                            <th data-col="major">Major</th>
+                            <th data-col="ability_proxy">Transfer-Admit GPA</th>
+                            <th data-col="avg_gpa">Raw Course GPA</th>
+                            <th data-col="adjustment">Adjustment</th>
+                            <th data-col="adjusted_gpa">Adjusted GPA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adj-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="link-card">
+            For the full methodology, statistical details, and discussion of limitations, see
+            <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md#921-transfer-admit-gpa-robustness-check"
+                target="_blank" rel="noopener noreferrer">
+                Section 9.2.1: Transfer-Admit GPA Robustness Check
+            </a> in the methodology document.
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div>
+            <a href="index.html">Main Rankings</a>&emsp;
+            <a href="https://github.com/ethanuser/ucla-major-difficulty" target="_blank">Source Code</a>&emsp;
+            <a href="https://github.com/ethanuser/ucla-major-difficulty/blob/main/methodology.md" target="_blank">Full
+                Methodology</a>
+        </div>
+        <div style="margin-top:8px">Independent project. Not affiliated with UCLA or the University of California.</div>
+    </footer>
+
+    <script>
+        // ─── Data: embedded from merged CSV ───
+        // This data is read from merged_major_difficulty_with_transfer_proxy.csv
+        // Only majors with ability_proxy_mid are included.
+
+        const RAW_DATA = { "k": 0.4618, "mean_ability": 3.7984, "slope": -0.4618, "n_majors": 118, "majors": [{ "major": "Economics BA", "avg_gpa": 3.168, "ability_proxy": 3.955, "rank": 1 }, { "major": "Business Economics BA", "avg_gpa": 3.181, "ability_proxy": 3.945, "rank": 2 }, { "major": "Mathematics/Economics BS", "avg_gpa": 3.241, "ability_proxy": 3.955, "rank": 3 }, { "major": "Linguistics and Computer Science BA", "avg_gpa": 3.254, "ability_proxy": 3.765, "rank": 4 }, { "major": "Financial Actuarial Mathematics BS", "avg_gpa": 3.27, "ability_proxy": 3.94, "rank": 5 }, { "major": "Atmospheric and Oceanic Sciences/Mathematics BS", "avg_gpa": 3.313, "ability_proxy": 4.0, "rank": 6 }, { "major": "Mathematics for Teaching BS", "avg_gpa": 3.334, "ability_proxy": 3.94, "rank": 7 }, { "major": "Applied Mathematics BS", "avg_gpa": 3.336, "ability_proxy": 3.94, "rank": 8 }, { "major": "Mathematics of Computation BS", "avg_gpa": 3.337, "ability_proxy": 3.935, "rank": 9 }, { "major": "Chemistry BS", "avg_gpa": 3.34, "ability_proxy": 3.9, "rank": 10 }, { "major": "Chemistry/Materials Science BS", "avg_gpa": 3.343, "ability_proxy": 3.6, "rank": 11 }, { "major": "Linguistics and Philosophy BA", "avg_gpa": 3.343, "ability_proxy": 3.75, "rank": 12 }, { "major": "Physics BS", "avg_gpa": 3.347, "ability_proxy": 3.92, "rank": 13 }, { "major": "Astrophysics BS", "avg_gpa": 3.351, "ability_proxy": 3.85, "rank": 15 }, { "major": "Computer Science BS", "avg_gpa": 3.351, "ability_proxy": 4.0, "rank": 16 }, { "major": "Statistics and Data Science BS", "avg_gpa": 3.352, "ability_proxy": 3.97, "rank": 17 }, { "major": "Atmospheric and Oceanic Sciences BS", "avg_gpa": 3.354, "ability_proxy": 3.61, "rank": 18 }, { "major": "Mathematics BS", "avg_gpa": 3.355, "ability_proxy": 3.945, "rank": 19 }, { "major": "Computer Science and Engineering BS", "avg_gpa": 3.356, "ability_proxy": 3.97, "rank": 20 }, { "major": "Materials Engineering BS", "avg_gpa": 3.359, "ability_proxy": 3.76, "rank": 21 }, { "major": "Electrical Engineering BS", "avg_gpa": 3.361, "ability_proxy": 3.965, "rank": 22 }, { "major": "Linguistics and Spanish BA", "avg_gpa": 3.362, "ability_proxy": 3.68, "rank": 23 }, { "major": "Data Theory BS", "avg_gpa": 3.368, "ability_proxy": 3.86, "rank": 25 }, { "major": "Earth and Environmental Science BA", "avg_gpa": 3.368, "ability_proxy": 3.64, "rank": 26 }, { "major": "Linguistics and Anthropology BA", "avg_gpa": 3.37, "ability_proxy": 3.8, "rank": 27 }, { "major": "Linguistics and English BA", "avg_gpa": 3.37, "ability_proxy": 3.285, "rank": 28 }, { "major": "Computer Engineering BS", "avg_gpa": 3.372, "ability_proxy": 3.965, "rank": 29 }, { "major": "Aerospace Engineering BS", "avg_gpa": 3.372, "ability_proxy": 3.935, "rank": 30 }, { "major": "Mechanical Engineering BS", "avg_gpa": 3.375, "ability_proxy": 3.96, "rank": 31 }, { "major": "Chemical Engineering BS", "avg_gpa": 3.377, "ability_proxy": 3.885, "rank": 32 }, { "major": "Biochemistry BS", "avg_gpa": 3.379, "ability_proxy": 3.895, "rank": 33 }, { "major": "Geology BS", "avg_gpa": 3.393, "ability_proxy": 3.745, "rank": 34 }, { "major": "Linguistics and Asian Languages and Cultures BA", "avg_gpa": 3.395, "ability_proxy": 3.72, "rank": 35 }, { "major": "Bioengineering BS", "avg_gpa": 3.397, "ability_proxy": 3.98, "rank": 37 }, { "major": "Biophysics BS", "avg_gpa": 3.397, "ability_proxy": 3.885, "rank": 38 }, { "major": "Engineering Geology BS", "avg_gpa": 3.403, "ability_proxy": 3.55, "rank": 39 }, { "major": "Civil Engineering BS", "avg_gpa": 3.409, "ability_proxy": 3.845, "rank": 40 }, { "major": "Geophysics BS", "avg_gpa": 3.411, "ability_proxy": 3.82, "rank": 41 }, { "major": "Physiological Science BS", "avg_gpa": 3.416, "ability_proxy": 3.865, "rank": 42 }, { "major": "Applied Linguistics BA", "avg_gpa": 3.418, "ability_proxy": 3.735, "rank": 43 }, { "major": "Computational Biology BS", "avg_gpa": 3.419, "ability_proxy": 3.905, "rank": 44 }, { "major": "Mathematics/Applied Science BS", "avg_gpa": 3.422, "ability_proxy": 3.985, "rank": 45 }, { "major": "Sociology BA", "avg_gpa": 3.422, "ability_proxy": 3.86, "rank": 46 }, { "major": "Linguistics BA", "avg_gpa": 3.424, "ability_proxy": 3.78, "rank": 47 }, { "major": "Anthropology BS", "avg_gpa": 3.427, "ability_proxy": 3.73, "rank": 48 }, { "major": "Microbiology, Immunology, and Molecular Genetics BS", "avg_gpa": 3.429, "ability_proxy": 3.905, "rank": 49 }, { "major": "Molecular, Cell, and Developmental Biology BS", "avg_gpa": 3.43, "ability_proxy": 3.935, "rank": 50 }, { "major": "Ecology, Behavior, and Evolution BS", "avg_gpa": 3.436, "ability_proxy": 3.765, "rank": 51 }, { "major": "Nursing BS Prelicensure", "avg_gpa": 3.437, "ability_proxy": 3.815, "rank": 52 }, { "major": "Neuroscience BS", "avg_gpa": 3.438, "ability_proxy": 3.875, "rank": 53 }, { "major": "Marine Biology BS", "avg_gpa": 3.438, "ability_proxy": 3.795, "rank": 54 }, { "major": "Communication BA", "avg_gpa": 3.442, "ability_proxy": 3.96, "rank": 55 }, { "major": "Linguistics and Psychology BA", "avg_gpa": 3.445, "ability_proxy": 3.74, "rank": 56 }, { "major": "Public Health BS", "avg_gpa": 3.445, "ability_proxy": 3.965, "rank": 57 }, { "major": "Psychobiology BS", "avg_gpa": 3.447, "ability_proxy": 3.905, "rank": 58 }, { "major": "Environmental Science BS", "avg_gpa": 3.449, "ability_proxy": 3.755, "rank": 59 }, { "major": "Biology BS", "avg_gpa": 3.449, "ability_proxy": 3.91, "rank": 60 }, { "major": "Cognitive Science BS", "avg_gpa": 3.466, "ability_proxy": 3.885, "rank": 61 }, { "major": "African and Middle Eastern Studies BA", "avg_gpa": 3.474, "ability_proxy": 3.5, "rank": 62 }, { "major": "Psychology BA", "avg_gpa": 3.483, "ability_proxy": 3.895, "rank": 63 }, { "major": "Public Health BA", "avg_gpa": 3.488, "ability_proxy": 3.935, "rank": 64 }, { "major": "Human Biology and Society BS", "avg_gpa": 3.488, "ability_proxy": 3.95, "rank": 65 }, { "major": "European Studies BA", "avg_gpa": 3.5, "ability_proxy": 3.755, "rank": 67 }, { "major": "Asian Studies BA", "avg_gpa": 3.507, "ability_proxy": 3.745, "rank": 68 }, { "major": "International Development Studies BA", "avg_gpa": 3.508, "ability_proxy": 3.895, "rank": 69 }, { "major": "Philosophy BA", "avg_gpa": 3.516, "ability_proxy": 3.76, "rank": 70 }, { "major": "Political Science BA", "avg_gpa": 3.52, "ability_proxy": 3.915, "rank": 71 }, { "major": "Geography BA", "avg_gpa": 3.541, "ability_proxy": 3.79, "rank": 72 }, { "major": "Human Biology and Society BA", "avg_gpa": 3.552, "ability_proxy": 3.935, "rank": 73 }, { "major": "Geography/Environmental Studies BA", "avg_gpa": 3.553, "ability_proxy": 3.765, "rank": 74 }, { "major": "Global Studies BA", "avg_gpa": 3.578, "ability_proxy": 3.795, "rank": 75 }, { "major": "Art History BA", "avg_gpa": 3.587, "ability_proxy": 3.755, "rank": 76 }, { "major": "Spanish and Linguistics BA", "avg_gpa": 3.595, "ability_proxy": 3.485, "rank": 77 }, { "major": "Middle Eastern Studies BA", "avg_gpa": 3.599, "ability_proxy": 3.715, "rank": 78 }, { "major": "Anthropology BA", "avg_gpa": 3.602, "ability_proxy": 3.735, "rank": 79 }, { "major": "American Indian Studies BA", "avg_gpa": 3.606, "ability_proxy": 3.495, "rank": 80 }, { "major": "Comparative Literature BA", "avg_gpa": 3.628, "ability_proxy": 3.77, "rank": 82 }, { "major": "Labor Studies BA", "avg_gpa": 3.632, "ability_proxy": 3.765, "rank": 83 }, { "major": "Disability Studies BA", "avg_gpa": 3.638, "ability_proxy": 3.78, "rank": 85 }, { "major": "Study of Religion BA", "avg_gpa": 3.651, "ability_proxy": 3.61, "rank": 87 }, { "major": "Asian Languages and Linguistics BA", "avg_gpa": 3.654, "ability_proxy": 3.79, "rank": 88 }, { "major": "English BA", "avg_gpa": 3.658, "ability_proxy": 3.79, "rank": 89 }, { "major": "Spanish and Community and Culture BA", "avg_gpa": 3.662, "ability_proxy": 3.705, "rank": 90 }, { "major": "American Literature and Culture BA", "avg_gpa": 3.666, "ability_proxy": 3.605, "rank": 91 }, { "major": "Chinese BA", "avg_gpa": 3.68, "ability_proxy": 3.835, "rank": 94 }, { "major": "Central and East European Languages and Cultures BA", "avg_gpa": 3.683, "ability_proxy": 3.795, "rank": 95 }, { "major": "Korean BA", "avg_gpa": 3.684, "ability_proxy": 3.705, "rank": 96 }, { "major": "Nordic Studies BA", "avg_gpa": 3.689, "ability_proxy": 3.95, "rank": 98 }, { "major": "History BA", "avg_gpa": 3.689, "ability_proxy": 3.84, "rank": 99 }, { "major": "Asian Religions BA", "avg_gpa": 3.691, "ability_proxy": 3.785, "rank": 100 }, { "major": "Arabic BA", "avg_gpa": 3.694, "ability_proxy": 3.89, "rank": 101 }, { "major": "Ethnomusicology BA", "avg_gpa": 3.702, "ability_proxy": 3.62, "rank": 102 }, { "major": "European Languages and Transcultural Studies BA", "avg_gpa": 3.707, "ability_proxy": 3.42, "rank": 104 }, { "major": "Japanese BA", "avg_gpa": 3.71, "ability_proxy": 3.75, "rank": 105 }, { "major": "Asian Humanities BA", "avg_gpa": 3.712, "ability_proxy": 3.825, "rank": 106 }, { "major": "African American Studies BA", "avg_gpa": 3.717, "ability_proxy": 3.35, "rank": 108 }, { "major": "European Languages and Transcultural Studies with Italian BA", "avg_gpa": 3.718, "ability_proxy": 3.79, "rank": 110 }, { "major": "European Languages and Transcultural Studies with French and Francophone BA", "avg_gpa": 3.719, "ability_proxy": 3.785, "rank": 112 }, { "major": "Russian Language and Literature BA", "avg_gpa": 3.726, "ability_proxy": 3.64, "rank": 113 }, { "major": "Spanish BA", "avg_gpa": 3.731, "ability_proxy": 3.74, "rank": 114 }, { "major": "Chicana and Chicano Studies BA", "avg_gpa": 3.749, "ability_proxy": 3.595, "rank": 115 }, { "major": "Public Affairs BA", "avg_gpa": 3.755, "ability_proxy": 3.705, "rank": 116 }, { "major": "Classical Civilization BA", "avg_gpa": 3.757, "ability_proxy": 3.785, "rank": 117 }, { "major": "Iranian Studies BA", "avg_gpa": 3.76, "ability_proxy": 3.78, "rank": 118 }, { "major": "Architectural Studies BA", "avg_gpa": 3.774, "ability_proxy": 3.855, "rank": 119 }, { "major": "Film and Television BA", "avg_gpa": 3.802, "ability_proxy": 3.845, "rank": 121 }, { "major": "Theater BA", "avg_gpa": 3.809, "ability_proxy": 3.93, "rank": 122 }, { "major": "Music Industry BA", "avg_gpa": 3.817, "ability_proxy": 3.82, "rank": 123 }, { "major": "Asian American Studies BA", "avg_gpa": 3.824, "ability_proxy": 3.73, "rank": 124 }, { "major": "Music Education BA", "avg_gpa": 3.837, "ability_proxy": 3.8, "rank": 126 }, { "major": "Gender Studies BA", "avg_gpa": 3.842, "ability_proxy": 3.77, "rank": 128 }, { "major": "Education and Social Transformation BA", "avg_gpa": 3.851, "ability_proxy": 3.75, "rank": 129 }, { "major": "Design|Media Arts BA", "avg_gpa": 3.855, "ability_proxy": 3.76, "rank": 130 }, { "major": "Musicology BA", "avg_gpa": 3.867, "ability_proxy": 3.82, "rank": 131 }, { "major": "Music Performance BM", "avg_gpa": 3.882, "ability_proxy": 3.6, "rank": 134 }, { "major": "World Arts and Cultures BA", "avg_gpa": 3.887, "ability_proxy": 3.705, "rank": 135 }, { "major": "Art BA", "avg_gpa": 3.897, "ability_proxy": 3.655, "rank": 136 }, { "major": "Dance BA", "avg_gpa": 3.914, "ability_proxy": 3.815, "rank": 137 }] };
+
+        // ─── Compute stats ───
+        const K = RAW_DATA.k;
+        const MEAN_ABILITY = RAW_DATA.mean_ability;
+        const SLOPE = RAW_DATA.slope;
+        const N = RAW_DATA.majors.length;
+
+        const majors = RAW_DATA.majors.map(m => {
+            const adjustment = -K * (m.ability_proxy - MEAN_ABILITY);
+            return {
+                ...m,
+                adjustment: adjustment,
+                adjusted_gpa: m.avg_gpa + adjustment,
+            };
+        });
+
+        // ─── Pearson r ───
+        const gpaArr = majors.map(m => m.avg_gpa);
+        const abArr = majors.map(m => m.ability_proxy);
+        const meanGpa = gpaArr.reduce((s, v) => s + v, 0) / N;
+        const meanAb = abArr.reduce((s, v) => s + v, 0) / N;
+        let sxx = 0, syy = 0, sxy = 0;
+        for (let i = 0; i < N; i++) {
+            const dx = abArr[i] - meanAb;
+            const dy = gpaArr[i] - meanGpa;
+            sxx += dx * dx;
+            syy += dy * dy;
+            sxy += dx * dy;
+        }
+        const r = sxy / Math.sqrt(sxx * syy);
+        const r2 = r * r;
+
+        // ─── Stats grid ───
+        document.getElementById('stats-grid').innerHTML = `
+        <div class="stat-card"><div class="stat-card__value">${N}</div><div class="stat-card__label">Majors Covered</div></div>
+        <div class="stat-card"><div class="stat-card__value">r = ${r.toFixed(2)}</div><div class="stat-card__label">Pearson Correlation</div></div>
+        <div class="stat-card"><div class="stat-card__value">${r2.toFixed(2)}</div><div class="stat-card__label">R² (Variance Explained)</div></div>
+        <div class="stat-card"><div class="stat-card__value">${SLOPE.toFixed(2)}</div><div class="stat-card__label">OLS Slope</div></div>
+        <div class="stat-card"><div class="stat-card__value">${MEAN_ABILITY.toFixed(3)}</div><div class="stat-card__label">Mean Ability Proxy</div></div>
+    `;
+
+        // ─── Scatter plot ───
+        const ctx = document.getElementById('scatter-chart').getContext('2d');
+        Chart.defaults.font.family = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+        // Build scatter data
+        const scatterData = majors.map(m => ({
+            x: m.ability_proxy,
+            y: m.avg_gpa,
+            label: m.major,
+        }));
+
+        // Trend line endpoints
+        const xMin = Math.min(...abArr) - 0.02;
+        const xMax = Math.max(...abArr) + 0.02;
+        const intercept = meanGpa - SLOPE * meanAb;
+        const trendData = [
+            { x: xMin, y: intercept + SLOPE * xMin },
+            { x: xMax, y: intercept + SLOPE * xMax },
+        ];
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Majors',
+                        data: scatterData,
+                        backgroundColor: 'rgba(39, 116, 174, 0.65)',
+                        borderColor: 'rgba(39, 116, 174, 0.9)',
+                        borderWidth: 1.5,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: '#FFD100',
+                        pointHoverBorderColor: '#003B5C',
+                        pointHoverBorderWidth: 2,
+                    },
+                    {
+                        label: `Trend (slope = ${SLOPE.toFixed(2)})`,
+                        data: trendData,
+                        type: 'line',
+                        borderColor: 'rgba(198, 40, 40, 0.7)',
+                        borderWidth: 2,
+                        borderDash: [6, 4],
+                        pointRadius: 0,
+                        fill: false,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 1.6,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (ctx) {
+                                if (ctx.dataset.label === 'Majors') {
+                                    const d = ctx.raw;
+                                    return `${d.label}: Admit GPA=${d.x.toFixed(3)}, Course GPA=${d.y.toFixed(3)}`;
+                                }
+                                return '';
+                            },
+                        },
+                        backgroundColor: 'rgba(0, 59, 92, 0.9)',
+                        titleFont: { size: 11 },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 0,
+                    },
+                    legend: {
+                        labels: {
+                            usePointStyle: true,
+                            font: { size: 12 },
+                        },
+                    },
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Transfer-Admit GPA (Ability Proxy)',
+                            font: { size: 13, weight: '600' },
+                            color: '#003B5C',
+                        },
+                        grid: { color: 'rgba(0,0,0,0.06)' },
+                        ticks: { font: { size: 11 } },
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Weighted Average Course GPA',
+                            font: { size: 13, weight: '600' },
+                            color: '#003B5C',
+                        },
+                        grid: { color: 'rgba(0,0,0,0.06)' },
+                        ticks: { font: { size: 11 } },
+                    },
+                },
+            },
+        });
+
+        // ─── Table ───
+        let sortCol = 'adjustment';
+        let sortDir = 'desc';
+
+        function renderTable() {
+            const sorted = [...majors];
+            sorted.sort((a, b) => {
+                let va = a[sortCol], vb = b[sortCol];
+                if (typeof va === 'string') {
+                    return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+                }
+                return sortDir === 'asc' ? va - vb : vb - va;
+            });
+
+            const tbody = document.getElementById('adj-tbody');
+            let html = '';
+            sorted.forEach((m, i) => {
+                const adjClass = m.adjustment >= 0 ? 'adj-positive' : 'adj-negative';
+                const adjSign = m.adjustment >= 0 ? '+' : '';
+                html += `<tr>
+                <td class="col-rank">${i + 1}</td>
+                <td class="col-major">${m.major}</td>
+                <td class="col-num">${m.ability_proxy.toFixed(3)}</td>
+                <td class="col-num">${m.avg_gpa.toFixed(3)}</td>
+                <td class="col-num ${adjClass}">${adjSign}${m.adjustment.toFixed(4)}</td>
+                <td class="col-num">${m.adjusted_gpa.toFixed(3)}</td>
+            </tr>`;
+            });
+            tbody.innerHTML = html;
+            document.getElementById('table-count').textContent = `${sorted.length} majors with transfer data`;
+
+            // Update header sort indicators
+            document.querySelectorAll('.adj-table th').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+                if (th.dataset.col === sortCol) {
+                    th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                }
+            });
+        }
+
+        document.querySelectorAll('.adj-table th[data-col]').forEach(th => {
+            th.insertAdjacentHTML('beforeend', '<svg class="sort" viewBox="0 0 10 16" aria-hidden="true"><path class="sort__up" d="M5 1l4.5 5.5h-9z"/><path class="sort__down" d="M5 15L.5 9.5h9z"/></svg>');
+            th.addEventListener('click', () => {
+                const col = th.dataset.col;
+                if (sortCol === col) {
+                    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+                } else {
+                    sortCol = col;
+                    sortDir = col === 'major' ? 'asc' : 'desc';
+                }
+                renderTable();
+            });
+        });
+
+        renderTable();
+    </script>
+</body>
+
+</html>
